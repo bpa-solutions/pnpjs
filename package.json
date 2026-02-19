@@ -2,7 +2,7 @@
     "name": "@pnp/monorepo",
     "private": true,
     "type": "module",
-    "version": "3.26.0",
+    "version": "3.30.0",
     "description": "A JavaScript library for SharePoint & Graph development.",
     "devDependencies": {
         "@azure/identity": "3.4.1",
@@ -55,7 +55,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/pnp/pnpjs"
+        "url": "git://github.com/bpa-solutions/pnpjs"
     },
     "author": {
         "name": "Microsoft and other contributors"
@@ -74,22 +74,16 @@
     "engineStrict": true,
     "maintainers": [
         {
-            "name": "patrick-rodgers",
-            "email": "patrick.rodgers@microsoft.com"
+            "name": "sbryois",
+            "email": "sbryois@bpa-solutions.net"
         },
         {
-            "name": "juliemturner",
-            "email": "julie.turner@sympraxisconsulting.com",
-            "url": "https://julieturner.net"
-        },
-        {
-            "name": "bcameron1231",
-            "email": "beau@beaucameron.net",
-            "url": "https://beaucameron.net"
+            "name": "leo.maradan",
+            "email": "leo.maradan@bpa-solutions.net"
         }
     ],
     "bugs": {
-        "url": "https://github.com/pnp/pnpjs/issues"
+        "url": "https://github.com/bpa-solutions/pnpjs/issues"
     },
-    "homepage": "https://github.com/pnp/pnpjs"
+    "homepage": "https://github.com/bpa-solutions/pnpjs"
 }

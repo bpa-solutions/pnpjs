@@ -1,3 +1,9 @@
+## About this forked Project
+
+This is a fork of the PnPjs repository done in February 2026 for BPA Solutions needs. Being currently "stuck" to use version 3 due to dependencies, endpoints and such, it made sense to fork our own customized version which will have minor tweaks compared to last official v3.26.0 release.
+
+## Original README
+
 PnPjs is a fluent JavaScript API for consuming SharePoint and Microsoft Graph REST APIs in a type-safe way. You can use it with SharePoint Framework, Nodejs, or JavaScript projects. This an open source initiative complementing existing SDKs provided by Microsoft.
 
 Please use [http://aka.ms/community/home](http://aka.ms/community/home) for the latest updates around the whole *Microsoft 365 and Power Platform Community(PnP)* initiative.
