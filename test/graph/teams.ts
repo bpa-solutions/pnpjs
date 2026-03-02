@@ -1,4 +1,4 @@
-import { getRandomString, delay, stringIsNullOrEmpty } from "@pnp/core";
+import { getRandomString, delay, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
 import "@pnp/graph/teams";
 import "@pnp/graph/groups";

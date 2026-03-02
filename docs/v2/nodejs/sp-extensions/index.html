@@ -2178,7 +2178,7 @@
 <p>Allows you to read a response body as a nodejs PassThrough stream.</p>
 <pre><code class="language-TypeScript">// by importing the the library the node specific extensions are automatically applied
 import { SPFetchClient, SPNS } from &quot;@pnp/nodejs-commonjs&quot;;
-import { sp } from &quot;@pnp/sp-commonjs&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp-commonjs&quot;;
 
 sp.setup({
     sp: {
@@ -2204,12 +2204,12 @@ const txt = await new Promise&lt;string&gt;((resolve) =&gt; {
 </code></pre>
 <h2 id="ifilesaddchunked">IFiles.addChunked<a class="headerlink" href="#ifilesaddchunked" title="Permanent link">&para;</a></h2>
 <p><em>Added in 2.1.0</em></p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders/web&quot;;
-import &quot;@pnp/sp/folders/list&quot;;
-import &quot;@pnp/sp/files/web&quot;;
-import &quot;@pnp/sp/files/folder&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders/list&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/folder&quot;;
 import * as fs from &quot;fs&quot;;
 
 
@@ -2220,12 +2220,12 @@ await files.addChunked(name, stream, null, true, 10);
 </code></pre>
 <h2 id="ifilesetstreamcontentchunked">IFile.setStreamContentChunked<a class="headerlink" href="#ifilesetstreamcontentchunked" title="Permanent link">&para;</a></h2>
 <p><em>Added in 2.1.0</em></p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders/web&quot;;
-import &quot;@pnp/sp/folders/list&quot;;
-import &quot;@pnp/sp/files/web&quot;;
-import &quot;@pnp/sp/files/folder&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders/list&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/folder&quot;;
 import * as fs from &quot;fs&quot;;
 
 const stream = fs.createReadStream(&quot;{file path}&quot;);

@@ -1,4 +1,4 @@
-import { addProp, body } from "@pnp/queryable";
+import { addProp, body } from "@bpa-solutions/pnp-queryable";
 import { graphPost } from "../operations.js";
 import { _User } from "../users/types.js";
 import { IDrive, Drive, IDrives, Drives, _Drive, DriveItem, IDriveItem, _DriveItem, IItemOptions } from "./types.js";

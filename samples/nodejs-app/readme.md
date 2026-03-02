@@ -19,13 +19,13 @@ For production, this should be done using a settings file or something like Azur
 
 ```TypeScript
 // our imports come from the esm libs
-import { spfi } from "@pnp/sp/index.js";
+import { spfi } from "@bpa-solutions/pnp-sp/index.js";
 import { graphfi } from "@pnp/graph/index.js";
 import { LogLevel  } from "@pnp/logging/index.js";
 import { SPDefault, GraphDefault } from "@pnp/nodejs/index.js";
 
 import {readFileSync} from 'fs';
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 import "@pnp/graph/users/index.js";
 
 const buffer = readFileSync("c:/temp/key.pem");
@@ -113,7 +113,7 @@ We add the "start" script to the package.json
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@pnp/sp": "3.0.0",
+    "@bpa-solutions/pnp-sp": "3.0.0",
     "@pnp/graph": "3.0.0",
     "@pnp/nodejs": "3.0.0"
   },

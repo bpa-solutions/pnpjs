@@ -2131,7 +2131,7 @@
 <p>The SPFetchClient is used to authentication to SharePoint as a provider hosted add-in using a client and secret in nodejs. Remember it is not a good practice to expose client ids and secrets on the client and use of this class is intended for nodejs exclusively.</p>
 <p>See: <a href="../../authentication/sp-app-registration/">How to register a legacy SharePoint application</a></p>
 <pre><code class="language-TypeScript">import { SPFetchClient } from &quot;@pnp/nodejs&quot;;
-import { sp } from &quot;@pnp/sp/presets/all&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 sp.setup({
     sp: {
@@ -2155,7 +2155,7 @@ console.log(JSON.stringify(w, null, 4));
 <li>USDef: USA Defense cloud</li>
 <li>USGov: USA Government cloud</li>
 </ul>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 import { SPFetchClient, SPOAuthEnv } from &quot;@pnp/nodejs&quot;;
 
 sp.setup({
@@ -2168,7 +2168,7 @@ sp.setup({
 </code></pre>
 <h2 id="set-realm">Set Realm<a class="headerlink" href="#set-realm" title="Permanent link">&para;</a></h2>
 <p>In some cases automatically resolving the realm may not work. In this case you can set the realm parameter in the SPFetchClient constructor. You can determine the correct value for the realm by navigating to <code>https://{site name}-admin.sharepoint.com/_layouts/15/TA_AllAppPrincipals.aspx</code> and copying the GUID value that appears after the "@" - this is the realm id.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 import { SPFetchClient, SPOAuthEnv } from &quot;@pnp/nodejs&quot;;
 
 sp.setup({

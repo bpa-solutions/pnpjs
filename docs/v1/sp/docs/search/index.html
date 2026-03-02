@@ -1594,11 +1594,11 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/search.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspsearch">@pnp/sp/search<a class="headerlink" href="#pnpspsearch" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsearch">@bpa-solutions/pnp-sp/search<a class="headerlink" href="#pnpspsearch" title="Permanent link">&para;</a></h1>
 <p>Using search you can access content throughout your organization in a secure and consistent manner. The library provides support for searching and search suggest - as well as some interfaces and helper classes to make building your queries and processing responses easier.</p>
 <h1 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h1>
 <p>Search is accessed directly from the root sp object and can take either a string representing the query text, a plain object matching the SearchQuery interface, or a SearchQueryBuilder instance. The first two are shown below.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchQuery</span><span class="p">,</span> <span class="nx">SearchResults</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchQuery</span><span class="p">,</span> <span class="nx">SearchResults</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// text search using SharePoint default values for other parameters</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">r</span>: <span class="kt">SearchResults</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1625,7 +1625,7 @@
 <h2 id="search-result-caching">Search Result Caching<a class="headerlink" href="#search-result-caching" title="Permanent link">&para;</a></h2>
 <p><em>Added in 1.1.5</em></p>
 <p>As of version 1.1.5 you can also use the searchWithCaching method to enable cache support for your search results this option works with any of the options for providing a query, just replace "search" with "searchWithCaching" in your method chain and gain all the benefits of caching. The second parameter is optional and allows you to specify the cache options</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchQuery</span><span class="p">,</span> <span class="nx">SearchResults</span><span class="p">,</span> <span class="nx">SearchQueryBuilder</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchQuery</span><span class="p">,</span> <span class="nx">SearchResults</span><span class="p">,</span> <span class="nx">SearchQueryBuilder</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">searchWithCaching</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">SearchQuery</span><span class="o">&gt;</span><span class="p">{</span>
     <span class="nx">Querytext</span><span class="o">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
@@ -1651,7 +1651,7 @@
 
 <h2 id="paging-with-searchresultsgetpage">Paging with SearchResults.getPage<a class="headerlink" href="#paging-with-searchresultsgetpage" title="Permanent link">&para;</a></h2>
 <p>Paging is controlled by a start row and page size parameter. You can specify both arguments in your initial query however you can use the getPage method to jump to any page. The second parameter page size is optional and will use the previous RowLimit or default to 10.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchQueryBuilder</span><span class="p">,</span> <span class="nx">SearchResults</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchQueryBuilder</span><span class="p">,</span> <span class="nx">SearchResults</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// this will hold our current results</span>
 <span class="kd">let</span> <span class="nx">currentResults</span>: <span class="kt">SearchResults</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
@@ -1692,7 +1692,7 @@
 
 <h2 id="searchquerybuilder">SearchQueryBuilder<a class="headerlink" href="#searchquerybuilder" title="Permanent link">&para;</a></h2>
 <p>The SearchQueryBuilder allows you to build your queries in a fluent manner. It also accepts constructor arguments for query text and a base query plain object, should you have a shared configuration for queries in an application you can define them once. The methods and properties match those on the SearchQuery interface. Boolean properties add the flag to the query while methods require that you supply one or more arguments. Also arguments supplied later in the chain will overwrite previous values.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">SearchQueryBuilder</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">SearchQueryBuilder</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// basic usage</span>
 <span class="kd">let</span> <span class="nx">q</span> <span class="o">=</span> <span class="nx">SearchQueryBuilder</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">).</span><span class="nx">rowLimit</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="nx">enablePhonetic</span><span class="p">;</span>
@@ -1721,7 +1721,7 @@
 
 <h1 id="search-suggest">Search Suggest<a class="headerlink" href="#search-suggest" title="Permanent link">&para;</a></h1>
 <p>Search suggest works in much the same way as search, except against the suggest end point. It takes a string or a plain object that matches SearchSuggestQuery.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchSuggestQuery</span><span class="p">,</span> <span class="nx">SearchSuggestResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SearchSuggestQuery</span><span class="p">,</span> <span class="nx">SearchSuggestResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">searchSuggest</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">r</span>: <span class="kt">SearchSuggestResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 

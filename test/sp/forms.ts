@@ -1,7 +1,7 @@
 import { expect } from "chai";
-import "@pnp/sp/sites";
-import "@pnp/sp/lists";
-import "@pnp/sp/forms";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/forms";
 
 describe("Forms", function () {
     const listName = "Documents";

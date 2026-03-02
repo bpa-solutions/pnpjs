@@ -9,27 +9,27 @@
 
 
 // we import the extendFactory function for use below
-import { extendFactory } from "@pnp/core";
+import { extendFactory } from "@bpa-solutions/pnp-core";
 
 // we grab the SPRest object so we can export an sp const from this module
-import { SPFI, spfi, SPFx } from "@pnp/sp";
+import { SPFI, spfi, SPFx } from "@bpa-solutions/pnp-sp";
 
 // we import all the ambient features we need in our project in one place
 // no need to do them in every file where we want to use them (one place to update)
-import "@pnp/sp/batching";
-import "@pnp/sp/webs";
-import "@pnp/sp/items";
-import "@pnp/sp/lists";
-import "@pnp/sp/sites";
-import "@pnp/sp/fields";
-import { Web, IWeb } from "@pnp/sp/webs";
-import { UrlFieldFormatType } from "@pnp/sp/fields";
+import "@bpa-solutions/pnp-sp/batching";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/fields";
+import { Web, IWeb } from "@bpa-solutions/pnp-sp/webs";
+import { UrlFieldFormatType } from "@bpa-solutions/pnp-sp/fields";
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
 // for extensions to correctly appear in intellisense we need to extend the interface
 // to do this we extend the modules and need to append the /types to the normal import path
 // this has to do with where the file we are extending is located
-declare module "@pnp/sp/webs/types" {
+declare module "@bpa-solutions/pnp-sp/webs/types" {
     /**
      * Returns the instance wrapped by the invokable proxy
      */
@@ -58,8 +58,8 @@ extendFactory(Web, {
 });
 
 // we can export things we might need
-export { IWeb, Web } from "@pnp/sp/webs";
-export { UrlFieldFormatType, IFieldAddResult, IField, ChoiceFieldFormatType } from "@pnp/sp/fields";
+export { IWeb, Web } from "@bpa-solutions/pnp-sp/webs";
+export { UrlFieldFormatType, IFieldAddResult, IField, ChoiceFieldFormatType } from "@bpa-solutions/pnp-sp/fields";
 
 export function mySPFi(context: WebPartContext): SPFI {
 

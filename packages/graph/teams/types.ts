@@ -1,5 +1,5 @@
 import { _GraphQueryableInstance, _GraphQueryableCollection, graphInvokableFactory, GraphQueryableInstance } from "../graphqueryable.js";
-import { body, HeaderParse } from "@pnp/queryable";
+import { body, HeaderParse } from "@bpa-solutions/pnp-queryable";
 import { updateable, IUpdateable, getById, IGetById, deleteable, IDeleteable } from "../decorators.js";
 import { graphPost } from "../operations.js";
 import { defaultPath } from "../decorators.js";

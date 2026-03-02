@@ -14,13 +14,13 @@ In other news, we fixed 54 reported bugs, answered 123 questions, and made 54 su
 
 In 2022 we continued to see steady usage and growth maintaining a requst/month rate over 30 billion for much of the year. These requets came from ~29K tenants a month, including some of our largest M365 customers.
 
-![Graph showing requests and tenants/month for @pnp/sp](../img/usage-2022-eoy.png)
+![Graph showing requests and tenants/month for @bpa-solutions/pnp-sp](../img/usage-2022-eoy.png)
 
 ## Releases
 
 We continued our monthly release cadence as it represents a good pace for addressing issues while not expecting folks to update too often and keeping each update to a reasonable size. All changes can be tracked in our [change log](https://github.com/pnp/pnpjs/blob/main/CHANGELOG.md), updated with each release. You can check our scheduled releases through [project milestones](https://github.com/pnp/pnpjs/milestones), understanding there are occasionally delays. Monthly releases allows us to ensure bugs do not linger and we continually improve and expand the capabilities of the libraries.
 
-### NPM Package download statistics (@pnp/sp)
+### NPM Package download statistics (@bpa-solutions/pnp-sp)
 
 | Month    | Count   | *   | Month       | Count  |
 | -------- | ------- | --- | ----------- | ------ |
@@ -35,7 +35,7 @@ We continued our monthly release cadence as it represents a good pace for addres
 
 For comparison our total downloads in 2021 was 793,747.
 
-With 2022 our total all time downloads of @pnp/sp is now at: 2,543,639
+With 2022 our total all time downloads of @bpa-solutions/pnp-sp is now at: 2,543,639
 
 In 2021 the all time total was 1,743,385.
 

@@ -1,5 +1,5 @@
-import { isFunc, TimelinePipe, dateAdd, getHashCode, isUrlAbsolute } from "@pnp/core";
-import { Queryable } from "@pnp/queryable";
+import { isFunc, TimelinePipe, dateAdd, getHashCode, isUrlAbsolute } from "@bpa-solutions/pnp-core";
+import { Queryable } from "@bpa-solutions/pnp-queryable";
 import { statSync, readFileSync, existsSync, createWriteStream, mkdirSync, writeFileSync } from "fs";
 import { join, resolve } from "path";
 import { Context, Suite } from "mocha";

@@ -1,4 +1,4 @@
-# @pnp/sp/taxonomy
+# @bpa-solutions/pnp-sp/taxonomy
 
 Provides access to the v2.1 api term store
 
@@ -15,9 +15,9 @@ Provides access to the v2.1 api term store
 Access term store data from the root sp object as shown below.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermStoreInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermStoreInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -34,8 +34,8 @@ Search for terms starting with provided label under entire termStore or a termSe
 The following properties are valid for the supplied query: `label: string`, `setId?: string`, `parentTermId?: string`, `languageTag?: string`, `stringMatchOption?: "ExactMatch" | "StartsWith"`.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -65,8 +65,8 @@ _Added in 3.10.0_
 Allows you to update language setttings for the store
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -83,9 +83,9 @@ Access term group information
 ### List
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermGroupInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermGroupInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -96,9 +96,9 @@ const info: ITermGroupInfo[] = await sp.termStore.groups();
 ### Get By Id
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermGroupInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermGroupInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -113,9 +113,9 @@ _Added in 3.10.0_
 Allows you to add a term group to a store.
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermGroupInfo } from "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermGroupInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -137,9 +137,9 @@ _Added in 3.10.0_
 Allows you to add a term group to a store.
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermGroupInfo } from "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermGroupInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -155,9 +155,9 @@ Access term set information
 ### List
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermSetInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermSetInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -168,9 +168,9 @@ const info: ITermSetInfo[] = await sp.termStore.groups.getById("338666a8-1111-22
 ### Get By Id
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermSetInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermSetInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -188,9 +188,9 @@ _Added in 3.10.0_
 Allows you to add a term set.
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermGroupInfo } from "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermGroupInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -239,10 +239,10 @@ This method will get all of a set's child terms in an ordered array. It is a cos
 > Starting with version 2.6.0 you can now include an optional param to retrieve all of the term's properties and localProperties in the tree. Default is false.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermInfo } from "@pnp/sp/taxonomy";
-import { dateAdd, PnPClientStorage } from "@pnp/core";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermInfo } from "@bpa-solutions/pnp-sp/taxonomy";
+import { dateAdd, PnPClientStorage } from "@bpa-solutions/pnp-core";
 
 const sp = spfi(...);
 
@@ -272,9 +272,9 @@ Access term set information
 _Added in 3.10.0_
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermGroupInfo } from "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermGroupInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -300,9 +300,9 @@ const termSetInfo2 = await sp.termStore.groups.getById("338666a8-1111-2222-3333-
 _Added in 3.10.0_
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermGroupInfo } from "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermGroupInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -320,9 +320,9 @@ Access term set information
 ### List
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -335,9 +335,9 @@ const infos: ITermInfo[] = await sp.termStore.groups.getById("338666a8-1111-2222
 You can use the terms property to get a flat list of all terms in the set. These terms do not contain parent/child relationship information.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -351,9 +351,9 @@ const infosByTermSetId: ITermInfo[] = await sp.termStore.sets.getById("338666a8-
 ### Get By Id
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermInfo } from "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 
@@ -366,9 +366,9 @@ const info: ITermInfo = await sp.termStore.groups.getById("338666a8-1111-2222-33
 _Added in 3.10.0_
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
-import { ITermInfo } from "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermInfo } from "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -404,8 +404,8 @@ const newTermInfo = await sp.termStore.groups.getById("338666a8-1111-2222-3333-f
 _Added in 3.10.0_
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -431,8 +431,8 @@ const termInfo2 = await sp.termStore.groups.getById("338666a8-1111-2222-3333-f72
 _Added in 3.10.0_
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
 
 // NOTE: Because this endpoint requires a token and does not work with cookie auth you must create an instance of SPFI that includes an auth token.
 // We've included a new behavior to support getting a token for sharepoint called `SPFxToken`
@@ -450,8 +450,8 @@ _Behavior Change in 2.1.0_
 The server API changed again, resulting in the removal of the "parent" property from ITerm as it is not longer supported as a path property. You now must use "expand" to load a term's parent information. The side affect of this is that the parent is no longer chainable, meaning you need to load a new term instance to work with the parent term. An approach for this is shown below.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 

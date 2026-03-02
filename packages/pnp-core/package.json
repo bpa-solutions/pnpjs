@@ -1,0 +1,10 @@
+{
+    "name": "@bpa-solutions/pnp-core",
+    "version": "0.0.0-PLACEHOLDER",
+    "description": "pnp - provides shared functionality across all pnp libraries",
+    "main": "./index.js",
+    "typings": "./index",
+    "dependencies": {
+        "tslib": "2.4.1"
+    }
+}

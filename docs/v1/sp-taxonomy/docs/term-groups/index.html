@@ -1721,11 +1721,11 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp-taxonomy/docs/term-groups.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpsp-taxonomytermgroups">@pnp/sp-taxonomy/termgroups<a class="headerlink" href="#pnpsp-taxonomytermgroups" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsp-taxonomytermgroups">@bpa-solutions/pnp-sp-taxonomy/termgroups<a class="headerlink" href="#pnpsp-taxonomytermgroups" title="Permanent link">&para;</a></h1>
 <p>Term groups are used as a container for terms within a term store.</p>
 <h2 id="load-a-term-group">Load a term group<a class="headerlink" href="#load-a-term-group" title="Permanent link">&para;</a></h2>
 <p>Term groups are loaded from a <a href="../term-stores/">term store</a></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">store</span>: <span class="kt">ITermStore</span> <span class="o">=</span> <span class="nx">taxonomy</span><span class="p">.</span><span class="nx">termStores</span><span class="p">.</span><span class="nx">getByName</span><span class="p">(</span><span class="s2">&quot;Taxonomy_v5o/SbcTE2cegwO2dtAN9l==&quot;</span><span class="p">);</span>
 
@@ -1736,7 +1736,7 @@
 <h2 id="term-group-methods-and-properties">Term Group methods and properties<a class="headerlink" href="#term-group-methods-and-properties" title="Permanent link">&para;</a></h2>
 <h3 id="addcontributor">addContributor<a class="headerlink" href="#addcontributor" title="Permanent link">&para;</a></h3>
 <p>Adds a contributor to the Group</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">store</span>: <span class="kt">ITermStore</span> <span class="o">=</span> <span class="nx">taxonomy</span><span class="p">.</span><span class="nx">termStores</span><span class="p">.</span><span class="nx">getByName</span><span class="p">(</span><span class="s2">&quot;Taxonomy_v5o/SbcTE2cegwO2dtAN9l==&quot;</span><span class="p">);</span>
 
@@ -1748,7 +1748,7 @@
 
 <h3 id="addgroupmanager">addGroupManager<a class="headerlink" href="#addgroupmanager" title="Permanent link">&para;</a></h3>
 <p>Adds a group manager to the Group</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">store</span>: <span class="kt">ITermStore</span> <span class="o">=</span> <span class="nx">taxonomy</span><span class="p">.</span><span class="nx">termStores</span><span class="p">.</span><span class="nx">getByName</span><span class="p">(</span><span class="s2">&quot;Taxonomy_v5o/SbcTE2cegwO2dtAN9l==&quot;</span><span class="p">);</span>
 
@@ -1760,7 +1760,7 @@
 
 <h3 id="createtermset">createTermSet<a class="headerlink" href="#createtermset" title="Permanent link">&para;</a></h3>
 <p>Creates a new <a href="../term-sets/">term set</a></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span><span class="p">,</span> <span class="nx">ITermSet</span><span class="p">,</span> <span class="nx">ITermSetData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroup</span><span class="p">,</span> <span class="nx">ITermSet</span><span class="p">,</span> <span class="nx">ITermSetData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">store</span>: <span class="kt">ITermStore</span> <span class="o">=</span> <span class="nx">taxonomy</span><span class="p">.</span><span class="nx">termStores</span><span class="p">.</span><span class="nx">getByName</span><span class="p">(</span><span class="s2">&quot;Taxonomy_v5o/SbcTE2cegwO2dtAN9l==&quot;</span><span class="p">);</span>
 
@@ -1775,7 +1775,7 @@
 
 <h3 id="get">get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
 <p>Gets this term group's data</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroupData</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">ITermStore</span><span class="p">,</span> <span class="nx">ITermGroupData</span><span class="p">,</span> <span class="nx">ITermGroup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">store</span>: <span class="kt">ITermStore</span> <span class="o">=</span> <span class="nx">taxonomy</span><span class="p">.</span><span class="nx">termStores</span><span class="p">.</span><span class="nx">getByName</span><span class="p">(</span><span class="s2">&quot;Taxonomy_v5o/SbcTE2cegwO2dtAN9l==&quot;</span><span class="p">);</span>
 

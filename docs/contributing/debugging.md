@@ -30,7 +30,7 @@ Using [./debug/launch/sp.ts](https://github.com/pnp/pnpjs/blob/main/debug/launch
 // note we can use the actual package names for our imports (ex: @pnp/logging)
 import { Logger, LogLevel, ConsoleListener } from "@pnp/logging";
 // using the all preset for simplicity in the example, selective imports work as expected
-import { sp, ListEnsureResult } from "@pnp/sp/presets/all";
+import { sp, ListEnsureResult } from "@bpa-solutions/pnp-sp/presets/all";
 
 declare var process: { exit(code?: number): void };
 

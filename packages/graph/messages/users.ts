@@ -1,4 +1,4 @@
-import { addProp, body } from "@pnp/queryable";
+import { addProp, body } from "@bpa-solutions/pnp-queryable";
 import { _User, User } from "../users/types.js";
 import { IMessages, Messages, IMailboxSettings, MailboxSettings, IMailFolders, MailFolders } from "./types.js";
 import { graphPost } from "../operations.js";

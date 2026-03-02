@@ -1,4 +1,4 @@
-# @pnp/sp/sharing
+# @bpa-solutions/pnp-sp/sharing
 
 > **_Note: This API is still considered "beta" meaning it may change and some behaviors may differ across tenants by version. It is also supported only in SharePoint Online._**
 
@@ -13,10 +13,10 @@ In previous versions of this library the sharing methods were part of the inheri
 To import and attach the sharing methods to all four of the sharable types include all of the sharing sub module:
 
 ```TypeScript
-import "@pnp/sp/sharing";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
-import { spfi } from "@pnp/sp";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi(...);
 
@@ -29,10 +29,10 @@ const r = await sp.web.shareWith(user.LoginName);
 Import only the web's sharing methods into the library
 
 ```TypeScript
-import "@pnp/sp/sharing/web";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
-import { spfi } from "@pnp/sp";
+import "@bpa-solutions/pnp-sp/sharing/web";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi(...);
 
@@ -47,11 +47,11 @@ const r = await sp.web.shareWith(user.LoginName);
 Creates a sharing link for the given resource with an optional expiration.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import { SharingLinkKind, IShareLinkResponse } from "@pnp/sp/sharing";
-import { dateAdd } from "@pnp/core";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import { SharingLinkKind, IShareLinkResponse } from "@bpa-solutions/pnp-sp/sharing";
+import { dateAdd } from "@bpa-solutions/pnp-core";
 
 const sp = spfi(...);
 
@@ -74,12 +74,12 @@ Shares the given resource with the specified permissions (View or Edit) and opti
 ![Batching Not Supported Banner](https://img.shields.io/badge/Batching%20Not%20Supported-important.svg)
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import "@pnp/sp/folders/web";
-import "@pnp/sp/files/web";
-import { ISharingResult, SharingRole } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/folders/web";
+import "@bpa-solutions/pnp-sp/files/web";
+import { ISharingResult, SharingRole } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -113,10 +113,10 @@ await sp.web.getFileByServerRelativeUrl("/sites/dev/Shared Documents/test.txt").
 Allows you to share any shareable object in a web by providing the appropriate parameters. These two methods differ in that shareObject will try and fix up your query based on the supplied parameters where shareObjectRaw will send your supplied json object directly to the server. The later method is provided for the greatest amount of flexibility.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import { ISharingResult, SharingRole } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import { ISharingResult, SharingRole } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -143,10 +143,10 @@ await sp.web.shareObjectRaw({
 **Applies to: Web**
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import { ISharingResult } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import { ISharingResult } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -160,11 +160,11 @@ const result = await sp.web.unshareObject("https://mysite.sharepoint.com/sites/d
 Checks Permissions on the list of Users and returns back role the users have on the Item.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing/folders";
-import "@pnp/sp/folders/web";
-import { SharingEntityPermission } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing/folders";
+import "@bpa-solutions/pnp-sp/folders/web";
+import { SharingEntityPermission } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -179,11 +179,11 @@ const perms = await sp.web.getFolderByServerRelativeUrl("/sites/dev/Shared Docum
 Get Sharing Information.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import "@pnp/sp/folders";
-import { ISharingInformation } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/folders";
+import { ISharingInformation } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -207,11 +207,11 @@ const info3 = await sp.web.getFolderByServerRelativeUrl("/sites/dev/Shared Docum
 Gets the sharing settings
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import "@pnp/sp/folders";
-import { IObjectSharingSettings } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/folders";
+import { IObjectSharingSettings } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -226,11 +226,11 @@ const settings: IObjectSharingSettings = await sp.web.getFolderByServerRelativeU
 Unshares a given resource
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import "@pnp/sp/folders";
-import { ISharingResult } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/folders";
+import { ISharingResult } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -242,11 +242,11 @@ const result: ISharingResult = await sp.web.getFolderByServerRelativeUrl("/sites
 **Applies to: Item, Folder, File**
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import "@pnp/sp/folders";
-import { ISharingResult, SharingLinkKind } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/folders";
+import { ISharingResult, SharingLinkKind } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 
@@ -258,11 +258,11 @@ const result: ISharingResult = await sp.web.getFolderByServerRelativeUrl("/sites
 **Applies to: Item, Folder, File**
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/sharing";
-import "@pnp/sp/folders";
-import { SharingLinkKind } from "@pnp/sp/sharing";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/folders";
+import { SharingLinkKind } from "@bpa-solutions/pnp-sp/sharing";
 
 const sp = spfi(...);
 

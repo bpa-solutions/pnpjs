@@ -2167,7 +2167,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspregional-settings">@pnp/sp/regional-settings<a class="headerlink" href="#pnpspregional-settings" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspregional-settings">@bpa-solutions/pnp-sp/regional-settings<a class="headerlink" href="#pnpspregional-settings" title="Permanent link">&para;</a></h1>
 <p>The regional settings module helps with managing dates and times across various timezones.</p>
 <h2 id="iregionalsettings">IRegionalSettings<a class="headerlink" href="#iregionalsettings" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2181,25 +2181,25 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import { IRegionalSettings, ITimeZone, ITimeZones, RegionalSettings, TimeZone, TimeZones, } from "@pnp/sp/regional-settings";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import { IRegionalSettings, ITimeZone, ITimeZones, RegionalSettings, TimeZone, TimeZones, } from "@bpa-solutions/pnp-sp/regional-settings";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/regional-settings";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/regional-settings";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/regional-settings/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/regional-settings/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Webs, IWebs } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Webs, IWebs } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/regional-settings/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/regional-settings/web&quot;;
 
 // get all the web's regional settings
 const s = await sp.web.regionalSettings();
@@ -2209,9 +2209,9 @@ const s2 = await sp.web.regionalSettings.select(&quot;DecimalSeparator&quot;, &q
 </code></pre>
 <h3 id="installed-languages">Installed Languages<a class="headerlink" href="#installed-languages" title="Permanent link">&para;</a></h3>
 <p>You can get a list of the installed languages in the web.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/regional-settings/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/regional-settings/web&quot;;
 
 const s = await sp.web.regionalSettings.getInstalledLanguages();
 </code></pre>
@@ -2220,9 +2220,9 @@ const s = await sp.web.regionalSettings.getInstalledLanguages();
 </blockquote>
 <h3 id="timezones">TimeZones<a class="headerlink" href="#timezones" title="Permanent link">&para;</a></h3>
 <p>You can also get information about the selected timezone in the web and all of the defined timezones.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/regional-settings/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/regional-settings/web&quot;;
 
 // get the web's configured timezone
 const s = await sp.web.regionalSettings.timeZone();
@@ -2248,9 +2248,9 @@ const s7 = await sp.web.regionalSettings.timeZone.utcToLocalTime(new Date(2019, 
 <h3 id="title-and-description-resources">Title and Description Resources<a class="headerlink" href="#title-and-description-resources" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.4</em></p>
 <p>Some objects allow you to read language specific title information as shown in the following sample. This applies to Web, List, Field, Content Type, and User Custom Actions.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/regional-settings&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/regional-settings&quot;;
 
 //
 // The below methods appears on
@@ -2260,14 +2260,14 @@ import &quot;@pnp/sp/regional-settings&quot;;
 // - ContentType
 // - User Custom Action
 //
-// after you import @pnp/sp/regional-settings
+// after you import @bpa-solutions/pnp-sp/regional-settings
 //
 // you can also import just parts of the regional settings:
-// import &quot;@pnp/sp/regional-settings/web&quot;;
-// import &quot;@pnp/sp/regional-settings/list&quot;;
-// import &quot;@pnp/sp/regional-settings/content-type&quot;;
-// import &quot;@pnp/sp/regional-settings/field&quot;;
-// import &quot;@pnp/sp/regional-settings/user-custom-actions&quot;;
+// import &quot;@bpa-solutions/pnp-sp/regional-settings/web&quot;;
+// import &quot;@bpa-solutions/pnp-sp/regional-settings/list&quot;;
+// import &quot;@bpa-solutions/pnp-sp/regional-settings/content-type&quot;;
+// import &quot;@bpa-solutions/pnp-sp/regional-settings/field&quot;;
+// import &quot;@bpa-solutions/pnp-sp/regional-settings/user-custom-actions&quot;;
 
 
 const title = await sp.web.titleResource(&quot;en-us&quot;);

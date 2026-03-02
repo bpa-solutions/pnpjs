@@ -2489,7 +2489,7 @@
                   </a>
                 
                 
-                <h1 id="pnpsplists">@pnp/sp/lists<a class="headerlink" href="#pnpsplists" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsplists">@bpa-solutions/pnp-sp/lists<a class="headerlink" href="#pnpsplists" title="Permanent link">&para;</a></h1>
 <p>Fields in SharePoint can be applied to both webs and lists. When referencing a webs' fields you are effectively looking at site columns which are common fields that can be utilized in any list/library in the site. When referencing a lists' fields you are looking at the fields only associated to that particular list.</p>
 <h2 id="ifields">IFields<a class="headerlink" href="#ifields" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a></p>
@@ -2503,29 +2503,29 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { Webs, IWebs } from "@pnp/sp/webs"; <br />import { Fields, IFields } from "@pnp/sp/fields";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { Webs, IWebs } from "@bpa-solutions/pnp-sp/webs"; <br />import { Fields, IFields } from "@bpa-solutions/pnp-sp/fields";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/fields";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/fields";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Fields, IFields } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Fields, IFields } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 <tr>
 <td>Preset: Core</td>
-<td>import { sp, Fields, IFields } from "@pnp/sp/presets/core";</td>
+<td>import { sp, Fields, IFields } from "@bpa-solutions/pnp-sp/presets/core";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-field-by-id">Get Field by Id<a class="headerlink" href="#get-field-by-id" title="Permanent link">&para;</a></h3>
 <p>Gets a field from the collection by id (guid). Note that the library will handle a guid formatted with curly braces (i.e. '{03b05ff4-d95d-45ed-841d-3855f77a2483}') as well as without curly braces (i.e. '03b05ff4-d95d-45ed-841d-3855f77a2483'). The Id parameter is also case insensitive.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IField } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IField } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // get the field by Id for web
 const field: IField = sp.web.fields.getById(&quot;03b05ff4-d95d-45ed-841d-3855f77a2483&quot;);
@@ -2540,11 +2540,11 @@ console.log(r.Title);
 </code></pre>
 <h3 id="get-field-by-title">Get Field by Title<a class="headerlink" href="#get-field-by-title" title="Permanent link">&para;</a></h3>
 <p>You can also get a field from the collection by title.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IField } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IField } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // get the field with the title 'Author' for web
 const field: IField = sp.web.fields.getByTitle(&quot;Author&quot;);
@@ -2559,11 +2559,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="get-field-by-internal-name-or-title">Get Field by Internal Name or Title<a class="headerlink" href="#get-field-by-internal-name-or-title" title="Permanent link">&para;</a></h3>
 <p>You can also get a field from the collection regardless of if the string is the fields internal name or title which can be different.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IField } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IField } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // get the field with the internal name 'ModifiedBy' for web
 const field: IField = sp.web.fields.getByInternalNameOrTitle(&quot;ModifiedBy&quot;);
@@ -2578,11 +2578,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="create-a-field-using-an-xml-schema">Create a Field using an XML schema<a class="headerlink" href="#create-a-field-using-an-xml-schema" title="Permanent link">&para;</a></h3>
 <p>Create a new field by defining an XML schema that assigns all the properties for the field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IField } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IField } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // define the schema for your new field, in this case a date field with a default date of today.
 const fieldSchema = `&lt;Field ID=&quot;{03b09ff4-d99d-45ed-841d-3855f77a2483}&quot; StaticName=&quot;MyField&quot; Name=&quot;MyField&quot; DisplayName=&quot;My New Field&quot; FriendlyDisplayFormat=&quot;Disabled&quot; Format=&quot;DateOnly&quot; Type=&quot;DateTime&quot; Group=&quot;My Group&quot;&gt;&lt;Default&gt;[today]&lt;/Default&gt;&lt;/Field&gt;`;
@@ -2600,11 +2600,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-new-field">Add a New Field<a class="headerlink" href="#add-a-new-field" title="Permanent link">&para;</a></h3>
 <p>Use the add method to create a new field where you define the field type</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IField } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IField } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new field called 'My Field' in web.
 const field: IFieldAddResult = await sp.web.fields.add(&quot;My Field&quot;, &quot;SP.FieldText&quot;, { FieldTypeKind: 3, Group: &quot;My Group&quot; });
@@ -2619,11 +2619,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-site-field-to-a-list">Add a Site Field to a List<a class="headerlink" href="#add-a-site-field-to-a-list" title="Permanent link">&para;</a></h3>
 <p>Use the createFieldAsXml method to add a site field to a list.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IFieldAddResult } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IFieldAddResult } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new field called 'My Field' in web.
 const field: IFieldAddResult = await sp.web.fields.add(&quot;My Field&quot;, &quot;SP.FieldText&quot;, { FieldTypeKind: 3, Group: &quot;My Group&quot; });
@@ -2635,11 +2635,11 @@ console.log(r.data.Id);
 </code></pre>
 <h3 id="add-a-text-field">Add a Text Field<a class="headerlink" href="#add-a-text-field" title="Permanent link">&para;</a></h3>
 <p>Use the addText method to create a new text field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IFieldAddResult } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IFieldAddResult } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new text field called 'My Field' in web.
 const field: IFieldAddResult = await sp.web.fields.addText(&quot;My Field&quot;, 255, { Group: &quot;My Group&quot; });
@@ -2654,11 +2654,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-calculated-field">Add a Calculated Field<a class="headerlink" href="#add-a-calculated-field" title="Permanent link">&para;</a></h3>
 <p>Use the addCalculated method to create a new calculated field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { DateTimeFieldFormatType, FieldTypes } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { DateTimeFieldFormatType, FieldTypes } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new calculated field called 'My Field' in web
 const field = await sp.web.fields.addCalculated(&quot;My Field&quot;, &quot;=Modified+1&quot;, DateTimeFieldFormatType.DateOnly, FieldTypes.DateTime, { Group: &quot;MyGroup&quot; });
@@ -2673,11 +2673,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-datetime-field">Add a Date/Time Field<a class="headerlink" href="#add-a-datetime-field" title="Permanent link">&para;</a></h3>
 <p>Use the addDateTime method to create a new date/time field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { DateTimeFieldFormatType, CalendarType, DateTimeFieldFriendlyFormatType } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { DateTimeFieldFormatType, CalendarType, DateTimeFieldFriendlyFormatType } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new date/time field called 'My Field' in web
 const field = await sp.web.fields.addDateTime(&quot;My Field&quot;, DateTimeFieldFormatType.DateOnly, CalendarType.Gregorian, DateTimeFieldFriendlyFormatType.Disabled, { Group: &quot;My Group&quot; });
@@ -2692,10 +2692,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-currency-field">Add a Currency Field<a class="headerlink" href="#add-a-currency-field" title="Permanent link">&para;</a></h3>
 <p>Use the addCurrency method to create a new currency field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new currency field called 'My Field' in web
 const field = await sp.web.fields.addCurrency(&quot;My Field&quot;, 0, 100, 1033, { Group: &quot;My Group&quot; });
@@ -2713,10 +2713,10 @@ console.log(r.Id);
 <blockquote>
 <p>For Enhanced Rich Text mode, see the next section.</p>
 </blockquote>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new multi-line text field called 'My Field' in web
 const field = await sp.web.fields.addMultilineText(&quot;My Field&quot;, 6, true, false, false, true, { Group: &quot;My Group&quot; });
@@ -2731,10 +2731,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-multi-line-text-field-with-enhanced-rich-text">Add a Multi-line Text Field with Enhanced Rich Text<a class="headerlink" href="#add-a-multi-line-text-field-with-enhanced-rich-text" title="Permanent link">&para;</a></h3>
 <p>The REST endpoint doesn't support setting the <code>RichTextMode</code> field therefore you will need to revert to Xml to create the field. The following is an example that will create a multi-line text field in Enhanced Rich Text mode.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 //Create a new multi-line text field called 'My Field' in web
 const field = await sp.web.lists.getByTitle(&quot;My List&quot;).fields.createFieldAsXml(
@@ -2749,10 +2749,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-number-field">Add a Number Field<a class="headerlink" href="#add-a-number-field" title="Permanent link">&para;</a></h3>
 <p>Use the addNumber method to create a new number field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new number field called 'My Field' in web
 const field = await sp.web.fields.addNumber(&quot;My Field&quot;, 1, 100, { Group: &quot;My Group&quot; });
@@ -2767,11 +2767,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-url-field">Add a URL Field<a class="headerlink" href="#add-a-url-field" title="Permanent link">&para;</a></h3>
 <p>Use the addUrl method to create a new url field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { UrlFieldFormatType } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { UrlFieldFormatType } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new url field called 'My Field' in web
 const field = await sp.web.fields.addUrl(&quot;My Field&quot;, UrlFieldFormatType.Hyperlink, { Group: &quot;My Group&quot; });
@@ -2786,11 +2786,11 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-user-field">Add a User Field<a class="headerlink" href="#add-a-user-field" title="Permanent link">&para;</a></h3>
 <p>Use the addUser method to create a new user field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { FieldUserSelectionMode } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { FieldUserSelectionMode } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new user field called 'My Field' in web
 const field = await sp.web.fields.addUser(&quot;My Field&quot;, FieldUserSelectionMode.PeopleOnly, { Group: &quot;My Group&quot; });
@@ -2805,10 +2805,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-lookup-field">Add a Lookup Field<a class="headerlink" href="#add-a-lookup-field" title="Permanent link">&para;</a></h3>
 <p>Use the addLookup method to create a new lookup field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 const list = await sp.web.lists.getByTitle(&quot;My Lookup List&quot;)();
 // create a new lookup field called 'My Field' based on an existing list 'My Lookup List' showing 'Title' field in web.
@@ -2830,11 +2830,11 @@ await fieldAddResult.field.update({ Description: 'New Description' }, &quot;SP.F
 </code></pre>
 <h3 id="add-a-choice-field">Add a Choice Field<a class="headerlink" href="#add-a-choice-field" title="Permanent link">&para;</a></h3>
 <p>Use the addChoice method to create a new choice field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { ChoiceFieldFormatType } from &quot;@pnp/sp/fields/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { ChoiceFieldFormatType } from &quot;@bpa-solutions/pnp-sp/fields/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 const choices = [`ChoiceA`, `ChoiceB`, `ChoiceC`];
 // create a new choice field called 'My Field' in web
@@ -2850,10 +2850,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-multi-choice-field">Add a Multi-Choice Field<a class="headerlink" href="#add-a-multi-choice-field" title="Permanent link">&para;</a></h3>
 <p>Use the addMultiChoice method to create a new multi-choice field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 const choices = [`ChoiceA`, `ChoiceB`, `ChoiceC`];
 // create a new multi-choice field called 'My Field' in web
@@ -2869,10 +2869,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-boolean-field">Add a Boolean Field<a class="headerlink" href="#add-a-boolean-field" title="Permanent link">&para;</a></h3>
 <p>Use the addBoolean method to create a new boolean field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new boolean field called 'My Field' in web
 const field = await sp.web.fields.addBoolean(&quot;My Field&quot;, { Group: &quot;My Group&quot; });
@@ -2887,10 +2887,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-dependent-lookup-field">Add a Dependent Lookup Field<a class="headerlink" href="#add-a-dependent-lookup-field" title="Permanent link">&para;</a></h3>
 <p>Use the addDependentLookupField method to create a new dependent lookup field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new dependent lookup field called 'My Dep Field' showing 'Description' based on an existing 'My Field' lookup field in web.
 const field = await sp.web.fields.getByTitle(&quot;My Field&quot;)();
@@ -2907,10 +2907,10 @@ console.log(r.Id);
 </code></pre>
 <h3 id="add-a-location-field">Add a Location Field<a class="headerlink" href="#add-a-location-field" title="Permanent link">&para;</a></h3>
 <p>Use the addLocation method to create a new location field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // create a new location field called 'My Field' in web
 const field = await sp.web.fields.addLocation(&quot;My Field&quot;, { Group: &quot;My Group&quot; });
@@ -2925,9 +2925,9 @@ console.log(r.Id);
 </code></pre>
 <h3 id="delete-a-field">Delete a Field<a class="headerlink" href="#delete-a-field" title="Permanent link">&para;</a></h3>
 <p>Use the delete method to delete a field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // delete one or more fields from web, returns boolean
 const result = await sp.web.fields.getByTitle(&quot;My Field&quot;).delete();
@@ -2938,10 +2938,10 @@ const result2 = await sp.web.lists.getByTitle(&quot;My List&quot;).fields.getByT
 </code></pre>
 <h3 id="update-a-field">Update a Field<a class="headerlink" href="#update-a-field" title="Permanent link">&para;</a></h3>
 <p>Use the update method to update a field.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // update the field called 'My Field' with a description in web, returns FieldUpdateResult
 const fieldUpdate = await sp.web.fields.getByTitle(&quot;My Field&quot;).update({ Description: &quot;My Description&quot; });
@@ -2954,10 +2954,10 @@ const fieldUpdate2 = await sp.web.lists.getByTitle(&quot;My List&quot;).fields.g
 </code></pre>
 <h3 id="show-a-field-in-the-display-form">Show a Field in the Display Form<a class="headerlink" href="#show-a-field-in-the-display-form" title="Permanent link">&para;</a></h3>
 <p>Use the setShowInDisplayForm method to add a field to the display form.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // show field called 'My Field' in display form throughout web
 await sp.web.fields.getByTitle(&quot;My Field&quot;).setShowInDisplayForm(true);
@@ -2966,10 +2966,10 @@ await sp.web.lists.getByTitle(&quot;My List&quot;).fields.getByTitle(&quot;My Fi
 </code></pre>
 <h3 id="show-a-field-in-the-edit-form">Show a Field in the Edit Form<a class="headerlink" href="#show-a-field-in-the-edit-form" title="Permanent link">&para;</a></h3>
 <p>Use the setShowInEditForm method to add a field to the edit form.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // show field called 'My Field' in edit form throughout web
 await sp.web.fields.getByTitle(&quot;My Field&quot;).setShowInEditForm(true);
@@ -2978,10 +2978,10 @@ await sp.web.lists.getByTitle(&quot;My List&quot;).fields.getByTitle(&quot;My Fi
 </code></pre>
 <h3 id="show-a-field-in-the-new-form">Show a Field in the New Form<a class="headerlink" href="#show-a-field-in-the-new-form" title="Permanent link">&para;</a></h3>
 <p>Use the setShowInNewForm method to add a field to the display form.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/fields&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/fields&quot;;
 
 // show field called 'My Field' in new form throughout web
 await sp.web.fields.getByTitle(&quot;My Field&quot;).setShowInNewForm(true);

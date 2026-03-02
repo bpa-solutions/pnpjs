@@ -3,7 +3,7 @@ import "@pnp/graph/sites";
 import "@pnp/graph/lists";
 import { List } from "@microsoft/microsoft-graph-types";
 import { ISite } from "@pnp/graph/sites";
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import getTestingGraphSPSite from "./utilities/getTestingGraphSPSite.js";
 
 describe("Lists", function () {

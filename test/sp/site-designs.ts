@@ -1,10 +1,10 @@
 
-import { delay, getRandomString, stringIsNullOrEmpty } from "@pnp/core";
+import { delay, getRandomString, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-designs";
-import "@pnp/sp/site-users/web";
-import { ISiteDesignRun, ISiteDesignTask } from "@pnp/sp/site-designs";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-designs";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { ISiteDesignRun, ISiteDesignTask } from "@bpa-solutions/pnp-sp/site-designs";
 
 describe.skip("SiteDesigns", function () {
 

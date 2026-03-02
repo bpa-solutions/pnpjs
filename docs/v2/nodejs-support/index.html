@@ -2198,12 +2198,12 @@
 <p>But first a little history, you can skip this part if you just want to see how things work but we felt some folks might be interested. To make selective imports work we need to support es module syntax for client-side environments such as SPFx development. All versions of Nodejs that are currently LTS do not support es modules without flags (as of when this was written). We thought we had a scheme to handle this <a href="https://nodejs.org/docs/latest-v12.x/api/esm.html#esm_enabling">following the available guidance</a> but ultimately it didn't work across all node versions and we unpublished 2.0.1.</p>
 <h2 id="commonjs-libraries">CommonJS Libraries<a class="headerlink" href="#commonjs-libraries" title="Permanent link">&para;</a></h2>
 <p>Because of the difficulties of working with es modules in node we recommend using our mirror packages providing commonjs modules. These can be installed by using the package name and appending -commonjs, such as:</p>
-<pre><code class="language-CMD">npm install @pnp/sp-commonjs @pnp/nodejs-commonjs
+<pre><code class="language-CMD">npm install @bpa-solutions/pnp-sp-commonjs @pnp/nodejs-commonjs
 </code></pre>
 <p>These packages are built from the same source and released at the same time so all updates are included with each release. The only difference is that for the sp-commonjs and graph-commonjs packages we target the "all" preset as the entry point. This makes things a little easier in node where bundle sizes aren't an issue. You can see this in the <a href="https://github.com/pnp/pnpjs/tree/version-2/samples/nodejs-app">nodejs-app sample</a>. Here is that sample explained fully:</p>
 <h3 id="install-libraries">Install Libraries<a class="headerlink" href="#install-libraries" title="Permanent link">&para;</a></h3>
 <p>We want to make a simple request to SharePoint so we need to first install the modules we need:</p>
-<pre><code class="language-cmd">npm install @pnp/sp-commonjs @pnp/nodejs-commonjs --save
+<pre><code class="language-cmd">npm install @bpa-solutions/pnp-sp-commonjs @pnp/nodejs-commonjs --save
 </code></pre>
 <p>We will also install TypeScript:</p>
 <pre><code class="language-cmd">npm install typescript --save-dev
@@ -2212,7 +2212,7 @@
 <p>We will create an index.ts file and add the following code. You will need to update the site url, client id, and client secret to your values. This should be done using a settings file or something like Azure KeyVault for production, but for this example it is good enough.</p>
 <pre><code class="language-TypeScript">// our imports come from the -commonjs libs
 import { SPFetchClient } from &quot;@pnp/nodejs-commonjs&quot;;
-import { sp } from &quot;@pnp/sp-commonjs&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp-commonjs&quot;;
 
 // we call setup to use the node client
 sp.setup({
@@ -2272,7 +2272,7 @@ makeRequest();
   &quot;license&quot;: &quot;MIT&quot;,
   &quot;dependencies&quot;: {
     &quot;@pnp/nodejs-commonjs&quot;: &quot;^2.0.2-5&quot;,
-    &quot;@pnp/sp-commonjs&quot;: &quot;^2.0.2-5&quot;
+    &quot;@bpa-solutions/pnp-sp-commonjs&quot;: &quot;^2.0.2-5&quot;
   },
   &quot;devDependencies&quot;: {
     &quot;typescript&quot;: &quot;^3.7.5&quot;

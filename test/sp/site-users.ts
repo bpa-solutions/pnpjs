@@ -1,8 +1,8 @@
 import { expect } from "chai";
-import "@pnp/sp/site-users";
-import { ISiteUserProps, IUserUpdateResult, ISiteUserInfo } from "@pnp/sp/site-users";
-import { ISiteGroups } from "@pnp/sp/presets/all";
-import { stringIsNullOrEmpty } from "@pnp/core";
+import "@bpa-solutions/pnp-sp/site-users";
+import { ISiteUserProps, IUserUpdateResult, ISiteUserInfo } from "@bpa-solutions/pnp-sp/site-users";
+import { ISiteGroups } from "@bpa-solutions/pnp-sp/presets/all";
+import { stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 
 function testISiteUserInfo(siteUser: ISiteUserInfo): boolean {
     return Reflect.has(siteUser, "Email") &&

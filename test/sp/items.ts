@@ -1,12 +1,12 @@
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items/list";
-import "@pnp/sp/items/get-all";
-import "@pnp/sp/batching";
-import { IList } from "@pnp/sp/lists";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items/list";
+import "@bpa-solutions/pnp-sp/items/get-all";
+import "@bpa-solutions/pnp-sp/batching";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
 import testSPInvokables from "../test-invokable-props.js";
-import { IItem } from "@pnp/sp/items";
+import { IItem } from "@bpa-solutions/pnp-sp/items";
 
 describe("Items", function () {
 

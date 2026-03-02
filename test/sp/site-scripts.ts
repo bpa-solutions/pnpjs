@@ -1,8 +1,8 @@
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
-import "@pnp/sp/site-scripts";
-import { IList } from "@pnp/sp/lists";
-import { spfi, SPFI } from "@pnp/sp";
+import "@bpa-solutions/pnp-sp/site-scripts";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
+import { spfi, SPFI } from "@bpa-solutions/pnp-sp";
 
 describe("SiteScripts", function () {
 

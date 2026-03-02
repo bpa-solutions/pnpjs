@@ -2449,12 +2449,12 @@
                   </a>
                 
                 
-                <h1 id="pnpspprofiles">@pnp/sp/profiles<a class="headerlink" href="#pnpspprofiles" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspprofiles">@bpa-solutions/pnp-sp/profiles<a class="headerlink" href="#pnpspprofiles" title="Permanent link">&para;</a></h1>
 <p>The profile services allows you to work with the SharePoint User Profile Store.</p>
 <h2 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">&para;</a></h2>
 <p>Profiles is accessed directly from the root sp object.</p>
-<pre><code class="language-typescript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/profiles&quot;;
+<pre><code class="language-typescript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/profiles&quot;;
 </code></pre>
 <h2 id="get-edit-profile-link-for-the-current-user">Get edit profile link for the current user<a class="headerlink" href="#get-edit-profile-link-for-the-current-user" title="Permanent link">&para;</a></h2>
 <pre><code class="language-typescript">editProfileLink(): Promise&lt;string&gt;
@@ -2597,12 +2597,12 @@ console.log(isFollowing);
 Accepts the profilePicSource Blob data representing the user's picture in BMP, JPEG, or PNG format of up to 4.76MB.</p>
 <pre><code class="language-typescript">setMyProfilePic(profilePicSource: Blob): Promise&lt;void&gt;
 </code></pre>
-<pre><code class="language-typescript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/profiles&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-typescript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/profiles&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 // get the blob object through a request or from a file input
 const blob = await sp.web.lists.getByTitle(&quot;Documents&quot;).rootFolder.files.getByName(&quot;profile.jpg&quot;).getBlob();

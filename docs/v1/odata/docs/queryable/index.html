@@ -1817,7 +1817,7 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/queryable/docs/queryable.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpodataqueryable">@pnp/queryable/queryable<a class="headerlink" href="#pnpodataqueryable" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpodataqueryable">@bpa-solutions/pnp-queryable/queryable<a class="headerlink" href="#pnpodataqueryable" title="Permanent link">&para;</a></h1>
 <p>The Queryable class is the base class for all of the libraries building fluent request apis.</p>
 <h2 id="abstract-class-odataqueryable">abstract class ODataQueryable<BatchType extends ODataBatch><a class="headerlink" href="#abstract-class-odataqueryable" title="Permanent link">&para;</a></h2>
 <p>This class takes a single type parameter representing the type of the batch implementation object. If your api will not support batching 
@@ -1830,8 +1830,8 @@ you can create a dummy class here and simply not use the batching calls.</p>
 <p>Directly concatenates the supplied string to the current url, not normalizing "/" chars</p>
 <h3 id="configure">configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h3>
 <p>Sets custom options for current object and all derived objects accessible via chaining</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ConfigOptions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/queryable&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ConfigOptions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-queryable&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">headers</span>: <span class="kt">ConfigOptions</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">Accept</span><span class="o">:</span> <span class="s1">&#39;application/json;odata=nometadata&#39;</span>
@@ -1859,7 +1859,7 @@ you can create a dummy class here and simply not use the batching calls.</p>
 <p>Sets custom options from another queryable instance's options. Identical to configure except the options are derived from the supplied instance.</p>
 <h3 id="usingcaching">usingCaching<a class="headerlink" href="#usingcaching" title="Permanent link">&para;</a></h3>
 <p>Enables caching for this request. See <a href="../caching/">caching</a> for more details.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">usingCaching</span><span class="p">().</span><span class="nx">get</span><span class="p">().</span><span class="nx">then</span><span class="p">(...);</span>
 </pre></div>

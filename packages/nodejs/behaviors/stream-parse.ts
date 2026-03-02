@@ -1,5 +1,5 @@
-import { TimelinePipe } from "@pnp/core";
-import { parseBinderWithErrorCheck, Queryable } from "@pnp/queryable";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
+import { parseBinderWithErrorCheck, Queryable } from "@bpa-solutions/pnp-queryable";
 
 export function StreamParse(): TimelinePipe<Queryable> {
 

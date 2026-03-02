@@ -2131,7 +2131,7 @@
 <p>Currently there is a single provider included in the library, but contributions of additional providers are welcome.</p>
 <h2 id="splistconfigurationprovider">SPListConfigurationProvider<a class="headerlink" href="#splistconfigurationprovider" title="Permanent link">&para;</a></h2>
 <p>This provider is based on a SharePoint list it reads all of the rows and makes them available as a <code>TypedHash&lt;string&gt;</code>. By default the column names used are Title for key and "Value" for value, but you can update these as needed. Additionally, the settings class supports the idea of last value in wins - so you can easily load multiple configurations. This helps to support a common scenario in the enterprise where you might have one main list for global configuration but some settings can be set at the web level. In this case you would first load the global, then the local settings and any local values will take precedence.</p>
-<pre><code class="language-TypeScript">import { Web } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { Web } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 import { Settings, SPListConfigurationProvider } from &quot;@pnp/config-store&quot;;
 
 // create a new provider instance
@@ -2146,7 +2146,7 @@ await settings.load(provider);
 <h2 id="cachingconfigurationprovider">CachingConfigurationProvider<a class="headerlink" href="#cachingconfigurationprovider" title="Permanent link">&para;</a></h2>
 <p>Because making requests on each page load is very inefficient you can optionally use the caching configuration provider, which wraps a
 provider and caches the configuration in local or session storage.</p>
-<pre><code class="language-TypeScript">import { Web } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { Web } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 import { Settings, SPListConfigurationProvider } from &quot;@pnp/config-store&quot;;
 
 // create a new provider instance

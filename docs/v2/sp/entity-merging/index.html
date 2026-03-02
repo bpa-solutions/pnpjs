@@ -2141,23 +2141,23 @@
                   </a>
                 
                 
-                <h1 id="pnpsp-entity-merging">@pnp/sp - entity merging<a class="headerlink" href="#pnpsp-entity-merging" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsp-entity-merging">@bpa-solutions/pnp-sp - entity merging<a class="headerlink" href="#pnpsp-entity-merging" title="Permanent link">&para;</a></h1>
 <p>Sometimes when we make a query entity's data we would like then to immediately run other commands on the returned entity. To have data returned as its representing type we make use of the <em>spODataEntity</em> and <em>spODataEntityArray</em> parsers. The below approach works for all instance types such as List, Web, Item, or Field as examples.</p>
 <h2 id="importing-spodataentity-and-spodataentityarray">Importing spODataEntity and spODataEntityArray<a class="headerlink" href="#importing-spodataentity-and-spodataentityarray" title="Permanent link">&para;</a></h2>
 <p>You can import spODataEntity and spODataEntityArray in two ways, depending on your use case. The simplest way is to use the presets/all import as shown in the examples. The downside of this approach is that you can't take advantage of selective imports.</p>
 <p>If you want to take advantage of selective imports while using either of the entity parsers you can use:</p>
-<pre><code class="language-TypeScript">import { spODataEntity, spODataEntityArray } from &quot;@pnp/sp/odata&quot;;
+<pre><code class="language-TypeScript">import { spODataEntity, spODataEntityArray } from &quot;@bpa-solutions/pnp-sp/odata&quot;;
 </code></pre>
 <p>The full selective import for the first sample would be:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { spODataEntity } from &quot;@pnp/sp/odata&quot;;
-import { Item, IItem } from &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { spODataEntity } from &quot;@bpa-solutions/pnp-sp/odata&quot;;
+import { Item, IItem } from &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 </code></pre>
 <h2 id="request-a-single-entity">Request a single entity<a class="headerlink" href="#request-a-single-entity" title="Permanent link">&para;</a></h2>
 <p>If we are loading a single entity we use the <em>spODataEntity</em> method. Here we show loading a list item using the Item class and a simple get query.</p>
-<pre><code class="language-TypeScript">import { sp, spODataEntity, Item, IItem } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp, spODataEntity, Item, IItem } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 // interface defining the returned properties
 interface MyProps {
@@ -2183,7 +2183,7 @@ try {
 </code></pre>
 <h2 id="request-a-collection">Request a collection<a class="headerlink" href="#request-a-collection" title="Permanent link">&para;</a></h2>
 <p>The same pattern works when requesting a collection of objects with the exception of using the <em>spODataEntityArray</em> method.</p>
-<pre><code class="language-TypeScript">import { sp, spODataEntityArray, Item, IItem } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp, spODataEntityArray, Item, IItem } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 // interface defining the returned properties
 interface MyProps {

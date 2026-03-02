@@ -22,8 +22,8 @@ async function(url, init) {
 You can follow this example as a general pattern to build your own custom authentication model. You can then wrap your authentication in a [behavior](../core/behaviors.md) for easy reuse.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using({behaviors});
 const web = sp.web;

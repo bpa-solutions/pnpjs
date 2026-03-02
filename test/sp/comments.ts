@@ -1,13 +1,13 @@
 import { expect } from "chai";
-import "@pnp/sp/comments/clientside-page";
-import "@pnp/sp/comments/item";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items/list";
-import { CreateClientsidePage } from "@pnp/sp/clientside-pages";
-import { getRandomString } from "@pnp/core";
-import { ICommentInfo } from "@pnp/sp/comments/types.js";
-import { IList } from "@pnp/sp/lists";
-import { IItem } from "@pnp/sp/items";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
+import "@bpa-solutions/pnp-sp/comments/item";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items/list";
+import { CreateClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
+import { getRandomString } from "@bpa-solutions/pnp-core";
+import { ICommentInfo } from "@bpa-solutions/pnp-sp/comments/types.js";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
+import { IItem } from "@bpa-solutions/pnp-sp/items";
 
 describe("Comments", function () {
 

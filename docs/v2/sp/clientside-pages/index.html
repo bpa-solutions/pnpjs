@@ -2719,7 +2719,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspclientside-pages">@pnp/sp/clientside-pages<a class="headerlink" href="#pnpspclientside-pages" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspclientside-pages">@bpa-solutions/pnp-sp/clientside-pages<a class="headerlink" href="#pnpspclientside-pages" title="Permanent link">&para;</a></h1>
 <p>The 'clientside-pages' module allows you to create, edit, and delete modern SharePoint pages. There are methods to update the page settings and add/remove client-side web parts.</p>
 <p><a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a></p>
 <table>
@@ -2732,25 +2732,25 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { ClientsidePageFromFile, ClientsideText, ClientsideWebpartPropertyTypes, CreateClientsidePage, ClientsideWebpart, IClientsidePage } from "@pnp/sp/clientside-pages";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { ClientsidePageFromFile, ClientsideText, ClientsideWebpartPropertyTypes, CreateClientsidePage, ClientsideWebpart, IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/clientside-pages";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/clientside-pages";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, ClientsidePageFromFile, ClientsideText, ClientsideWebpartPropertyTypes, CreateClientsidePage, ClientsideWebpart, IClientsidePage } from "@pnp/sp/presets/all";</td>
+<td>import { sp, ClientsidePageFromFile, ClientsideText, ClientsideWebpartPropertyTypes, CreateClientsidePage, ClientsideWebpart, IClientsidePage } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h2 id="create-a-new-page">Create a new Page<a class="headerlink" href="#create-a-new-page" title="Permanent link">&para;</a></h2>
 <p>You can create a new client-side page in several ways, all are equivalent.</p>
 <h3 id="create-using-iwebaddclientsidepage">Create using IWeb.addClientsidePage<a class="headerlink" href="#create-using-iwebaddclientsidepage" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/clientside-pages/web&quot;;
-import { PromotedState } from &quot;@pnp/sp/clientside-pages&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/clientside-pages/web&quot;;
+import { PromotedState } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 // Create a page providing a file name
 const page = await sp.web.addClientsidePage(&quot;mypage1&quot;);
@@ -2773,10 +2773,10 @@ const page3 = await sp.web.addClientsidePage(&quot;mypage&quot;, &quot;My Page T
 await page3.save();
 </code></pre>
 <h3 id="create-using-createclientsidepage-method">Create using CreateClientsidePage method<a class="headerlink" href="#create-using-createclientsidepage-method" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import { Web } from &quot;@pnp/sp/webs&quot;;
-import { CreateClientsidePage, PromotedState } from &quot;@pnp/sp/clientside-pages&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import { Web } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import { CreateClientsidePage, PromotedState } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 const page1 = await CreateClientsidePage(sp.web, &quot;mypage2&quot;, &quot;My Page Title&quot;);
 
@@ -2805,10 +2805,10 @@ await page3.save();
 <p>There are a few ways to load pages, each of which results in an IClientsidePage instance being returned.</p>
 <h3 id="load-using-iwebloadclientsidepage">Load using IWeb.loadClientsidePage<a class="headerlink" href="#load-using-iwebloadclientsidepage" title="Permanent link">&para;</a></h3>
 <p>This method takes a <em>server relative</em> path to the page to load.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import { Web } from &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/clientside-pages/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import { Web } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/clientside-pages/web&quot;;
 
 // use from the sp.web fluent chain
 const page = await sp.web.loadClientsidePage(&quot;/sites/dev/sitepages/mypage3.aspx&quot;);
@@ -2818,10 +2818,10 @@ const page2 = await Web(&quot;https://{absolute web url}&quot;).loadClientsidePa
 </code></pre>
 <h3 id="load-using-clientsidepagefromfile">Load using ClientsidePageFromFile<a class="headerlink" href="#load-using-clientsidepagefromfile" title="Permanent link">&para;</a></h3>
 <p>This method takes an IFile instance and loads an IClientsidePage instance.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { ClientsidePageFromFile } from &quot;@pnp/sp/clientside-pages&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { ClientsidePageFromFile } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/web&quot;;
 
 const page = await ClientsidePageFromFile(sp.web.getFileByServerRelativePath(&quot;/sites/dev/sitepages/mypage3.aspx&quot;));
 </code></pre>
@@ -2906,21 +2906,21 @@ await page.save();
 <h2 id="clientside-controls">Clientside Controls<a class="headerlink" href="#clientside-controls" title="Permanent link">&para;</a></h2>
 <p>Once you have your sections and columns defined you will want to add/edit controls within those columns.</p>
 <h3 id="add-text-content">Add Text Content<a class="headerlink" href="#add-text-content" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { ClientsideText } from &quot;@pnp/sp/clientside-pages&quot;;
+<pre><code class="language-TypeScript">import { ClientsideText } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 // our page instance
 const page: IClientsidePage;
 
-page.addSection().addControl(new ClientsideText(&quot;@pnp/sp is a great library!&quot;));
+page.addSection().addControl(new ClientsideText(&quot;@bpa-solutions/pnp-sp is a great library!&quot;));
 
 await page.save();
 </code></pre>
 <h3 id="add-controls">Add Controls<a class="headerlink" href="#add-controls" title="Permanent link">&para;</a></h3>
 <p>Adding controls involves loading the available client-side part definitions from the server or creating a text part.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/clientside-pages/web&quot;;
-import { ClientsideWebpart } from &quot;@pnp/sp/clientside-pages&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/clientside-pages/web&quot;;
+import { ClientsideWebpart } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 // this will be a ClientsidePageComponent array
 // this can be cached on the client in production scenarios
@@ -2952,9 +2952,9 @@ await page.save();
 </code></pre>
 <h3 id="handle-different-webparts-settings">Handle Different Webpart's Settings<a class="headerlink" href="#handle-different-webparts-settings" title="Permanent link">&para;</a></h3>
 <p>There are many ways that client side web parts are implemented and we can't provide handling within the library for all possibilities. This example shows how to handle a property set within the serverProcessedContent, in this case a List part's display title.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import { ClientsideWebpart } from &quot;@pnp/sp/clientside-pages&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import { ClientsideWebpart } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 // we create a class to wrap our functionality in a reusable way
 class ListWebpart extends ClientsideWebpart {
@@ -3183,7 +3183,7 @@ await page.promoteToNews();
 <p>Used to control the availability of comments on a page.</p>
 <p><a href="https://github.com/pnp/pnpjs/issues/1383"><img alt="Known Issue Banner" src="https://img.shields.io/badge/Known%20Issue-important.svg" /></a></p>
 <pre><code class="language-TypeScript">// you need to import the comments sub-module or use the all preset
-import &quot;@pnp/sp/comments/clientside-page&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/clientside-page&quot;;
 
 // our page instance
 const page: IClientsidePage;
@@ -3196,7 +3196,7 @@ await page.disableComments();
 </code></pre>
 <h3 id="findcontrolbyid">findControlById<a class="headerlink" href="#findcontrolbyid" title="Permanent link">&para;</a></h3>
 <p>Finds a control within the page by id.</p>
-<pre><code class="language-TypeScript">import { ClientsideText } from &quot;@pnp/sp/clientside-pages&quot;;
+<pre><code class="language-TypeScript">import { ClientsideText } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 // our page instance
 const page: IClientsidePage;
@@ -3240,8 +3240,8 @@ const info = await page.getLikedByInformation();
 </code></pre>
 <h3 id="copy">copy<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h3>
 <p>Creates a copy of the page, including all controls.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // our page instance
 const page: IClientsidePage;
@@ -3259,8 +3259,8 @@ pageCopy2.save();
 </code></pre>
 <h3 id="copyto">copyTo<a class="headerlink" href="#copyto" title="Permanent link">&para;</a></h3>
 <p>Copies the contents of a page to another existing page instance.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // our page instances, loaded in any of the ways shown above
 const source: IClientsidePage;
@@ -3306,11 +3306,11 @@ await page.save();
 <pre><code class="language-TypeScript">import { SPFetchClient } from &quot;@pnp/nodejs&quot;;
 import { join } from &quot;path&quot;;
 import { readFileSync } from &quot;fs&quot;;
-import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/clientside-pages&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 // configure your node options
 sp.setup({

@@ -1,5 +1,5 @@
-import { TimelinePipe } from "@pnp/core";
-import { BrowserFetchWithRetry, DefaultParse, Queryable } from "@pnp/queryable";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
+import { BrowserFetchWithRetry, DefaultParse, Queryable } from "@bpa-solutions/pnp-queryable";
 import { DefaultHeaders, DefaultInit } from "./defaults.js";
 
 interface ISPFXContext {

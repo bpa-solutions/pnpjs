@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import "@pnp/graph/groups";
-import "@pnp/sp/groupsitemanager";
-import { stringIsNullOrEmpty } from "@pnp/core/util";
+import "@bpa-solutions/pnp-sp/groupsitemanager";
+import { stringIsNullOrEmpty } from "@bpa-solutions/pnp-core/util";
 
 describe.skip("GroupSiteManager (without group context)", function () {
     // skip because app only tests.

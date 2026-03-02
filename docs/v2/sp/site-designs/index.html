@@ -2197,7 +2197,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspsite-designs">@pnp/sp/site-designs<a class="headerlink" href="#pnpspsite-designs" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsite-designs">@bpa-solutions/pnp-sp/site-designs<a class="headerlink" href="#pnpspsite-designs" title="Permanent link">&para;</a></h1>
 <p>You can create site designs to provide reusable lists, themes, layouts, pages, or custom actions so that your users can quickly build new SharePoint sites with the features they need.
 Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview">SharePoint site design and site script overview</a> for more information.</p>
 <h2 id="site-designs">Site Designs<a class="headerlink" href="#site-designs" title="Permanent link">&para;</a></h2>
@@ -2212,17 +2212,17 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/site-designs";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/site-designs";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h2 id="create-a-new-site-design">Create a new site design<a class="headerlink" href="#create-a-new-site-design" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-designs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-designs&quot;;
 
 // WebTemplate: 64 Team site template, 68 Communication site template
 const siteDesign = await sp.siteDesigns.createSiteDesign({
@@ -2234,8 +2234,8 @@ const siteDesign = await sp.siteDesigns.createSiteDesign({
 console.log(siteDesign.Title);
 </code></pre>
 <h2 id="applying-a-site-design-to-a-site">Applying a site design to a site<a class="headerlink" href="#applying-a-site-design-to-a-site" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-designs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-designs&quot;;
 
 // Limited to 30 actions in a site script, but runs synchronously
 await sp.siteDesigns.applySiteDesign(&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;,&quot;https://contoso.sharepoint.com/sites/teamsite-pnpjs001&quot;);
@@ -2244,8 +2244,8 @@ await sp.siteDesigns.applySiteDesign(&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&
 const task = await sp.web.addSiteDesignTask(&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;);
 </code></pre>
 <h2 id="retrieval">Retrieval<a class="headerlink" href="#retrieval" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-designs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-designs&quot;;
 
 // Retrieving all site designs
 const allSiteDesigns = await sp.siteDesigns.getSiteDesigns();
@@ -2256,8 +2256,8 @@ const siteDesign = await sp.siteDesigns.getSiteDesignMetadata(&quot;75b9d8fe-438
 console.log(siteDesign.Title);
 </code></pre>
 <h2 id="update-and-delete">Update and delete<a class="headerlink" href="#update-and-delete" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-designs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-designs&quot;;
 
 // Update
 const updatedSiteDesign = await sp.siteDesigns.updateSiteDesign({ Id: &quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;, Title: &quot;SiteDesignUpdatedTitle001&quot; });
@@ -2266,8 +2266,8 @@ const updatedSiteDesign = await sp.siteDesigns.updateSiteDesign({ Id: &quot;75b9
 await sp.siteDesigns.deleteSiteDesign(&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;);
 </code></pre>
 <h2 id="setting-rightspermissions">Setting Rights/Permissions<a class="headerlink" href="#setting-rightspermissions" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-designs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-designs&quot;;
 
 // Get
 const rights = await sp.siteDesigns.getSiteDesignRights(&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;);
@@ -2284,8 +2284,8 @@ const rights = await sp.siteDesigns.getSiteDesignRights(&quot;75b9d8fe-4381-45d9
 await sp.siteDesigns.revokeSiteDesignRights(&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;, rights.map(u =&gt; u.PrincipalName));
 </code></pre>
 <h2 id="get-a-history-of-site-designs-that-have-run-on-a-web">Get a history of site designs that have run on a web<a class="headerlink" href="#get-a-history-of-site-designs-that-have-run-on-a-web" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-designs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-designs&quot;;
 
 const runs = await sp.web.getSiteDesignRuns();
 const runs2 = await sp.siteDesigns.getSiteDesignRun(&quot;https://TENANT.sharepoint.com/sites/mysite&quot;);

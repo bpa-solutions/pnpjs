@@ -1,10 +1,10 @@
-import { spfi } from "@pnp/sp/index.js";
+import { spfi } from "@bpa-solutions/pnp-sp/index.js";
 import { graphfi } from "@pnp/graph/index.js";
 import { LogLevel  } from "@pnp/logging/index.js";
 import { SPDefault, GraphDefault } from "@pnp/nodejs/index.js";
 
 import {readFileSync} from 'fs';
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 import "@pnp/graph/users/index.js";
 
 const buffer = readFileSync("c:/temp/key.pem");

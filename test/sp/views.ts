@@ -1,9 +1,9 @@
 import { expect } from "chai";
-import { getRandomString } from "@pnp/core";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
-import { IList } from "@pnp/sp/lists";
+import { getRandomString } from "@bpa-solutions/pnp-core";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
 
 describe("Views", function () {
 

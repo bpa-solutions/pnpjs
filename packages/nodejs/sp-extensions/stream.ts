@@ -1,11 +1,11 @@
-import { asCancelableScope, CancelAction, headers } from "@pnp/queryable";
-import { File, Files, IFile, IFileAddResult, IFiles, IFileUploadProgressData } from "@pnp/sp/files/index.js";
-import { spPost, encodePath } from "@pnp/sp";
+import { asCancelableScope, CancelAction, headers } from "@bpa-solutions/pnp-queryable";
+import { File, Files, IFile, IFileAddResult, IFiles, IFileUploadProgressData } from "@bpa-solutions/pnp-sp/files/index.js";
+import { spPost, encodePath } from "@bpa-solutions/pnp-sp";
 import { ReadStream } from "fs";
 import { PassThrough } from "stream";
-import { extendFactory, getGUID, isFunc } from "@pnp/core";
+import { extendFactory, getGUID, isFunc } from "@bpa-solutions/pnp-core";
 import { StreamParse } from "../behaviors/stream-parse.js";
-import { fileFromServerRelativePath } from "@pnp/sp/files/index.js";
+import { fileFromServerRelativePath } from "@bpa-solutions/pnp-sp/files/index.js";
 
 export interface IResponseBodyStream {
     body: PassThrough;
@@ -104,7 +104,7 @@ extendFactory(Files, {
 type ProgressFunc = (data: IFileUploadProgressData) => void;
 type ChunkedResult = Promise<IFileAddResult>;
 
-declare module "@pnp/sp/files/types" {
+declare module "@bpa-solutions/pnp-sp/files/types" {
 
     interface IFile {
         /**

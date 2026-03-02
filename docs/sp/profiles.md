@@ -1,4 +1,4 @@
-# @pnp/sp/profiles
+# @bpa-solutions/pnp-sp/profiles
 
 The profile services allows you to work with the SharePoint User Profile Store.
 
@@ -7,8 +7,8 @@ The profile services allows you to work with the SharePoint User Profile Store.
 Profiles is accessed directly from the root sp object.
 
 ```typescript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/profiles";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/profiles";
 ```
 
 ## Get edit profile link for the current user
@@ -253,12 +253,12 @@ setMyProfilePic(profilePicSource: Blob): Promise<void>
 ```
 
 ```typescript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/profiles";
-import "@pnp/sp/folders";
-import "@pnp/sp/files";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/profiles";
+import "@bpa-solutions/pnp-sp/folders";
+import "@bpa-solutions/pnp-sp/files";
 
 const sp = spfi(...);
 

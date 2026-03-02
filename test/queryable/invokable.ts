@@ -2,7 +2,7 @@ import { expect } from "chai";
 import {
     invokable,
     IInvokable,
-} from "@pnp/queryable";
+} from "@bpa-solutions/pnp-queryable";
 
 const value = "Test Result";
 const value2 = "Test2 Values";

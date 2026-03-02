@@ -1,5 +1,5 @@
-import { combine } from "@pnp/core";
-import { body, InjectHeaders } from "@pnp/queryable";
+import { combine } from "@bpa-solutions/pnp-core";
+import { body, InjectHeaders } from "@bpa-solutions/pnp-queryable";
 import { graphPost, graphPut } from "../operations.js";
 import { DriveItem, IDriveItemAddResult, IFileOptions } from "./types.js";
 

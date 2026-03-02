@@ -2113,12 +2113,12 @@
                   </a>
                 
                 
-                <h1 id="pnpsp-addinhelperssprequestexecutorclient">@pnp/sp-addinhelpers/sprequestexecutorclient<a class="headerlink" href="#pnpsp-addinhelperssprequestexecutorclient" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsp-addinhelperssprequestexecutorclient">@bpa-solutions/pnp-sp-addinhelpers/sprequestexecutorclient<a class="headerlink" href="#pnpsp-addinhelperssprequestexecutorclient" title="Permanent link">&para;</a></h1>
 <p>The SPRequestExecutorClient is an implementation of the HttpClientImpl interface that facilitates requests to SharePoint from an add-in. It relies on the SharePoint SP product libraries being present to allow use of the SP.RequestExecutor to make the request.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>To use the client you need to set it using the fetch client factory using the setup  method as shown below. This is only required when working within a SharePoint add-in web.</p>
-<pre><code class="language-TypeScript">// note we are getting the sp variable from this library, it extends the sp export from @pnp/sp to add the required helper methods
-import { sp, SPRequestExecutorClient } from &quot;@pnp/sp-addinhelpers&quot;;
+<pre><code class="language-TypeScript">// note we are getting the sp variable from this library, it extends the sp export from @bpa-solutions/pnp-sp to add the required helper methods
+import { sp, SPRequestExecutorClient } from &quot;@bpa-solutions/pnp-sp-addinhelpers&quot;;
 
 // this only needs to be done once within your application
 sp.setup({

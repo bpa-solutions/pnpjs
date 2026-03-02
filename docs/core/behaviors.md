@@ -1,4 +1,4 @@
-# @pnp/core : behaviors
+# @bpa-solutions/pnp-core : behaviors
 
 While you can always register observers to any Timeline's moments using the `.on.moment` syntax, to make things easier we have included the ability to create behaviors. Behaviors define one or more observer registrations abstracted into a single registration. To differentiate behaviors are applied with the `.using` method. The power of behaviors is they are composable so a behavior can apply other behaviors.
 
@@ -7,7 +7,7 @@ While you can always register observers to any Timeline's moments using the `.on
 Let's create a behavior that will register two observers to a Timeline. We'll use error and log since they exist on all Timelines. In this example let's imagine we need to include some special secret into every lifecycle for logging to work. And we also want a company wide method to track errors. So we roll our own behavior.
 
 ```TypeScript
-import { Timeline, TimelinePipe } from "@pnp/core";
+import { Timeline, TimelinePipe } from "@bpa-solutions/pnp-core";
 import { MySpecialLoggingFunction } from "../mylogging.js";
 
 // top level function allows binding of values within the closure
@@ -37,14 +37,14 @@ obj.using(MyBehavior("HereIsMySuperSecretValue"));
 
 ## Composing Behaviors
 
-We encourage you to use our defaults, or create your own default behavior appropriate to your needs. You can see all of the behaviors available in [@pnp/nodejs](../nodejs/behaviors.md), [@pnp/queryable](../queryable/behaviors.md), [@pnp/sp](../sp/behaviors.md), and [@pnp/graph](../graph/behaviors.md).
+We encourage you to use our defaults, or create your own default behavior appropriate to your needs. You can see all of the behaviors available in [@pnp/nodejs](../nodejs/behaviors.md), [@bpa-solutions/pnp-queryable](../queryable/behaviors.md), [@bpa-solutions/pnp-sp](../sp/behaviors.md), and [@pnp/graph](../graph/behaviors.md).
 
 As an example, let's create our own behavior for a nodejs project. We want to call the graph, default to the beta endpoint, setup MSAL, and include a custom header we need for our environment. To do so we create a composed behavior consisting of graph's DefaultInit, graph's DefaultHeaders, nodejs's MSAL, nodejs's NodeFetchWithRetry, and queryable's DefaultParse & InjectHeaders. Then we can import this behavior into all our projects to configure them.
 
 _company-default.ts_
 ```TypeScript
-import { TimelinePipe } from "@pnp/core";
-import { DefaultParse, Queryable, InjectHeaders } from "@pnp/queryable";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
+import { DefaultParse, Queryable, InjectHeaders } from "@bpa-solutions/pnp-queryable";
 import { DefaultHeaders, DefaultInit } from "@pnp/graph";
 import { NodeFetchWithRetry, MSAL } from "@pnp/nodejs";
 
@@ -88,16 +88,16 @@ const graph = graphfi().using(CompanyDefault());
 
 ## Core Behaviors
 
-This section describes two behaviors provided by the `@pnp/core` library, AssignFrom and CopyFrom. Likely you won't often need them directly - they are used in some places internally - but they are made available should they prove useful.
+This section describes two behaviors provided by the `@bpa-solutions/pnp-core` library, AssignFrom and CopyFrom. Likely you won't often need them directly - they are used in some places internally - but they are made available should they prove useful.
 
 ### AssignFrom
 
 This behavior creates a ref to the supplied Timeline implementation's observers and resets the inheriting flag. This means that changes to the parent, here being the supplied Timeline, will begin affecting the target to which this behavior is applied.
 
 ```TypeScript
-import { spfi, SPBrowser } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { AssignFrom } from "@pnp/core";
+import { spfi, SPBrowser } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { AssignFrom } from "@bpa-solutions/pnp-core";
 // some local project file
 import { MyCustomeBehavior } from "./behaviors.ts";
 
@@ -126,9 +126,9 @@ Similar to AssignFrom, this method creates a copy of all the observers on the so
 > By design CopyFrom does NOT include moments defined by symbol keys.
 
 ```TypeScript
-import { spfi, SPBrowser } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { CopyFrom } from "@pnp/core";
+import { spfi, SPBrowser } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { CopyFrom } from "@bpa-solutions/pnp-core";
 // some local project file
 import { MyCustomeBehavior } from "./behaviors.ts";
 
@@ -153,9 +153,9 @@ target.on.log(console.log);
 As well `CopyFrom` supports a filter parameter if you only want to copy the observers from a subset of moments. This filter is a predicate function taking a single string key and returning true if the observers from that moment should be copied to the target.
 
 ```TypeScript
-import { spfi, SPBrowser } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { CopyFrom } from "@pnp/core";
+import { spfi, SPBrowser } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { CopyFrom } from "@bpa-solutions/pnp-core";
 // some local project file
 import { MyCustomeBehavior } from "./behaviors.ts";
 

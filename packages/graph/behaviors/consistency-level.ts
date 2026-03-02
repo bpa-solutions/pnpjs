@@ -1,5 +1,5 @@
-import { TimelinePipe } from "@pnp/core";
-import { Queryable } from "@pnp/queryable";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
+import { Queryable } from "@bpa-solutions/pnp-queryable";
 
 export function ConsistencyLevel(level = "eventual"): TimelinePipe<Queryable> {
 

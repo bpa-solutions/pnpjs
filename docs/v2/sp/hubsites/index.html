@@ -2263,7 +2263,7 @@
                   </a>
                 
                 
-                <h1 id="pnpsphubsites">@pnp/sp/hubsites<a class="headerlink" href="#pnpsphubsites" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsphubsites">@bpa-solutions/pnp-sp/hubsites<a class="headerlink" href="#pnpsphubsites" title="Permanent link">&para;</a></h1>
 <p>This module helps you with working with hub sites in your tenant.</p>
 <h2 id="ihubsites">IHubSites<a class="headerlink" href="#ihubsites" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2277,18 +2277,18 @@
 <tbody>
 <tr>
 <td>Selective</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/hubsites";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/hubsites";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, HubSites, IHubSites } from "@pnp/sp/presets/all";</td>
+<td>import { sp, HubSites, IHubSites } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-a-listing-of-all-hub-sites">Get a Listing of All Hub sites<a class="headerlink" href="#get-a-listing-of-all-hub-sites" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IHubSiteInfo } from  &quot;@pnp/sp/hubsites&quot;;
-import &quot;@pnp/sp/hubsites&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IHubSiteInfo } from  &quot;@bpa-solutions/pnp-sp/hubsites&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites&quot;;
 
 // invoke the hub sites object
 const hubsites: IHubSiteInfo[] = await sp.hubSites();
@@ -2298,9 +2298,9 @@ const hubsites2: IHubSiteInfo[] = await sp.hubSites.select(&quot;ID&quot;, &quot
 </code></pre>
 <h3 id="get-hub-site-by-id">Get Hub site by Id<a class="headerlink" href="#get-hub-site-by-id" title="Permanent link">&para;</a></h3>
 <p>Using the getById method on the hubsites module to get a hub site by site Id (guid).</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IHubSiteInfo } from  &quot;@pnp/sp/hubsites&quot;;
-import &quot;@pnp/sp/hubsites&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IHubSiteInfo } from  &quot;@bpa-solutions/pnp-sp/hubsites&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites&quot;;
 
 const hubsite: IHubSiteInfo = await sp.hubSites.getById(&quot;3504348e-b2be-49fb-a2a9-2d748db64beb&quot;)();
 
@@ -2309,9 +2309,9 @@ console.log(hubsite.Title);
 </code></pre>
 <h3 id="get-isite-instance">Get ISite instance<a class="headerlink" href="#get-isite-instance" title="Permanent link">&para;</a></h3>
 <p>We provide a helper method to load the ISite instance from the HubSite</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { ISite } from  &quot;@pnp/sp/sites&quot;;
-import &quot;@pnp/sp/hubsites&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { ISite } from  &quot;@bpa-solutions/pnp-sp/sites&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites&quot;;
 
 const site: ISite = await sp.hubSites.getById(&quot;3504348e-b2be-49fb-a2a9-2d748db64beb&quot;).getSite();
 
@@ -2320,10 +2320,10 @@ const siteData = await site();
 console.log(siteData.Title);
 </code></pre>
 <h3 id="get-hub-site-data-for-a-web">Get Hub site data for a web<a class="headerlink" href="#get-hub-site-data-for-a-web" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IHubSiteWebData } from  &quot;@pnp/sp/hubsites&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/hubsites/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IHubSiteWebData } from  &quot;@bpa-solutions/pnp-sp/hubsites&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites/web&quot;;
 
 const webData: Partial&lt;IHubSiteWebData&gt; = await sp.web.hubSiteData();
 
@@ -2332,9 +2332,9 @@ const webData2: Partial&lt;IHubSiteWebData&gt; = await sp.web.hubSiteData(true);
 </code></pre>
 <h3 id="synchubsitetheme">syncHubSiteTheme<a class="headerlink" href="#synchubsitetheme" title="Permanent link">&para;</a></h3>
 <p>Allows you to apply theme updates from the parent hub site collection.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/hubsites/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites/web&quot;;
 
 await sp.web.syncHubSiteTheme();
 </code></pre>
@@ -2342,9 +2342,9 @@ await sp.web.syncHubSiteTheme();
 <p>You manage hub sites at the Site level.</p>
 <h3 id="joinhubsite">joinHubSite<a class="headerlink" href="#joinhubsite" title="Permanent link">&para;</a></h3>
 <p>Id of the hub site collection you want to join. If you want to disassociate the site collection from hub site, then pass the siteId as 00000000-0000-0000-0000-000000000000</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sites&quot;;
-import &quot;@pnp/sp/hubsites/site&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sites&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites/site&quot;;
 
 // join a site to a hub site
 await sp.site.joinHubSite(&quot;{parent hub site id}&quot;);
@@ -2354,18 +2354,18 @@ await sp.site.joinHubSite(&quot;00000000-0000-0000-0000-000000000000&quot;);
 </code></pre>
 <h3 id="registerhubsite">registerHubSite<a class="headerlink" href="#registerhubsite" title="Permanent link">&para;</a></h3>
 <p>Registers the current site collection as hub site collection</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sites&quot;;
-import &quot;@pnp/sp/hubsites/site&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sites&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites/site&quot;;
 
 // register current site as a hub site
 await sp.site.registerHubSite();
 </code></pre>
 <h3 id="unregisterhubsite">unRegisterHubSite<a class="headerlink" href="#unregisterhubsite" title="Permanent link">&para;</a></h3>
 <p>Un-registers the current site collection as hub site collection.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sites&quot;;
-import &quot;@pnp/sp/hubsites/site&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sites&quot;;
+import &quot;@bpa-solutions/pnp-sp/hubsites/site&quot;;
 
 // make a site no longer a hub
 await sp.site.unRegisterHubSite();

@@ -2189,7 +2189,7 @@
 <p>Within the PnPjs testing framework we make use of SharePoint App Registration. This uses the <code>SPFetchClient</code> client from the nodejs package. This client works based on the <a href="https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs">legacy SharePoint App Registration model</a> making use of a client and secret granted permissions through AppInv.aspx. This method works and at the time of writing has no published end date.</p>
 <p>See: <a href="../sp-app-registration/">details on how to register a legacy SharePoint application</a>.</p>
 <pre><code class="language-TypeScript">import { SPFetchClient } from &quot;@pnp/nodejs&quot;;
-import { sp } from &quot;@pnp/sp/presets/all&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 sp.setup({
     sp: {
@@ -2240,8 +2240,8 @@ openssl rsa -in keytmp.pem -out key.pem -passin pass:HereIsMySuperPass
 <blockquote>
 <p>You need to set the baseUrl property when using the MsalFetchClient</p>
 </blockquote>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 import { readFileSync } from &quot;fs&quot;;
 
 // read in our private key

@@ -1,5 +1,5 @@
-import { isArray } from "@pnp/core";
-import { IInvokable, Queryable, queryableFactory } from "@pnp/queryable";
+import { isArray } from "@bpa-solutions/pnp-core";
+import { IInvokable, Queryable, queryableFactory } from "@bpa-solutions/pnp-queryable";
 import { ConsistencyLevel } from "./behaviors/consistency-level.js";
 import { AsPaged, IPagedResult } from "./behaviors/paged.js";
 

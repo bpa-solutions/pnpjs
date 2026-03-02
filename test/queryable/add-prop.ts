@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import {
     addProp,
-} from "@pnp/queryable";
-import "@pnp/sp/webs";
+} from "@bpa-solutions/pnp-queryable";
+import "@bpa-solutions/pnp-sp/webs";
 
 describe("add-prop", function () {
 

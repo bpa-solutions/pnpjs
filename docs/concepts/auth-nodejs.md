@@ -20,11 +20,11 @@ The following samples reference a MSAL configuration that utilizes an Azure AD A
 
 ```TypeScript
 import { SPDefault, GraphDefault } from "@pnp/nodejs";
-import { spfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
 import { graphfi } from "@pnp/graph";
 import { Configuration, AuthenticationParameters } from "msal";
 import "@pnp/graph/users";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const configuration: Configuration = {
   auth: {
@@ -76,11 +76,11 @@ The following sample shows how to pass the credential object to the AzureIdentit
 
 ```TypeScript
 import { DefaultAzureCredential } from "@azure/identity";
-import { spfi } from "@pnp/sp";
-import { graphfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { graphfi } from "@bpa-solutions/pnp-sp";
 import { SPDefault, GraphDefault } from "@pnp/nodejs";
 import { AzureIdentity } from "@pnp/azidjsclient";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 import "@pnp/graph/users";
 
 // We're using DefaultAzureCredential but the credential can be any valid `Credential Type`

@@ -2249,7 +2249,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspsite-groups">@pnp/sp/site-groups<a class="headerlink" href="#pnpspsite-groups" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsite-groups">@bpa-solutions/pnp-sp/site-groups<a class="headerlink" href="#pnpspsite-groups" title="Permanent link">&para;</a></h1>
 <p>The site groups module provides methods to manage groups for a sharepoint site.</p>
 <h2 id="isitegroups">ISiteGroups<a class="headerlink" href="#isitegroups" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2263,31 +2263,31 @@
 <tbody>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-groups";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-groups";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-groups/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-groups/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import {sp, SiteGroups } from "@pnp/sp/presets/all";</td>
+<td>import {sp, SiteGroups } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-all-site-groups">Get all site groups<a class="headerlink" href="#get-all-site-groups" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-groups/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-groups/web&quot;;
 
 // gets all site groups of the web
 const groups = await sp.web.siteGroups();
 </code></pre>
 <h3 id="get-the-associated-groups-of-a-web">Get the associated groups of a web<a class="headerlink" href="#get-the-associated-groups-of-a-web" title="Permanent link">&para;</a></h3>
 <p>You can get the associated Owner, Member and Visitor groups of a web</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-groups/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-groups/web&quot;;
 
 // Gets the associated visitors group of a web
 const visitorGroup = await sp.web.associatedVisitorGroup();
@@ -2300,9 +2300,9 @@ const ownerGroup = await sp.web.associatedOwnerGroup();
 
 </code></pre>
 <h3 id="create-the-default-associated-groups-for-a-web">Create the default associated groups for a web<a class="headerlink" href="#create-the-default-associated-groups-for-a-web" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-groups/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-groups/web&quot;;
 
 // Breaks permission inheritance and creates the default associated groups for the web
 
@@ -2318,9 +2318,9 @@ const clearSubScopes = true;
 await sp.web.createDefaultAssociatedGroups(&quot;PnP Site&quot;, owner1, copyRoleAssignments, clearSubScopes);
 </code></pre>
 <h3 id="create-a-new-site-group">Create a new site group<a class="headerlink" href="#create-a-new-site-group" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-groups/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-groups/web&quot;;
 
 // Creates a new site group with the specified title
 await sp.web.siteGroups.add({&quot;Title&quot;:&quot;new group name&quot;});
@@ -2337,22 +2337,22 @@ await sp.web.siteGroups.add({&quot;Title&quot;:&quot;new group name&quot;});
 <tbody>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-groups";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-groups";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-groups/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-groups/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import {sp, SiteGroups, SiteGroup } from "@pnp/sp/presets/all";</td>
+<td>import {sp, SiteGroups, SiteGroup } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="getting-and-updating-the-groups-of-a-sharepoint-web">Getting and updating the groups of a sharepoint web<a class="headerlink" href="#getting-and-updating-the-groups-of-a-sharepoint-web" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-groups&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-groups&quot;;
 
 // get the group using a group id
 const groupID = 33;
@@ -2372,9 +2372,9 @@ await sp.web.siteGroups.removeById(groupID);
 await sp.web.siteGroups.removeByLoginName(groupName);
 </code></pre>
 <h3 id="getting-all-users-of-a-group">Getting all users of a group<a class="headerlink" href="#getting-all-users-of-a-group" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-groups&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-groups&quot;;
 
 // get all users of group
 const groupID = 7;
@@ -2382,9 +2382,9 @@ const users = await sp.web.siteGroups.getById(groupID).users();
 </code></pre>
 <h3 id="updating-the-owner-of-a-site-group">Updating the owner of a site group<a class="headerlink" href="#updating-the-owner-of-a-site-group" title="Permanent link">&para;</a></h3>
 <p>Unfortunately for now setting the owner of a group as another or same SharePoint group is currently unsupported in REST. Setting the owner as a user is supported.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-groups&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-groups&quot;;
 
 // Update the owner with a user id
 await sp.web.siteGroups.getById(7).setUserAsOwner(4);

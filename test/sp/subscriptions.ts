@@ -1,8 +1,8 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/subscriptions";
-import { dateAdd, stringIsNullOrEmpty } from "@pnp/core";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/subscriptions";
+import { dateAdd, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 
 describe("Subscriptions", function () {
 

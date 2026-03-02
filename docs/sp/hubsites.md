@@ -1,4 +1,4 @@
-# @pnp/sp/hubsites
+# @bpa-solutions/pnp-sp/hubsites
 
 This module helps you with working with hub sites in your tenant.
 
@@ -9,9 +9,9 @@ This module helps you with working with hub sites in your tenant.
 ### Get a Listing of All Hub sites
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IHubSiteInfo } from  "@pnp/sp/hubsites";
-import "@pnp/sp/hubsites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IHubSiteInfo } from  "@bpa-solutions/pnp-sp/hubsites";
+import "@bpa-solutions/pnp-sp/hubsites";
 
 const sp = spfi(...);
 
@@ -27,9 +27,9 @@ const hubsites2: IHubSiteInfo[] = await sp.hubSites.select("ID", "Title", "Relat
 Using the getById method on the hubsites module to get a hub site by site Id (guid).
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IHubSiteInfo } from  "@pnp/sp/hubsites";
-import "@pnp/sp/hubsites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IHubSiteInfo } from  "@bpa-solutions/pnp-sp/hubsites";
+import "@bpa-solutions/pnp-sp/hubsites";
 
 const sp = spfi(...);
 
@@ -44,9 +44,9 @@ console.log(hubsite.Title);
 We provide a helper method to load the ISite instance from the HubSite
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ISite } from  "@pnp/sp/sites";
-import "@pnp/sp/hubsites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ISite } from  "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/hubsites";
 
 const sp = spfi(...);
 
@@ -60,10 +60,10 @@ console.log(siteData.Title);
 ### Get Hub site data for a web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IHubSiteWebData } from  "@pnp/sp/hubsites";
-import "@pnp/sp/webs";
-import "@pnp/sp/hubsites/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IHubSiteWebData } from  "@bpa-solutions/pnp-sp/hubsites";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/hubsites/web";
 
 const sp = spfi(...);
 
@@ -78,9 +78,9 @@ const webData2: Partial<IHubSiteWebData> = await sp.web.hubSiteData(true);
 Allows you to apply theme updates from the parent hub site collection.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/hubsites/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/hubsites/web";
 
 const sp = spfi(...);
 
@@ -96,9 +96,9 @@ You manage hub sites at the Site level.
 Id of the hub site collection you want to join. If you want to disassociate the site collection from hub site, then pass the siteId as 00000000-0000-0000-0000-000000000000
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import "@pnp/sp/hubsites/site";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/hubsites/site";
 
 const sp = spfi(...);
 
@@ -114,9 +114,9 @@ await sp.site.joinHubSite("00000000-0000-0000-0000-000000000000");
 Registers the current site collection as hub site collection
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import "@pnp/sp/hubsites/site";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/hubsites/site";
 
 const sp = spfi(...);
 
@@ -129,9 +129,9 @@ await sp.site.registerHubSite();
 Un-registers the current site collection as hub site collection.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import "@pnp/sp/hubsites/site";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/hubsites/site";
 
 const sp = spfi(...);
 

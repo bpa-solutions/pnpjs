@@ -2515,7 +2515,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspfolders">@pnp/sp/folders<a class="headerlink" href="#pnpspfolders" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspfolders">@bpa-solutions/pnp-sp/folders<a class="headerlink" href="#pnpspfolders" title="Permanent link">&para;</a></h1>
 <p>Folders serve as a container for your files and list items.</p>
 <h2 id="ifolders">IFolders<a class="headerlink" href="#ifolders" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2530,36 +2530,36 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import { IFolders, Folders } from "@pnp/sp/folders";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import { IFolders, Folders } from "@bpa-solutions/pnp-sp/folders";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders/web";</td>
 </tr>
 <tr>
 <td>Selective 4</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders/list";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders/list";</td>
 </tr>
 <tr>
 <td>Selective 5</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders/list";<br/>import "@pnp/sp/folders/item";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders/list";<br/>import "@bpa-solutions/pnp-sp/folders/item";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, IFolders, Folders } from "@pnp/sp/presets/all";</td>
+<td>import { sp, IFolders, Folders } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-folders-collection-for-various-sharepoint-objects">Get folders collection for various SharePoint objects<a class="headerlink" href="#get-folders-collection-for-various-sharepoint-objects" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // gets web's folders
 const webFolders = await sp.web.folders();
@@ -2572,18 +2572,18 @@ const itemFolders = await sp.web.lists.getByTitle(&quot;My List&quot;).items.get
 </code></pre>
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
 <p>Adds a new folder to collection of folders</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 // creates a new folder for web with specified url
 const folderAddResult = await sp.web.folders.add(&quot;folder url&quot;);
 </code></pre>
 <h3 id="getbyname">getByName<a class="headerlink" href="#getbyname" title="Permanent link">&para;</a></h3>
 <p>Gets a folder instance from a collection by folder's name</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folder = await sp.web.folders.getByName(&quot;folder name&quot;)();
 </code></pre>
@@ -2600,36 +2600,36 @@ const folder = await sp.web.folders.getByName(&quot;folder name&quot;)();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import { IFolders, Folders } from "@pnp/sp/folders";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import { IFolders, Folders } from "@bpa-solutions/pnp-sp/folders";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders/web";</td>
 </tr>
 <tr>
 <td>Selective 4</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders/list";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders/list";</td>
 </tr>
 <tr>
 <td>Selective 5</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/folders/list";<br/>import "@pnp/sp/folders/item";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/folders/list";<br/>import "@bpa-solutions/pnp-sp/folders/item";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, IFolders, Folders } from "@pnp/sp/presets/all";</td>
+<td>import { sp, IFolders, Folders } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-a-folder-object-associated-with-different-sharepoint-artifacts-web-list-list-item">Get a folder object associated with different SharePoint artifacts (web, list, list item)<a class="headerlink" href="#get-a-folder-object-associated-with-different-sharepoint-artifacts-web-list-list-item" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/items&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
 
 // web's folder
 const rootFolder = await sp.web.rootFolder();
@@ -2642,17 +2642,17 @@ const itemFolder = await sp.web.lists.getByTitle(&quot;234&quot;).items.getById(
 </code></pre>
 <h3 id="getitem">getItem<a class="headerlink" href="#getitem" title="Permanent link">&para;</a></h3>
 <p>Gets list item associated with a folder</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folderItem = await sp.web.rootFolder.folders.getByName(&quot;SiteAssets&quot;).folders.getByName(&quot;My Folder&quot;).getItem();
 </code></pre>
 <h3 id="move">move<a class="headerlink" href="#move" title="Permanent link">&para;</a></h3>
 <p>It's possible to move a folder to a new destination within a site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 // destination is a server-relative url of a new folder
 const destinationUrl = `/sites/my-site/SiteAssets/new-folder`;
@@ -2661,9 +2661,9 @@ await sp.web.rootFolder.folders.getByName(&quot;SiteAssets&quot;).folders.getByN
 </code></pre>
 <h3 id="copy">copy<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h3>
 <p>It's possible to copy a folder to a new destination within a site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 // destination is a server-relative url of a new folder
 const destinationUrl = `/sites/my-site/SiteAssets/new-folder`;
@@ -2672,9 +2672,9 @@ await sp.web.rootFolder.folders.getByName(&quot;SiteAssets&quot;).folders.getByN
 </code></pre>
 <h3 id="move-by-path">move by path<a class="headerlink" href="#move-by-path" title="Permanent link">&para;</a></h3>
 <p>It's possible to move a folder to a new destination within the same or a different site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 // destination is a server-relative url of a new folder
 const destinationUrl = `/sites/my-site/SiteAssets/new-folder`;
@@ -2683,9 +2683,9 @@ await sp.web.rootFolder.folders.getByName(&quot;SiteAssets&quot;).folders.getByN
 </code></pre>
 <h3 id="copy-by-path">copy by path<a class="headerlink" href="#copy-by-path" title="Permanent link">&para;</a></h3>
 <p>It's possible to copy a folder to a new destination within the same or a different site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 // destination is a server-relative url of a new folder
 const destinationUrl = `/sites/my-site/SiteAssets/new-folder`;
@@ -2694,18 +2694,18 @@ await sp.web.rootFolder.folders.getByName(&quot;SiteAssets&quot;).folders.getByN
 </code></pre>
 <h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
 <p>Deletes a folder</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 await sp.web.rootFolder.folders.getByName(&quot;My Folder&quot;).delete();
 </code></pre>
 <h3 id="delete-with-params">delete with params<a class="headerlink" href="#delete-with-params" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.9</em></p>
 <p>Deletes a folder with options</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 await sp.web.rootFolder.folders.getByName(&quot;My Folder&quot;).deleteWithParams({
                 BypassSharedLock: true,
@@ -2714,25 +2714,25 @@ await sp.web.rootFolder.folders.getByName(&quot;My Folder&quot;).deleteWithParam
 </code></pre>
 <h3 id="recycle">recycle<a class="headerlink" href="#recycle" title="Permanent link">&para;</a></h3>
 <p>Recycles a folder</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 await sp.web.rootFolder.folders.getByName(&quot;My Folder&quot;).recycle();
 </code></pre>
 <h3 id="serverrelativeurl">serverRelativeUrl<a class="headerlink" href="#serverrelativeurl" title="Permanent link">&para;</a></h3>
 <p>Gets folder's server relative url</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const relUrl = await sp.web.rootFolder.folders.getByName(&quot;SiteAssets&quot;).serverRelativeUrl();
 </code></pre>
 <h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
 <p>Updates folder's properties</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 await sp.web.getFolderByServerRelativePath(&quot;Shared Documents/Folder2&quot;).update({
         &quot;Name&quot;: &quot;New name&quot;,
@@ -2740,66 +2740,66 @@ await sp.web.getFolderByServerRelativePath(&quot;Shared Documents/Folder2&quot;)
 </code></pre>
 <h3 id="contenttypeorder">contentTypeOrder<a class="headerlink" href="#contenttypeorder" title="Permanent link">&para;</a></h3>
 <p>Gets content type order of a folder</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const order = await sp.web.getFolderByServerRelativePath(&quot;Shared Documents&quot;).contentTypeOrder();
 </code></pre>
 <h3 id="folders">folders<a class="headerlink" href="#folders" title="Permanent link">&para;</a></h3>
 <p>Gets all child folders associated with the current folder</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folders = await sp.web.rootFolder.folders();
 </code></pre>
 <h3 id="files">files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
 <p>Gets all files inside a folder</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/files/folder&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/folder&quot;;
 
 const files = await sp.web.getFolderByServerRelativePath(&quot;Shared Documents&quot;).files();
 </code></pre>
 <h3 id="listitemallfields">listItemAllFields<a class="headerlink" href="#listitemallfields" title="Permanent link">&para;</a></h3>
 <p>Gets this folder's list item field values</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const itemFields = await sp.web.getFolderByServerRelativePath(&quot;Shared Documents/My Folder&quot;).listItemAllFields();
 </code></pre>
 <h3 id="parentfolder">parentFolder<a class="headerlink" href="#parentfolder" title="Permanent link">&para;</a></h3>
 <p>Gets the parent folder, if available</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const parentFolder = await sp.web.getFolderByServerRelativePath(&quot;Shared Documents/My Folder&quot;).parentFolder();
 </code></pre>
 <h3 id="properties">properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
 <p>Gets this folder's properties</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const properties = await sp.web.getFolderByServerRelativePath(&quot;Shared Documents/Folder2&quot;).properties();
 </code></pre>
 <h3 id="uniquecontenttypeorder">uniqueContentTypeOrder<a class="headerlink" href="#uniquecontenttypeorder" title="Permanent link">&para;</a></h3>
 <p>Gets a value that specifies the content type order.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const contentTypeOrder = await sp.web.getFolderByServerRelativePath(&quot;Shared Documents/Folder2&quot;).uniqueContentTypeOrder();
 </code></pre>
 <h3 id="rename-a-folder">Rename a folder<a class="headerlink" href="#rename-a-folder" title="Permanent link">&para;</a></h3>
 <p>You can rename a folder by updating <code>FileLeafRef</code> property:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folder = sp.web.getFolderByServerRelativePath(&quot;Shared Documents/My Folder&quot;);
 
@@ -2808,11 +2808,11 @@ const result = await item.update({ FileLeafRef: &quot;Folder2&quot; });
 </code></pre>
 <h3 id="create-a-folder-with-custom-content-type">Create a folder with custom content type<a class="headerlink" href="#create-a-folder-with-custom-content-type" title="Permanent link">&para;</a></h3>
 <p>Below code creates a new folder under Document library and assigns custom folder content type to a newly created folder. Additionally it sets a field of a custom folder content type.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const newFolderResult = await sp.web.rootFolder.folders.getByName(&quot;Shared Documents&quot;).folders.add(&quot;My New Folder&quot;);
 const item = await newFolderResult.folder.listItemAllFields();
@@ -2826,29 +2826,29 @@ await sp.web.lists.getByTitle(&quot;Documents&quot;).items.getById(item.ID).upda
 <h3 id="addsubfolderusingpath">addSubFolderUsingPath<a class="headerlink" href="#addsubfolderusingpath" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.9</em></p>
 <p>You can use the addSubFolderUsingPath method to add a folder with some special chars supported</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import { IFolder } from &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import { IFolder } from &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 // add a folder to site assets
 const folder: IFolder = await web.rootFolder.folders.getByName(&quot;SiteAssets&quot;).addSubFolderUsingPath(&quot;folder name&quot;);
 </code></pre>
 <h3 id="getfolderbyid">getFolderById<a class="headerlink" href="#getfolderbyid" title="Permanent link">&para;</a></h3>
 <p>You can get a folder by Id from a web.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import { IFolder } from &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import { IFolder } from &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folder: IFolder = sp.web.getFolderById(&quot;2b281c7b-ece9-4b76-82f9-f5cf5e152ba0&quot;);
 </code></pre>
 <h3 id="getparentinfos">getParentInfos<a class="headerlink" href="#getparentinfos" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.12</em></p>
 <p>Gets information about folder, including details about the parent list, parent list root folder, and parent web.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folder: IFolder = sp.web.getFolderById(&quot;2b281c7b-ece9-4b76-82f9-f5cf5e152ba0&quot;);
 await folder.getParentInfos();

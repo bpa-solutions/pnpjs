@@ -1737,11 +1737,11 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/webs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspwebs">@pnp/sp/webs<a class="headerlink" href="#pnpspwebs" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspwebs">@bpa-solutions/pnp-sp/webs<a class="headerlink" href="#pnpspwebs" title="Permanent link">&para;</a></h1>
 <p>Webs are one of the fundamental entry points when working with SharePoint. Webs serve as a container for lists, features, sub-webs, and all of the entity types.</p>
 <h2 id="add-a-web">Add a Web<a class="headerlink" href="#add-a-web" title="Permanent link">&para;</a></h2>
 <p>Using the library you can add a web to another web's collection of subwebs. The basic usage requires only a title and url. This will result in a team site with all of the default settings.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">WebAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">WebAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">webs</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;subweb1&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">w</span>: <span class="kt">WebAddResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1758,7 +1758,7 @@
 
 
 <p>You can also provide other settings such as description, template, language, and inherit permissions.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">WebAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">WebAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// create a German language wiki site with title, url, description, which inherits permissions</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">webs</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;wiki&quot;</span><span class="p">,</span> <span class="s2">&quot;subweb2&quot;</span><span class="p">,</span> <span class="s2">&quot;a wiki web&quot;</span><span class="p">,</span> <span class="s2">&quot;WIKI#0&quot;</span><span class="p">,</span> <span class="mi">1031</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">w</span>: <span class="kt">WebAddResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1777,7 +1777,7 @@
 
 <h2 id="create-default-associated-groups">Create Default Associated Groups<a class="headerlink" href="#create-default-associated-groups" title="Permanent link">&para;</a></h2>
 <p>If you create a web that doesn't inherit permissions from the parent web, you can create its default associated groups (Members, Owners, Visitors) with the default role assigments (Contribute, Full Control, Read)</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">WebAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">WebAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">webs</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;subweb1&quot;</span><span class="p">,</span> <span class="s2">&quot;a wiki web&quot;</span><span class="p">,</span> <span class="s2">&quot;WIKI#0&quot;</span><span class="p">,</span> <span class="mi">1031</span><span class="p">,</span> <span class="kc">false</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">w</span>: <span class="kt">WebAddResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1790,7 +1790,7 @@
 
 
 <h2 id="get-a-webs-properties">Get A Web's properties<a class="headerlink" href="#get-a-webs-properties" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// basic get of the webs properties</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">w</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1814,7 +1814,7 @@
 
 <h2 id="get-complex-properties">Get Complex Properties<a class="headerlink" href="#get-complex-properties" title="Permanent link">&para;</a></h2>
 <p>Some properties, such as AllProperties, are not returned by default. You can still access them using the expand operator.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;AllProperties&quot;</span><span class="p">).</span><span class="nx">expand</span><span class="p">(</span><span class="s2">&quot;AllProperties&quot;</span><span class="p">).</span><span class="nx">get</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">w</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1825,7 +1825,7 @@
 
 <h2 id="get-a-web-directly">Get a Web Directly<a class="headerlink" href="#get-a-web-directly" title="Permanent link">&para;</a></h2>
 <p>You can also use the Web object directly to get any web, though of course the current user must have the necessary permissions. This is done by importing the web object.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">web</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web</span><span class="p">(</span><span class="s2">&quot;https://my-tenant.sharepoint.com/sites/mysite&quot;</span><span class="p">);</span>
 
@@ -1853,7 +1853,7 @@
 
 <h2 id="update-web-properties">Update Web Properties<a class="headerlink" href="#update-web-properties" title="Permanent link">&para;</a></h2>
 <p>You can update web properties using the update method. The properties available for update are listed in <a href="https://msdn.microsoft.com/en-us/library/office/dn499819.aspx#bk_WebProperties">this table</a>. Updating is a simple as passing a plain object with the properties you want to update.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">web</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web</span><span class="p">(</span><span class="s2">&quot;https://my-tenant.sharepoint.com/sites/mysite&quot;</span><span class="p">);</span>
 
@@ -1869,7 +1869,7 @@
 
 
 <h2 id="delete-a-web">Delete a Web<a class="headerlink" href="#delete-a-web" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">web</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web</span><span class="p">(</span><span class="s2">&quot;https://my-tenant.sharepoint.com/sites/mysite&quot;</span><span class="p">);</span>
 

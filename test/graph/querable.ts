@@ -3,7 +3,7 @@ import "@pnp/graph/sites/group";
 import "@pnp/graph/users";
 import "@pnp/graph/onedrive";
 import { Drive, Group } from "@microsoft/microsoft-graph-types";
-import { hOP, stringIsNullOrEmpty } from "@pnp/core";
+import { hOP, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import getValidUser from "./utilities/getValidUser.js";
 
 describe("Queryable", function () {

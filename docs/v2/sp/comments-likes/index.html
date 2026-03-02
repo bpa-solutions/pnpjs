@@ -2347,7 +2347,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspcomments-and-likes">@pnp/sp/comments and likes<a class="headerlink" href="#pnpspcomments-and-likes" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspcomments-and-likes">@bpa-solutions/pnp-sp/comments and likes<a class="headerlink" href="#pnpspcomments-and-likes" title="Permanent link">&para;</a></h1>
 <p>Comments can be accessed through either IItem or IClientsidePage instances, though in slightly different ways. For information on loading <a href="../clientside-pages/">clientside pages</a> or <a href="../items/">items</a> please refer to those articles.</p>
 <p><em>These APIs are currently in BETA and are subject to change or may not work on all tenants.</em></p>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2361,11 +2361,11 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/comments";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/comments";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -2373,8 +2373,8 @@
 <p>The IClientsidePage interface has three methods to provide easier access to the comments for a page, without requiring that you load the item separately.</p>
 <h3 id="add-comments">Add Comments<a class="headerlink" href="#add-comments" title="Permanent link">&para;</a></h3>
 <p>You can add a comment using the addComment method as shown</p>
-<pre><code class="language-TypeScript">import { CreateClientsidePage } from &quot;@pnp/sp/clientside-pages&quot;;
-import &quot;@pnp/sp/comments/clientside-page&quot;;
+<pre><code class="language-TypeScript">import { CreateClientsidePage } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/clientside-page&quot;;
 
 const page = await CreateClientsidePage(sp.web, &quot;mypage&quot;, &quot;My Page Title&quot;, &quot;Article&quot;);
 // optionally publish the page first
@@ -2383,8 +2383,8 @@ await page.save();
 const comment = await page.addComment(&quot;A test comment&quot;);
 </code></pre>
 <h3 id="get-page-comments">Get Page Comments<a class="headerlink" href="#get-page-comments" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { CreateClientsidePage } from &quot;@pnp/sp/clientside-pages&quot;;
-import &quot;@pnp/sp/comments/clientside-page&quot;;
+<pre><code class="language-TypeScript">import { CreateClientsidePage } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/clientside-page&quot;;
 
 const page = await CreateClientsidePage(sp.web, &quot;mypage&quot;, &quot;My Page Title&quot;, &quot;Article&quot;);
 // optionally publish the page first
@@ -2402,7 +2402,7 @@ const comments = await page.getComments();
 <h3 id="enablecomments-disablecomments">enableComments &amp; disableComments<a class="headerlink" href="#enablecomments-disablecomments" title="Permanent link">&para;</a></h3>
 <p>Used to control the availability of comments on a page</p>
 <pre><code class="language-TypeScript">// you need to import the comments sub-module or use the all preset
-import &quot;@pnp/sp/comments/clientside-page&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/clientside-page&quot;;
 
 // our page instance
 const page: IClientsidePage;
@@ -2414,8 +2414,8 @@ await page.enableComments();
 await page.disableComments();
 </code></pre>
 <h3 id="getbyid">GetById<a class="headerlink" href="#getbyid" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { CreateClientsidePage } from &quot;@pnp/sp/clientside-pages&quot;;
-import &quot;@pnp/sp/comments/clientside-page&quot;;
+<pre><code class="language-TypeScript">import { CreateClientsidePage } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/clientside-page&quot;;
 
 const page = await CreateClientsidePage(sp.web, &quot;mypage&quot;, &quot;My Page Title&quot;, &quot;Article&quot;);
 // optionally publish the page first
@@ -2427,11 +2427,11 @@ const commentData = await page.getCommentById(parseInt(comment.id, 10));
 </code></pre>
 <h3 id="clear-comments">Clear Comments<a class="headerlink" href="#clear-comments" title="Permanent link">&para;</a></h3>
 <h2 id="item-comments">Item Comments<a class="headerlink" href="#item-comments" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/comments/item&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/item&quot;;
 
 const item = await sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/SitePages/Test_8q5L.aspx&quot;).getItem();
 
@@ -2444,8 +2444,8 @@ await item.like();
 <pre><code class="language-TypeScript">const comments = await item.comments();
 </code></pre>
 <p>You can also get the comments merged with instances of the Comment class to immediately start accessing the properties and methods:</p>
-<pre><code class="language-TypeScript">import { spODataEntityArray } from &quot;@pnp/sp/odata&quot;;
-import { Comment, ICommentData } from &quot;@pnp/sp/comments&quot;;
+<pre><code class="language-TypeScript">import { spODataEntityArray } from &quot;@bpa-solutions/pnp-sp/odata&quot;;
+import { Comment, ICommentData } from &quot;@bpa-solutions/pnp-sp/comments&quot;;
 
 const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&gt;(Comment));
 
@@ -2463,7 +2463,7 @@ item.comments.add(&quot;string comment&quot;);
 item.comments.add({ text: &quot;comment from object property&quot; });
 </code></pre>
 <h3 id="delete-a-comment">Delete a Comment<a class="headerlink" href="#delete-a-comment" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&gt;(Comment));
 
@@ -2471,7 +2471,7 @@ const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&
 comments[0].delete()
 </code></pre>
 <h3 id="like-comment">Like Comment<a class="headerlink" href="#like-comment" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&gt;(Comment));
 
@@ -2479,21 +2479,21 @@ const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&
 comments[0].like()
 </code></pre>
 <h3 id="unlike-comment">Unlike Comment<a class="headerlink" href="#unlike-comment" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&gt;(Comment));
 
 comments[0].unlike()
 </code></pre>
 <h3 id="reply-to-a-comment">Reply to a Comment<a class="headerlink" href="#reply-to-a-comment" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&gt;(Comment));
 
 const comment: Comment &amp; CommentData = await comments[0].replies.add({ text: &quot;#PnPjs is pretty ok!&quot; });
 </code></pre>
 <h3 id="load-replies-to-a-comment">Load Replies to a Comment<a class="headerlink" href="#load-replies-to-a-comment" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { spODataEntityArray, Comment, CommentData } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const comments = await item.comments(spODataEntityArray&lt;Comment, CommentData&gt;(Comment));
 
@@ -2501,9 +2501,9 @@ const replies = await comments[0].replies();
 </code></pre>
 <h2 id="like">Like<a class="headerlink" href="#like" title="Permanent link">&para;</a></h2>
 <p>You can like/unlike client-side pages, items, and comments on items. See above for how to like or unlike a comment. Below you can see how to like and unlike an items, as well as get the liked by data.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/comments/item&quot;;
-import { ILikeData, ILikedByInformation } from &quot;@pnp/sp/comments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/item&quot;;
+import { ILikeData, ILikedByInformation } from &quot;@bpa-solutions/pnp-sp/comments&quot;;
 
 // like an item
 await item.like();
@@ -2518,9 +2518,9 @@ const likedByData: ILikeData[] = await item.getLikedBy();
 const likedByInfo: ILikedByInformation = await item.getLikedByInformation();
 </code></pre>
 <p>To like/unlike a client-side page and get liked by information.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/comments/clientside-page&quot;;
-import { ILikedByInformation } from &quot;@pnp/sp/comments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/comments/clientside-page&quot;;
+import { ILikedByInformation } from &quot;@bpa-solutions/pnp-sp/comments&quot;;
 
 // like a page
 await page.like();

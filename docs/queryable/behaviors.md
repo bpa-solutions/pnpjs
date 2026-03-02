@@ -1,6 +1,6 @@
-# @pnp/queryable : behaviors
+# @bpa-solutions/pnp-queryable : behaviors
 
-The article describes the behaviors exported by the `@pnp/queryable` library. Please also see available behaviors in [@pnp/core](../core/behaviors.md), [@pnp/nodejs](../nodejs/behaviors.md), [@pnp/sp](../sp/behaviors.md), and [@pnp/graph](../graph/behaviors.md).
+The article describes the behaviors exported by the `@bpa-solutions/pnp-queryable` library. Please also see available behaviors in [@bpa-solutions/pnp-core](../core/behaviors.md), [@pnp/nodejs](../nodejs/behaviors.md), [@bpa-solutions/pnp-sp](../sp/behaviors.md), and [@pnp/graph](../graph/behaviors.md).
 
 Generally you won't need to use these behaviors individually when using the defaults supplied by the library, but when appropriate you can create your own [composed behaviors](../core/behavior-recipes.md) using these as building blocks.
 
@@ -9,9 +9,9 @@ Generally you won't need to use these behaviors individually when using the defa
 Allows you to inject an existing bearer token into the request. This behavior will _not replace_ any existing authentication behaviors, so you may want to ensure they are cleared if you are supplying your own tokens, regardless of their source. This behavior does no caching or performs any operation other than including your token in an authentication heading.
 
 ```TypeScript
-import { BearerToken } from "@pnp/queryable";
+import { BearerToken } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(BearerToken("HereIsMyBearerTokenStringFromSomeSource"));
 
@@ -30,9 +30,9 @@ This behavior, for use in web browsers, provides basic fetch support through the
 > For fetch configuration in nodejs please see [@pnp/nodejs behaviors]("../../../nodejs/behaviors.md).
 
 ```TypeScript
-import { BrowserFetch } from "@pnp/queryable";
+import { BrowserFetch } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(BrowserFetch());
 
@@ -40,9 +40,9 @@ const webInfo = await sp.webs();
 ```
 
 ```TypeScript
-import { BrowserFetch } from "@pnp/queryable";
+import { BrowserFetch } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(BrowserFetch({ replace: false }));
 
@@ -54,9 +54,9 @@ const webInfo = await sp.webs();
 This behavior makes fetch requests but will attempt to retry the request on certain failures such as throttling.
 
 ```TypeScript
-import { BrowserFetchWithRetry } from "@pnp/queryable";
+import { BrowserFetchWithRetry } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(BrowserFetchWithRetry());
 
@@ -66,9 +66,9 @@ const webInfo = await sp.webs();
 You can also control how the behavior works through its props. The `replace` value works as described above for BrowserFetch. `interval` specifies the initial dynamic back off value in milliseconds. This value is ignored if a "Retry-After" header exists in the response. `retries` indicates the number of times to retry before failing the request, the default is 3. A default of 3 will result in up to 4 total requests being the initial request and threee potential retries.
 
 ```TypeScript
-import { BrowserFetchWithRetry } from "@pnp/queryable";
+import { BrowserFetchWithRetry } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(BrowserFetchWithRetry({
     retries: 2,
@@ -84,9 +84,9 @@ const webInfo = await sp.webs();
 This behavior allows you to cache the results of get requests in either session or local storage. If neither is available (such as in Nodejs) the library will shim using an in memory map. It is a good idea to include caching in your projects to improve performance. By default items in the cache will expire after 5 minutes.
 
 ```TypeScript
-import { Caching } from "@pnp/queryable";
+import { Caching } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(Caching());
 
@@ -108,10 +108,10 @@ The expire date factory has the form `(url: string) => Date` and should return t
 > Note that for sp.search() requests if you want to specify a key you will need to use the CacheKey behavior below, the keyFactory value will be overwritten
 
 ```TypeScript
-import { getHashCode, PnPClientStorage, dateAdd, TimelinePipe } from "@pnp/core";
-import { Caching } from "@pnp/queryable";
+import { getHashCode, PnPClientStorage, dateAdd, TimelinePipe } from "@bpa-solutions/pnp-core";
+import { Caching } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(Caching({
     store: "local",
@@ -131,12 +131,12 @@ const webInfo2 = await sp.webs();
 As with any behavior you have the option to only apply caching to certain requests:
 
 ```TypeScript
-import { getHashCode, dateAdd } from "@pnp/core";
-import { Caching } from "@pnp/queryable";
+import { getHashCode, dateAdd } from "@bpa-solutions/pnp-core";
+import { Caching } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -159,8 +159,8 @@ The `bindCachingCore` method is supplied to allow all caching behaviors to share
 The `bindCachingCore` method is designed for use in a `pre` observer and the first two parameters are the url and init passed to pre. The third parameter is an optional Partial<ICachingProps>. It returns a tuple with three values. The first is a calculated value indicating if this request should be cached based on the internal default logic of the library, you can use this value in conjunction with your own logic. The second value is a function that will get a cached value, note no key is passed - the key is calculated and held within `bindCachingCore`. The third value is a function to which you pass a value to cache. The key and expiration are similarly calculated and held within `bindCachingCore`.
 
 ```TS
-import { TimelinePipe } from "@pnp/core";
-import { bindCachingCore, ICachingProps, Queryable } from "@pnp/queryable";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
+import { bindCachingCore, ICachingProps, Queryable } from "@bpa-solutions/pnp-queryable";
 
 export function Caching(props?: ICachingProps): TimelinePipe<Queryable> {
 
@@ -204,9 +204,9 @@ _Added in 3.5.0_
 This behavior allows you to set a pre-determined cache key for a given request. It needs to be used **PER** request otherwise the value will be continuously overwritten.
 
 ```TypeScript
-import { Caching, CacheKey } from "@pnp/queryable";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
+import { Caching, CacheKey } from "@bpa-solutions/pnp-queryable";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
 
 const sp = spfi(...).using(Caching());
 
@@ -223,9 +223,9 @@ _Added in 3.8.0_
 This behavior allows you to force caching for a given request. This should not be used for update/create operations as the request will not execute if a result is found in the cache
 
 ```TypeScript
-import { Caching, CacheAlways } from "@pnp/queryable";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
+import { Caching, CacheAlways } from "@bpa-solutions/pnp-queryable";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
 
 const sp = spfi(...).using(Caching());
 
@@ -239,9 +239,9 @@ _Added in 3.10.0_
 This behavior allows you to force skipping caching for a given request.
 
 ```TypeScript
-import { Caching, CacheNever } from "@pnp/queryable";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
+import { Caching, CacheNever } from "@bpa-solutions/pnp-queryable";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
 
 const sp = spfi(...).using(Caching());
 
@@ -255,9 +255,9 @@ This behavior is slightly different than our default Caching behavior in that it
 If you do not provide an expiration function then the cache will be updated asyncronously on every call, if you do provide an expiration then the cached value will only be updated, although still asyncronously, only when the cache has expired.
 
 ```TypeScript
-import { CachingPessimisticRefresh } from "@pnp/queryable";
+import { CachingPessimisticRefresh } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(CachingPessimisticRefresh());
 
@@ -275,9 +275,9 @@ Again as with the default Caching behavior you can provide custom functions for 
 Adds any specified headers to a given request. Can be used multiple times with a timeline. The supplied headers are added to all requests, and last applied wins - meaning if two InjectHeaders are included in the pipeline which inlcude a value for the same header, the second one applied will be used.
 
 ```TypeScript
-import { InjectHeaders } from "@pnp/queryable";
+import { InjectHeaders } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(InjectHeaders({
     "X-Something": "a value",
@@ -298,9 +298,9 @@ Parsers convert the returned fetch Response into something usable. We have inclu
 Performs error handling and parsing of JSON responses. This is the one you'll use for most of your requests and it is included in all the defaults.
 
 ```TypeScript
-import { DefaultParse } from "@pnp/queryable";
+import { DefaultParse } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(DefaultParse());
 
@@ -312,9 +312,9 @@ const webInfo = await sp.webs();
 Checks for errors and parses the results as text with no further manipulation.
 
 ```TypeScript
-import { TextParse } from "@pnp/queryable";
+import { TextParse } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(TextParse());
 ```
@@ -324,9 +324,9 @@ const sp = spfi(...).using(TextParse());
 Checks for errors and parses the results a Blob with no further manipulation.
 
 ```TypeScript
-import { BlobParse } from "@pnp/queryable";
+import { BlobParse } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(BlobParse());
 ```
@@ -336,9 +336,9 @@ const sp = spfi(...).using(BlobParse());
 Checks for errors and parses the results as JSON with no further manipulation. Meaning you will get the raw JSON response vs DefaultParse which will remove wrapping JSON.
 
 ```TypeScript
-import { JSONParse } from "@pnp/queryable";
+import { JSONParse } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(JSONParse());
 ```
@@ -348,9 +348,9 @@ const sp = spfi(...).using(JSONParse());
 Checks for errors and parses the results a Buffer with no further manipulation.
 
 ```TypeScript
-import { BufferParse } from "@pnp/queryable";
+import { BufferParse } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(BufferParse());
 ```
@@ -360,9 +360,9 @@ const sp = spfi(...).using(BufferParse());
 Checks for errors and parses the headers of the Response as the result. This is a specialised parses which can be used in those infrequent scenarios where you need information from the headers of a response.
 
 ```TypeScript
-import { HeaderParse } from "@pnp/queryable";
+import { HeaderParse } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(HeaderParse());
 ```
@@ -372,9 +372,9 @@ const sp = spfi(...).using(HeaderParse());
 Checks for errors and parses the headers of the Respnose as well as the JSON and returns an object with both values.
 
 ```TypeScript
-import { JSONHeaderParse } from "@pnp/queryable";
+import { JSONHeaderParse } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(JSONHeaderParse());
 
@@ -389,9 +389,9 @@ These two behaviors are special and should always be included when composing you
 ### ResolveOnData, RejectOnError
 
 ```TypeScript
-import { ResolveOnData, RejectOnError } from "@pnp/queryable";
+import { ResolveOnData, RejectOnError } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...).using(ResolveOnData(), RejectOnError());
 ```
@@ -403,18 +403,18 @@ The Timeout behavior allows you to include a timeout in requests. You can specif
 > In Nodejs you will need to polyfill `AbortController` if your version (&lt;15) does not include it when using Timeout and passing a number. If you are supplying your own AbortSignal you do not.
 
 ```TypeScript
-import { Timeout } from "@pnp/queryable";
+import { Timeout } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 // requests should timeout in 5 seconds
 const sp = spfi(...).using(Timeout(5000));
 ```
 
 ```TypeScript
-import { Timeout } from "@pnp/queryable";
+import { Timeout } from "@bpa-solutions/pnp-queryable";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const controller = new AbortController();
 
@@ -445,9 +445,9 @@ This behavior allows you to cancel requests before they are complete. It is simi
 - Due to how the event loop works you may get unhandled rejections after canceling a request
 
 ```TypeScript
-import { Cancelable, CancelablePromise } from "@pnp/queryable";
-import { IWebInfo } from "@pnp/sp/webs";
-import "@pnp/sp/webs";
+import { Cancelable, CancelablePromise } from "@bpa-solutions/pnp-queryable";
+import { IWebInfo } from "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using(Cancelable());
 
@@ -468,12 +468,12 @@ const webInfo: IWebInfo = await p;
 Some operations such as chunked uploads that take longer to complete are good candidates for canceling based on user input such as a button select.
 
 ```TypeScript
-import { Cancelable, CancelablePromise } from "@pnp/queryable";
-import { IFileAddResult } from "@pnp/sp/files";
-import "@pnp/sp/webs";
-import "@pnp/sp/files";
-import "@pnp/sp/folders";
-import { getRandomString } from "@pnp/core";
+import { Cancelable, CancelablePromise } from "@bpa-solutions/pnp-queryable";
+import { IFileAddResult } from "@bpa-solutions/pnp-sp/files";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/files";
+import "@bpa-solutions/pnp-sp/folders";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import { createReadStream } from "fs";
 
 const sp = spfi().using(Cancelable());

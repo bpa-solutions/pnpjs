@@ -1,17 +1,17 @@
 # @pnp/nodejs : behaviors
 
-The article describes the behaviors exported by the `@pnp/nodejs` library. Please also see available behaviors in [@pnp/core](../core/behaviors.md), [@pnp/queryable](../queryable/behaviors.md), [@pnp/sp](../sp/behaviors.md), and [@pnp/graph](../graph/behaviors.md).
+The article describes the behaviors exported by the `@pnp/nodejs` library. Please also see available behaviors in [@bpa-solutions/pnp-core](../core/behaviors.md), [@bpa-solutions/pnp-queryable](../queryable/behaviors.md), [@bpa-solutions/pnp-sp](../sp/behaviors.md), and [@pnp/graph](../graph/behaviors.md).
 
 ## NodeFetch
 
 This behavior, for use in nodejs, provides basic fetch support through the `node-fetch` package. It replaces any other registered observers on the send moment by default, but this can be controlled via the props. Remember, when registering observers on the send moment only the first one will be used so not replacing
 
-> For fetch configuration in browsers please see [@pnp/queryable behaviors]("../../../queryable/behaviors.md).
+> For fetch configuration in browsers please see [@bpa-solutions/pnp-queryable behaviors]("../../../queryable/behaviors.md).
 
 ```TypeScript
 import { NodeFetch } from "@pnp/nodejs";
 
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 
 const sp = spfi().using(NodeFetch());
 
@@ -21,7 +21,7 @@ await sp.webs();
 ```TypeScript
 import { NodeFetch } from "@pnp/nodejs";
 
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 
 const sp = spfi().using(NodeFetch({ replace: false }));
 
@@ -35,7 +35,7 @@ This behavior makes fetch requests but will attempt to retry the request on cert
 ```TypeScript
 import { NodeFetchWithRetry } from "@pnp/nodejs";
 
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 
 const sp = spfi().using(NodeFetchWithRetry());
 
@@ -47,7 +47,7 @@ You can also control how the behavior works through its props. The `replace` val
 ```TypeScript
 import { NodeFetchWithRetry } from "@pnp/nodejs";
 
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 
 const sp = spfi().using(NodeFetchWithRetry({
     retries: 2,
@@ -123,7 +123,7 @@ You can use the baseUrl property to specify the absolute site/web url to which q
 ```TypeScript
 import { SPDefault } from "@pnp/nodejs";
 
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 
 const sp = spfi().using(SPDefault({
     msal: {
@@ -149,7 +149,7 @@ await sp.web();
 ```TypeScript
 import { StreamParse } from "@pnp/nodejs";
 
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 
 const sp = spfi().using(StreamParse());
 

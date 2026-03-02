@@ -1,16 +1,16 @@
 import { expect } from "chai";
-import "@pnp/sp/lists";
-import "@pnp/sp/content-types/list";
-import "@pnp/sp/views/list";
-import "@pnp/sp/folders/list";
-import "@pnp/sp/fields/list";
-import "@pnp/sp/forms/list";
-import "@pnp/sp/items/list";
-import "@pnp/sp/subscriptions/list";
-import "@pnp/sp/user-custom-actions/list";
-import "@pnp/sp/batching";
-import { IList, IRenderListDataParameters, ControlMode, IListEnsureResult, ICamlQuery, IChangeLogItemQuery, RenderListDataOptions } from "@pnp/sp/lists";
-import { getRandomString } from "@pnp/core";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/content-types/list";
+import "@bpa-solutions/pnp-sp/views/list";
+import "@bpa-solutions/pnp-sp/folders/list";
+import "@bpa-solutions/pnp-sp/fields/list";
+import "@bpa-solutions/pnp-sp/forms/list";
+import "@bpa-solutions/pnp-sp/items/list";
+import "@bpa-solutions/pnp-sp/subscriptions/list";
+import "@bpa-solutions/pnp-sp/user-custom-actions/list";
+import "@bpa-solutions/pnp-sp/batching";
+import { IList, IRenderListDataParameters, ControlMode, IListEnsureResult, ICamlQuery, IChangeLogItemQuery, RenderListDataOptions } from "@bpa-solutions/pnp-sp/lists";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import testSPInvokables from "../test-invokable-props.js";
 import { Context } from "mocha";
 

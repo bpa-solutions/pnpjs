@@ -2169,28 +2169,28 @@
                   </a>
                 
                 
-                <h1 id="pnpspsecurity">@pnp/sp/security<a class="headerlink" href="#pnpspsecurity" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsecurity">@bpa-solutions/pnp-sp/security<a class="headerlink" href="#pnpspsecurity" title="Permanent link">&para;</a></h1>
 <p>There are four levels where you can break inheritance and assign security: Site, Web, List, Item. All four of these objects share a common set of methods. Because of this we are showing in the examples below usage of these methods for an IList instance, but they apply across all four securable objects. In addition to the shared methods, some types have unique methods which are listed below.</p>
 <blockquote>
 <p>Site permissions are managed on the root web of the site collection.</p>
 </blockquote>
 <h2 id="a-note-on-selective-imports-for-security">A Note on Selective Imports for Security<a class="headerlink" href="#a-note-on-selective-imports-for-security" title="Permanent link">&para;</a></h2>
 <p>Because the method are shared you can opt to import only the methods for one of the instances.</p>
-<pre><code class="language-TypeScript">import &quot;@pnp/sp/security/web&quot;;
-import &quot;@pnp/sp/security/list&quot;;
-import &quot;@pnp/sp/security/item&quot;;
+<pre><code class="language-TypeScript">import &quot;@bpa-solutions/pnp-sp/security/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/security/list&quot;;
+import &quot;@bpa-solutions/pnp-sp/security/item&quot;;
 </code></pre>
 <p>Possibly useful if you are trying to hyper-optimize for bundle size but it is just as easy to import the whole module:</p>
-<pre><code class="language-TypeScript">import &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import &quot;@bpa-solutions/pnp-sp/security&quot;;
 </code></pre>
 <h2 id="securable-methods">Securable Methods<a class="headerlink" href="#securable-methods" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/security/list&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
-import { IList } from &quot;@pnp/sp/lists&quot;;
-import { PermissionKind } from &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/security/list&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
+import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import { PermissionKind } from &quot;@bpa-solutions/pnp-sp/security&quot;;
 
 // ensure we have a list
 const ler = await sp.web.lists.ensure(&quot;SecurityTestingList&quot;);
@@ -2226,22 +2226,22 @@ await list.breakRoleInheritance(true, true);
 await list.resetRoleInheritance();
 </code></pre>
 <h2 id="web-specific-methods">Web Specific methods<a class="headerlink" href="#web-specific-methods" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/security/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/security/web&quot;;
 
 // role definitions (see section below)
 const defs = await sp.web.roleDefinitions();
 </code></pre>
 <h2 id="role-assignments">Role Assignments<a class="headerlink" href="#role-assignments" title="Permanent link">&para;</a></h2>
 <p>Allows you to list and manipulate the set of role assignments for the given securable. Again we show usage using list, but the examples apply to web and item as well.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/security/web&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
-import { IList } from &quot;@pnp/sp/lists&quot;;
-import { PermissionKind } from &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/security/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
+import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import { PermissionKind } from &quot;@bpa-solutions/pnp-sp/security&quot;;
 
 // ensure we have a list
 const ler = await sp.web.lists.ensure(&quot;SecurityTestingList&quot;);
@@ -2281,9 +2281,9 @@ const ra = ras.find(v =&gt; true);
 await list.roleAssignments.getById(ra.Id).delete();
 </code></pre>
 <h2 id="role-definitions">Role Definitions<a class="headerlink" href="#role-definitions" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/security/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/security/web&quot;;
 
 // read role definitions
 const defs = await sp.web.roleDefinitions();

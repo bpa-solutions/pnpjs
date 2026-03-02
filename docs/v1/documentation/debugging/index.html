@@ -1879,7 +1879,7 @@
 <h3 id="create-a-debug-module">Create a debug module<a class="headerlink" href="#create-a-debug-module" title="Permanent link">&para;</a></h3>
 <p>Using ./debug/launch/example.ts as a reference create a debugging file in the debug folder, let's call it mydebug.ts and add this content:</p>
 <div class="codehilite"><pre><span></span><span class="c1">// note we can use the actual package names for our imports</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">ListEnsureResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">ListEnsureResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Logger</span><span class="p">,</span> <span class="nx">LogLevel</span><span class="p">,</span> <span class="nx">ConsoleListener</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/logging&quot;</span><span class="p">;</span>
 
 <span class="kr">declare</span> <span class="kd">var</span> <span class="nx">process</span><span class="o">:</span> <span class="p">{</span> <span class="nx">exit</span><span class="p">(</span><span class="nx">code?</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">};</span>
@@ -1958,7 +1958,7 @@ the file from https://localhost:8080/assets/pnp.js, allowing you to create a sin
 <p>You should see an alert with the current web's title using the default main.ts. Feel free to update main.ts to do whatever you would like, but note that any changes
 included as part of a PR to this file will not be allowed.</p>
 <h3 id="serve-a-specific-package">Serve a specific package<a class="headerlink" href="#serve-a-specific-package" title="Permanent link">&para;</a></h3>
-<p>For example if you wanted to serve the @pnp/sp package for testing you would use:</p>
+<p>For example if you wanted to serve the @bpa-solutions/pnp-sp package for testing you would use:</p>
 <p><code>gulp serve --p sp</code></p>
 <p>This will serve a bundle of the sp functionality along with all dependencies and place a global variable named "pnp.{packagename}", in this case pnp.sp. This will be
 true for each package, if you served just the graph package the global would be pnp.graph. This mirrors how the umd modules are built in the distributed npm packages

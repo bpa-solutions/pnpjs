@@ -1,4 +1,4 @@
-# @pnp/sp/publishing-sitepageservice
+# @bpa-solutions/pnp-sp/publishing-sitepageservice
 
 [![Selective Imports Banner](https://img.shields.io/badge/Selective%20Imports-informational.svg)](../concepts/selective-imports.md)  
 
@@ -7,8 +7,8 @@ Through the REST api you are able to call a SP.Publishing.SitePageService method
 ## Get current user's group memberships
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/publishing-sitepageservice";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/publishing-sitepageservice";
 
 const sp = spfi(...);
 

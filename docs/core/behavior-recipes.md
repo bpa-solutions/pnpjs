@@ -10,8 +10,8 @@ At times you might need to introduce a proxy for requests for debugging or other
 
 _proxy.ts_
 ```TypeScript
-import { TimelinePipe } from "@pnp/core";
-import { Queryable } from "@pnp/queryable";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
+import { Queryable } from "@bpa-solutions/pnp-queryable";
 import { HttpsProxyAgent } from "https-proxy-agent";
 
 export function Proxy(proxyInit: string): TimelinePipe<Queryable>;
@@ -41,7 +41,7 @@ _usage_
 ```TypeScript
 import { Proxy } from "./proxy.ts";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 import { SPDefault } from "@pnp/nodejs";
 
 // would work with graph library in the same manner
@@ -83,7 +83,7 @@ _usage_
 ```TypeScript
 import { CacheBust } from "./query-cache-param.ts";
 
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 import { SPDefault } from "@pnp/nodejs";
 
 // would work with graph library in the same manner
@@ -187,7 +187,7 @@ export function ACS(clientId: string, clientSecret: string, authUrl = "https://a
 _usage_
 ```Typescript
 import { CacheBust } from "./acs-auth-behavior.ts";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 import { SPDefault } from "@pnp/nodejs";
 
 const sp = spfi("https://tenant.sharepoint.com/sites.dev").using(SPDefault(), ACS("{client id}", "{client secret}"));

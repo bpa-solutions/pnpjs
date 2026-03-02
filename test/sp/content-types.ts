@@ -1,7 +1,7 @@
 import { expect } from "chai";
-import "@pnp/sp/content-types";
-import "@pnp/sp/lists/web";
-import { getRandomString } from "@pnp/core";
+import "@bpa-solutions/pnp-sp/content-types";
+import "@bpa-solutions/pnp-sp/lists/web";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 
 describe("Content Types", function () {
 

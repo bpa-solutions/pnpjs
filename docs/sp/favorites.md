@@ -1,4 +1,4 @@
-# @pnp/sp/ - favorites
+# @bpa-solutions/pnp-sp/ - favorites
 
 [![Selective Imports Banner](https://img.shields.io/badge/Selective%20Imports-informational.svg)](../concepts/selective-imports.md)  
 
@@ -7,8 +7,8 @@ The favorites API allows you to fetch and manipulate followed sites and list ite
 ## Get current user's followed sites
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/favorites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/favorites";
 
 const sp = spfi(...);
 
@@ -18,8 +18,8 @@ const favSites = await sp.favorites.getFollowedSites();
 ## Add a site to current user's followed sites
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/favorites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/favorites";
 
 const sp = spfi(...);
 
@@ -34,8 +34,8 @@ const favSiteInfo = await sp.favorites.getFollowedSites.add(tenantUrl, siteId, w
 ## Remove a site from current user's followed sites
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/favorites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/favorites";
 
 const sp = spfi(...);
 
@@ -50,8 +50,8 @@ await sp.favorites.getFollowedSites.remove(tenantUrl, siteId, webId, webUrl);
 ## Get current user's followed list items
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/favorites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/favorites";
 
 const sp = spfi(...);
 
@@ -61,8 +61,8 @@ const favListItems = await sp.favorites.getFollowedListItems();
 ## Add an item to current user's followed list items
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/favorites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/favorites";
 
 const sp = spfi(...);
 
@@ -77,8 +77,8 @@ const favListItemInfo = await sp.favorites.getFollowedListItems.add(siteId, webI
 ## Remove an item from current user's followed list items
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/favorites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/favorites";
 
 const sp = spfi(...);
 

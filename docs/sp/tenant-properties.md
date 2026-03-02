@@ -1,4 +1,4 @@
-# @pnp/sp/web - tenant properties
+# @bpa-solutions/pnp-sp/web - tenant properties
 
 You can set, read, and remove tenant properties using the methods shown below:
 
@@ -7,9 +7,9 @@ You can set, read, and remove tenant properties using the methods shown below:
 This method MUST be called in the context of the app catalog web or you will get an access denied message.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/appcatalog";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -27,10 +27,10 @@ await w.setStorageEntity("Test2", "Value 2", "description", "comments");
 This method can be used from any web to retrieve values previously set.
 
 ```TypeScript
-import { spfi, SPFx } from "@pnp/sp";
-import "@pnp/sp/appcatalog";
-import "@pnp/sp/webs";
-import { IStorageEntity } from "@pnp/sp/webs"; 
+import { spfi, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/webs";
+import { IStorageEntity } from "@bpa-solutions/pnp-sp/webs"; 
 
 const sp = spfi(...);
 
@@ -44,9 +44,9 @@ console.log(prop.Value);
 This method MUST be called in the context of the app catalog web or you will get an access denied message.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/appcatalog";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 

@@ -1,7 +1,7 @@
 import { User as IUser } from "@microsoft/microsoft-graph-types";
 import "@pnp/graph/users";
 import { Logger, LogLevel } from "@pnp/logging";
-import { stringIsNullOrEmpty } from "@pnp/core";
+import { stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import { Context } from "mocha";
 
 let cachedValidUser = null;

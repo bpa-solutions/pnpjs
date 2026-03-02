@@ -2211,7 +2211,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspcolumn-defaults">@pnp/sp/column-defaults<a class="headerlink" href="#pnpspcolumn-defaults" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspcolumn-defaults">@bpa-solutions/pnp-sp/column-defaults<a class="headerlink" href="#pnpspcolumn-defaults" title="Permanent link">&para;</a></h1>
 <p>The column defaults sub-module allows you to manage the default column values on a library or library folder.</p>
 <p><a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a></p>
 <table>
@@ -2224,24 +2224,24 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { IFieldDefault, IFieldDefaultProps, AllowedDefaultColumnValues } from "@pnp/sp/column-defaults";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { IFieldDefault, IFieldDefaultProps, AllowedDefaultColumnValues } from "@bpa-solutions/pnp-sp/column-defaults";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/column-defaults";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/column-defaults";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, IFieldDefault, IFieldDefaultProps, AllowedDefaultColumnValues } from "@pnp/sp/presents/all";</td>
+<td>import { sp, IFieldDefault, IFieldDefaultProps, AllowedDefaultColumnValues } from "@bpa-solutions/pnp-sp/presents/all";</td>
 </tr>
 </tbody>
 </table>
 <h2 id="get-folder-defaults">Get Folder Defaults<a class="headerlink" href="#get-folder-defaults" title="Permanent link">&para;</a></h2>
 <p>You can get the default values for a specific folder as shown below:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders/web&quot;;
-import &quot;@pnp/sp/column-defaults&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/column-defaults&quot;;
 
 const defaults = await sp.web.getFolderByServerRelativePath(&quot;/sites/dev/DefaultColumnValues/fld_GHk5&quot;).getDefaultColumnValues();
 
@@ -2268,10 +2268,10 @@ The resulting structure will have the form:
 <p>For more examples of other field types see the section <a href="#Pattern-for-setting-defaults-on-various-column-types">Pattern for setting defaults on various column types</a></p>
 <p><em>Note: Be very careful when setting the path as the site collection url is case sensitive</em></p>
 </blockquote>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders/web&quot;;
-import &quot;@pnp/sp/column-defaults&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/column-defaults&quot;;
 
 await sp.web.getFolderByServerRelativePath(&quot;/sites/dev/DefaultColumnValues/fld_GHk5&quot;).setDefaultColumnValues([{
   name: &quot;TextField&quot;,
@@ -2284,10 +2284,10 @@ await sp.web.getFolderByServerRelativePath(&quot;/sites/dev/DefaultColumnValues/
 </code></pre>
 <h2 id="get-library-defaults">Get Library Defaults<a class="headerlink" href="#get-library-defaults" title="Permanent link">&para;</a></h2>
 <p>You can also get all of the defaults for the entire library.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/column-defaults&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/column-defaults&quot;;
 
 const defaults = await sp.web.lists.getByTitle(&quot;DefaultColumnValues&quot;).getDefaultColumnValues();
 
@@ -2314,10 +2314,10 @@ The resulting structure will have the form:
 <p>For more examples of other field types see the section <a href="#Pattern-for-setting-defaults-on-various-column-types">Pattern for setting defaults on various column types</a></p>
 <p><em>Note: Be very careful when setting the path as the site collection url is case sensitive</em></p>
 </blockquote>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/column-defaults&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/column-defaults&quot;;
 
 await sp.web.lists.getByTitle(&quot;DefaultColumnValues&quot;).setDefaultColumnValues([{
                 name: &quot;TextField&quot;,
@@ -2327,19 +2327,19 @@ await sp.web.lists.getByTitle(&quot;DefaultColumnValues&quot;).setDefaultColumnV
 </code></pre>
 <h2 id="clear-folder-defaults">Clear Folder Defaults<a class="headerlink" href="#clear-folder-defaults" title="Permanent link">&para;</a></h2>
 <p>If you want to clear all of the folder defaults you can use the clear method:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/folders/web&quot;;
-import &quot;@pnp/sp/column-defaults&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/column-defaults&quot;;
 
 await sp.web.getFolderByServerRelativePath(&quot;/sites/dev/DefaultColumnValues/fld_GHk5&quot;).clearDefaultColumnValues();
 </code></pre>
 <h2 id="clear-library-defaults">Clear Library Defaults<a class="headerlink" href="#clear-library-defaults" title="Permanent link">&para;</a></h2>
 <p>If you need to clear all of the default column values in a library you can pass an empty array to the list's setDefaultColumnValues method.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/column-defaults&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/column-defaults&quot;;
 
 await sp.web.lists.getByTitle(&quot;DefaultColumnValues&quot;).setDefaultColumnValues([]);
 </code></pre>
@@ -2401,10 +2401,10 @@ await sp.web.lists.getByTitle(&quot;DefaultColumnValues&quot;).setDefaultColumnV
 </code></pre>
 <h2 id="taxonomy-full-example">Taxonomy Full Example<a class="headerlink" href="#taxonomy-full-example" title="Permanent link">&para;</a></h2>
 <p>This example shows fully how to get the taxonomy values and set them as a default column value using PnPjs.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/column-defaults&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/column-defaults&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get the term's info we want to use as the default
 const term = await sp.termStore.sets.getById(&quot;ea6fc521-d293-4f3d-9e84-f3a5bc0936ce&quot;).getTermById(&quot;775c9cf6-c3cd-4db9-8cfa-fc0aeefad93a&quot;)();

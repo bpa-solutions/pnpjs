@@ -1,16 +1,16 @@
 import { assert, expect } from "chai";
-import { Web } from "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items/list";
-import "@pnp/sp/files/item";
-import "@pnp/sp/folders/list";
-import "@pnp/sp/lists";
-import "@pnp/sp/site-groups/web";
-import "@pnp/sp/site-users/web";
-import { createBatch } from "@pnp/sp/batching";
-import { CheckinType } from "@pnp/sp/files";
-import { AssignFrom, getRandomString, stringIsNullOrEmpty } from "@pnp/core";
-import { IItem } from "@pnp/sp/items";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items/list";
+import "@bpa-solutions/pnp-sp/files/item";
+import "@bpa-solutions/pnp-sp/folders/list";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/site-groups/web";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { createBatch } from "@bpa-solutions/pnp-sp/batching";
+import { CheckinType } from "@bpa-solutions/pnp-sp/files";
+import { AssignFrom, getRandomString, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
+import { IItem } from "@bpa-solutions/pnp-sp/items";
 import { pnpTest } from "../pnp-test.js";
 
 describe("Batching", function () {

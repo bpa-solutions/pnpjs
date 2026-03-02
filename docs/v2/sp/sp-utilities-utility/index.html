@@ -2237,7 +2237,7 @@
                   </a>
                 
                 
-                <h1 id="pnpsputilities">@pnp/sp/utilities<a class="headerlink" href="#pnpsputilities" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsputilities">@bpa-solutions/pnp-sp/utilities<a class="headerlink" href="#pnpsputilities" title="Permanent link">&para;</a></h1>
 <p>Through the REST api you are able to call a subset of the SP.Utilities.Utility methods. We have explicitly defined some of these methods and provided a method to call any others in a generic manner. These methods are exposed on pnp.sp.utility and support batching and caching.</p>
 <h2 id="sendemail">sendEmail<a class="headerlink" href="#sendemail" title="Permanent link">&para;</a></h2>
 <p>This methods allows you to send an email based on the supplied arguments. The method takes a single argument, a plain object defined by the EmailProperties interface (shown below).</p>
@@ -2255,9 +2255,9 @@
 </code></pre>
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
 <p>You must define the To, Subject, and Body values - the remaining are optional.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sputilities&quot;;
-import { IEmailProperties } from &quot;@pnp/sp/sputilities&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
+import { IEmailProperties } from &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
 
 const emailProps: IEmailProperties = {
     To: [&quot;user@site.com&quot;],
@@ -2275,8 +2275,8 @@ console.log(&quot;Email Sent!&quot;);
 </code></pre>
 <h2 id="getcurrentuseremailaddresses">getCurrentUserEmailAddresses<a class="headerlink" href="#getcurrentuseremailaddresses" title="Permanent link">&para;</a></h2>
 <p>This method returns the current user's email addresses known to SharePoint.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sputilities&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
 
 let addressString: string = await sp.utility.getCurrentUserEmailAddresses();
 
@@ -2292,8 +2292,8 @@ await sp.utility.sendEmail({
 </code></pre>
 <h2 id="resolveprincipal">resolvePrincipal<a class="headerlink" href="#resolveprincipal" title="Permanent link">&para;</a></h2>
 <p>Gets information about a principal that matches the specified Search criteria</p>
-<pre><code class="language-TypeScript">import { sp, IPrincipalInfo, PrincipalType, PrincipalSource } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sputilities&quot;;
+<pre><code class="language-TypeScript">import { sp, IPrincipalInfo, PrincipalType, PrincipalSource } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
 
 let principal : IPrincipalInfo = await sp.utility.resolvePrincipal(&quot;user@site.com&quot;, PrincipalType.User, PrincipalSource.All, true, false, true);
 
@@ -2301,8 +2301,8 @@ console.log(principal);
 </code></pre>
 <h2 id="searchprincipals">searchPrincipals<a class="headerlink" href="#searchprincipals" title="Permanent link">&para;</a></h2>
 <p>Gets information about the principals that match the specified Search criteria.</p>
-<pre><code class="language-TypeScript">import { sp, IPrincipalInfo, PrincipalType, PrincipalSource } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sputilities&quot;;
+<pre><code class="language-TypeScript">import { sp, IPrincipalInfo, PrincipalType, PrincipalSource } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
 
 let principals : IPrincipalInfo[] = await sp.utility.searchPrincipals(&quot;john&quot;, PrincipalType.User, PrincipalSource.All,&quot;&quot;, 10);
 
@@ -2310,16 +2310,16 @@ console.log(principals);
 </code></pre>
 <h2 id="createemailbodyforinvitation">createEmailBodyForInvitation<a class="headerlink" href="#createemailbodyforinvitation" title="Permanent link">&para;</a></h2>
 <p>Gets the external (outside the firewall) URL to a document or resource in a site.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sputilities&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
 
 let url : string = await sp.utility.createEmailBodyForInvitation(&quot;https://contoso.sharepoint.com/sites/dev/SitePages/DevHome.aspx&quot;);
 console.log(url);
 </code></pre>
 <h2 id="expandgroupstoprincipals">expandGroupsToPrincipals<a class="headerlink" href="#expandgroupstoprincipals" title="Permanent link">&para;</a></h2>
 <p>Resolves the principals contained within the supplied groups</p>
-<pre><code class="language-TypeScript">import { sp, IPrincipalInfo } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sputilities&quot;;
+<pre><code class="language-TypeScript">import { sp, IPrincipalInfo } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
 
 let principals : IPrincipalInfo[] = await sp.utility.expandGroupsToPrincipals([&quot;Dev Owners&quot;, &quot;Dev Members&quot;]);
 console.log(principals);
@@ -2329,9 +2329,9 @@ let principals : IPrincipalInfo[] = await sp.utility.expandGroupsToPrincipals([&
 console.log(principals);
 </code></pre>
 <h2 id="createwikipage">createWikiPage<a class="headerlink" href="#createwikipage" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/sputilities&quot;;
-import { ICreateWikiPageResult } from &quot;@pnp/sp/sputilities&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
+import { ICreateWikiPageResult } from &quot;@bpa-solutions/pnp-sp/sputilities&quot;;
 
 let newPage : ICreateWikiPageResult = await sp.utility.createWikiPage({
     ServerRelativeUrl: &quot;/sites/dev/SitePages/mynewpage.aspx&quot;,

@@ -1,5 +1,5 @@
-import { hOP, objectDefinedNotNull, stringIsNullOrEmpty, TimelinePipe } from "@pnp/core";
-import { errorCheck, parseODataJSON } from "@pnp/queryable";
+import { hOP, objectDefinedNotNull, stringIsNullOrEmpty, TimelinePipe } from "@bpa-solutions/pnp-core";
+import { errorCheck, parseODataJSON } from "@bpa-solutions/pnp-queryable";
 import { GraphQueryableCollection, IGraphQueryable, IGraphQueryableCollection } from "../graphqueryable.js";
 import { ConsistencyLevel } from "./consistency-level.js";
 

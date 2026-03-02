@@ -10,13 +10,13 @@ In other news, we fixed 47 reported bugs, answered 89 questions, and made 51 sug
 
 In 2021 we transitioned from rapid growth to slower growth but maintaining a request/month rate over 11 billion, approaching 13 billion by the end of the year. These requests came from more than 25 thousand tenants including some of the largest M365 customers. Due to some data cleanup we don't have the full year's information, but the below graph shows the final 7 months of the year.
 
-![Graph showing requests and tenants/month for @pnp/sp](../img/usage-2021-eoy.png)
+![Graph showing requests and tenants/month for @bpa-solutions/pnp-sp](../img/usage-2021-eoy.png)
 
 ## Releases
 
 We continued our monthly release cadence as it represents a good pace for addressing issues while not expecting folks to update too often and keeping each update to a reasonable size. All changes can be tracked in our [change log](https://github.com/pnp/pnpjs/blob/main/CHANGELOG.md), updated with each release. You can check our scheduled releases through [project milestones](https://github.com/pnp/pnpjs/milestones), understanding there are occasionally delays. Monthly releases allows us to ensure bugs do not linger and we continually improve and expand the capabilities of the libraries.
 
-### NPM Package download statistics (@pnp/sp)
+### NPM Package download statistics (@bpa-solutions/pnp-sp)
 
 | Month    | Count   | *   | Month       | Count  |
 | -------- | ------- | --- | ----------- | ------ |
@@ -31,7 +31,7 @@ We continued our monthly release cadence as it represents a good pace for addres
 
 For comparison our total downloads in 2020 was 543,836.
 
-With 2021 our total all time downloads of @pnp/sp is now at: 1,743,385
+With 2021 our total all time downloads of @bpa-solutions/pnp-sp is now at: 1,743,385
 
 In 2020 the all time total was 949,638.
 

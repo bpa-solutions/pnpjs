@@ -1737,12 +1737,12 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/client-side-pages.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspclientsidepages">@pnp/sp/clientsidepages<a class="headerlink" href="#pnpspclientsidepages" title="Permanent link">&para;</a></h1>
-<p>The ability to manage client-side pages is a capability introduced in version 1.0.2 of @pnp/sp. Through the methods described
+                <h1 id="pnpspclientsidepages">@bpa-solutions/pnp-sp/clientsidepages<a class="headerlink" href="#pnpspclientsidepages" title="Permanent link">&para;</a></h1>
+<p>The ability to manage client-side pages is a capability introduced in version 1.0.2 of @bpa-solutions/pnp-sp. Through the methods described
 you can add and edit "modern" pages in SharePoint sites.</p>
 <h2 id="add-client-side-page">Add Client-side page<a class="headerlink" href="#add-client-side-page" title="Permanent link">&para;</a></h2>
 <p>Using the addClientSidePage you can add a new client side page to a site, specifying the filename.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">addClientSidePage</span><span class="p">(</span><span class="sb">`file-name`</span><span class="p">);</span>
 
@@ -1753,7 +1753,7 @@ you can add and edit "modern" pages in SharePoint sites.</p>
 
 
 <p>Added in 1.0.5 you can also add a client side page using the list path. This gets around potential language issues with list title. You must specify the list path when calling this method in addition to the new page's filename.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">addClientSidePageByPath</span><span class="p">(</span><span class="sb">`file-name`</span><span class="p">,</span> <span class="s2">&quot;/sites/dev/SitePages&quot;</span><span class="p">);</span>
 </pre></div>
@@ -1766,7 +1766,7 @@ of <a href="../files/">getting a File instance</a> will work. Also note we are p
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> 
     <span class="nx">sp</span><span class="p">,</span>
     <span class="nx">ClientSidePage</span><span class="p">,</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">ClientSidePage</span><span class="p">.</span><span class="nx">fromFile</span><span class="p">(</span><span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/SitePages/ExistingFile.aspx&quot;</span><span class="p">));</span>
 </pre></div>
@@ -1783,11 +1783,11 @@ if you wanted to have two equal columns you can set a factor of 6 for each. A pa
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> 
     <span class="nx">sp</span><span class="p">,</span> 
     <span class="nx">ClientSideText</span><span class="p">,</span> 
-<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// this code adds a section, and then adds a control to that section. The control is added to the section&#39;s defaultColumn, and if there are no columns a single</span>
 <span class="c1">// column of factor 12 is created as a default. Here we add the ClientSideText part</span>
-<span class="nx">page</span><span class="p">.</span><span class="nx">addSection</span><span class="p">().</span><span class="nx">addControl</span><span class="p">(</span><span class="k">new</span> <span class="nx">ClientSideText</span><span class="p">(</span><span class="s2">&quot;@pnp/sp is a great library!&quot;</span><span class="p">));</span>
+<span class="nx">page</span><span class="p">.</span><span class="nx">addSection</span><span class="p">().</span><span class="nx">addControl</span><span class="p">(</span><span class="k">new</span> <span class="nx">ClientSideText</span><span class="p">(</span><span class="s2">&quot;@bpa-solutions/pnp-sp is a great library!&quot;</span><span class="p">));</span>
 
 <span class="c1">// here we add a section, add two columns, and add a text control to the second section so it will appear on the right of the page</span>
 <span class="c1">// add and get a reference to a new section</span>
@@ -1815,7 +1815,7 @@ whose's id is "490d7c76-1824-45b2-9de3-676421c997fa" (at least in one farm, your
     <span class="nx">sp</span><span class="p">,</span>
     <span class="nx">ClientSideWebpart</span><span class="p">,</span>
     <span class="nx">ClientSideWebpartPropertyTypes</span><span class="p">,</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// this will be a ClientSidePageComponent array</span>
 <span class="c1">// this can be cached on the client in production scenarios</span>
@@ -1851,7 +1851,7 @@ whose's id is "490d7c76-1824-45b2-9de3-676421c997fa" (at least in one farm, your
 <h2 id="find-controls">Find Controls<a class="headerlink" href="#find-controls" title="Permanent link">&para;</a></h2>
 <p>Added in <em>1.0.3</em></p>
 <p>You can use the either of the two available method to locate controls within a page. These method search through all sections, columns, and controls returning the first instance that meets the supplied criteria.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ClientSideWebPart</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ClientSideWebPart</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// find a control by instance id</span>
 <span class="kr">const</span> <span class="nx">control1</span> <span class="o">=</span> <span class="nx">page</span><span class="p">.</span><span class="nx">findControlById</span><span class="p">(</span><span class="s2">&quot;b99bfccc-164e-4d3d-9b96-da48db62eb78&quot;</span><span class="p">);</span>

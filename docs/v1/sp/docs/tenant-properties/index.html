@@ -1667,11 +1667,11 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/tenant-properties.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspweb-tenant-properties">@pnp/sp/web - tenant properties<a class="headerlink" href="#pnpspweb-tenant-properties" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspweb-tenant-properties">@bpa-solutions/pnp-sp/web - tenant properties<a class="headerlink" href="#pnpspweb-tenant-properties" title="Permanent link">&para;</a></h1>
 <p>You can set, read, and remove tenant properties using the methods shown below:</p>
 <h2 id="setstorageentity">setStorageEntity<a class="headerlink" href="#setstorageentity" title="Permanent link">&para;</a></h2>
 <p>This method MUST be called in the context of the app catalog web or you will get an access denied message.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">w</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web</span><span class="p">(</span><span class="s2">&quot;https://tenant.sharepoint.com/sites/appcatalog/&quot;</span><span class="p">);</span>
 
@@ -1685,7 +1685,7 @@
 
 <h2 id="getstorageentity">getStorageEntity<a class="headerlink" href="#getstorageentity" title="Permanent link">&para;</a></h2>
 <p>This method can be used from any web to retrieve values previsouly set.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">StorageEntity</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">StorageEntity</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">prop</span>: <span class="kt">StorageEntity</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getStorageEntity</span><span class="p">(</span><span class="s2">&quot;Test1&quot;</span><span class="p">);</span>
 
@@ -1695,7 +1695,7 @@
 
 <h2 id="removestorageentity">removeStorageEntity<a class="headerlink" href="#removestorageentity" title="Permanent link">&para;</a></h2>
 <p>This method MUST be called in the context of the app catalog web or you will get an access denied message.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">w</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web</span><span class="p">(</span><span class="s2">&quot;https://tenant.sharepoint.com/sites/appcatalog/&quot;</span><span class="p">);</span>
 

@@ -1,16 +1,16 @@
 import { expect } from "chai";
-import "@pnp/sp/folders";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/sharing";
-import "@pnp/sp/site-users/web";
-import "@pnp/sp/files";
-import { getRandomString } from "@pnp/core";
-import "@pnp/sp/fields/list";
-import "@pnp/sp/column-defaults";
-import "@pnp/sp/batching";
+import "@bpa-solutions/pnp-sp/folders";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import "@bpa-solutions/pnp-sp/files";
+import { getRandomString } from "@bpa-solutions/pnp-core";
+import "@bpa-solutions/pnp-sp/fields/list";
+import "@bpa-solutions/pnp-sp/column-defaults";
+import "@bpa-solutions/pnp-sp/batching";
 
-import { IList } from "@pnp/sp/lists";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
 
 describe("DefaultColumnValues", function () {
 

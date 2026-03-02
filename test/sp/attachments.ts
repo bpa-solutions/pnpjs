@@ -1,10 +1,10 @@
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
-import { IList } from "@pnp/sp/lists";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
 import { pnpTest } from "../pnp-test.js";
 
 describe("Attachments", function () {

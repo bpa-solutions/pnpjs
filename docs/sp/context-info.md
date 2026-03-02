@@ -1,4 +1,4 @@
-# @pnp/sp/ - context-info
+# @bpa-solutions/pnp-sp/ - context-info
 
 [![Selective Imports Banner](https://img.shields.io/badge/Selective%20Imports-informational.svg)](../concepts/selective-imports.md)  
 
@@ -22,9 +22,9 @@ export interface IContextInfo {
 ## Get Context for a web
 
 ```TS
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/context-info";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/context-info";
 
 const sp = spfi(...);
 
@@ -36,10 +36,10 @@ const info = await sp.web.getContextInfo();
 This pattern works as well for any SPQueryable derived object, allowing you to gain context no matter with which fluent objects you are working.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/context-info";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/context-info";
 
 const sp = spfi(...);
 
@@ -51,9 +51,9 @@ const info = await sp.web.lists.getContextInfo();
 Often you will have an absolute URL to a file or path and would like to create an IWeb or IFile. You can use the [fileFromPath](./files.md#fileFromPath) or [folderFromPath](./folders.md#folderFromPath) to get an IFile/IFolder, or you can use `getContextInfo` to create a new web within the context of the file path.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import { Web } from "@pnp/sp/webs";
-import "@pnp/sp/context-info";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/context-info";
 
 const sp = spfi(...);
 

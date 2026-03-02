@@ -2359,7 +2359,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspviews">@pnp/sp/views<a class="headerlink" href="#pnpspviews" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspviews">@bpa-solutions/pnp-sp/views<a class="headerlink" href="#pnpspviews" title="Permanent link">&para;</a></h1>
 <p>Views define the columns, ordering, and other details we see when we look at a list. You can have multiple views for a list, including private views - and one default view.</p>
 <h2 id="iviews">IViews<a class="headerlink" href="#iviews" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2373,23 +2373,23 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { Views, IViews } from "@pnp/sp/views";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { Views, IViews } from "@bpa-solutions/pnp-sp/views";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/views";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/views";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Views, IViews } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Views, IViews } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-views-in-a-list">Get views in a list<a class="headerlink" href="#get-views-in-a-list" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const list = sp.web.lists.getByTitle(&quot;My List&quot;);
 
@@ -2403,10 +2403,10 @@ const views2 = await list.views.select(&quot;Id&quot;, &quot;Title&quot;)();
 const views3 = await list.views.top(3)();
 </code></pre>
 <h3 id="add-a-view">Add a View<a class="headerlink" href="#add-a-view" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const list = sp.web.lists.getByTitle(&quot;My List&quot;);
 
@@ -2429,10 +2429,10 @@ await Promise.all([
 </code></pre>
 <h2 id="iview">IView<a class="headerlink" href="#iview" title="Permanent link">&para;</a></h2>
 <h3 id="get-a-views-information">Get a View's Information<a class="headerlink" href="#get-a-views-information" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const list = sp.web.lists.getByTitle(&quot;My List&quot;);
 
@@ -2447,20 +2447,20 @@ const result4 = await list.defaultView();
 const result5 = await list.getView(&quot;{GUID view id}&quot;)();
 </code></pre>
 <h3 id="fields">fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const list = sp.web.lists.getByTitle(&quot;My List&quot;);
 
 const result = await list.views.getById(&quot;{GUID view id}&quot;).fields();
 </code></pre>
 <h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const list = sp.web.lists.getByTitle(&quot;My List&quot;);
 
@@ -2469,28 +2469,28 @@ const result = await list.views.getById(&quot;{GUID view id}&quot;).update({
 });
 </code></pre>
 <h3 id="renderashtml">renderAsHtml<a class="headerlink" href="#renderashtml" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const result = await sp.web.lists.getByTitle(&quot;My List&quot;).views.getById(&quot;{GUID view id}&quot;).renderAsHtml();
 </code></pre>
 <h3 id="setviewxml">setViewXml<a class="headerlink" href="#setviewxml" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const viewXml = &quot;...&quot;;
 
 await sp.web.lists.getByTitle(&quot;My List&quot;).views.getById(&quot;{GUID view id}&quot;).setViewXml(viewXml);
 </code></pre>
 <h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const viewXml = &quot;...&quot;;
 
@@ -2498,42 +2498,42 @@ await sp.web.lists.getByTitle(&quot;My List&quot;).views.getById(&quot;{GUID vie
 </code></pre>
 <h2 id="viewfields">ViewFields<a class="headerlink" href="#viewfields" title="Permanent link">&para;</a></h2>
 <h3 id="getschemaxml">getSchemaXml<a class="headerlink" href="#getschemaxml" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 const xml = await sp.web.lists.getByTitle(&quot;My List&quot;).defaultView.fields.getSchemaXml();
 </code></pre>
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 await sp.web.lists.getByTitle(&quot;My List&quot;).defaultView.fields.add(&quot;Created&quot;);
 </code></pre>
 <h3 id="move">move<a class="headerlink" href="#move" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 await sp.web.lists.getByTitle(&quot;My List&quot;).defaultView.fields.move(&quot;Created&quot;, 0);
 </code></pre>
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 await sp.web.lists.getByTitle(&quot;My List&quot;).defaultView.fields.remove(&quot;Created&quot;);
 </code></pre>
 <h3 id="removeall">removeAll<a class="headerlink" href="#removeall" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/views&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/views&quot;;
 
 await sp.web.lists.getByTitle(&quot;My List&quot;).defaultView.fields.removeAll();
 </code></pre>

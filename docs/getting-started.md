@@ -12,14 +12,14 @@ If you need to support older browsers, SharePoint on-premisis servers, or older 
 
 ## Install
 
-First you will need to install those libraries you want to use in your application. Here we will install the most frequently used packages. `@pnp/sp` to access the SharePoint REST API and `@pnp/graph` to access some of the Microsoft Graph API. This step applies to any environment or project.
+First you will need to install those libraries you want to use in your application. Here we will install the most frequently used packages. `@bpa-solutions/pnp-sp` to access the SharePoint REST API and `@pnp/graph` to access some of the Microsoft Graph API. This step applies to any environment or project.
 
-`npm install @pnp/sp @pnp/graph --save`
+`npm install @bpa-solutions/pnp-sp @pnp/graph --save`
 
 Next we can import and use the functionality within our application. Below is a very simple example, please see the individual package documentation for more details and examples.
 
 ```ts
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 
 (function() {
 
@@ -31,7 +31,7 @@ import { getRandomString } from "@pnp/core";
 
 ## Getting Started with SharePoint Framework
 
-The @pnp/sp and @pnp/graph libraries are designed to work seamlessly within SharePoint Framework projects with a small amount of upfront configuration. If you are running in 2016 or 2019 on-premises you will need to use [version 2](./v2/SPFx-on-premises/index.html) of the library. If you are targeting SharePoint online you will need to take the additional steps outlined below based on the version of the SharePoint Framework you are targeting.
+The @bpa-solutions/pnp-sp and @pnp/graph libraries are designed to work seamlessly within SharePoint Framework projects with a small amount of upfront configuration. If you are running in 2016 or 2019 on-premises you will need to use [version 2](./v2/SPFx-on-premises/index.html) of the library. If you are targeting SharePoint online you will need to take the additional steps outlined below based on the version of the SharePoint Framework you are targeting.
 
 We've created two Getting Started samples. The first uses the more traditional React Component classes and can be found in the [react-pnp-js-sample](https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-pnp-js-sample) project, utilizing SPFx 1.15.2 and PnPjs V3, it showcases some of the more dramatic changes to the library. There is also a companion video series on YouTube if you prefer to see things done through that medium here's a link to the playlist for the 5 part series:
 
@@ -92,12 +92,12 @@ Because SharePoint Framework provides a local context to each component we need 
 
 Depending on how you architect your solution establishing context is done where you want to make calls to the API. The examples demonstrate doing so in the onInit method as a local variable but this could also be done to a private variable or passed into a service.
 
->Note if you are going to use both the @pnp/sp and @pnp/graph packages in SPFx you will need to alias the SPFx behavior import, please see the [section](#using-both-pnpsp-and-pnpgraph-in-spfx) below for more details.
+>Note if you are going to use both the @bpa-solutions/pnp-sp and @pnp/graph packages in SPFx you will need to alias the SPFx behavior import, please see the [section](#using-both-pnpsp-and-pnpgraph-in-spfx) below for more details.
 
-### Using @pnp/sp `spfi` factory interface in SPFx
+### Using @bpa-solutions/pnp-sp `spfi` factory interface in SPFx
 
 ```TypeScript
-import { spfi, SPFx } from "@pnp/sp";
+import { spfi, SPFx } from "@bpa-solutions/pnp-sp";
 
 // ...
 
@@ -130,11 +130,11 @@ protected async onInit(): Promise<void> {
 
 ```
 
-### Using both @pnp/sp and @pnp/graph in SPFx
+### Using both @bpa-solutions/pnp-sp and @pnp/graph in SPFx
 
 ```TypeScript
 
-import { spfi, SPFx as spSPFx } from "@pnp/sp";
+import { spfi, SPFx as spSPFx } from "@bpa-solutions/pnp-sp";
 import { graphfi, SPFx as graphSPFx} from "@pnp/graph";
 
 // ...
@@ -157,7 +157,7 @@ Please see the [documentation](./concepts/project-preset.md) on setting up a con
 
 ## Getting started with NodeJS
 
-> Due to the way in which Node resolves ESM modules when you use selective imports in node you must include the `index.js` part of the path. Meaning an import like `import "@pnp/sp/webs"` in examples must be `import "@pnp/sp/webs/index.js"`. Root level imports such as `import { spfi } from "@pnp/sp"` remain correct. The samples in this section demonstrate this for their selective imports.
+> Due to the way in which Node resolves ESM modules when you use selective imports in node you must include the `index.js` part of the path. Meaning an import like `import "@bpa-solutions/pnp-sp/webs"` in examples must be `import "@bpa-solutions/pnp-sp/webs/index.js"`. Root level imports such as `import { spfi } from "@bpa-solutions/pnp-sp"` remain correct. The samples in this section demonstrate this for their selective imports.
 
 ### Importing NodeJS support
 
@@ -180,14 +180,14 @@ openssl rsa -in keytmp.pem -out key.pem -passin pass:HereIsMySuperPass
 
 > Using the above code you end up with three files, "cert.pem", "key.pem", and "keytmp.pem". The "cert.pem" file is uploaded to your AAD application registration. The "key.pem" is read as the private key for the configuration.
 
-### Using @pnp/sp `spfi` factory interface in NodeJS
+### Using @bpa-solutions/pnp-sp `spfi` factory interface in NodeJS
 
 > Version 3 of this library only supports ESModules. If you still require commonjs modules please check out [version 2](./v2/SPFx-on-premises/index.html).
 
 The first step is to install the packages that will be needed. You can read more about what each package does starting on the [packages](packages.md) page.
 
 ```cmd
-npm i @pnp/sp @pnp/nodejs
+npm i @bpa-solutions/pnp-sp @pnp/nodejs
 ```
 
 Once these are installed you need to import them into your project, to communicate with SharePoint from node we'll need the following imports:
@@ -195,7 +195,7 @@ Once these are installed you need to import them into your project, to communica
 ```TypeScript
 
 import { SPDefault } from "@pnp/nodejs";
-import "@pnp/sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/webs/index.js";
 import { readFileSync } from 'fs';
 import { Configuration } from "@azure/msal-node";
 
@@ -288,9 +288,9 @@ import { settings } from "./settings.js";
 // at the root.
 setTimeout(async () => {
 
-    const { spfi } = await import("@pnp/sp");
+    const { spfi } = await import("@bpa-solutions/pnp-sp");
     const { SPDefault } = await import("@pnp/nodejs");
-    await import("@pnp/sp/webs/index.js");
+    await import("@bpa-solutions/pnp-sp/webs/index.js");
 
     const sp = spfi().using(SPDefault({
         baseUrl: settings.testing.sp.url,
@@ -336,9 +336,9 @@ Because of the way the fluent library is designed by definition it's extendible.
 The new factory function allows you to create a connection to a different web maintaining the same setup as your existing interface. You have two options, either to  'AssignFrom' or 'CopyFrom' the base timeline's observers. The below example utilizes 'AssignFrom' but the method would be the same regadless of which route you choose. For more information on these behaviors see [Core/Behaviors](./core/behaviors.md).
 
 ```TypeScript
-import { spfi, SPFx } from "@pnp/sp";
-import { AssignFrom } from "@pnp/core";
-import "@pnp/sp/webs";
+import { spfi, SPFx } from "@bpa-solutions/pnp-sp";
+import { AssignFrom } from "@bpa-solutions/pnp-core";
+import "@bpa-solutions/pnp-sp/webs";
 
 //Connection to the current context's Web
 const sp = spfi(...);

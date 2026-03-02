@@ -1,6 +1,6 @@
 # @pnp/graph : behaviors
 
-The article describes the behaviors exported by the `@pnp/graph` library. Please also see available behaviors in [@pnp/core](../core/behaviors.md), [@pnp/queryable](../queryable/behaviors.md), [@pnp/sp](../sp/behaviors.md), and [@pnp/nodejs](../nodejs/behaviors.md).
+The article describes the behaviors exported by the `@pnp/graph` library. Please also see available behaviors in [@bpa-solutions/pnp-core](../core/behaviors.md), [@bpa-solutions/pnp-queryable](../queryable/behaviors.md), [@bpa-solutions/pnp-sp](../sp/behaviors.md), and [@pnp/nodejs](../nodejs/behaviors.md).
 
 ## DefaultInit
 
@@ -190,7 +190,7 @@ Note that both the sp and graph libraries export an SPFx behavior. They are uniq
 
 ```TypeScript
 import { GraphFI, graphfi, SPFx as graphSPFx } from '@pnp/graph'
-import { SPFI, spfi, SPFx as spSPFx } from '@pnp/sp'
+import { SPFI, spfi, SPFx as spSPFx } from '@bpa-solutions/pnp-sp'
 
 const sp = spfi().using(spSPFx(this.context));
 const graph = graphfi().using(graphSPFx(this.context));

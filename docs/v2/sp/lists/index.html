@@ -2723,7 +2723,7 @@
                   </a>
                 
                 
-                <h1 id="pnpsplists">@pnp/sp/lists<a class="headerlink" href="#pnpsplists" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsplists">@bpa-solutions/pnp-sp/lists<a class="headerlink" href="#pnpsplists" title="Permanent link">&para;</a></h1>
 <p>Lists in SharePoint are collections of information built in a structural way using columns and rows. Columns for metadata, and rows representing each entry. Visually, it reminds us a lot of a database table or an Excel spreadsheet.</p>
 <h2 id="ilists">ILists<a class="headerlink" href="#ilists" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2737,27 +2737,27 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { Webs, IWebs } from "@pnp/sp/webs"; <br />import { Lists, ILists } from "@pnp/sp/lists";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { Webs, IWebs } from "@bpa-solutions/pnp-sp/webs"; <br />import { Lists, ILists } from "@bpa-solutions/pnp-sp/lists";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/lists";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/lists";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Lists, ILists } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Lists, ILists } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 <tr>
 <td>Preset: Core</td>
-<td>import { sp, Lists, ILists } from "@pnp/sp/presets/core";</td>
+<td>import { sp, Lists, ILists } from "@bpa-solutions/pnp-sp/presets/core";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-list-by-id">Get List by Id<a class="headerlink" href="#get-list-by-id" title="Permanent link">&para;</a></h3>
 <p>Gets a list from the collection by id (guid). Note that the library will handle a guid formatted with curly braces (i.e. '{03b05ff4-d95d-45ed-841d-3855f77a2483}') as well as without curly braces (i.e. '03b05ff4-d95d-45ed-841d-3855f77a2483'). The Id parameter is also case insensitive.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // get the list by Id
 const list = sp.web.lists.getById(&quot;03b05ff4-d95d-45ed-841d-3855f77a2483&quot;);
@@ -2770,9 +2770,9 @@ console.log(r.Title);
 </code></pre>
 <h3 id="get-list-by-title">Get List by Title<a class="headerlink" href="#get-list-by-title" title="Permanent link">&para;</a></h3>
 <p>You can also get a list from the collection by title.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // get the default document library 'Documents'
 const list = sp.web.lists.getByTitle(&quot;Documents&quot;);
@@ -2871,25 +2871,25 @@ console.log(r.Title);
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { List, IList } from "@pnp/sp/lists";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { List, IList } from "@bpa-solutions/pnp-sp/lists";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/lists";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/lists";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, List, IList } from "@pnp/sp/presets/all";</td>
+<td>import { sp, List, IList } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 <tr>
 <td>Preset: Core</td>
-<td>import { sp, List, IList } from "@pnp/sp/presets/core";</td>
+<td>import { sp, List, IList } from "@bpa-solutions/pnp-sp/presets/core";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="update-a-list">Update a list<a class="headerlink" href="#update-a-list" title="Permanent link">&para;</a></h3>
 <p>Update an existing list with the provided properties. You can also provide an eTag value that will be used in the IF-Match header (default is "*")</p>
-<pre><code class="language-TypeScript">import { IListUpdateResult } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IListUpdateResult } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // create a TypedHash object with the properties to update
 const updateProperties = {
@@ -2910,7 +2910,7 @@ list.update(updateProperties).then(async (l: IListUpdateResult) =&gt; {
 </code></pre>
 <h3 id="get-changes-on-a-list">Get changes on a list<a class="headerlink" href="#get-changes-on-a-list" title="Permanent link">&para;</a></h3>
 <p>From the change log, you can get a collection of changes that have occurred within the list based on the specified query.</p>
-<pre><code class="language-TypeScript">import { sp, IChangeQuery } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { sp, IChangeQuery } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 // build the changeQuery object, here we look att changes regarding Add, DeleteObject and Restore
 const changeQuery: IChangeQuery = {
@@ -2930,7 +2930,7 @@ console.log(r);
 </code></pre>
 <h3 id="get-list-items-using-a-caml-query">Get list items using a CAML Query<a class="headerlink" href="#get-list-items-using-a-caml-query" title="Permanent link">&para;</a></h3>
 <p>You can get items from SharePoint using a CAML Query.</p>
-<pre><code class="language-TypeScript">import { ICamlQuery } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { ICamlQuery } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // build the caml query object (in this example, we include Title field and limit rows to 5)
 const caml: ICamlQuery = {
@@ -2944,7 +2944,7 @@ const r = await list.getItemsByCAMLQuery(caml);
 console.log(r);
 </code></pre>
 <p>If you need to get and expand a lookup field, there is a spread array parameter on the getItemsByCAMLQuery. This means that you can provide multiple properties to this method depending on how many lookup fields you are working with on your list. Below is a minimal example showing how to expand one field (RoleAssignment)</p>
-<pre><code class="language-TypeScript">import { ICamlQuery } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { ICamlQuery } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // build the caml query object (in this example, we include Title field and limit rows to 5)
 const caml: ICamlQuery = {
@@ -2958,7 +2958,7 @@ const r = await list.getItemsByCAMLQuery(caml, &quot;RoleAssignments&quot;);
 console.log(r);
 </code></pre>
 <h3 id="get-list-items-changes-using-a-token">Get list items changes using a Token<a class="headerlink" href="#get-list-items-changes-using-a-token" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import {  IChangeLogItemQuery } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import {  IChangeLogItemQuery } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // build the caml query object (in this example, we include Title field and limit rows to 5)
 const changeLogItemQuery: IChangeLogItemQuery = {
@@ -2982,7 +2982,7 @@ console.log(r);
 <pre><code class="language-TypeScript">await list.recycle();
 </code></pre>
 <h3 id="render-list-data">Render list data<a class="headerlink" href="#render-list-data" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { IRenderListData } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IRenderListData } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // render list data, top 5 items
 const r: IRenderListData = await list.renderListData(&quot;&lt;View&gt;&lt;RowLimit&gt;5&lt;/RowLimit&gt;&lt;/View&gt;&quot;);
@@ -2991,7 +2991,7 @@ const r: IRenderListData = await list.renderListData(&quot;&lt;View&gt;&lt;RowLi
 console.log(r.Row);
 </code></pre>
 <h3 id="render-list-data-as-stream">Render list data as stream<a class="headerlink" href="#render-list-data-as-stream" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { IRenderListDataParameters } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IRenderListDataParameters } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // setup parameters object
 const renderListDataParams: IRenderListDataParameters = {
@@ -3039,15 +3039,15 @@ list.addValidateUpdateItemUsingPath(formValues,`${list.ParentWebUrl}/Lists/${lis
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/content-types";</td>
+<td>import "@bpa-solutions/pnp-sp/content-types";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/content-types/list";</td>
+<td>import "@bpa-solutions/pnp-sp/content-types/list";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3067,15 +3067,15 @@ const r = await list.contentTypes();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/fields";</td>
+<td>import "@bpa-solutions/pnp-sp/fields";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/fields/list";</td>
+<td>import "@bpa-solutions/pnp-sp/fields/list";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3099,15 +3099,15 @@ await sp.web.lists.getByTitle(&quot;MyList&quot;).fields.createFieldAsXml(fld.da
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/folders";</td>
+<td>import "@bpa-solutions/pnp-sp/folders";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/folders/list";</td>
+<td>import "@bpa-solutions/pnp-sp/folders/list";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3127,15 +3127,15 @@ const r = await list.rootFolder();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/forms";</td>
+<td>import "@bpa-solutions/pnp-sp/forms";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/forms/list";</td>
+<td>import "@bpa-solutions/pnp-sp/forms/list";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3153,15 +3153,15 @@ const r = await list.rootFolder();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/items";</td>
+<td>import "@bpa-solutions/pnp-sp/items";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/items/list";</td>
+<td>import "@bpa-solutions/pnp-sp/items/list";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3180,15 +3180,15 @@ const r = await list.rootFolder();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/views";</td>
+<td>import "@bpa-solutions/pnp-sp/views";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/views/list";</td>
+<td>import "@bpa-solutions/pnp-sp/views/list";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3203,9 +3203,9 @@ const defaultView = await list.defaultView();
 </code></pre>
 <h2 id="security-imports">security imports<a class="headerlink" href="#security-imports" title="Permanent link">&para;</a></h2>
 <p>To work with list security, you can import the list methods as follows:</p>
-<pre><code class="language-TypeScript">import &quot;@pnp/sp/security/list&quot;;
+<pre><code class="language-TypeScript">import &quot;@bpa-solutions/pnp-sp/security/list&quot;;
 </code></pre>
-<p>For more information on how to call security methods for lists, please refer to the <a href="../security/">@pnp/sp/security</a> documentation.</p>
+<p>For more information on how to call security methods for lists, please refer to the <a href="../security/">@bpa-solutions/pnp-sp/security</a> documentation.</p>
 <h2 id="subscriptions-imports">subscriptions imports<a class="headerlink" href="#subscriptions-imports" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -3217,15 +3217,15 @@ const defaultView = await list.defaultView();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/subscriptions";</td>
+<td>import "@bpa-solutions/pnp-sp/subscriptions";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/subscriptions/list";</td>
+<td>import "@bpa-solutions/pnp-sp/subscriptions/list";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3245,15 +3245,15 @@ const subscriptions = await list.subscriptions();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/user-custom-actions";</td>
+<td>import "@bpa-solutions/pnp-sp/user-custom-actions";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/user-custom-actions/web";</td>
+<td>import "@bpa-solutions/pnp-sp/user-custom-actions/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3265,9 +3265,9 @@ const r = await list.userCustomActions();
 <h3 id="getparentinfos">getParentInfos<a class="headerlink" href="#getparentinfos" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.12</em></p>
 <p>Gets information about an list, including details about the parent list root folder, and parent web.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/items&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
 
 const list = sp.web.lists.getByTitle(&quot;Documents&quot;);
 await list.getParentInfos();

@@ -2495,14 +2495,14 @@
                   </a>
                 
                 
-                <h1 id="pnpspfiles">@pnp/sp/files<a class="headerlink" href="#pnpspfiles" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspfiles">@bpa-solutions/pnp-sp/files<a class="headerlink" href="#pnpspfiles" title="Permanent link">&para;</a></h1>
 <p>One of the more challenging tasks on the client side is working with SharePoint files, especially if they are large files. We have added some methods to the library to help and their use is outlined below.</p>
 <h2 id="reading-files">Reading Files<a class="headerlink" href="#reading-files" title="Permanent link">&para;</a></h2>
 <p>Reading files from the client using REST is covered in the below examples. The important thing to remember is choosing which format you want the file in so you can appropriately process it. You can retrieve a file as Blob, Buffer, JSON, or Text. If you have a special requirement you could also write your <a href="../../odata/parsers/">own parser</a>.</p>
-<pre><code class="language-typescript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-typescript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const blob: Blob = await sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/documents/file.avi&quot;).getBlob();
 
@@ -2518,9 +2518,9 @@ const text2: string = await sp.web.getFolderByServerRelativeUrl(&quot;/sites/dev
 <h3 id="getfilebyurl">getFileByUrl<a class="headerlink" href="#getfilebyurl" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.4</em></p>
 <p>This method supports opening files from sharing links or absolute urls. The file must reside in the site from which you are trying to open the file.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/web&quot;;
 
 const url = &quot;{absolute file url OR sharing url}&quot;;
 
@@ -2535,11 +2535,11 @@ const fileContent = await file.getText();
 <pre><code class="language-typescript">declare var require: (s: string) =&gt; any;
 
 import { ConsoleListener, Logger, LogLevel } from &quot;@pnp/logging&quot;;
-import { sp } from &quot;@pnp/sp&quot;;
-import { Web } from &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { Web } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 import { auth } from &quot;./auth&quot;;
 let $ = require(&quot;jquery&quot;); // &lt;-- used here for illustration
 
@@ -2599,10 +2599,10 @@ const fr = await sp.web.lists.getByTitle(&quot;Documents&quot;).rootFolder.files
 </code></pre>
 <h3 id="setting-associated-item-values">Setting Associated Item Values<a class="headerlink" href="#setting-associated-item-values" title="Permanent link">&para;</a></h3>
 <p>You can also update the file properties of a newly uploaded file using code similar to the below snippet:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const file = await sp.web.getFolderByServerRelativeUrl(&quot;/sites/dev/Shared%20Documents/test/&quot;).files.add(&quot;file.name&quot;, &quot;file&quot;, true);
 const item = await file.file.getItem();
@@ -2613,19 +2613,19 @@ await item.update({
 </code></pre>
 <h2 id="addusingpath">AddUsingPath<a class="headerlink" href="#addusingpath" title="Permanent link">&para;</a></h2>
 <p>If you need to support the percent or pound characters you can use the addUsingPath method of IFiles</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const file = await sp.web.getFolderByServerRelativeUrl(&quot;/sites/dev/Shared%20Documents/test/&quot;).files.addUsingPath(&quot;file%#%.name&quot;, &quot;content&quot;);
 </code></pre>
 <h2 id="update-file-content">Update File Content<a class="headerlink" href="#update-file-content" title="Permanent link">&para;</a></h2>
 <p>You can of course use similar methods to update existing files as shown below. This overwrites the existing content in the file.</p>
-<pre><code class="language-typescript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-typescript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 await sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/documents/test.txt&quot;).setContent(&quot;New string content for the file.&quot;);
 
@@ -2635,10 +2635,10 @@ await sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/documents/test.mp4&quot
 <p>The library provides helper methods for checking in, checking out, and approving files. Examples of these methods are shown below.</p>
 <h3 id="check-in">Check In<a class="headerlink" href="#check-in" title="Permanent link">&para;</a></h3>
 <p>Check in takes two optional arguments, comment and check in type.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { CheckinType } from &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { CheckinType } from &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 // default options with empty comment and CheckinType.Major
 await sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/shared documents/file.txt&quot;).checkin();
@@ -2654,18 +2654,18 @@ console.log(&quot;File checked in!&quot;);
 </code></pre>
 <h3 id="check-out">Check Out<a class="headerlink" href="#check-out" title="Permanent link">&para;</a></h3>
 <p>Check out takes no arguments.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/shared documents/file.txt&quot;).checkout();
 console.log(&quot;File checked out!&quot;);
 </code></pre>
 <h3 id="approve-and-deny">Approve and Deny<a class="headerlink" href="#approve-and-deny" title="Permanent link">&para;</a></h3>
 <p>You can also approve or deny files in libraries that use approval. Approve takes a single required argument of comment, the comment is optional for deny.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 await sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/shared documents/file.txt&quot;).approve(&quot;Approval Comment&quot;);
 console.log(&quot;File approved!&quot;);
@@ -2680,9 +2680,9 @@ console.log(&quot;File denied!&quot;);
 </code></pre>
 <h2 id="publish-and-unpublish">Publish and Unpublish<a class="headerlink" href="#publish-and-unpublish" title="Permanent link">&para;</a></h2>
 <p>You can both publish and unpublish a file using the library. Both methods take an optional comment argument.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 // publish with no comment
 await sp.web.getFileByServerRelativeUrl(&quot;/sites/dev/shared documents/file.txt&quot;).publish();
@@ -2719,11 +2719,11 @@ console.log(&quot;File unpublished!&quot;);
 <p>This property controls the size of the individual chunks and is defaulted to 10485760 bytes (10 MB). You can adjust this based on your bandwidth needs - especially if writing code for mobile uploads or you are seeing frequent timeouts.</p>
 <h2 id="getitem">getItem<a class="headerlink" href="#getitem" title="Permanent link">&para;</a></h2>
 <p>This method allows you to get the item associated with this file. You can optionally specify one or more select fields. The result will be merged with a new Item instance so you will have both the returned property values and chaining ability in a single object.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/security&quot;;
 
 const item = await sp.web.getFileByServerRelativePath(&quot;/sites/dev/Shared Documents/test.txt&quot;).getItem();
 console.log(item);
@@ -2736,12 +2736,12 @@ const perms = await item.getCurrentUserEffectivePermissions();
 console.log(perms);
 </code></pre>
 <p>You can also supply a generic typing parameter and the resulting type will be a union type of Item and the generic type parameter. This allows you to have proper intellisense and type checking.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import &quot;@pnp/sp/folders&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import &quot;@bpa-solutions/pnp-sp/folders&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/security&quot;;
 
 // also supports typing the objects so your type will be a union type
 const item = await sp.web.getFileByServerRelativePath(&quot;/sites/dev/Shared Documents/test.txt&quot;).getItem&lt;{ Id: number, Title: string }&gt;(&quot;Id&quot;, &quot;Title&quot;);
@@ -2755,9 +2755,9 @@ console.log(perms);
 </code></pre>
 <h3 id="move">move<a class="headerlink" href="#move" title="Permanent link">&para;</a></h3>
 <p>It's possible to move a file to a new destination within a site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 // destination is a server-relative url of a new file
 const destinationUrl = `/sites/dev/SiteAssets/new-file.docx`;
@@ -2766,9 +2766,9 @@ await sp.web.getFileByServerRelativePath(&quot;/sites/dev/Shared Documents/test.
 </code></pre>
 <h3 id="copy">copy<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h3>
 <p>It's possible to copy a file to a new destination within a site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 // destination is a server-relative url of a new file
 const destinationUrl = `/sites/dev/SiteAssets/new-file.docx`;
@@ -2777,9 +2777,9 @@ await sp.web.getFileByServerRelativePath(&quot;/sites/dev/Shared Documents/test.
 </code></pre>
 <h3 id="move-by-path">move by path<a class="headerlink" href="#move-by-path" title="Permanent link">&para;</a></h3>
 <p>It's possible to move a file to a new destination within the same or a different site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 // destination is a server-relative url of a new file
 const destinationUrl = `/sites/dev2/SiteAssets/new-file.docx`;
@@ -2788,9 +2788,9 @@ await sp.web.getFileByServerRelativePath(&quot;/sites/dev/Shared Documents/test.
 </code></pre>
 <h3 id="copy-by-path">copy by path<a class="headerlink" href="#copy-by-path" title="Permanent link">&para;</a></h3>
 <p>It's possible to copy a file to a new destination within the same or a different site collection  </p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 // destination is a server-relative url of a new file
 const destinationUrl = `/sites/dev2/SiteAssets/new-file.docx`;
@@ -2799,27 +2799,27 @@ await sp.web.getFileByServerRelativePath(&quot;/sites/dev/Shared Documents/test.
 </code></pre>
 <h3 id="getfilebyid">getFileById<a class="headerlink" href="#getfilebyid" title="Permanent link">&para;</a></h3>
 <p>You can get a file by Id from a web.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
-import { IFile } from &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
+import { IFile } from &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 const file: IFile = sp.web.getFileById(&quot;2b281c7b-ece9-4b76-82f9-f5cf5e152ba0&quot;);
 </code></pre>
 <h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
 <p>Deletes a file</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 await sp.web.rootFolder.files.getByName(&quot;name.txt&quot;).delete();
 </code></pre>
 <h3 id="delete-with-params">delete with params<a class="headerlink" href="#delete-with-params" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.9</em></p>
 <p>Deletes a file with options</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 await sp.web.rootFolder.files.getByName(&quot;name.txt&quot;).deleteWithParams({
     BypassSharedLock: true,
@@ -2828,9 +2828,9 @@ await sp.web.rootFolder.files.getByName(&quot;name.txt&quot;).deleteWithParams({
 <h3 id="exists">exists<a class="headerlink" href="#exists" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.9</em></p>
 <p>Checks to see if a file exists</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 const exists = await sp.web.rootFolder.files.getByName(&quot;name.txt&quot;).exists();
 </code></pre>

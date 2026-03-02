@@ -1,4 +1,4 @@
-import { IInvokable } from "@pnp/queryable";
+import { IInvokable } from "@bpa-solutions/pnp-queryable";
 import { expect } from "chai";
 
 // eslint-disable-next-line max-len

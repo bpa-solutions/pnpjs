@@ -2225,7 +2225,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspattachments">@pnp/sp/attachments<a class="headerlink" href="#pnpspattachments" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspattachments">@bpa-solutions/pnp-sp/attachments<a class="headerlink" href="#pnpspattachments" title="Permanent link">&para;</a></h1>
 <p>The ability to attach file to list items allows users to track documents outside of a document library. You can use the PnP JS Core library to work with attachments as outlined below.</p>
 <table>
 <thead>
@@ -2237,22 +2237,22 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/attachments";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/attachments";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, IFeatures, Features } from "@pnp/sp/presets/all";</td>
+<td>import { sp, IFeatures, Features } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h2 id="get-attachments">Get attachments<a class="headerlink" href="#get-attachments" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IAttachmentInfo } from &quot;@pnp/sp/attachments&quot;;
-import { IItem } from &quot;@pnp/sp/items/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IAttachmentInfo } from &quot;@bpa-solutions/pnp-sp/attachments&quot;;
+import { IItem } from &quot;@bpa-solutions/pnp-sp/items/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const item: IItem = sp.web.lists.getByTitle(&quot;MyList&quot;).items.getById(1);
 
@@ -2267,12 +2267,12 @@ const info3: Pick&lt;IAttachmentInfo, &quot;ServerRelativeUrl&quot;&gt;[] = awai
 </code></pre>
 <h2 id="add-an-attachment">Add an Attachment<a class="headerlink" href="#add-an-attachment" title="Permanent link">&para;</a></h2>
 <p>You can add an attachment to a list item using the add method. This method takes either a string, Blob, or ArrayBuffer.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IItem } from &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IItem } from &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const item: IItem = sp.web.lists.getByTitle(&quot;MyList&quot;).items.getById(1);
 
@@ -2280,13 +2280,13 @@ await item.attachmentFiles.add(&quot;file2.txt&quot;, &quot;Here is my content&q
 </code></pre>
 <h2 id="add-multiple">Add Multiple<a class="headerlink" href="#add-multiple" title="Permanent link">&para;</a></h2>
 <p>This method allows you to pass an array of AttachmentFileInfo plain objects that will be added one at a time as attachments. Essentially automating the promise chaining.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IList } from &quot;@pnp/sp/lists&quot;;
-import { IAttachmentFileInfo } from &quot;@pnp/sp/attachments&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import { IAttachmentFileInfo } from &quot;@bpa-solutions/pnp-sp/attachments&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const list: IList = sp.web.lists.getByTitle(&quot;MyList&quot;);
 
@@ -2305,12 +2305,12 @@ fileInfos.push({
 await list.items.getById(2).attachmentFiles.addMultiple(fileInfos);
 </code></pre>
 <h2 id="delete-multiple">Delete Multiple<a class="headerlink" href="#delete-multiple" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IList } from &quot;./@pnp/sp/lists/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IList } from &quot;./@bpa-solutions/pnp-sp/lists/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const list: IList = sp.web.lists.getByTitle(&quot;MyList&quot;);
 
@@ -2318,12 +2318,12 @@ await list.items.getById(2).attachmentFiles.deleteMultiple(&quot;1.txt&quot;, &q
 </code></pre>
 <h2 id="read-attachment-content">Read Attachment Content<a class="headerlink" href="#read-attachment-content" title="Permanent link">&para;</a></h2>
 <p>You can read the content of an attachment as a string, Blob, ArrayBuffer, or json using the methods supplied.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IItem } from &quot;@pnp/sp/items/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IItem } from &quot;@bpa-solutions/pnp-sp/items/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const item: IItem = sp.web.lists.getByTitle(&quot;MyList&quot;).items.getById(1);
 
@@ -2340,24 +2340,24 @@ const json = await item.attachmentFiles.getByName(&quot;file.json&quot;).getJSON
 </code></pre>
 <h2 id="update-attachment-content">Update Attachment Content<a class="headerlink" href="#update-attachment-content" title="Permanent link">&para;</a></h2>
 <p>You can also update the content of an attachment. This API is limited compared to the full file API - so if you need to upload large files consider using a document library.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IItem } from &quot;@pnp/sp/items/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IItem } from &quot;@bpa-solutions/pnp-sp/items/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const item: IItem = sp.web.lists.getByTitle(&quot;MyList&quot;).items.getById(1);
 
 await item.attachmentFiles.getByName(&quot;file2.txt&quot;).setContent(&quot;My new content!!!&quot;);
 </code></pre>
 <h2 id="delete-attachment">Delete Attachment<a class="headerlink" href="#delete-attachment" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IItem } from &quot;@pnp/sp/items/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IItem } from &quot;@bpa-solutions/pnp-sp/items/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const item: IItem = sp.web.lists.getByTitle(&quot;MyList&quot;).items.getById(1);
 
@@ -2365,12 +2365,12 @@ await item.attachmentFiles.getByName(&quot;file2.txt&quot;).delete();
 </code></pre>
 <h2 id="recycle-attachment">Recycle Attachment<a class="headerlink" href="#recycle-attachment" title="Permanent link">&para;</a></h2>
 <p>Delete the attachment and send it to recycle bin</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IItem } from &quot;@pnp/sp/items/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IItem } from &quot;@bpa-solutions/pnp-sp/items/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const item: IItem = sp.web.lists.getByTitle(&quot;MyList&quot;).items.getById(1);
 
@@ -2378,12 +2378,12 @@ await item.attachmentFiles.getByName(&quot;file2.txt&quot;).recycle();
 </code></pre>
 <h2 id="recycle-multiple-attachments">Recycle Multiple Attachments<a class="headerlink" href="#recycle-multiple-attachments" title="Permanent link">&para;</a></h2>
 <p>Delete multiple attachments and send them to recycle bin</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IList } from &quot;@pnp/sp/lists/types&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items&quot;;
-import &quot;@pnp/sp/attachments&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IList } from &quot;@bpa-solutions/pnp-sp/lists/types&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/attachments&quot;;
 
 const list: IList = sp.web.lists.getByTitle(&quot;MyList&quot;);
 

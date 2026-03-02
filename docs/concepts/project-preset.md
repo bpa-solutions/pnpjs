@@ -14,12 +14,12 @@ Within the src directory create a new file named `pnpjs-config.ts` and copy in t
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
 // import pnp, pnp logging system, and any other selective imports needed
-import { spfi, SPFI, SPFx } from "@pnp/sp";
+import { spfi, SPFI, SPFx } from "@bpa-solutions/pnp-sp";
 import { LogLevel, PnPLogging } from "@pnp/logging";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/batching";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/batching";
 
 var _sp: SPFI = null;
 
@@ -79,10 +79,10 @@ Because you do not have full access to the context object within a service you n
 import { ServiceKey, ServiceScope } from "@microsoft/sp-core-library";
 import { PageContext } from "@microsoft/sp-page-context";
 import { AadTokenProviderFactory } from "@microsoft/sp-http";
-import { spfi, SPFI, SPFx as spSPFx } from "@pnp/sp";
+import { spfi, SPFI, SPFx as spSPFx } from "@bpa-solutions/pnp-sp";
 import { graphfi, GraphFI, SPFx as gSPFx } from "@pnp/graph";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
 
 export interface ISampleService {
     getLists(): Promise<any[]>;

@@ -476,7 +476,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - docs:
   - Various documentation copy/paste and typo fixes.
-  - Updates for getting-started guidance for imports of both @pnp/sp and @pnp/graph in SPFx.
+  - Updates for getting-started guidance for imports of both @bpa-solutions/pnp-sp and @pnp/graph in SPFx.
   - Updates to remove documentation showing batching adding files; includes new tag on all areas of library that are not supported for batching.
   - New documentation for Graph to get SharePoint sites.
   - New doucmentation for updating a BCS field in SharePoint.
@@ -543,7 +543,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Changed to using minimal metadata for all requests
   - web.update return changed to `Promise<void>`
   - web.getParentWeb return changed to `Promise<IWeb>`
-  - moved items.getAll to seperate import @pnp/sp/items/get-all
+  - moved items.getAll to seperate import @bpa-solutions/pnp-sp/items/get-all
   - files.getByName => files.getByUrl
   - folders.getByName => folders.getByUrl
   - fields.add* methods now take title and a single props object with the additional properties for each field
@@ -576,7 +576,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - nodejs:
   - AdalCertificateFetchClient, AdalFetchClient, MsalFetchClient, SPFetchClient, ProviderHostedRequestContext -> use MSAL behavior
-  - BearerTokenFetchClient -> use @pnp/Queryable BearerToken behavior
+  - BearerTokenFetchClient -> use @bpa-solutions/pnp-queryable BearerToken behavior
   - SPFetchClient -> Use SPNodeFetch which includes SP retry logic
 
 - core (common):

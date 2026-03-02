@@ -1,25 +1,25 @@
-import { combine, getRandomString } from "@pnp/core";
+import { combine, getRandomString } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/content-types/web";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/navigation/web";
-import "@pnp/sp/site-users/web";
-import "@pnp/sp/site-groups/web";
-import "@pnp/sp/folders/web";
-import "@pnp/sp/files/web";
-import "@pnp/sp/user-custom-actions/web";
-import "@pnp/sp/related-items/web";
-import "@pnp/sp/fields/web";
-import "@pnp/sp/features/web";
-import "@pnp/sp/hubsites/web";
-import "@pnp/sp/appcatalog";
-import "@pnp/sp/regional-settings/web";
-import "@pnp/sp/clientside-pages";
-import "@pnp/sp/security";
-import { INavNodeInfo } from "@pnp/sp/navigation/types.js";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/content-types/web";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/navigation/web";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import "@bpa-solutions/pnp-sp/site-groups/web";
+import "@bpa-solutions/pnp-sp/folders/web";
+import "@bpa-solutions/pnp-sp/files/web";
+import "@bpa-solutions/pnp-sp/user-custom-actions/web";
+import "@bpa-solutions/pnp-sp/related-items/web";
+import "@bpa-solutions/pnp-sp/fields/web";
+import "@bpa-solutions/pnp-sp/features/web";
+import "@bpa-solutions/pnp-sp/hubsites/web";
+import "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/regional-settings/web";
+import "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/security";
+import { INavNodeInfo } from "@bpa-solutions/pnp-sp/navigation/types.js";
 import testSPInvokables from "../test-invokable-props.js";
-import { Web } from "@pnp/sp/webs";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
 
 describe("Webs", function () {
 

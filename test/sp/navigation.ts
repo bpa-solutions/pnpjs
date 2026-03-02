@@ -1,8 +1,8 @@
 import { expect } from "chai";
-import "@pnp/sp/navigation";
-import "@pnp/sp/webs";
-import { INavigationNodes } from "@pnp/sp/navigation";
-import { getRandomString } from "@pnp/core";
+import "@bpa-solutions/pnp-sp/navigation";
+import "@bpa-solutions/pnp-sp/webs";
+import { INavigationNodes } from "@bpa-solutions/pnp-sp/navigation";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 
 describe("Navigation Service", function () {
 

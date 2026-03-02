@@ -1,12 +1,12 @@
-# @pnp/sp/site-scripts
+# @bpa-solutions/pnp-sp/site-scripts
 
 [![Selective Imports Banner](https://img.shields.io/badge/Selective%20Imports-informational.svg)](../concepts/selective-imports.md)
 
 ## Create a new site script
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-scripts";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-scripts";
 
 const sp = spfi(...);
 
@@ -30,8 +30,8 @@ console.log(siteScript.Title);
 ## Retrieval
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-scripts";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-scripts";
 
 const sp = spfi(...);
 
@@ -47,8 +47,8 @@ console.log(siteScript.Title);
 ## Update and delete
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-scripts";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-scripts";
 
 const sp = spfi(...);
 
@@ -63,8 +63,8 @@ await sp.siteScripts.deleteSiteScript("884ed56b-1aab-4653-95cf-4be0bfa5ef0a");
 ## Get site script from a list
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-scripts";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-scripts";
 
 const sp = spfi(...);
 
@@ -78,8 +78,8 @@ const ss2 = await sp.web.lists.getByTitle("mylist").getSiteScript();
 ## Get site script from a web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-scripts";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-scripts";
 
 const extractInfo = {
     IncludeBranding: true,
@@ -99,8 +99,8 @@ const ss2 = await sp.web.getSiteScript(extractInfo);
 ## Execute Site Script Action
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-scripts";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-scripts";
 
 const sp = spfi(...);
 
@@ -112,8 +112,8 @@ const ss = await sp.siteScripts.executeSiteScriptAction(siteScript);
 ### Execute site script for a specific web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { SiteScripts } "@pnp/sp/site-scripts";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { SiteScripts } "@bpa-solutions/pnp-sp/site-scripts";
 
 const siteScript = "your site script action...";
 

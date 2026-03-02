@@ -1,5 +1,5 @@
-import { body } from "@pnp/queryable";
-import { _SPInstance, defaultPath, spPost, IResourcePath, spInvokableFactory } from "@pnp/sp";
+import { body } from "@bpa-solutions/pnp-queryable";
+import { _SPInstance, defaultPath, spPost, IResourcePath, spInvokableFactory } from "@bpa-solutions/pnp-sp";
 import {
     IGetExternalUsersResults,
     IImportProfilePropertiesJobInfo,

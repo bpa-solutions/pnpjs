@@ -1,4 +1,4 @@
-# @pnp/sp/fields
+# @bpa-solutions/pnp-sp/fields
 
 Fields in SharePoint can be applied to both webs and lists. When referencing a webs' fields you are effectively looking at site columns which are common fields that can be utilized in any list/library in the site. When referencing a lists' fields you are looking at the fields only associated to that particular list.
 
@@ -11,11 +11,11 @@ Fields in SharePoint can be applied to both webs and lists. When referencing a w
 Gets a field from the collection by id (guid). Note that the library will handle a guid formatted with curly braces (i.e. '{03b05ff4-d95d-45ed-841d-3855f77a2483}') as well as without curly braces (i.e. '03b05ff4-d95d-45ed-841d-3855f77a2483'). The Id parameter is also case insensitive.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IField, IFieldInfo } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IField, IFieldInfo } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/fields";
 
 // set up sp root object
 const sp = spfi(...);
@@ -36,11 +36,11 @@ console.log(r.Title);
 You can also get a field from the collection by title.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IField, IFieldInfo } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists"
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IField, IFieldInfo } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists"
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 // get the field with the title 'Author' for web
@@ -60,11 +60,11 @@ console.log(r.Id);
 You can also get a field from the collection regardless of if the string is the fields internal name or title which can be different.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IField, IFieldInfo } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists"
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IField, IFieldInfo } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists"
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 // get the field with the internal name 'ModifiedBy' for web
@@ -84,12 +84,12 @@ console.log(r.Id);
 Create a new field by defining an XML schema that assigns all the properties for the field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IField, IFieldAddResult } from "@pnp/sp/fields/types";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IField, IFieldAddResult } from "@bpa-solutions/pnp-sp/fields/types";
 
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -113,11 +113,11 @@ console.log(r.Id);
 Use the add method to create a new field where you define the field type
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IField, IFieldAddResult, FieldTypes } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IField, IFieldAddResult, FieldTypes } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -138,11 +138,11 @@ console.log(r.Id);
 Use the createFieldAsXml method to add a site field to a list.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IFieldAddResult, FieldTypes } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IFieldAddResult, FieldTypes } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -160,11 +160,11 @@ console.log(r.data.Id);
 Use the addText method to create a new text field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IFieldAddResult, FieldTypes } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IFieldAddResult, FieldTypes } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -185,11 +185,11 @@ console.log(r.Id);
 Use the addCalculated method to create a new calculated field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { DateTimeFieldFormatType, FieldTypes } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { DateTimeFieldFormatType, FieldTypes } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -210,11 +210,11 @@ console.log(r.Id);
 Use the addDateTime method to create a new date/time field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { DateTimeFieldFormatType, CalendarType, DateTimeFieldFriendlyFormatType } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { DateTimeFieldFormatType, CalendarType, DateTimeFieldFriendlyFormatType } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -235,10 +235,10 @@ console.log(r.Id);
 Use the addCurrency method to create a new currency field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -259,11 +259,11 @@ console.log(r.Id);
 Use the addImageField method to create a new image field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IFieldAddResult, FieldTypes } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IFieldAddResult, FieldTypes } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -285,10 +285,10 @@ Use the addMultilineText method to create a new multi-line text field.
 >For Enhanced Rich Text mode, see the next section.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -309,10 +309,10 @@ console.log(r.Id);
 The REST endpoint doesn't support setting the `RichTextMode` field therefore you will need to revert to Xml to create the field. The following is an example that will create a multi-line text field in Enhanced Rich Text mode.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -333,10 +333,10 @@ console.log(r.Id);
 Use the addNumber method to create a new number field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -357,11 +357,11 @@ console.log(r.Id);
 Use the addUrl method to create a new url field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { UrlFieldFormatType } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { UrlFieldFormatType } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -382,11 +382,11 @@ console.log(r.Id);
 Use the addUser method to create a new user field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { FieldUserSelectionMode } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { FieldUserSelectionMode } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -412,12 +412,12 @@ await fieldAddResult.field.update({ AllowMultipleValues: true }, "SP.FieldUser")
 Use the addLookup method to create a new lookup field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { FieldTypes } from "@pnp/sp/fields/types";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { FieldTypes } from "@bpa-solutions/pnp-sp/fields/types";
 
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -444,11 +444,11 @@ await fieldAddResult.field.update({ AllowMultipleValues: true }, "SP.FieldLookup
 Use the addChoice method to create a new choice field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ChoiceFieldFormatType } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ChoiceFieldFormatType } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -470,11 +470,11 @@ console.log(r.Id);
 Use the addMultiChoice method to create a new multi-choice field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ChoiceFieldFormatType } from "@pnp/sp/fields/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ChoiceFieldFormatType } from "@bpa-solutions/pnp-sp/fields/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -496,10 +496,10 @@ console.log(r.Id);
 Use the addBoolean method to create a new boolean field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -520,10 +520,10 @@ console.log(r.Id);
 Use the addDependentLookupField method to create a new dependent lookup field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -546,10 +546,10 @@ console.log(r.Id);
 Use the addLocation method to create a new location field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -570,9 +570,9 @@ console.log(r.Id);
 Use the delete method to delete a field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -596,10 +596,10 @@ const result2 = await sp.web.lists.getByTitle("My List").fields.getByTitle("Temp
 Use the update method to update a field.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -618,10 +618,10 @@ const fieldUpdate2 = await sp.web.lists.getByTitle("My List").fields.getByTitle(
 Use the setShowInDisplayForm method to add a field to the display form.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -636,10 +636,10 @@ await sp.web.lists.getByTitle("My List").fields.getByTitle("My Field").setShowIn
 Use the setShowInEditForm method to add a field to the edit form.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -654,10 +654,10 @@ await sp.web.lists.getByTitle("My List").fields.getByTitle("My Field").setShowIn
 Use the setShowInNewForm method to add a field to the display form.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 

@@ -1,4 +1,4 @@
-# @pnp/sp/recycle-bin
+# @bpa-solutions/pnp-sp/recycle-bin
 
 The contents of the recycle bin.
 
@@ -9,9 +9,9 @@ The contents of the recycle bin.
 ### Work with the contents of the web's Recycle Bin
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/recycle-bin";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/recycle-bin";
 
 const sp = spfi(...);
 
@@ -46,9 +46,9 @@ await sp.web.recycleBin.deleteAllSecondStageItems();
 ### Work with the contents of the Second-stage (site) Recycle Bin
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import "@pnp/sp/recycle-bin";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/recycle-bin";
 
 const sp = spfi(...);
 

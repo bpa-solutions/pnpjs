@@ -1,7 +1,7 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import { combine, getRandomString } from "@pnp/core";
-import { ILimitedWebPartManager, WebPartsPersonalizationScope } from "@pnp/sp/presets/all";
+import "@bpa-solutions/pnp-sp/webs";
+import { combine, getRandomString } from "@bpa-solutions/pnp-core";
+import { ILimitedWebPartManager, WebPartsPersonalizationScope } from "@bpa-solutions/pnp-sp/presets/all";
 
 describe("WebParts", function () {
 

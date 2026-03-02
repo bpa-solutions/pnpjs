@@ -2083,8 +2083,8 @@
 </blockquote>
 <h2 id="isolated-runtimes">Isolated Runtimes<a class="headerlink" href="#isolated-runtimes" title="Permanent link">&para;</a></h2>
 <p>You can create an isolated runtime when using either the sp or graph libraries. What this does is create an isolated set of properties and behaviors specific to a given fluent chain. Have a look at this basic example below:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // create an isolated sp root instance
 const isolatedSP = await sp.createIsolated();
@@ -2110,9 +2110,9 @@ const web1 = await sp.web();
 const web2 = await isolatedSP.web();
 </code></pre>
 <p>This configuration is supplied to all objects down a given fluent chain:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // create an isolated sp root instance
 const isolatedSP = await sp.createIsolated();
@@ -2140,7 +2140,7 @@ const lists2 = await isolatedSP.web.lists();
 <h2 id="createisolated">createIsolated<a class="headerlink" href="#createisolated" title="Permanent link">&para;</a></h2>
 <p>The createIsolated method is used to establish the isolated runtime for a given instance of either the sp or graph libraries. Once created it is no longer connected to the default instance and if you have common settings that must be updated you would need to update them across each isolated instance, this is by design. Currently sp and graph createIsolated methods accept the same init, but we have broken them out to make thing clear. All properties of the init object are optional. Any properties provided will overwrite those cloned from the default if cloneGlobal is true. If cloneGlobal is false you start with an empty config containing only the <a href="#common-configuration">core defaults</a>.</p>
 <h3 id="spcreateisolated">sp.createIsolated<a class="headerlink" href="#spcreateisolated" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp, ISPConfiguration } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { sp, ISPConfiguration } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 // accept all the defaults, will clone any settings from sp
 const isolatedSP = await sp.createIsolated();
@@ -2258,8 +2258,8 @@ const isolatedGraph = await graph.createIsolated&lt;IGraphConfiguration&gt;({
 <h3 id="msal-with-node-multiple-site-requests">MSAL with Node multiple site requests<a class="headerlink" href="#msal-with-node-multiple-site-requests" title="Permanent link">&para;</a></h3>
 <p><em>MSAL Support Added in 2.0.11</em></p>
 <p>In this example you can see how you can setup the MSAL client once and then set a different baseUrl for an isolated instance. <a href="../../authentication/server-nodejs/">More information specific to setting up the MSAL client is available</a>.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 import { readFileSync } from &quot;fs&quot;;
 
 // read in our private key
@@ -2295,7 +2295,7 @@ const isolatedSP = await sp.createIsolated&lt;ISPConfigurationPart&gt;({
 <h3 id="node-multiple-site-requests">Node multiple site requests<a class="headerlink" href="#node-multiple-site-requests" title="Permanent link">&para;</a></h3>
 <p>Isolated configuration was most requested for scenarios in node where you need to access information in multiple sites. This example shows setting up the global configuration and then creating an isolated config with only the baseUrl updated.</p>
 <pre><code class="language-TypeScript">import { SPFetchClient } from &quot;@pnp/nodejs&quot;;
-import { ISPConfigurationPart, sp } from &quot;@pnp/sp&quot;;
+import { ISPConfigurationPart, sp } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 sp.setup({
   cacheExpirationIntervalMilliseconds: 1000,
@@ -2409,7 +2409,7 @@ await batch2.execute();
 <p>For more information on setting up in SPFx please see the <a href="../../authentication/">authentication section</a></p>
 <p>For more details on ie11 mode please see the <a href="../ie11-mode/">topic article</a></p>
 </blockquote>
-<pre><code class="language-ts">import { setup } from &quot;@pnp/core&quot;;
+<pre><code class="language-ts">import { setup } from &quot;@bpa-solutions/pnp-core&quot;;
 
 // called before other code
 setup({
@@ -2454,8 +2454,8 @@ setup({
 <blockquote>
 <p>There are many examples of using fetchClientFactory available in the <a href="../../authentication/">authentication section</a>.</p>
 </blockquote>
-<pre><code class="language-ts">import { sp } from &quot;@pnp/sp&quot;;
-import { SPFxAdalClient } from &quot;@pnp/core&quot;;
+<pre><code class="language-ts">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { SPFxAdalClient } from &quot;@bpa-solutions/pnp-core&quot;;
 
 // note you can still set the global configuration such as ie11 using the same object as 
 // the interface extends ILibraryConfiguration
@@ -2476,7 +2476,7 @@ sp.setup({
 </code></pre>
 <h3 id="sharepoint-framework">SharePoint Framework<a class="headerlink" href="#sharepoint-framework" title="Permanent link">&para;</a></h3>
 <p>You can optionally supply only the SPFx context to the sp configure method.</p>
-<pre><code class="language-ts">import { sp } from &quot;@pnp/sp&quot;;
+<pre><code class="language-ts">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 // in SPFx only
 sp.setup(this.context);
@@ -2550,9 +2550,9 @@ graph.setup(this.context);
 <blockquote>
 <p>In versions before 2.0.8 ISPConfigurationPart, IGraphConfigurationPart, and ILibraryConfiguration incorrectly were missing the "I" prefix. That was fixed in 2.0.8 - but note if you are using an older version of the library you'll need to use the old names. Everything else in the below example works as expected.</p>
 </blockquote>
-<pre><code class="language-ts">import { ISPConfigurationPart } from &quot;@pnp/sp&quot;;
+<pre><code class="language-ts">import { ISPConfigurationPart } from &quot;@bpa-solutions/pnp-sp&quot;;
 import { IGraphConfigurationPart } from &quot;@pnp/graph&quot;;
-import { ILibraryConfiguration, setup } from &quot;@pnp/core&quot;;
+import { ILibraryConfiguration, setup } from &quot;@bpa-solutions/pnp-core&quot;;
 
 // you could also include your custom configuration parts
 export interface AllConfig extends ILibraryConfiguration, ISPConfigurationPart, IGraphConfigurationPart { }

@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/user-custom-actions";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/user-custom-actions";
 
 describe("UserCustomActions", function () {
 

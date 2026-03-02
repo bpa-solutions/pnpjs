@@ -2221,7 +2221,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspuser-custom-actions">@pnp/sp/user-custom-actions<a class="headerlink" href="#pnpspuser-custom-actions" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspuser-custom-actions">@bpa-solutions/pnp-sp/user-custom-actions<a class="headerlink" href="#pnpspuser-custom-actions" title="Permanent link">&para;</a></h1>
 <p>Represents a custom action associated with a SharePoint list, web or site collection.</p>
 <h2 id="iusercustomactions">IUserCustomActions<a class="headerlink" href="#iusercustomactions" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2235,30 +2235,30 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { IUserCustomActions, IUserCustomAction } from "@pnp/sp/user-custom-actions";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { IUserCustomActions, IUserCustomAction } from "@bpa-solutions/pnp-sp/user-custom-actions";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/user-custom-actions";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/user-custom-actions";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, IUserCustomActions, IUserCustomAction } from "@pnp/sp/presents/all";</td>
+<td>import { sp, IUserCustomActions, IUserCustomAction } from "@bpa-solutions/pnp-sp/presents/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-a-collection-of-user-custom-actions-from-a-web">Get a collection of User Custom Actions from a web<a class="headerlink" href="#get-a-collection-of-user-custom-actions-from-a-web" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/user-custom-actions&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/user-custom-actions&quot;;
 
 const userCustomActions = sp.web.userCustomActions();
 </code></pre>
 <h3 id="add-a-new-user-custom-action">Add a new User Custom Action<a class="headerlink" href="#add-a-new-user-custom-action" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/user-custom-actions&quot;;
-import { IUserCustomActionAddResult } from '@pnp/sp/user-custom-actions';
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/user-custom-actions&quot;;
+import { IUserCustomActionAddResult } from '@bpa-solutions/pnp-sp/user-custom-actions';
 
 const newValues: TypedHash&lt;string&gt; = {
     &quot;Title&quot;: &quot;New Title&quot;,
@@ -2270,18 +2270,18 @@ const newValues: TypedHash&lt;string&gt; = {
 const response : IUserCustomActionAddResult = await sp.web.userCustomActions.add(newValues);
 </code></pre>
 <h3 id="get-a-user-custom-action-by-id">Get a User Custom Action by ID<a class="headerlink" href="#get-a-user-custom-action-by-id" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/user-custom-actions&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/user-custom-actions&quot;;
 
 const uca: IUserCustomAction = sp.web.userCustomActions.getById(&quot;00000000-0000-0000-0000-000000000000&quot;);
 
 const ucaData = await uca();
 </code></pre>
 <h3 id="clear-the-user-custom-action-collection">Clear the User Custom Action collection<a class="headerlink" href="#clear-the-user-custom-action-collection" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/user-custom-actions&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/user-custom-actions&quot;;
 
 // Site collection level
 await sp.site.userCustomActions.clear();
@@ -2294,10 +2294,10 @@ await sp.web.lists.getByTitle(&quot;Documents&quot;).userCustomActions.clear();
 </code></pre>
 <h2 id="iusercustomaction">IUserCustomAction<a class="headerlink" href="#iusercustomaction" title="Permanent link">&para;</a></h2>
 <h3 id="update-an-existing-user-custom-action">Update an existing User Custom Action<a class="headerlink" href="#update-an-existing-user-custom-action" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/user-custom-actions&quot;;
-import { IUserCustomActionUpdateResult } from '@pnp/sp/user-custom-actions';
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/user-custom-actions&quot;;
+import { IUserCustomActionUpdateResult } from '@bpa-solutions/pnp-sp/user-custom-actions';
 
 const uca = sp.web.userCustomActions.getById(&quot;00000000-0000-0000-0000-000000000000&quot;);
 

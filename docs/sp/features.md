@@ -1,4 +1,4 @@
-# @pnp/sp/features
+# @bpa-solutions/pnp-sp/features
 
 Features module provides method to get the details of activated features. And to activate/deactivate features scoped at Site Collection and Web.
 
@@ -13,7 +13,7 @@ Represents a collection of features. SharePoint Sites and Webs will have a colle
 Gets the information about a feature for the given GUID
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi(...);
 
@@ -30,7 +30,7 @@ const siteFeature = await sp.site.features.getById(siteFeatureId)();
 Adds (activates) a feature at the Site or Web level
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi(...);
 
@@ -46,7 +46,7 @@ res = await sp.web.features.add(webFeatureId, true);
 Removes and deactivates the specified feature from the SharePoint Site or Web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi(...);
 
@@ -68,9 +68,9 @@ Represents an instance of a SharePoint feature.
 Deactivates the specified feature from the SharePoint Site or Web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/features";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/features";
 
 const sp = spfi(...);
 

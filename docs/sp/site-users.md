@@ -1,4 +1,4 @@
-# @pnp/sp/site-users
+# @bpa-solutions/pnp-sp/site-users
 
 The site users module provides methods to manage users for a sharepoint site.
 
@@ -9,9 +9,9 @@ The site users module provides methods to manage users for a sharepoint site.
 ### Get all site user
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -21,9 +21,9 @@ const users = await sp.web.siteUsers();
 ### Get Current user
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -33,9 +33,9 @@ let user = await sp.web.currentUser();
 ### Get user by id
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -46,9 +46,9 @@ user = await sp.web.getUserById(id)();
 ### Ensure user
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -62,16 +62,16 @@ result = await sp.web.ensureUser(username);
 
 |Scenario|Import Statement|
 |--|--|
-|Selective 2|import "@pnp/sp/webs";<br />import "@pnp/sp/site-users";|
-|Selective 3|import "@pnp/sp/webs";<br />import "@pnp/sp/site-users/web";|
-|Preset: All|import {sp, SiteUsers, SiteUser } from "@pnp/sp/presets/all";|
+|Selective 2|import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-users";|
+|Selective 3|import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-users/web";|
+|Preset: All|import {sp, SiteUsers, SiteUser } from "@bpa-solutions/pnp-sp/presets/all";|
 
 ### Get user Groups
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -81,9 +81,9 @@ let groups = await sp.web.currentUser.groups();
 ### Add user to Site collection
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -96,9 +96,9 @@ await users.add(user.data.LoginName);
 ### Get user
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -115,9 +115,9 @@ const user = await sp.web.siteUsers.getByLoginName("userLoginName")();
 ### Update user
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 
@@ -129,9 +129,9 @@ await sp.web.currentUser.update(userProps);
 ### Remove user
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
 
 const sp = spfi(...);
 

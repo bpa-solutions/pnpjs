@@ -9,7 +9,7 @@ Allows you to read a response body as a nodejs PassThrough stream.
 ```TypeScript
 // by importing the the library the node specific extensions are automatically applied
 import { SPDefault } from "@pnp/nodejs";
-import { spfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi("https://something.com").using(SPDefault({
     // config
@@ -34,12 +34,12 @@ const txt = await new Promise<string>((resolve) => {
 
 ```TypeScript
 import { SPDefault } from "@pnp/nodejs";
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs/index.js";
-import "@pnp/sp/folders/web.js";
-import "@pnp/sp/folders/list.js";
-import "@pnp/sp/files/web.js";
-import "@pnp/sp/files/folder.js";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/folders/web.js";
+import "@bpa-solutions/pnp-sp/folders/list.js";
+import "@bpa-solutions/pnp-sp/files/web.js";
+import "@bpa-solutions/pnp-sp/files/folder.js";
 import * as fs from "fs";
 
 const sp = spfi("https://something.com").using(SPDefault({
@@ -58,12 +58,12 @@ await files.addChunked(name, stream, null, true);
 
 ```TypeScript
 import { SPDefault } from "@pnp/nodejs";
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs/index.js";
-import "@pnp/sp/folders/web.js";
-import "@pnp/sp/folders/list.js";
-import "@pnp/sp/files/web.js";
-import "@pnp/sp/files/folder.js";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs/index.js";
+import "@bpa-solutions/pnp-sp/folders/web.js";
+import "@bpa-solutions/pnp-sp/folders/list.js";
+import "@bpa-solutions/pnp-sp/files/web.js";
+import "@bpa-solutions/pnp-sp/files/folder.js";
 import * as fs from "fs";
 
 const sp = spfi("https://something.com").using(SPDefault({

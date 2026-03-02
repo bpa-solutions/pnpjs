@@ -1,4 +1,4 @@
-# @pnp/core : util
+# @bpa-solutions/pnp-core : util
 
 This module contains utility methods that you can import individually from the core library.
 
@@ -7,7 +7,7 @@ This module contains utility methods that you can import individually from the c
 Combines any number of paths, normalizing the slashes as required
 
 ```TypeScript
-import { combine } from "@pnp/core";
+import { combine } from "@bpa-solutions/pnp-core";
 
 // "https://microsoft.com/something/more"
 const paths = combine("https://microsoft.com", "something", "more");
@@ -21,7 +21,7 @@ const paths2 = combine("/also/", "/works", "with/", "/relative\\");
 Manipulates a date, please see the [Stack Overflow discussion](https://stackoverflow.com/questions/1197928/how-to-add-30-minutes-to-a-javascript-date-object) from which this method was taken.
 
 ```TypeScript
-import { dateAdd } from "@pnp/core";
+import { dateAdd } from "@bpa-solutions/pnp-core";
 
 const now = new Date();
 
@@ -33,7 +33,7 @@ const newData = dateAdd(now, "minute", 10);
 Creates a random guid, please see the [Stack Overflow discussion](https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript) from which this method was taken.
 
 ```TypeScript
-import { getGUID } from "@pnp/core";
+import { getGUID } from "@bpa-solutions/pnp-core";
 
 const newGUID = getGUID();
 ```
@@ -43,7 +43,7 @@ const newGUID = getGUID();
 Gets a random string containing the number of characters specified.
 
 ```TypeScript
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 
 const randomString = getRandomString(10);
 ```
@@ -53,8 +53,8 @@ const randomString = getRandomString(10);
 Shortcut for Object.hasOwnProperty. Determines if an object has a specified property.
 
 ```TypeScript
-import { HttpRequestError } from "@pnp/queryable";
-import { hOP } from "@pnp/core";
+import { HttpRequestError } from "@bpa-solutions/pnp-queryable";
+import { hOP } from "@bpa-solutions/pnp-core";
 
 export async function handleError(e: Error | HttpRequestError): Promise<void> {
 
@@ -73,7 +73,7 @@ export async function handleError(e: Error | HttpRequestError): Promise<void> {
 Shorthand for JSON.stringify
 
 ```TypeScript
-import { jsS } from "@pnp/core";
+import { jsS } from "@bpa-solutions/pnp-core";
 
 const s: string = jsS({ hello: "world" });
 ```
@@ -83,7 +83,7 @@ const s: string = jsS({ hello: "world" });
 Determines if a supplied variable represents an array.
 
 ```TypeScript
-import { isArray } from "@pnp/core";
+import { isArray } from "@bpa-solutions/pnp-core";
 
 const x = [1, 2, 3];
 
@@ -99,7 +99,7 @@ if (isArray(x)){
 Determines if a supplied variable represents a function.
 
 ```TypeScript
-import { isFunc } from "@pnp/core";
+import { isFunc } from "@bpa-solutions/pnp-core";
 
 public testFunction() {
     console.log("test function");
@@ -117,7 +117,7 @@ if (isFunc(testFunction)){
 Determines if a supplied url is absolute, returning true; otherwise returns false.
 
 ```TypeScript
-import { isUrlAbsolute } from "@pnp/core";
+import { isUrlAbsolute } from "@bpa-solutions/pnp-core";
 
 const webPath = 'https://{tenant}.sharepoint.com/sites/dev/';
 
@@ -133,7 +133,7 @@ if (isUrlAbsolute(webPath)){
 Determines if an object is defined and not null.
 
 ```TypeScript
-import { objectDefinedNotNull } from "@pnp/core";
+import { objectDefinedNotNull } from "@bpa-solutions/pnp-core";
 
 const obj = {
     prop: 1
@@ -151,7 +151,7 @@ if (objectDefinedNotNull(obj)){
 Determines if a supplied string is null or empty.
 
 ```TypeScript
-import { stringIsNullOrEmpty } from "@pnp/core";
+import { stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 
 const x: string = "hello";
 
@@ -169,7 +169,7 @@ Gets a (mostly) unique hashcode for a specified string.
 > Taken from: [https://stackoverflow.com/questions/6122571/simple-non-secure-hash-function-for-javascript](https://stackoverflow.com/questions/6122571/simple-non-secure-hash-function-for-javascript)
 
 ```TypeScript
-import { getHashCode } from "@pnp/core";
+import { getHashCode } from "@bpa-solutions/pnp-core";
 
 const x: string = "hello";
 
@@ -181,7 +181,7 @@ const hash = getHashCode(x);
 Provides an awaitable delay specified in milliseconds.
 
 ```TypeScript
-import { delay } from "@pnp/core";
+import { delay } from "@bpa-solutions/pnp-core";
 
 // wait 1 second
 await delay(1000);

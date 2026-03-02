@@ -1,4 +1,4 @@
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 import { _Team } from "../teams/types.js";
 import { Photo, IPhoto } from "./types.js";
 

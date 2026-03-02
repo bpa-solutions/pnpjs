@@ -1,4 +1,4 @@
-import { addProp, body } from "@pnp/queryable";
+import { addProp, body } from "@bpa-solutions/pnp-queryable";
 import { graphPost } from "../operations.js";
 import { _ContentType } from "../content-types/types.js";
 import { Columns, IColumns,IColumn, _Columns } from "./types.js";

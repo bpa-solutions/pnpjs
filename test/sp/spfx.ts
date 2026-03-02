@@ -1,11 +1,11 @@
 // these tests are meant to simulate basic functionality in SPFx through node so we can validate we aren't breaking core library
 // functionality in SPFx added after #2347
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import { ISPFXContext, SPFI, spfi, SPFx } from "@pnp/sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import { ISPFXContext, SPFI, spfi, SPFx } from "@bpa-solutions/pnp-sp";
 import { NodeFetchWithRetry } from "@pnp/nodejs";
-import { CopyFrom, isArray } from "@pnp/core";
+import { CopyFrom, isArray } from "@bpa-solutions/pnp-core";
 
 describe("SPFx", function () {
 

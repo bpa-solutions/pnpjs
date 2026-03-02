@@ -1,10 +1,10 @@
 import { expect } from "chai";
-import { encodePath, ISPQueryable, spfi } from "@pnp/sp";
-import "@pnp/sp/navigation";
-import "@pnp/sp/webs";
-import "@pnp/sp/files";
-import "@pnp/sp/folders";
-import { Folders } from "@pnp/sp/folders";
+import { encodePath, ISPQueryable, spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/navigation";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/files";
+import "@bpa-solutions/pnp-sp/folders";
+import { Folders } from "@bpa-solutions/pnp-sp/folders";
 
 function getTestValue(query: ISPQueryable) {
 

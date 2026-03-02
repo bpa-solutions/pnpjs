@@ -2192,8 +2192,8 @@ class CustomSPHttpClient extends SPHttpClient {
 }
 </code></pre>
 <p>The final step is to register the custom client with the library so it is used instead of the default. For that we import the <code>registerCustomRequestClientFactory</code> function and call it before our request generating code. You can reset to the default client factory by passing <code>null</code> to this same function.</p>
-<pre><code class="language-ts">import { sp, registerCustomRequestClientFactory } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-ts">import { sp, registerCustomRequestClientFactory } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 registerCustomRequestClientFactory(() =&gt; new CustomSPHttpClient());
 
@@ -2211,7 +2211,7 @@ registerCustomRequestClientFactory(null);
 </code></pre>
 <h2 id="irequestclient-interface">IRequestClient Interface<a class="headerlink" href="#irequestclient-interface" title="Permanent link">&para;</a></h2>
 <p>If you want to 100% roll your own client you need to implement the below interface, found in common.</p>
-<pre><code class="language-ts">import { IRequestClient } from &quot;@pnp/core&quot;;
+<pre><code class="language-ts">import { IRequestClient } from &quot;@bpa-solutions/pnp-core&quot;;
 </code></pre>
 <pre><code class="language-ts">export interface IRequestClient {
     fetch(url: string, options?: IFetchOptions): Promise&lt;Response&gt;;

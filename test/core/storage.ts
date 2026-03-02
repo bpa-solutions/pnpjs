@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { PnPClientStorage } from "@pnp/core";
+import { PnPClientStorage } from "@bpa-solutions/pnp-core";
 
 describe("Storage", function () {
 

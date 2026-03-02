@@ -1,4 +1,4 @@
-# @pnp/sp/security
+# @bpa-solutions/pnp-sp/security
 
 There are four levels where you can break inheritance and assign security: Site, Web, List, Item. All four of these objects share a common set of methods. Because of this we are showing in the examples below usage of these methods for an IList instance, but they apply across all four securable objects. In addition to the shared methods, some types have unique methods which are listed below.
 
@@ -9,27 +9,27 @@ There are four levels where you can break inheritance and assign security: Site,
 Because the method are shared you can opt to import only the methods for one of the instances.
 
 ```TypeScript
-import "@pnp/sp/security/web";
-import "@pnp/sp/security/list";
-import "@pnp/sp/security/item";
+import "@bpa-solutions/pnp-sp/security/web";
+import "@bpa-solutions/pnp-sp/security/list";
+import "@bpa-solutions/pnp-sp/security/item";
 ```
 
 Possibly useful if you are trying to hyper-optimize for bundle size but it is just as easy to import the whole module:
 
 ```TypeScript
-import "@pnp/sp/security";
+import "@bpa-solutions/pnp-sp/security";
 ```
 
 ## Securable Methods
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/security/list";
-import "@pnp/sp/site-users/web";
-import { IList } from "@pnp/sp/lists";
-import { PermissionKind } from "@pnp/sp/security";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/security/list";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
+import { PermissionKind } from "@bpa-solutions/pnp-sp/security";
 
 const sp = spfi(...);
 
@@ -70,9 +70,9 @@ await list.resetRoleInheritance();
 ## Web Specific methods
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/security/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/security/web";
 
 const sp = spfi(...);
 
@@ -85,13 +85,13 @@ const defs = await sp.web.roleDefinitions();
 Allows you to list and manipulate the set of role assignments for the given securable. Again we show usage using list, but the examples apply to web and item as well.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/security/web";
-import "@pnp/sp/site-users/web";
-import { IList } from "@pnp/sp/lists";
-import { PermissionKind } from "@pnp/sp/security";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/security/web";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
+import { PermissionKind } from "@bpa-solutions/pnp-sp/security";
 
 const sp = spfi(...);
 
@@ -137,9 +137,9 @@ await list.roleAssignments.getById(ra.Id).delete();
 ## Role Definitions
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/security/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/security/web";
 
 const sp = spfi(...);
 
@@ -181,11 +181,11 @@ const res = sp.web.roleDefinitions.getById(5).update({ Name: "New Name" });
 In order to get a list of items that have unique permissions you have to specifically select the '' field and then filter on the client.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/security/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/security/items";
 
 const sp = spfi(...);
 

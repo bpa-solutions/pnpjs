@@ -2,11 +2,11 @@
     "extends": "../tsconfig.json",
     "include": [
         "./**/*.ts",
-        "../queryable/**/*.ts"
+        "../pnp-queryable/**/*.ts"
     ],
     "references": [
         {
-            "path": "../queryable/tsconfig.json"
+            "path": "../pnp-queryable/tsconfig.json"
         }
     ]
 }

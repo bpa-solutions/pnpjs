@@ -1,11 +1,11 @@
 import { expect } from "chai";
-import { getRandomString, combine, stringIsNullOrEmpty } from "@pnp/core";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users";
-import "@pnp/sp/clientside-pages";
-import "@pnp/sp/comments/clientside-page";
-import "@pnp/sp/files";
-import { ClientsidePageFromFile, ClientsideText, CreateClientsidePage, ClientsideWebpart, IClientsidePage, PromotedState } from "@pnp/sp/clientside-pages";
+import { getRandomString, combine, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users";
+import "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
+import "@bpa-solutions/pnp-sp/files";
+import { ClientsidePageFromFile, ClientsideText, CreateClientsidePage, ClientsideWebpart, IClientsidePage, PromotedState } from "@bpa-solutions/pnp-sp/clientside-pages";
 import { pnpTest } from "../pnp-test.js";
 
 describe("Clientside Pages", function () {

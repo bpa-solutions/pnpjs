@@ -19,6 +19,7 @@ export async function builder(version: string, config: BuildSchema): Promise<voi
         await runTasks("pre-build", config.preBuildTasks || [], version, config);
 
         log(`${colors.bgBlue(" ")} Processing build targets.`);
+        log(`${colors.bgBlue(" ")} FLUTE.`);
         // run build targets
         await build(version, config);
         log(`${colors.bgGreen(" ")} Processed build targets.`);

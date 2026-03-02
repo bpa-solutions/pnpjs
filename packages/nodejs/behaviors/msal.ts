@@ -1,6 +1,6 @@
 import { ConfidentialClientApplication, Configuration } from "@azure/msal-node";
-import { objectDefinedNotNull, TimelinePipe } from "@pnp/core";
-import { Queryable } from "@pnp/queryable";
+import { objectDefinedNotNull, TimelinePipe } from "@bpa-solutions/pnp-core";
+import { Queryable } from "@bpa-solutions/pnp-queryable";
 
 export function MSAL(config: Configuration, scopes: string[] = ["https://graph.microsoft.com/.default"]): TimelinePipe<Queryable> {
 

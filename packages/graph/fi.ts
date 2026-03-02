@@ -1,4 +1,4 @@
-import { TimelinePipe } from "@pnp/core";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
 import { GraphQueryable, IGraphInvokableFactory, IGraphQueryable, GraphInit } from "./graphqueryable.js";
 
 export class GraphFI {

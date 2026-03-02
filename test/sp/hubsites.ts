@@ -1,7 +1,7 @@
 import { expect } from "chai";
-import "@pnp/sp/sites";
-import "@pnp/sp/hubsites";
-import { spfi } from "@pnp/sp";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/hubsites";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 describe("Hubsites", function () {
 

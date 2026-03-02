@@ -10,11 +10,11 @@ The following example shows how to configure the SPFI or GraphFI object using th
 
 ```TypeScript
 import { DefaultAzureCredential } from "@azure/identity";
-import { spfi } from "@pnp/sp";
-import { graphfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { graphfi } from "@bpa-solutions/pnp-sp";
 import { SPDefault, GraphDefault } from "@pnp/nodejs";
 import { AzureIdentity } from "@pnp/azidjsclient";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 import "@pnp/graph/me";
 
 const credential = new DefaultAzureCredential();

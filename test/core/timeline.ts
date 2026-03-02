@@ -1,4 +1,4 @@
-import { Timeline, asyncReduce } from "@pnp/core";
+import { Timeline, asyncReduce } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
 
 const TestingMoments = {

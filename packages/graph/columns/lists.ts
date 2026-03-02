@@ -1,4 +1,4 @@
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 import { _List } from "../lists/types.js";
 import { addColumn, IColumnAddResult } from "./addColumns.js";
 import { Columns, IColumns, _Columns } from "./types.js";

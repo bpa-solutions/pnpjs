@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import "@pnp/sp/search";
-import { SearchQueryBuilder } from "@pnp/sp/search";
+import "@bpa-solutions/pnp-sp/search";
+import { SearchQueryBuilder } from "@bpa-solutions/pnp-sp/search";
 
 // we skip these tests due to app level permissions not being able to use search
 describe.skip("Search", function () {

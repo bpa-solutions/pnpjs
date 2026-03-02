@@ -1,4 +1,4 @@
-# @pnp/sp/site-designs
+# @bpa-solutions/pnp-sp/site-designs
 
 You can create site designs to provide reusable lists, themes, layouts, pages, or custom actions so that your users can quickly build new SharePoint sites with the features they need.
 Check out [SharePoint site design and site script overview](https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview) for more information.
@@ -10,8 +10,8 @@ Check out [SharePoint site design and site script overview](https://docs.microso
 ## Create a new site design
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-designs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-designs";
 
 const sp = spfi(...);
 
@@ -28,8 +28,8 @@ console.log(siteDesign.Title);
 ## Applying a site design to a site
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-designs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-designs";
 
 const sp = spfi(...);
 
@@ -43,8 +43,8 @@ const task = await sp.web.addSiteDesignTask("75b9d8fe-4381-45d9-88c6-b03f483ae6a
 ## Retrieval
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-designs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-designs";
 
 const sp = spfi(...);
 
@@ -60,8 +60,8 @@ console.log(siteDesign.Title);
 ## Update and delete
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-designs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-designs";
 
 const sp = spfi(...);
 
@@ -75,8 +75,8 @@ await sp.siteDesigns.deleteSiteDesign("75b9d8fe-4381-45d9-88c6-b03f483ae6a8");
 ## Setting Rights/Permissions
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-designs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-designs";
 
 const sp = spfi(...);
 
@@ -98,8 +98,8 @@ await sp.siteDesigns.revokeSiteDesignRights("75b9d8fe-4381-45d9-88c6-b03f483ae6a
 ## Get a history of site designs that have run on a web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/site-designs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/site-designs";
 
 const sp = spfi(...);
 

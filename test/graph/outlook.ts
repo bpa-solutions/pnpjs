@@ -2,7 +2,7 @@ import { expect } from "chai";
 import "@pnp/graph/users";
 import "@pnp/graph/outlook";
 import { OutlookCategory } from "@microsoft/microsoft-graph-types";
-import { getRandomString, stringIsNullOrEmpty } from "@pnp/core";
+import { getRandomString, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import getValidUser from "./utilities/getValidUser.js";
 
 describe("Outlook", function () {

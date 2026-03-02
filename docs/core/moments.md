@@ -1,4 +1,4 @@
-# @pnp/core : moments
+# @bpa-solutions/pnp-core : moments
 
 Moments are the name we use to describe the steps executed during a timeline lifecycle. They are defined on a plain object by a series of functions with the general form:
 
@@ -87,7 +87,7 @@ You a already familiar with `broadcast` which passes the emited args to all subs
 Creates a moment that passes the emited args to all subscribed observers. Takes a single type parameter defining the observer signature and always returns void. Is not async.
 
 ```TypeScript
-import { broadcast } from "@pnp/core";
+import { broadcast } from "@bpa-solutions/pnp-core";
 
 // can have any method signature you want that returns void, "this" will always be set
 type BroadcastObserver = (this: Timeline<any>, message: string) => void;
@@ -108,7 +108,7 @@ obj.emit.example("Hello");
 Creates a moment that executes each observer asynchronously, awaiting the result and passes the returned arguments as the arguments to the next observer. This is very much like the redux pattern taking the arguments as the state which each observer may modify then returning a new state.
 
 ```TypeScript
-import { asyncReduce } from "@pnp/core";
+import { asyncReduce } from "@bpa-solutions/pnp-core";
 
 // can have any method signature you want, so long as it is async and returns a tuple matching in order the arguments, "this" will always be set
 type AsyncReduceObserver = (this: Timeline<any>, arg1: string, arg2: number) => Promise<[string, number]>;
@@ -138,7 +138,7 @@ Creates a moment where the first registered observer is used to asynchronously e
 This is used by us to execute web requets, but would also serve to represent any async request such as a database read, file read, or provisioning step.
 
 ```TypeScript
-import { request } from "@pnp/core";
+import { request } from "@bpa-solutions/pnp-core";
 
 // can have any method signature you want, "this" will always be set
 type RequestObserver = (this: Timeline<any>, arg1: string, arg2: number) => Promise<string>;

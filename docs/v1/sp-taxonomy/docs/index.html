@@ -1735,17 +1735,17 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp-taxonomy/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpsp-taxonomy">@pnp/sp-taxonomy<a class="headerlink" href="#pnpsp-taxonomy" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsp-taxonomy">@bpa-solutions/pnp-sp-taxonomy<a class="headerlink" href="#pnpsp-taxonomy" title="Permanent link">&para;</a></h1>
 <p><a href="https://badge.fury.io/js/%40pnp%2Fsp-taxonomy"><img alt="npm version" src="https://badge.fury.io/js/%40pnp%2Fsp-taxonomy.svg" /></a></p>
 <p>This module provides a fluent interface for working with the SharePoint term store. It does not rely on SP.taxonomy.js or other dependencies outside the @pnp scope. It is designed to function in a similar manner and present a similar feel to the other data retrieval libraries. It works by calling the "/_vti_bin/client.svc/ProcessQuery" endpoint.</p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>You will need to install the @pnp/sp-taxonomy package as well as the packages it requires to run.</p>
-<p><code>npm install @pnp/logging @pnp/core @pnp/queryable @pnp/sp @pnp/sp-taxonomy @pnp/sp-clientsvc --save</code></p>
+<p>You will need to install the @bpa-solutions/pnp-sp-taxonomy package as well as the packages it requires to run.</p>
+<p><code>npm install @pnp/logging @bpa-solutions/pnp-core @bpa-solutions/pnp-queryable @bpa-solutions/pnp-sp @bpa-solutions/pnp-sp-taxonomy @bpa-solutions/pnp-sp-clientsvc --save</code></p>
 <h2 id="root-object">Root Object<a class="headerlink" href="#root-object" title="Permanent link">&para;</a></h2>
 <p>All fluent taxonomy operations originate from the Taxonomy object. You can access it in several ways.</p>
 <h3 id="import-existing-instance">Import existing instance<a class="headerlink" href="#import-existing-instance" title="Permanent link">&para;</a></h3>
 <p>This method will grab an existing instance of the Taxonomy class and allow you to immediately chain additional methods.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="nx">await</span> <span class="nx">taxonomy</span><span class="p">.</span><span class="nx">termStores</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </pre></div>
@@ -1753,7 +1753,7 @@
 
 <h3 id="import-class-and-create-instance">Import class and create instance<a class="headerlink" href="#import-class-and-create-instance" title="Permanent link">&para;</a></h3>
 <p>You can also import the Taxonomy class and create a new instance. This useful in those cases where you want to work with taxonomy in another web than the current web.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Session</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Session</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">taxonomy</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="s2">&quot;https://mytenant.sharepoint.com/sites/dev&quot;</span><span class="p">);</span>
 
@@ -1762,9 +1762,9 @@
 
 
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<p>Because the sp-taxonomy library uses the same @pnp/queryable request pipeline as the other libraries you can call the setup method with the same options used for the @pnp/sp library. The setup method is provided as shorthand and avoids the need to import anything from @pnp/sp if you do not need to. A call to this setup method is equivilent to calling the sp.setup method and the configuration is shared between the libraries within your application.</p>
-<p>In the below example all requests for the @pnp/sp-taxonomy library <em>and</em> the @pnp/sp library will be routed through the specified SPFetchClient. Sharing the configuration like this handles the most common scenario of working on the same web easily. You can set other values here as well such as baseUrl and they will be respected by both libraries.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<p>Because the sp-taxonomy library uses the same @bpa-solutions/pnp-queryable request pipeline as the other libraries you can call the setup method with the same options used for the @bpa-solutions/pnp-sp library. The setup method is provided as shorthand and avoids the need to import anything from @bpa-solutions/pnp-sp if you do not need to. A call to this setup method is equivilent to calling the sp.setup method and the configuration is shared between the libraries within your application.</p>
+<p>In the below example all requests for the @bpa-solutions/pnp-sp-taxonomy library <em>and</em> the @bpa-solutions/pnp-sp library will be routed through the specified SPFetchClient. Sharing the configuration like this handles the most common scenario of working on the same web easily. You can set other values here as well such as baseUrl and they will be respected by both libraries.</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">SPFetchClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/nodejs&quot;</span><span class="p">;</span>
 
 <span class="c1">// example for setting up the node client using setup method</span>
@@ -1792,7 +1792,7 @@
 </ul>
 <h2 id="uml">UML<a class="headerlink" href="#uml" title="Permanent link">&para;</a></h2>
 <p><img alt="Graphical UML diagram" src="../../documentation/img/pnpjs-sp-taxonomy-uml.svg" /></p>
-<p>Graphical UML diagram of @pnp/sp-taxonomy. Right-click the diagram and open in new tab if it is too small.</p>
+<p>Graphical UML diagram of @bpa-solutions/pnp-sp-taxonomy. Right-click the diagram and open in new tab if it is too small.</p>
                 
                   
                 

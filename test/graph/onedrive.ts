@@ -4,7 +4,7 @@ import * as fs from "fs";
 import findupSync from "findup-sync";
 import "@pnp/graph/users";
 import "@pnp/graph/onedrive";
-import { getRandomString, stringIsNullOrEmpty } from "@pnp/core";
+import { getRandomString, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import { IItemOptions } from "@pnp/graph/onedrive/types";
 
 // give ourselves a single reference to the projectRoot

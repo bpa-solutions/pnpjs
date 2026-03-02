@@ -3,7 +3,7 @@ import "@pnp/graph/users";
 import "@pnp/graph/groups";
 import "@pnp/graph/directory-objects";
 import { GroupType } from "@pnp/graph/groups";
-import { getRandomString, getGUID, stringIsNullOrEmpty } from "@pnp/core";
+import { getRandomString, getGUID, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import getValidUser from "./utilities/getValidUser.js";
 
 describe("Directory Objects", function () {

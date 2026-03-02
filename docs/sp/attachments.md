@@ -1,17 +1,17 @@
-# @pnp/sp/attachments
+# @bpa-solutions/pnp-sp/attachments
 
 The ability to attach file to list items allows users to track documents outside of a document library. You can use the PnP JS Core library to work with attachments as outlined below.
 
 ## Get attachments
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IAttachmentInfo } from "@pnp/sp/attachments";
-import { IItem } from "@pnp/sp/items/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IAttachmentInfo } from "@bpa-solutions/pnp-sp/attachments";
+import { IItem } from "@bpa-solutions/pnp-sp/items/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
 
 const sp = spfi(...);
 
@@ -34,12 +34,12 @@ You can add an attachment to a list item using the add method. This method takes
 ![Batching Not Supported Banner](https://img.shields.io/badge/Batching%20Not%20Supported-important.svg)
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IItem } from "@pnp/sp/items";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IItem } from "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
 
 const sp = spfi(...);
 
@@ -53,12 +53,12 @@ await item.attachmentFiles.add("file2.txt", "Here is my content");
 You can read the content of an attachment as a string, Blob, ArrayBuffer, or json using the methods supplied.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IItem } from "@pnp/sp/items/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IItem } from "@bpa-solutions/pnp-sp/items/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
 
 const sp = spfi(...);
 
@@ -82,12 +82,12 @@ You can also update the content of an attachment. This API is limited compared t
 ![Batching Not Supported Banner](https://img.shields.io/badge/Batching%20Not%20Supported-important.svg)
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IItem } from "@pnp/sp/items/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IItem } from "@bpa-solutions/pnp-sp/items/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
 
 const sp = spfi(...);
 
@@ -99,12 +99,12 @@ await item.attachmentFiles.getByName("file2.txt").setContent("My new content!!!"
 ## Delete Attachment
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IItem } from "@pnp/sp/items/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IItem } from "@bpa-solutions/pnp-sp/items/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
 
 const sp = spfi(...);
 
@@ -118,12 +118,12 @@ await item.attachmentFiles.getByName("file2.txt").delete();
 Delete the attachment and send it to recycle bin
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IItem } from "@pnp/sp/items/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IItem } from "@bpa-solutions/pnp-sp/items/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
 
 const sp = spfi(...);
 
@@ -137,12 +137,12 @@ await item.attachmentFiles.getByName("file2.txt").recycle();
 Delete multiple attachments and send them to recycle bin
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IList } from "@pnp/sp/lists/types";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items";
-import "@pnp/sp/attachments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IList } from "@bpa-solutions/pnp-sp/lists/types";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/attachments";
 
 const sp = spfi(...);
 

@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@pnp/sp": "^3.0.0-v3nightly.20211018",
+    "@bpa-solutions/pnp-sp": "^3.0.0-v3nightly.20211018",
     "@pnp/graph": "^3.0.0-v3nightly.20211018",
     "@pnp/nodejs": "^3.0.0-v3nightly.20211018"
   },

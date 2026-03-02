@@ -1,4 +1,4 @@
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 import { Invitation as IInvitationType } from "@microsoft/microsoft-graph-types";
 import { _GraphQueryableCollection, graphInvokableFactory } from "../graphqueryable.js";
 import { defaultPath } from "../decorators.js";

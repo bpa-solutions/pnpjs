@@ -8,7 +8,7 @@ The latest published version is [![npm version](https://badge.fury.io/js/%40pnp%
 
 Central to everything PnPjs builds on with utility methods, Timeline, the behavior plumbing, and the extendable framework.
 
-`npm install @pnp/core --save`
+`npm install @bpa-solutions/pnp-core --save`
 
 ## Graph
 
@@ -38,16 +38,16 @@ Provides functionality enabling the @pnp libraries within nodejs, including exte
 
 Extending Timeline this package provides the base functionality to create web requests in a fluent manner. It defines the available moments to which observers are subscribed for building the request.
 
-`npm install @pnp/queryable --save`
+`npm install @bpa-solutions/pnp-queryable --save`
 
 ## SP
 
 This package provides a fluent SDK for calling SharePoint.
 
-`npm install @pnp/sp --save`
+`npm install @bpa-solutions/pnp-sp --save`
 
 ## SP-Admin
 
 This package provides a fluent SDK for calling SharePoint tenant admin APIs
 
-`npm install @pnp/sp-admin --save`
+`npm install @bpa-solutions/pnp-sp-admin --save`

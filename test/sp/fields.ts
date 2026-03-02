@@ -1,8 +1,8 @@
 import { expect } from "chai";
-import "@pnp/sp/sites";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/fields";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/fields";
 import {
     DateTimeFieldFormatType,
     FieldTypes,
@@ -11,8 +11,8 @@ import {
     UrlFieldFormatType,
     FieldUserSelectionMode,
     ChoiceFieldFormatType,
-} from "@pnp/sp/fields";
-import { getRandomString, getGUID } from "@pnp/core";
+} from "@bpa-solutions/pnp-sp/fields";
+import { getRandomString, getGUID } from "@bpa-solutions/pnp-core";
 
 
 describe("Fields", function () {

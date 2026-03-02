@@ -11,6 +11,7 @@ import { packager } from "../src/packager.js";
 import { publisher } from "../src/publisher.js";
 import importJSON from "../src/lib/importJSON.js";
 
+
 const args: any = yargs(hideBin(process.argv)).argv;
 
 const packagePath = join(cwd(), 'package.json');
@@ -27,7 +28,7 @@ BuildSystem.prepare({}, function (env) {
         if (typeof env.configPath === "undefined" || env.configPath === null || env.configPath === "") {
             throw Error("No config file found.");
         }
-
+        
         const configs: { default: ConfigCollection } = await import("file://" + env.configPath);
         const pkg: { version: string } = importJSON(packagePath);
 

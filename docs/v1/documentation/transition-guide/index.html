@@ -1806,8 +1806,8 @@ feedback on how we can improve out guidance.</p>
 dependencies between the packages to do this. With each release we will release all packages so that the version numbers move in lock-step, making it easy to ensure
 you are working with compatible versions. One thing to keep in mind with peer dependencies is that they are not automatically installed. The advantage is you
 will only have one copy of each library in your project.</p>
-<p>Installing peer dependencies is easy, you can specify each of the packages in a single line, here we are installing everything required to use the @pnp/sp package.</p>
-<div class="codehilite"><pre><span></span>npm i @pnp/logging @pnp/core @pnp/queryable @pnp/sp
+<p>Installing peer dependencies is easy, you can specify each of the packages in a single line, here we are installing everything required to use the @bpa-solutions/pnp-sp package.</p>
+<div class="codehilite"><pre><span></span>npm i @pnp/logging @bpa-solutions/pnp-core @bpa-solutions/pnp-queryable @bpa-solutions/pnp-sp
 </pre></div>
 
 
@@ -1833,12 +1833,12 @@ the same set of imports, but one is done via sp-pnp-js and the other using the @
   <span class="nx">FunctionListener</span>
 <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/logging&quot;</span><span class="p">;</span>
 
-<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">Util</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/core&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">Util</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-core&quot;</span><span class="p">;</span>
 
 <span class="kr">import</span> <span class="p">{</span>
   <span class="nx">sp</span><span class="p">,</span>
   <span class="nx">Web</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 </pre></div>
 
 
@@ -1875,13 +1875,13 @@ the new format is shown below.</p>
 
 
 <h2 id="httpclient-renamed">HttpClient Renamed<a class="headerlink" href="#httpclient-renamed" title="Permanent link">&para;</a></h2>
-<p>If you used HttpClient from sp-pnp-js it was renamed to SPHttpClient. A transition to @pnp/sp assumes replacement of:</p>
+<p>If you used HttpClient from sp-pnp-js it was renamed to SPHttpClient. A transition to @bpa-solutions/pnp-sp assumes replacement of:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">HttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;sp-pnp-js&#39;</span><span class="p">;</span>
 </pre></div>
 
 
 <p>to the following import statement:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">SPHttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@pnp/sp&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">SPHttpClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@bpa-solutions/pnp-sp&#39;</span><span class="p">;</span>
 </pre></div>
                 
                   

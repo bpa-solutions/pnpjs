@@ -1,4 +1,4 @@
-# @pnp/sp/subscriptions
+# @bpa-solutions/pnp-sp/subscriptions
 
 Webhooks on a SharePoint list are used to notify any change in the list, to other applications using a push model. This module provides methods to add, update or delete webhooks on a particular SharePoint list or library.
 
@@ -11,12 +11,12 @@ Webhooks on a SharePoint list are used to notify any change in the list, to othe
 Using this library, you can add a webhook to a specified list within the SharePoint site.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
 
-import { Subscriptions, ISubscriptions} from "@pnp/sp/subscriptions";
-import "@pnp/sp/subscriptions/list";
+import { Subscriptions, ISubscriptions} from "@bpa-solutions/pnp-sp/subscriptions";
+import "@bpa-solutions/pnp-sp/subscriptions/list";
 
 const sp = spfi(...);
 
@@ -35,10 +35,10 @@ var res = await sp.web.lists.getByTitle("Documents").subscriptions.add(notificat
 Read all the webhooks' details which are associated to the list
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/subscriptions";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/subscriptions";
 
 const sp = spfi(...);
 
@@ -53,16 +53,16 @@ This interface provides the methods for managing a particular webhook.
 
 | Scenario    | Import Statement                                                                                                                                                                                                                                        |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Selective   | import "@pnp/sp/webs";<br />import "@pnp/sp/lists";<br />import { Subscriptions, ISubscriptions, Subscription, ISubscription} from "@pnp/sp/subscriptions";<br />import "@pnp/sp/subscriptions/list" |
-| Preset: All | import { sp, Webs, IWebs, Lists, ILists, Subscriptions, ISubscriptions, Subscription, ISubscription } from "@pnp/sp/presets/all";                                                                                                                       |
+| Selective   | import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/lists";<br />import { Subscriptions, ISubscriptions, Subscription, ISubscription} from "@bpa-solutions/pnp-sp/subscriptions";<br />import "@bpa-solutions/pnp-sp/subscriptions/list" |
+| Preset: All | import { sp, Webs, IWebs, Lists, ILists, Subscriptions, ISubscriptions, Subscription, ISubscription } from "@bpa-solutions/pnp-sp/presets/all";                                                                                                                       |
 
 ### Managing a webhook
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/subscriptions";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/subscriptions";
 
 const sp = spfi(...);
 

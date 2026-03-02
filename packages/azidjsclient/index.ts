@@ -1,5 +1,5 @@
-import { PnPClientStorage, getHashCode } from "@pnp/core/index.js";
-import { Queryable } from "@pnp/queryable/index.js";
+import { PnPClientStorage, getHashCode } from "@bpa-solutions/pnp-core/index.js";
+import { Queryable } from "@bpa-solutions/pnp-queryable/index.js";
 import {
     AccessToken,
     AuthorizationCodeCredential,

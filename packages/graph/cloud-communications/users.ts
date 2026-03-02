@@ -1,5 +1,5 @@
 
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 import { _User } from "../users/types.js";
 import { Presence, IPresence } from "./types.js";
 

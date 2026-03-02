@@ -12,7 +12,7 @@ import {
     jsS,
     hOP,
     getHashCode,
-} from "@pnp/core";
+} from "@bpa-solutions/pnp-core";
 
 // tslint:disable:no-unused-expression
 

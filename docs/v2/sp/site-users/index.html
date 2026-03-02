@@ -2291,7 +2291,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspsite-users">@pnp/sp/site-users<a class="headerlink" href="#pnpspsite-users" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsite-users">@bpa-solutions/pnp-sp/site-users<a class="headerlink" href="#pnpspsite-users" title="Permanent link">&para;</a></h1>
 <p>The site users module provides methods to manage users for a sharepoint site.</p>
 <h2 id="isiteusers">ISiteUsers<a class="headerlink" href="#isiteusers" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2305,44 +2305,44 @@
 <tbody>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-users";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-users";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-users/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-users/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import {sp, SiteUsers } from "@pnp/sp/presets/all";</td>
+<td>import {sp, SiteUsers } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-all-site-user">Get all site user<a class="headerlink" href="#get-all-site-user" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 const users = await sp.web.siteUsers();
 </code></pre>
 <h3 id="get-current-user">Get Current user<a class="headerlink" href="#get-current-user" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 let user = await sp.web.currentUser();
 </code></pre>
 <h3 id="get-user-by-id">Get user by id<a class="headerlink" href="#get-user-by-id" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 const id = 6;
 user = await sp.web.getUserById(id);
 </code></pre>
 <h3 id="ensure-user">Ensure user<a class="headerlink" href="#ensure-user" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 const username = &quot;usernames@microsoft.com&quot;;
 result = await sp.web.ensureUser(username);
@@ -2359,29 +2359,29 @@ result = await sp.web.ensureUser(username);
 <tbody>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-users";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-users";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/site-users/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-users/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import {sp, SiteUsers, SiteUser } from "@pnp/sp/presets/all";</td>
+<td>import {sp, SiteUsers, SiteUser } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-user-groups">Get user Groups<a class="headerlink" href="#get-user-groups" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 let groups = await sp.web.currentUser.groups();
 </code></pre>
 <h3 id="add-user-to-site-collection">Add user to Site collection<a class="headerlink" href="#add-user-to-site-collection" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 const user = await sp.web.ensureUser(&quot;userLoginname&quot;)
 const users = await sp.web.siteUsers;
@@ -2389,9 +2389,9 @@ const users = await sp.web.siteUsers;
 await users.add(user.data.LoginName);
 </code></pre>
 <h3 id="get-user">Get user<a class="headerlink" href="#get-user" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 // get user object by id
 const user = await sp.web.siteUsers.getById(6);
@@ -2403,18 +2403,18 @@ const user = await sp.web.siteUsers.getByEmail(&quot;user@mail.com&quot;);
 const user = await sp.web.siteUsers.getByLoginName(&quot;userLoginName&quot;);
 </code></pre>
 <h3 id="update-user">Update user<a class="headerlink" href="#update-user" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 let userProps = await sp.web.currentUser();
 userProps.Title = &quot;New title&quot;;
 await sp.web.currentUser.update(userProps);
 </code></pre>
 <h3 id="remove-user">Remove user<a class="headerlink" href="#remove-user" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/site-users/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-users/web&quot;;
 
 // remove user by id
 await sp.web.siteUsers.removeById(6);

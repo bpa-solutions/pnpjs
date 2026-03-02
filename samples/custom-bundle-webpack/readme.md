@@ -5,7 +5,7 @@ This project is an example for starting a custom bundle project using rollup.
 ## Steps
 
 1. Create a new project using `npm init` and add a blank index.ts file.
-2. Install the following packages: `npm install ts-loader typescript webpack webpack-cli @pnp/sp@beta --save-dev`  
+2. Install the following packages: `npm install ts-loader typescript webpack webpack-cli @bpa-solutions/pnp-sp@beta --save-dev`  
     - you could add other packages and create a rollup of all your third party code in a single place   
 3. Create a webpack.config.js file in the project root and copy this content:
     ```JavaScript
@@ -40,30 +40,30 @@ This project is an example for starting a custom bundle project using rollup.
 1. Add the following to the index.ts file. This will control what is exported from your custom library and is where you would make changes to include exactly what you need for your project.
     ```TypeScript
     // ** import the ambient augmentation
-    import "@pnp/sp/src/webs";
-    import "@pnp/sp/src/lists/web";
-    import "@pnp/sp/src/items/list";
+    import "@bpa-solutions/pnp-sp/src/webs";
+    import "@bpa-solutions/pnp-sp/src/lists/web";
+    import "@bpa-solutions/pnp-sp/src/items/list";
 
     export {
         IWeb,
         Web,
         IWebs,
         Webs,
-    } from "@pnp/sp/src/webs";
+    } from "@bpa-solutions/pnp-sp/src/webs";
 
     export {
         ILists,
         List,
         IList,
         Lists,
-    } from "@pnp/sp/src/lists";
+    } from "@bpa-solutions/pnp-sp/src/lists";
 
     export {
         IItems,
         IItem,
         Item,
         Items,
-    } from "@pnp/sp/src/items";
+    } from "@bpa-solutions/pnp-sp/src/items";
 
     // export only a subset of the sp lib root
     export {
@@ -71,7 +71,7 @@ This project is an example for starting a custom bundle project using rollup.
         spGet,
         spPost,
         extractWebUrl,
-    } from "@pnp/sp";
+    } from "@bpa-solutions/pnp-sp";
     ```
 2. Add a tsconfig.json file in the root of the project, this will control the behavior of the rollup plugin. You should edit it as needed to support your needs, but thsi is a good basic starter file.
     ```JSON

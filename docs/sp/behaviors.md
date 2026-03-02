@@ -1,14 +1,14 @@
-# @pnp/sp : behaviors
+# @bpa-solutions/pnp-sp : behaviors
 
-The article describes the behaviors exported by the `@pnp/sp` library. Please also see available behaviors in [@pnp/core](../core/behaviors.md), [@pnp/queryable](../queryable/behaviors.md), [@pnp/graph](../graph/behaviors.md), and [@pnp/nodejs](../nodejs/behaviors.md).
+The article describes the behaviors exported by the `@bpa-solutions/pnp-sp` library. Please also see available behaviors in [@bpa-solutions/pnp-core](../core/behaviors.md), [@bpa-solutions/pnp-queryable](../queryable/behaviors.md), [@pnp/graph](../graph/behaviors.md), and [@pnp/nodejs](../nodejs/behaviors.md).
 
 ## DefaultInit
 
 The `DefaultInit` behavior, is a composed behavior which includes Telemetry, RejectOnError, and ResolveOnData. Additionally, it sets the cache and credentials properties of the RequestInit.
 
 ```TypeScript
-import { spfi, DefaultInit } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi, DefaultInit } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using(DefaultInit());
 
@@ -20,8 +20,8 @@ await sp.web();
 The `DefaultHeaders` behavior uses InjectHeaders to set the Accept, Content-Type, and User-Agent headers.
 
 ```TypeScript
-import { spfi, DefaultHeaders } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi, DefaultHeaders } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using(DefaultHeaders());
 
@@ -37,8 +37,8 @@ The `RequestDigest` behavior ensures that the "X-RequestDigest" header is includ
 Optionally you can provide a function to supply your own digests. The logic followed by the behavior is to check the cache, run a hook if provided, and finally make a request to "/_api/contextinfo" for the value.
 
 ```TypeScript
-import { spfi, RequestDigest } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi, RequestDigest } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using(RequestDigest());
 
@@ -48,9 +48,9 @@ await sp.web();
 With a hook:
 
 ```TypeScript
-import { dateAdd } from "@pnp/core";
-import { spfi, RequestDigest } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { dateAdd } from "@bpa-solutions/pnp-core";
+import { spfi, RequestDigest } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using(RequestDigest((url, init) => {
 
@@ -77,8 +77,8 @@ The baseUrl prop can be used to configure a fallback when making urls absolute.
 You should set a baseUrl as shown below.
 
 ```TypeScript
-import { spfi, SPBrowser } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi, SPBrowser } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 // you should use the baseUrl value when working in a SPA to ensure it is always properly set for all requests
 const sp = spfi().using(SPBrowser({ baseUrl: "https://tenant.sharepoint.com/sites/dev" }));
@@ -91,8 +91,8 @@ await sp.web();
 This behavior is designed to work closely with SPFx. The only parameter is the current SPFx Context. `SPFx` is a composed behavior including DefaultHeaders, DefaultInit, BrowserFetchWithRetry, DefaultParse, and RequestDigest. A hook is supplied to RequestDigest that will attempt to use any existing legacyPageContext formDigestValue it can find, otherwise defaults to the base [RequestDigest](#requestdigest) behavior. It also sets a pre handler to ensure the url is absolute, using the SPFx context's pageContext.web.absoluteUrl as the base.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 // this.context represents the context object within an SPFx webpart, application customizer, or ACE.
 const sp = spfi(...).using(SPFx(this.context));
@@ -104,7 +104,7 @@ Note that both the sp and graph libraries export an SPFx behavior. They are uniq
 
 ```TypeScript
 import { GraphFI, graphfi, SPFx as graphSPFx } from '@pnp/graph'
-import { SPFI, spfi, SPFx as spSPFx } from '@pnp/sp'
+import { SPFI, spfi, SPFx as spSPFx } from '@bpa-solutions/pnp-sp'
 
 const sp = spfi().using(spSPFx(this.context));
 const graph = graphfi().using(graphSPFx(this.context));
@@ -117,8 +117,8 @@ _Added in 3.12_
 Allows you to include the SharePoint Framework application token in requests. This behavior is include within the SPFx behavior, but is available separately should you wish to compose it into your own behaviors.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 // this.context represents the context object within an SPFx webpart, application customizer, or ACE.
 const sp = spfi(...).using(SPFxToken(this.context));
@@ -133,8 +133,8 @@ This behavior helps provide usage statistics to us about the number of requests 
 > You can always opt out of the telemetry by creating your own default behaviors and leaving it out. However, we encourgage you to include it as it helps us understand usage and impact of the work.
 
 ```TypeScript
-import { spfi, Telemetry } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi, Telemetry } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using(Telemetry());
 

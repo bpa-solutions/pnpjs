@@ -1,4 +1,4 @@
-# @pnp/sp/regional-settings
+# @bpa-solutions/pnp-sp/regional-settings
 
 The regional settings module helps with managing dates and times across various timezones.
 
@@ -7,9 +7,9 @@ The regional settings module helps with managing dates and times across various 
 [![Invokable Banner](https://img.shields.io/badge/Invokable-informational.svg)](../concepts/invokable.md) [![Selective Imports Banner](https://img.shields.io/badge/Selective%20Imports-informational.svg)](../concepts/selective-imports.md)  
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/regional-settings/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/regional-settings/web";
 
 const sp = spfi(...);
 
@@ -25,9 +25,9 @@ const s2 = await sp.web.regionalSettings.select("DecimalSeparator", "ListSeparat
 You can get a list of the installed languages in the web.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/regional-settings/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/regional-settings/web";
 
 const sp = spfi(...);
 
@@ -41,9 +41,9 @@ const s = await sp.web.regionalSettings.getInstalledLanguages();
 You can also get information about the selected timezone in the web and all of the defined timezones.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/regional-settings/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/regional-settings/web";
 
 const sp = spfi(...);
 
@@ -74,9 +74,9 @@ const s7 = await sp.web.regionalSettings.timeZone.utcToLocalTime(new Date(2019, 
 Some objects allow you to read language specific title information as shown in the following sample. This applies to Web, List, Field, Content Type, and User Custom Actions.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/regional-settings";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/regional-settings";
 
 const sp = spfi(...);
 
@@ -88,14 +88,14 @@ const sp = spfi(...);
 // - ContentType
 // - User Custom Action
 //
-// after you import @pnp/sp/regional-settings
+// after you import @bpa-solutions/pnp-sp/regional-settings
 //
 // you can also import just parts of the regional settings:
-// import "@pnp/sp/regional-settings/web";
-// import "@pnp/sp/regional-settings/list";
-// import "@pnp/sp/regional-settings/content-type";
-// import "@pnp/sp/regional-settings/field";
-// import "@pnp/sp/regional-settings/user-custom-actions";
+// import "@bpa-solutions/pnp-sp/regional-settings/web";
+// import "@bpa-solutions/pnp-sp/regional-settings/list";
+// import "@bpa-solutions/pnp-sp/regional-settings/content-type";
+// import "@bpa-solutions/pnp-sp/regional-settings/field";
+// import "@bpa-solutions/pnp-sp/regional-settings/user-custom-actions";
 
 
 const title = await sp.web.titleResource("en-us");

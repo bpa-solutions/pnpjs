@@ -357,15 +357,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-pnpcommon-setup" title="Using @pnp/core setup" class="md-nav__link">
-    Using @pnp/core setup
+  <a href="#using-pnpcommon-setup" title="Using @bpa-solutions/pnp-core setup" class="md-nav__link">
+    Using @bpa-solutions/pnp-core setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-pnpsp-setup" title="Using @pnp/sp setup" class="md-nav__link">
-    Using @pnp/sp setup
+  <a href="#using-pnpsp-setup" title="Using @bpa-solutions/pnp-sp setup" class="md-nav__link">
+    Using @bpa-solutions/pnp-sp setup
   </a>
   
 </li>
@@ -535,15 +535,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-pnpcommon-setup" title="Using @pnp/core setup" class="md-nav__link">
-    Using @pnp/core setup
+  <a href="#using-pnpcommon-setup" title="Using @bpa-solutions/pnp-core setup" class="md-nav__link">
+    Using @bpa-solutions/pnp-core setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-pnpsp-setup" title="Using @pnp/sp setup" class="md-nav__link">
-    Using @pnp/sp setup
+  <a href="#using-pnpsp-setup" title="Using @bpa-solutions/pnp-sp setup" class="md-nav__link">
+    Using @bpa-solutions/pnp-sp setup
   </a>
   
 </li>
@@ -1861,15 +1861,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-pnpcommon-setup" title="Using @pnp/core setup" class="md-nav__link">
-    Using @pnp/core setup
+  <a href="#using-pnpcommon-setup" title="Using @bpa-solutions/pnp-core setup" class="md-nav__link">
+    Using @bpa-solutions/pnp-core setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-pnpsp-setup" title="Using @pnp/sp setup" class="md-nav__link">
-    Using @pnp/sp setup
+  <a href="#using-pnpsp-setup" title="Using @bpa-solutions/pnp-sp setup" class="md-nav__link">
+    Using @bpa-solutions/pnp-sp setup
   </a>
   
 </li>
@@ -1966,10 +1966,10 @@ more than one package. All packages are released together eliminating version co
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
 <p>First you will need to install those libraries you want to use in your application. Here we will install the most frequently used packages. This step applies to any 
 environment or project.</p>
-<p><code>npm install @pnp/logging @pnp/core @pnp/queryable @pnp/sp @pnp/graph --save</code></p>
+<p><code>npm install @pnp/logging @bpa-solutions/pnp-core @bpa-solutions/pnp-queryable @bpa-solutions/pnp-sp @pnp/graph --save</code></p>
 <p>Next we can import and use the functionality within our application. The below is a very simple example, please see the individual package documentation
 for more details.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getRandomString</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/core&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getRandomString</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-core&quot;</span><span class="p">;</span>
 
 <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
@@ -1981,15 +1981,15 @@ for more details.</p>
 
 
 <h2 id="getting-started-with-sharepoint-framework">Getting Started with SharePoint Framework<a class="headerlink" href="#getting-started-with-sharepoint-framework" title="Permanent link">&para;</a></h2>
-<p>The @pnp/sp and @pnp/graph libraries are designed to work seamlessly within SharePoint Framework projects with a small amount of upfront configuration. If you are running in 2016 on-premises please <a href="../SPFx-On-Premesis-2016/">read this note</a> on a workaround for the included TypeScript version. If you are targetting SharePoint online you do not need to take any additional steps.</p>
+<p>The @bpa-solutions/pnp-sp and @pnp/graph libraries are designed to work seamlessly within SharePoint Framework projects with a small amount of upfront configuration. If you are running in 2016 on-premises please <a href="../SPFx-On-Premesis-2016/">read this note</a> on a workaround for the included TypeScript version. If you are targetting SharePoint online you do not need to take any additional steps.</p>
 <h3 id="establish-context">Establish Context<a class="headerlink" href="#establish-context" title="Permanent link">&para;</a></h3>
 <p>Because SharePoint Framework provides a local context to each component we need to set that context within the library. This allows us to determine request
 urls as well as use the SPFx HttpGraphClient within @pnp/graph. There are two ways to provide the spfx context to the library. Either through the setup method
-imported from @pnp/core or using the setup method on either the @pnp/sp or @pnp/graph main export. All three are shown below and are equivalent, meaning if
-you are already importing the sp variable from @pnp/sp or the graph variable from @pnp/graph you should use their setup method to reduce imports. </p>
+imported from @bpa-solutions/pnp-core or using the setup method on either the @bpa-solutions/pnp-sp or @pnp/graph main export. All three are shown below and are equivalent, meaning if
+you are already importing the sp variable from @bpa-solutions/pnp-sp or the graph variable from @pnp/graph you should use their setup method to reduce imports. </p>
 <p>The setup is always done in the onInit method to ensure it runs before your other lifecycle code. You can also set any other settings at this time.</p>
-<h4 id="using-pnpcommon-setup">Using @pnp/core setup<a class="headerlink" href="#using-pnpcommon-setup" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">setup</span> <span class="kr">as</span> <span class="nx">pnpSetup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/core&quot;</span><span class="p">;</span>
+<h4 id="using-pnpcommon-setup">Using @bpa-solutions/pnp-core setup<a class="headerlink" href="#using-pnpcommon-setup" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">setup</span> <span class="kr">as</span> <span class="nx">pnpSetup</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-core&quot;</span><span class="p">;</span>
 
 <span class="c1">// ...</span>
 
@@ -2009,8 +2009,8 @@ you are already importing the sp variable from @pnp/sp or the graph variable fro
 </pre></div>
 
 
-<h4 id="using-pnpsp-setup">Using @pnp/sp setup<a class="headerlink" href="#using-pnpsp-setup" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<h4 id="using-pnpsp-setup">Using @bpa-solutions/pnp-sp setup<a class="headerlink" href="#using-pnpsp-setup" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// ...</span>
 
@@ -2056,7 +2056,7 @@ you are already importing the sp variable from @pnp/sp or the graph variable fro
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ServiceKey</span><span class="p">,</span> <span class="nx">ServiceScope</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@microsoft/sp-core-library&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">PageContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@microsoft/sp-page-context&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">AadTokenProviderFactory</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@microsoft/sp-http&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="kr">interface</span> <span class="nx">ISampleService</span> <span class="p">{</span>
   <span class="nx">getLists</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
@@ -2101,13 +2101,13 @@ you are already importing the sp variable from @pnp/sp or the graph variable fro
 <p>Because peer dependencies are not installed automatically you will need to list out each package to install. Don't worry if you forget one you will get a message
 on the command line that a peer dependency is missing. Let's for example look at installing the required libraries to connect to SharePoint from nodejs. You can see
 <a href="https://github.com/pnp/pnpjs/blob/main/debug/launch/sp.ts">./debug/launch/sp.ts</a> for a live example.</p>
-<div class="codehilite"><pre><span></span>npm i @pnp/logging @pnp/core @pnp/queryable @pnp/sp @pnp/nodejs
+<div class="codehilite"><pre><span></span>npm i @pnp/logging @bpa-solutions/pnp-core @bpa-solutions/pnp-queryable @bpa-solutions/pnp-sp @pnp/nodejs
 </pre></div>
 
 
 <p>This will install the logging, common, odata, sp, and nodejs packages. You can read more about what each package does starting on the <a href="../packages/">packages</a> page.
 Once these are installed you need to import them into your project, to communicate with SharePoint from node we'll need the following imports:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">SPFetchClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/nodejs&quot;</span><span class="p">;</span>
 </pre></div>
 
@@ -2132,7 +2132,7 @@ Once these are installed you need to import them into your project, to communica
 <h2 id="connect-to-microsoft-graph-from-node">Connect to Microsoft Graph From Node<a class="headerlink" href="#connect-to-microsoft-graph-from-node" title="Permanent link">&para;</a></h2>
 <p>Similar to the above you can also make calls to the Graph api from node using the libraries. Again we start with installing the required resources. You can see
 <a href="https://github.com/pnp/pnpjs/blob/main/debug/launch/graph.ts">./debug/launch/graph.ts</a> for a live example.</p>
-<div class="codehilite"><pre><span></span>npm i @pnp/logging @pnp/core @pnp/queryable @pnp/graph @pnp/nodejs
+<div class="codehilite"><pre><span></span>npm i @pnp/logging @bpa-solutions/pnp-core @bpa-solutions/pnp-queryable @pnp/graph @pnp/nodejs
 </pre></div>
 
 
@@ -2164,7 +2164,7 @@ Once these are installed you need to import them into your project, to communica
 <p>Here we are setting the baseUrl via the sp.setup method. We are also setting the headers to use verbose mode, something you may have to do when
 working against unpatched versions of SharePoint 2013 as <a href="https://blogs.msdn.microsoft.com/patrickrodgers/2016/06/13/pnp-jscore-1-0-1/">discussed here</a>.
 This is optional for 2016 or SharePoint Online.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
   <span class="nx">sp</span><span class="o">:</span> <span class="p">{</span>
@@ -2181,7 +2181,7 @@ This is optional for 2016 or SharePoint Online.</p>
 
 <h3 id="create-web-instances-directly">Create Web instances directly<a class="headerlink" href="#create-web-instances-directly" title="Permanent link">&para;</a></h3>
 <p>Using this method you create the web directly with the url you want to use as the base.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">web</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web</span><span class="p">(</span><span class="s2">&quot;{Absolute SharePoint Web URL}&quot;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">w</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">web</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>

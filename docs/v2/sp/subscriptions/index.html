@@ -2193,7 +2193,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspsubscriptions">@pnp/sp/subscriptions<a class="headerlink" href="#pnpspsubscriptions" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsubscriptions">@bpa-solutions/pnp-sp/subscriptions<a class="headerlink" href="#pnpspsubscriptions" title="Permanent link">&para;</a></h1>
 <p>Webhooks on a SharePoint list are used to notify any change in the list, to other applications using a push model. This module provides methods to add, update or delete webhooks on a particular SharePoint list or library.</p>
 <h2 id="isubscriptions">ISubscriptions<a class="headerlink" href="#isubscriptions" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2207,22 +2207,22 @@
 <tbody>
 <tr>
 <td>Selective</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/lists";<br />import { Subscriptions, ISubscriptions} from "@pnp/sp/subscriptions";<br />import "@pnp/sp/subscriptions/list"</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/lists";<br />import { Subscriptions, ISubscriptions} from "@bpa-solutions/pnp-sp/subscriptions";<br />import "@bpa-solutions/pnp-sp/subscriptions/list"</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import {sp, Webs, IWebs, Lists, ILists, Subscriptions, ISubscriptions, Subscription, ISubscription} from "@pnp/sp/presets/all";</td>
+<td>import {sp, Webs, IWebs, Lists, ILists, Subscriptions, ISubscriptions, Subscription, ISubscription} from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="add-a-webhook">Add a webhook<a class="headerlink" href="#add-a-webhook" title="Permanent link">&para;</a></h3>
 <p>Using this library, you can add a webhook to a specified list within the SharePoint site.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
-import { Subscriptions, ISubscriptions} from &quot;@pnp/sp/subscriptions&quot;;
-import &quot;@pnp/sp/subscriptions/list&quot;;
+import { Subscriptions, ISubscriptions} from &quot;@bpa-solutions/pnp-sp/subscriptions&quot;;
+import &quot;@bpa-solutions/pnp-sp/subscriptions/list&quot;;
 
 // This is the URL which will be called by SharePoint when there is a change in the list
 const notificationUrl = &quot;&lt;notification-url&gt;&quot;;
@@ -2235,10 +2235,10 @@ var res = await sp.web.lists.getByTitle(&quot;Documents&quot;).subscriptions.add
 </code></pre>
 <h3 id="get-all-webhooks-added-to-a-list">Get all webhooks added to a list<a class="headerlink" href="#get-all-webhooks-added-to-a-list" title="Permanent link">&para;</a></h3>
 <p>Read all the webhooks' details which are associated to the list</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/subscriptions&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/subscriptions&quot;;
 
 const res = await sp.web.lists.getByTitle(&quot;Documents&quot;).subscriptions();
 </code></pre>
@@ -2255,19 +2255,19 @@ const res = await sp.web.lists.getByTitle(&quot;Documents&quot;).subscriptions()
 <tbody>
 <tr>
 <td>Selective</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br />import "@pnp/sp/lists";<br />import { Subscriptions, ISubscriptions, Subscription, ISubscription} from "@pnp/sp/subscriptions";<br />import "@pnp/sp/subscriptions/list"</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/lists";<br />import { Subscriptions, ISubscriptions, Subscription, ISubscription} from "@bpa-solutions/pnp-sp/subscriptions";<br />import "@bpa-solutions/pnp-sp/subscriptions/list"</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Webs, IWebs, Lists, ILists, Subscriptions, ISubscriptions, Subscription, ISubscription } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Webs, IWebs, Lists, ILists, Subscriptions, ISubscriptions, Subscription, ISubscription } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="managing-a-webhook">Managing a webhook<a class="headerlink" href="#managing-a-webhook" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/subscriptions&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/subscriptions&quot;;
 
 // Get details of a webhook based on its ID
 const webhookId = &quot;1f029e5c-16e4-4941-b46f-67895118763f&quot;;

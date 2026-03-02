@@ -1,6 +1,6 @@
 import { MSAL } from "@pnp/msaljsclient/index.js";
-import { spfi, SPBrowser } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi, SPBrowser } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 import { settings } from "../../settings.js";
 // import { graph } from "@pnp/graph/presets/all";
 

@@ -242,9 +242,9 @@ To allow seamless logging with v3 we have introduced the `PnPLogging` behavior. 
 
 ```TypeScript
 import { LogLevel, PnPLogging, Logger, ConsoleListener } from "@pnp/logging";
-import { spfi, SPFx } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
+import { spfi, SPFx } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
 
 // subscribe a listener
 Logger.subscribe(ConsoleListener());

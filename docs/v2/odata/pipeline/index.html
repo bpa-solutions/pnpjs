@@ -2141,8 +2141,8 @@
                   </a>
                 
                 
-                <h1 id="pnpqueryablepipeline">@pnp/queryable/pipeline<a class="headerlink" href="#pnpqueryablepipeline" title="Permanent link">&para;</a></h1>
-<p>All of the odata requests processed by @pnp/queryable pass through an extensible request pipeline. Each request is executed in a specific request context defined by the <code>RequestContext&lt;T&gt;</code> interface with the type parameter representing the type ultimately returned at the end a successful processing through the pipeline. Unless you are writing a pipeline method it is unlikely you will ever interact directly with the request pipeline.</p>
+                <h1 id="pnpqueryablepipeline">@bpa-solutions/pnp-queryable/pipeline<a class="headerlink" href="#pnpqueryablepipeline" title="Permanent link">&para;</a></h1>
+<p>All of the odata requests processed by @bpa-solutions/pnp-queryable pass through an extensible request pipeline. Each request is executed in a specific request context defined by the <code>RequestContext&lt;T&gt;</code> interface with the type parameter representing the type ultimately returned at the end a successful processing through the pipeline. Unless you are writing a pipeline method it is unlikely you will ever interact directly with the request pipeline.</p>
 <h2 id="interface-requestcontextt">interface <code>RequestContext&lt;T&gt;</code><a class="headerlink" href="#interface-requestcontextt" title="Permanent link">&para;</a></h2>
 <p>The interface that defines the context within which all requests are executed. Note that the pipeline methods to be executed are part of the context. This allows full control over the methods called during a request, and allows for the insertion of any custom methods required.</p>
 <pre><code class="language-TypeScript">interface RequestContext&lt;T&gt; {

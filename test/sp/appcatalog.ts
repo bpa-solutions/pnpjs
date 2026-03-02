@@ -1,10 +1,10 @@
 
-import { getRandomString, delay } from "@pnp/core";
+import { getRandomString, delay } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
-import { IAppCatalog } from "@pnp/sp/appcatalog";
-import "@pnp/sp/webs";
-import "@pnp/sp/appcatalog";
-import "@pnp/sp/lists";
+import { IAppCatalog } from "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/lists";
 import * as fs from "fs";
 import * as path from "path";
 import findupSync from "findup-sync";

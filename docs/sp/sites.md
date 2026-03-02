@@ -1,4 +1,4 @@
-# @pnp/sp/site - Site properties
+# @bpa-solutions/pnp-sp/site - Site properties
 
 Site collection are one of the fundamental entry points while working with SharePoint. Sites serve as container for webs, lists, features and other entity types.
 
@@ -7,9 +7,9 @@ Site collection are one of the fundamental entry points while working with Share
 Using the library, you can get the context information of the current site collection
 
 ```Typescript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import { IContextInfo } from "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import { IContextInfo } from "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -24,9 +24,9 @@ Using the library, you can get a list of the document libraries present in the a
 **Note:** Works only in SharePoint online
 
 ```Typescript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import { IDocumentLibraryInformation } from "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import { IDocumentLibraryInformation } from "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -43,8 +43,8 @@ docLibs.forEach((docLib: IDocumentLibraryInformation) => {
 Because this method is a POST request you can chain off it directly. You will get back the full web properties in the data property of the return object. You can also chain directly off the returned Web instance on the web property.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -62,8 +62,8 @@ const w2 = await w.web.select("Title")();
 Using the library, you can get the absolute web url by providing a page url
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -77,8 +77,8 @@ console.log(d); //https://tenant.sharepoint.com/sites/test
 There are two methods to access the root web. The first, using the rootWeb property, is best for directly accessing information about that web. If you want to chain multiple operations off of the web, better to use the getRootWeb method that will ensure the web instance is created using its own Url vs. "_api/sites/rootweb" which does not work for all operations.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -115,8 +115,8 @@ Creates a modern communication site.
 
 ```TypeScript
 
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -138,8 +138,8 @@ const result = await sp.site.createCommunicationSite(
 You may need to supply additional parameters such as WebTemplate, to do so please use the `createCommunicationSiteFromProps` method.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -176,8 +176,8 @@ Creates a modern team site backed by O365 group.
 
 ```TypeScript
 
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -201,8 +201,8 @@ console.log(d);
 You may need to supply additional parameters, to do so please use the `createModernTeamSiteFromProps` method.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -219,9 +219,9 @@ const result = await sp.site.createModernTeamSiteFromProps({
 Using the library, you can delete a specific site collection
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import { Site } from "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import { Site } from "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -239,8 +239,8 @@ await site2.delete();
 Using the library, you can check if a specific site collection exist or not on your tenant
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 
@@ -253,9 +253,9 @@ console.log(exists);
 ## Set the site logo
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sites";
-import {ISiteLogoProperties, SiteLogoAspect, SiteLogoType} from "@pnp/sp/sites";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sites";
+import {ISiteLogoProperties, SiteLogoAspect, SiteLogoType} from "@bpa-solutions/pnp-sp/sites";
 
 const sp = spfi(...);
 

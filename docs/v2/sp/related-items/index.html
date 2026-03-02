@@ -2197,18 +2197,18 @@
                   </a>
                 
                 
-                <h1 id="pnpsprelated-items">@pnp/sp/related-items<a class="headerlink" href="#pnpsprelated-items" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsprelated-items">@bpa-solutions/pnp-sp/related-items<a class="headerlink" href="#pnpsprelated-items" title="Permanent link">&para;</a></h1>
 <p>The related items API allows you to add related items to items within a task or workflow list. Related items need to be in the same site collection.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>Instead of copying this block of code into each sample, understand that each sample is meant to run with this supporting code to work.</p>
-<pre><code class="language-TypeScript">import { sp, extractWebUrl } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/related-items/web&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items/list&quot;;
-import &quot;@pnp/sp/files/list&quot;;
-import { IList } from &quot;@pnp/sp/lists&quot;;
-import { getRandomString } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { sp, extractWebUrl } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/related-items/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items/list&quot;;
+import &quot;@bpa-solutions/pnp-sp/files/list&quot;;
+import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import { getRandomString } from &quot;@bpa-solutions/pnp-core&quot;;
 
 // setup some lists (or just use existing ones this is just to show the complete process)
 // we need two lists to use for creating related items, they need to use template 107 (task list)
@@ -2256,7 +2256,7 @@ await sp.web.relatedItems.deleteSingleLink(sourceListName, sourceItem.Id, webUrl
 </code></pre>
 <h2 id="getrelateditems">getRelatedItems<a class="headerlink" href="#getrelateditems" title="Permanent link">&para;</a></h2>
 <p>Gets the related items for an item</p>
-<pre><code class="language-TypeScript">import { IRelatedItem } from &quot;@pnp/sp/related-items&quot;;
+<pre><code class="language-TypeScript">import { IRelatedItem } from &quot;@bpa-solutions/pnp-sp/related-items&quot;;
 
 const sourceItem = await sourceList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r =&gt; r.data);
 const targetItem = await targetList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r =&gt; r.data);
@@ -2285,7 +2285,7 @@ const items: IRelatedItem[] = await sp.web.relatedItems.getRelatedItems(sourceLi
 </code></pre>
 <h2 id="getpageonerelateditems">getPageOneRelatedItems<a class="headerlink" href="#getpageonerelateditems" title="Permanent link">&para;</a></h2>
 <p>Gets an abbreviated set of related items</p>
-<pre><code class="language-TypeScript">import { IRelatedItem } from &quot;@pnp/sp/related-items&quot;;
+<pre><code class="language-TypeScript">import { IRelatedItem } from &quot;@bpa-solutions/pnp-sp/related-items&quot;;
 
 const sourceItem = await sourceList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r =&gt; r.data);
 const targetItem = await targetList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r =&gt; r.data);

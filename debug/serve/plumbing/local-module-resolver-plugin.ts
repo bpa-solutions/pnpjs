@@ -17,7 +17,8 @@ export class LocalModuleResolverPlugin {
             .getHook("module")
             .tapAsync("LocalModuleResolverPlugin", (request: { request: string }, resolveContext, callback) => {
 
-                if (request.request.startsWith("./@pnp")) {
+                console.log(`LocalModuleResolverPlugin processing request ${request.request}`);
+                if (request.request.startsWith("./@pnp") || request.request.startsWith("./@bpa-solutions")) {
 
                     const resolvedPath = this.doResolve(request.request);
 
@@ -35,12 +36,15 @@ export class LocalModuleResolverPlugin {
 
     private doResolve(candidate: string): string {
 
+        console.log(`LocalModuleResolverPlugin (doResolve) resolving candidate ${candidate}`);
         // pick off the "./@pnp" from the front
         let resolvedPath = join(this.options.packageResolveBasePath, candidate.substring(6));
 
+        console.log(`LocalModuleResolverPlugin (doResolve) candidate ${candidate} resolved to ${resolvedPath}`);
+
         if (!existsSync(resolvedPath)) {
 
-            // let's try and stick a ".js" on the end for cases like "@pnp/sp/presets/all" and try again
+            // let's try and stick a ".js" on the end for cases like "@bpa-solutions/pnp-sp/presets/all" and try again
             resolvedPath = resolvedPath + ".js";
 
             if (!existsSync(resolvedPath)) {

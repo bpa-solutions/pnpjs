@@ -1,5 +1,5 @@
 import { Site } from "@microsoft/microsoft-graph-types";
-import { combine } from "@pnp/core";
+import { combine } from "@bpa-solutions/pnp-core";
 import { ISite } from "@pnp/graph/sites";
 import { Context, Suite } from "mocha";
 

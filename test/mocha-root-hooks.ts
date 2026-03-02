@@ -1,16 +1,16 @@
 import { getProcessArgs, IProcessArgs } from "./args.js";
 import { getSettings, ISettings } from "./load-settings.js";
 import { Context } from "mocha";
-import { extractWebUrl, SPFI, spfi } from "@pnp/sp";
+import { extractWebUrl, SPFI, spfi } from "@bpa-solutions/pnp-sp";
 import { graphfi, GraphFI } from "@pnp/graph";
 import { GraphDefault, SPDefault, NodeFetch } from "@pnp/nodejs";
-import { getGUID, delay } from "@pnp/core";
+import { getGUID, delay } from "@bpa-solutions/pnp-core";
 import { cleanUpAllSubsites } from "./clean-subsite.js";
 import * as chai from "chai";
 import chaiAsPromised from "chai-as-promised";
 import "mocha";
-import "@pnp/sp/webs";
-import { Web } from "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
 import { PnPLogging, ConsoleListener, Logger, LogLevel } from "@pnp/logging";
 import { disposeRecording, initRecording } from "./test-recording.js";
 

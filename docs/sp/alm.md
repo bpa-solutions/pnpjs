@@ -1,6 +1,6 @@
-# @pnp/sp/appcatalog
+# @bpa-solutions/pnp-sp/appcatalog
 
-The ALM api allows you to manage app installations both in the tenant app catalog and individual site app catalogs. Some of the methods are still in beta and as such may change in the future. This article outlines how to call this api using @pnp/sp. Remember all these actions are bound by permissions so it is likely most users will not have the rights to perform these ALM actions.
+The ALM api allows you to manage app installations both in the tenant app catalog and individual site app catalogs. Some of the methods are still in beta and as such may change in the future. This article outlines how to call this api using @bpa-solutions/pnp-sp. Remember all these actions are bound by permissions so it is likely most users will not have the rights to perform these ALM actions.
 
 ## Understanding the App Catalog Hierarchy
 
@@ -8,14 +8,14 @@ Before you begin provisioning applications it is important to understand the rel
 
 ## Referencing an App Catalog
 
-There are several ways using @pnp/sp to get a reference to an app catalog. These methods are to provide you the greatest amount of flexibility in gaining access to the app catalog. Ultimately each method produces an AppCatalog instance differentiated only by the web to which it points.
+There are several ways using @bpa-solutions/pnp-sp to get a reference to an app catalog. These methods are to provide you the greatest amount of flexibility in gaining access to the app catalog. Ultimately each method produces an AppCatalog instance differentiated only by the web to which it points.
 
 ### Get tenant app catalog
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/appcatalog";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -27,9 +27,9 @@ const availableApps = await sp.tenantAppcatalog();
 ### Get site collection AppCatalog
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/appcatalog";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/appcatalog";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -44,8 +44,8 @@ If you know the url of the site collection whose app catalog you want you can us
 > If a given site collection does not have an app catalog trying to access it will throw an error.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { Web } from '@pnp/sp/webs';
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { Web } from '@bpa-solutions/pnp-sp/webs';
 
 const sp = spfi(...);
 const web = Web([sp.web, "https://mytenant.sharepoint.com/sites/mysite"]);

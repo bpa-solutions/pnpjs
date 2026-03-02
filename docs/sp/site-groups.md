@@ -1,4 +1,4 @@
-# @pnp/sp/site-groups
+# @bpa-solutions/pnp-sp/site-groups
 
 The site groups module provides methods to manage groups for a sharepoint site.
 
@@ -9,9 +9,9 @@ The site groups module provides methods to manage groups for a sharepoint site.
 ### Get all site groups
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups/web";
 
 const sp = spfi(...);
 
@@ -24,9 +24,9 @@ const groups = await sp.web.siteGroups();
 You can get the associated Owner, Member and Visitor groups of a web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups/web";
 
 const sp = spfi(...);
 
@@ -44,9 +44,9 @@ const ownerGroup = await sp.web.associatedOwnerGroup();
 ### Create the default associated groups for a web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups/web";
 
 const sp = spfi(...);
 
@@ -67,9 +67,9 @@ await sp.web.createDefaultAssociatedGroups("PnP Site", owner1, copyRoleAssignmen
 ### Create a new site group
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups/web";
 
 const sp = spfi(...);
 
@@ -83,16 +83,16 @@ await sp.web.siteGroups.add({"Title":"new group name"});
 
 |Scenario|Import Statement|
 |--|--|
-|Selective 2|import "@pnp/sp/webs";<br />import "@pnp/sp/site-groups";|
-|Selective 3|import "@pnp/sp/webs";<br />import "@pnp/sp/site-groups/web";|
-|Preset: All|import {sp, SiteGroups, SiteGroup } from "@pnp/sp/presets/all";|
+|Selective 2|import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-groups";|
+|Selective 3|import "@bpa-solutions/pnp-sp/webs";<br />import "@bpa-solutions/pnp-sp/site-groups/web";|
+|Preset: All|import {sp, SiteGroups, SiteGroup } from "@bpa-solutions/pnp-sp/presets/all";|
 
 ### Getting and updating the groups of a sharepoint web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups";
 
 const sp = spfi(...);
 
@@ -117,9 +117,9 @@ await sp.web.siteGroups.removeByLoginName(groupName);
 ### Getting all users of a group
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups";
 
 const sp = spfi(...);
 
@@ -133,9 +133,9 @@ const users = await sp.web.siteGroups.getById(groupID).users();
 Unfortunately for now setting the owner of a group as another or same SharePoint group is currently unsupported in REST. Setting the owner as a user is supported.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups";
 
 const sp = spfi(...);
 

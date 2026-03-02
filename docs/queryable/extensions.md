@@ -21,9 +21,9 @@ This function is passed the current operation as the first argument, currently o
 Named extensions are designed to add or replace a single property or method, though you can register multiple using the same object. These extensions are defined by using an object which has the property/methods you want to override described. Registering named extensions globally will override that operation to all invokables.
 
 ```TypeScript
-import { extendFactory } from "@pnp/queryable";
-import { sp, List, Lists, IWeb, ILists, List, IList, Web } from "@pnp/sp/presets/all";
-import { escapeQueryStrValue } from "@pnp/sp/utils/escapeQueryStrValue";
+import { extendFactory } from "@bpa-solutions/pnp-queryable";
+import { sp, List, Lists, IWeb, ILists, List, IList, Web } from "@bpa-solutions/pnp-sp/presets/all";
+import { escapeQueryStrValue } from "@bpa-solutions/pnp-sp/utils/escapeQueryStrValue";
 
 // create a plain object with the props and methods we want to add/change
 const myExtensions = {
@@ -64,9 +64,9 @@ console.log(JSON.stringify(items.length, null, 2));
 You can also register a partial ProxyHandler implementation as an extension. You can implement one or more of the ProxyHandler methods as needed. Here we implement the same override of getByTitle globally. This is the most complicated method of creating an extension and assumes an understanding of how ProxyHandlers work.
 
 ```TypeScript
-import { extendFactory } from "@pnp/queryable";
-import { sp, Lists, IWeb, ILists, Web } from "@pnp/sp/presets/all";
-import { escapeQueryStrValue } from "@pnp/sp/utils/escapeSingleQuote";
+import { extendFactory } from "@bpa-solutions/pnp-queryable";
+import { sp, Lists, IWeb, ILists, Web } from "@bpa-solutions/pnp-sp/presets/all";
+import { escapeQueryStrValue } from "@bpa-solutions/pnp-sp/utils/escapeSingleQuote";
 
 const myExtensions = {
     get: (target, p: string | number | symbol, _receiver: any) => {
@@ -104,18 +104,18 @@ You can register Extensions on an invocable factory or on a per-object basis, an
 The pattern you will likely find most useful is the ability to extend an invocable factory. This will apply your extensions to all instances created with that factory, meaning all IWebs or ILists will have the extension methods. The example below shows how to add a property to IWeb as well as a method to IList.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import { IWeb, Web } from "@pnp/sp/webs";
-import { ILists, Lists } from "@pnp/sp/lists";
-import { extendFactory } from "@pnp/queryable";
-import { sp } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import { IWeb, Web } from "@bpa-solutions/pnp-sp/webs";
+import { ILists, Lists } from "@bpa-solutions/pnp-sp/lists";
+import { extendFactory } from "@bpa-solutions/pnp-queryable";
+import { sp } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi().using(...);
 
 // sets up the types correctly when importing across your application
-declare module "@pnp/sp/webs/types" {
+declare module "@bpa-solutions/pnp-sp/webs/types" {
 
     // we need to extend the interface
     interface IWeb {
@@ -124,7 +124,7 @@ declare module "@pnp/sp/webs/types" {
 }
 
 // sets up the types correctly when importing across your application
-declare module "@pnp/sp/lists/types" {
+declare module "@bpa-solutions/pnp-sp/lists/types" {
 
     // we need to extend the interface
     interface ILists {
@@ -167,8 +167,8 @@ You can also register Extensions on a single object instance, which is often the
 Here we show the same override operation of getByTitle on the lists collection, but safely only overriding the single instance.
 
 ``` TypeScript
-import { extendObj } from "@pnp/queryable";
-import { sp, List, ILists } from "@pnp/sp/presets/all";
+import { extendObj } from "@bpa-solutions/pnp-queryable";
+import { sp, List, ILists } from "@bpa-solutions/pnp-sp/presets/all";
 
 const myExtensions = {
     getByTitle: function (this: ILists, title: string) {
@@ -194,7 +194,7 @@ console.log(JSON.stringify(items.length, null, 2));
 Extensions are automatically enabled when you set an extension through any of the above outlined methods. You can disable and enable extensions on demand if needed.
 
 ```TypeScript
-import { enableExtensions, disableExtensions, clearGlobalExtensions } from "@pnp/queryable";
+import { enableExtensions, disableExtensions, clearGlobalExtensions } from "@bpa-solutions/pnp-queryable";
 
 // disable Extensions
 disableExtensions();

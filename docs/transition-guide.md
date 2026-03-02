@@ -61,8 +61,8 @@ We are seeing a significant number of people report an error when using this met
 which results when it hasn't been updated to use the version 3 convention. Please see the examples below to pick the one that most suits your codebase.
 
 ```TypeScript
-import { spfi, SPFx } from "@pnp/sp";
-import { Web } from "@pnp/sp/webs";
+import { spfi, SPFx } from "@bpa-solutions/pnp-sp";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
 
 const spWebA = spfi().using(SPFx(this.context));
 

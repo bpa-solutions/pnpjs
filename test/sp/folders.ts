@@ -1,12 +1,12 @@
 import { expect } from "chai";
-import "@pnp/sp/folders";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/sharing";
-import "@pnp/sp/site-users/web";
-import "@pnp/sp/files";
-import { getRandomString } from "@pnp/core";
-import { SharingLinkKind } from "@pnp/sp/sharing";
+import "@bpa-solutions/pnp-sp/folders";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import "@bpa-solutions/pnp-sp/files";
+import { getRandomString } from "@bpa-solutions/pnp-core";
+import { SharingLinkKind } from "@bpa-solutions/pnp-sp/sharing";
 
 import testSPInvokables from "../test-invokable-props.js";
 

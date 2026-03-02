@@ -1,5 +1,5 @@
 import { _GraphQueryableCollection, _GraphQueryableInstance, graphInvokableFactory } from "../graphqueryable.js";
-import { BlobParse, BufferParse } from "@pnp/queryable";
+import { BlobParse, BufferParse } from "@bpa-solutions/pnp-queryable";
 import { ProfilePhoto as IProfilePhotoType } from "@microsoft/microsoft-graph-types";
 import { defaultPath } from "../decorators.js";
 import { graphPatch } from "../operations.js";

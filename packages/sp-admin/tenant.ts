@@ -1,8 +1,8 @@
-// import { body } from "@pnp/queryable";
-import { body, BufferParse } from "@pnp/queryable";
-import { _SPInstance, defaultPath, spInvokableFactory, spPost } from "@pnp/sp";
-import { IRenderListDataParameters } from "@pnp/sp/lists/index.js";
-import { IHubSiteInfo } from "@pnp/sp/hubsites/index.js";
+// import { body } from "@bpa-solutions/pnp-queryable";
+import { body, BufferParse } from "@bpa-solutions/pnp-queryable";
+import { _SPInstance, defaultPath, spInvokableFactory, spPost } from "@bpa-solutions/pnp-sp";
+import { IRenderListDataParameters } from "@bpa-solutions/pnp-sp/lists/index.js";
+import { IHubSiteInfo } from "@bpa-solutions/pnp-sp/hubsites/index.js";
 import {
     IHomeSitesDetails,
     IPortalHealthStatus,

@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import "@pnp/sp/taxonomy";
-import { ITermSet } from "@pnp/sp/taxonomy";
+import "@bpa-solutions/pnp-sp/taxonomy";
+import { ITermSet } from "@bpa-solutions/pnp-sp/taxonomy";
 
 describe("Taxonomy", function () {
 

@@ -1,11 +1,11 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/security";
-import "@pnp/sp/site-users/web";
-import { IWeb } from "@pnp/sp/webs";
-import { IList } from "@pnp/sp/lists";
-import { PermissionKind } from "@pnp/sp/security";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/security";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { IWeb } from "@bpa-solutions/pnp-sp/webs";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
+import { PermissionKind } from "@bpa-solutions/pnp-sp/security";
 
 
 describe("Security", function () {

@@ -1594,12 +1594,12 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/sitedesigns.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspsitedesigns">@pnp/sp/sitedesigns<a class="headerlink" href="#pnpspsitedesigns" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsitedesigns">@bpa-solutions/pnp-sp/sitedesigns<a class="headerlink" href="#pnpspsitedesigns" title="Permanent link">&para;</a></h1>
 <p>You can create site designs to provide reusable lists, themes, layouts, pages, or custom actions so that your users can quickly build new SharePoint sites with the features they need.
 Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/site-design-overview">SharePoint site design and site script overview</a> for more information.</p>
 <h1 id="site-designs">Site Designs<a class="headerlink" href="#site-designs" title="Permanent link">&para;</a></h1>
 <h2 id="create-a-new-site-design">Create a new site design<a class="headerlink" href="#create-a-new-site-design" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// WebTemplate: 64 Team site template, 68 Communication site template</span>
 <span class="kr">const</span> <span class="nx">siteDesign</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteDesigns</span><span class="p">.</span><span class="nx">createSiteDesign</span><span class="p">({</span>
@@ -1613,7 +1613,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="applying-a-site-design-to-a-site">Applying a site design to a site<a class="headerlink" href="#applying-a-site-design-to-a-site" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// Limited to 30 actions in a site script, but runs synchronously</span>
 <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteDesigns</span><span class="p">.</span><span class="nx">applySiteDesign</span><span class="p">(</span><span class="s2">&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;</span><span class="p">,</span><span class="s2">&quot;https://contoso.sharepoint.com/sites/teamsite-pnpjs001&quot;</span><span class="p">);</span>
@@ -1624,7 +1624,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="retrieval">Retrieval<a class="headerlink" href="#retrieval" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// Retrieving all site designs</span>
 <span class="kr">const</span> <span class="nx">allSiteDesigns</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteDesigns</span><span class="p">.</span><span class="nx">getSiteDesigns</span><span class="p">();</span>
@@ -1637,7 +1637,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="update-and-delete">Update and delete<a class="headerlink" href="#update-and-delete" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// Update</span>
 <span class="kr">const</span> <span class="nx">updatedSiteDesign</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteDesigns</span><span class="p">.</span><span class="nx">updateSiteDesign</span><span class="p">({</span> <span class="nx">Id</span><span class="o">:</span> <span class="s2">&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;</span><span class="p">,</span> <span class="nx">Title</span><span class="o">:</span> <span class="s2">&quot;SiteDesignUpdatedTitle001&quot;</span> <span class="p">});</span>
@@ -1648,7 +1648,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="setting-rightspermissions">Setting Rights/Permissions<a class="headerlink" href="#setting-rightspermissions" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// Get</span>
 <span class="kr">const</span> <span class="nx">rights</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteDesigns</span><span class="p">.</span><span class="nx">getSiteDesignRights</span><span class="p">(</span><span class="s2">&quot;75b9d8fe-4381-45d9-88c6-b03f483ae6a8&quot;</span><span class="p">);</span>
@@ -1667,7 +1667,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="get-a-history-of-site-designs-that-have-run-on-a-web">Get a history of site designs that have run on a web<a class="headerlink" href="#get-a-history-of-site-designs-that-have-run-on-a-web" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">runs</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getSiteDesignRuns</span><span class="p">();</span>
 <span class="kr">const</span> <span class="nx">runs2</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteDesigns</span><span class="p">.</span><span class="nx">getSiteDesignRun</span><span class="p">(</span><span class="s2">&quot;https://TENANT.sharepoint.com/sites/mysite&quot;</span><span class="p">);</span>
@@ -1684,7 +1684,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 <h1 id="site-scripts">Site Scripts<a class="headerlink" href="#site-scripts" title="Permanent link">&para;</a></h1>
 <h2 id="create-a-new-site-script">Create a new site script<a class="headerlink" href="#create-a-new-site-script" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">sitescriptContent</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;$schema&quot;</span><span class="o">:</span> <span class="s2">&quot;schema.json&quot;</span><span class="p">,</span>
@@ -1705,7 +1705,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="retrieval_1">Retrieval<a class="headerlink" href="#retrieval_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// Retrieving all site scripts</span>
 <span class="kr">const</span> <span class="nx">allSiteScripts</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteScripts</span><span class="p">.</span><span class="nx">getSiteScripts</span><span class="p">();</span>
@@ -1718,7 +1718,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="update-and-delete_1">Update and delete<a class="headerlink" href="#update-and-delete_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// Update</span>
 <span class="kr">const</span> <span class="nx">updatedSiteScript</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteScripts</span><span class="p">.</span><span class="nx">updateSiteScript</span><span class="p">({</span> <span class="nx">Id</span><span class="o">:</span> <span class="s2">&quot;884ed56b-1aab-4653-95cf-4be0bfa5ef0a&quot;</span><span class="p">,</span> <span class="nx">Title</span><span class="o">:</span> <span class="s2">&quot;New Title&quot;</span> <span class="p">});</span>
@@ -1730,7 +1730,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="get-site-script-from-a-list">Get site script from a list<a class="headerlink" href="#get-site-script-from-a-list" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// Using the absolute URL of the list</span>
 <span class="kr">const</span> <span class="nx">ss</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">siteScripts</span><span class="p">.</span><span class="nx">getSiteScriptFromList</span><span class="p">(</span><span class="s2">&quot;https://TENANT.sharepoint.com/Lists/mylist&quot;</span><span class="p">);</span>
@@ -1741,7 +1741,7 @@ Check out <a href="https://docs.microsoft.com/en-us/sharepoint/dev/declarative-c
 
 
 <h2 id="get-site-script-from-a-web">Get site script from a web<a class="headerlink" href="#get-site-script-from-a-web" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">extractInfo</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">IncludeBranding</span>: <span class="kt">true</span><span class="p">,</span>

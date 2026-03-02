@@ -1,4 +1,4 @@
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 import {
     Event as IEventType,
     Calendar as ICalendarType,

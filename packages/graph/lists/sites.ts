@@ -1,4 +1,4 @@
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 import { _Site } from "../sites/types.js";
 import { Lists, ILists } from "./types.js";
 

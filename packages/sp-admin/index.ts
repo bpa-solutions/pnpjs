@@ -1,4 +1,4 @@
-import { SPFI, _SPQueryable, spInvokableFactory } from "@pnp/sp";
+import { SPFI, _SPQueryable, spInvokableFactory } from "@bpa-solutions/pnp-sp";
 import { IOffice365Tenant, Office365Tenant } from "./office-tenant.js";
 import { ITenantSiteProperties, TenantSiteProperties } from "./site-properties.js";
 import { ITenant, Tenant } from "./tenant.js";
@@ -6,7 +6,7 @@ import { ITenant, Tenant } from "./tenant.js";
 export * from "./types.js";
 export * from "./office-tenant.js";
 
-declare module "@pnp/sp/fi" {
+declare module "@bpa-solutions/pnp-sp/fi" {
     interface SPFI {
 
         /**

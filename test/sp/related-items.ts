@@ -1,12 +1,12 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/related-items/web";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items/list";
-import "@pnp/sp/folders/list";
-import "@pnp/sp/files/folder";
-import { IList } from "@pnp/sp/lists";
-import { getRandomString } from "@pnp/core";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/related-items/web";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items/list";
+import "@bpa-solutions/pnp-sp/folders/list";
+import "@bpa-solutions/pnp-sp/files/folder";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 
 
 describe("Related Items", function () {

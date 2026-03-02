@@ -1765,14 +1765,14 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/sharing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspsharing">@pnp/sp/sharing<a class="headerlink" href="#pnpspsharing" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsharing">@bpa-solutions/pnp-sp/sharing<a class="headerlink" href="#pnpspsharing" title="Permanent link">&para;</a></h1>
 <p><strong><em>Note: This API is still considered "beta" meaning it may change and some behaviors may differ across tenants by version. It is also supported only in SharePoint Online.</em></strong></p>
 <p>One of the newer abilities in SharePoint is the ability to share webs, files, or folders with both internal and external folks. It is important to remember that these settings are managed at the tenant level and override anything you may supply as an argument to these methods. If you receive an <em>InvalidOperationException</em> when using these methods please check your tenant sharing settings to ensure sharing is not blocked before submitting an issue.</p>
 <h2 id="getsharelink">getShareLink<a class="headerlink" href="#getsharelink" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File</strong></p>
 <p>Creates a sharing link for the given resource with an optional expiration.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingLinkKind</span><span class="p">,</span> <span class="nx">ShareLinkResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">dateAdd</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/core&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingLinkKind</span><span class="p">,</span> <span class="nx">ShareLinkResponse</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">dateAdd</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-core&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/folder1&quot;</span><span class="p">).</span><span class="nx">getShareLink</span><span class="p">(</span><span class="nx">SharingLinkKind</span><span class="p">.</span><span class="nx">AnonymousView</span><span class="p">).</span><span class="nx">then</span><span class="p">(((</span><span class="nx">result</span>: <span class="kt">ShareLinkResponse</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1792,7 +1792,7 @@
 <h2 id="sharewith">shareWith<a class="headerlink" href="#sharewith" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File, Web</strong></p>
 <p>Shares the given resource with the specified permissions (View or Edit) and optionally sends an email to the users. You can supply a single string for the loginnames parameter or an array of loginnames. The folder method takes an optional parameter "shareEverything" which determines if the shared permissions are pushed down to all items in the folder, even those with unique permissions.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span><span class="p">,</span> <span class="nx">SharingRole</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span><span class="p">,</span> <span class="nx">SharingRole</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">shareWith</span><span class="p">(</span><span class="s2">&quot;i:0#.f|membership|user@site.com&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">SharingResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1841,7 +1841,7 @@
 <h2 id="shareobject-shareobjectraw">shareObject &amp; shareObjectRaw<a class="headerlink" href="#shareobject-shareobjectraw" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Web</strong></p>
 <p>Allows you to share any shareable object in a web by providing the appropriate parameters. These two methods differ in that shareObject will try and fix up your query based on the supplied parameters where shareObjectRaw will send your supplied json object directly to the server. The later method is provided for the greatest amount of flexibility.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span><span class="p">,</span> <span class="nx">SharingRole</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span><span class="p">,</span> <span class="nx">SharingRole</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">shareObject</span><span class="p">(</span><span class="s2">&quot;https://mysite.sharepoint.com/sites/dev/Docs/test.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;i:0#.f|membership|user@site.com&quot;</span><span class="p">,</span> <span class="nx">SharingRole</span><span class="p">.</span><span class="nx">View</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">SharingResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1867,7 +1867,7 @@
 
 <h2 id="unshareobject">unshareObject<a class="headerlink" href="#unshareobject" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Web</strong></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">unshareObject</span><span class="p">(</span><span class="s2">&quot;https://mysite.sharepoint.com/sites/dev/Docs/test.txt&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">SharingResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1881,7 +1881,7 @@
 <h2 id="checksharingpermissions">checkSharingPermissions<a class="headerlink" href="#checksharingpermissions" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File</strong></p>
 <p>Checks Permissions on the list of Users and returns back role the users have on the Item.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingEntityPermission</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingEntityPermission</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">checkSharingPermissions</span><span class="p">([{</span> <span class="nx">alias</span><span class="o">:</span> <span class="s2">&quot;i:0#.f|membership|user@site.com&quot;</span> <span class="p">}]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">SharingEntityPermission</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1895,7 +1895,7 @@
 <h2 id="getsharinginformation">getSharingInformation<a class="headerlink" href="#getsharinginformation" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File</strong></p>
 <p>Get Sharing Information.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingInformation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingInformation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">getSharingInformation</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">SharingInformation</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
@@ -1908,7 +1908,7 @@
 <h2 id="getobjectsharingsettings">getObjectSharingSettings<a class="headerlink" href="#getobjectsharingsettings" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File</strong></p>
 <p>Gets the sharing settings</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">ObjectSharingSettings</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">ObjectSharingSettings</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">getObjectSharingSettings</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">ObjectSharingSettings</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1922,7 +1922,7 @@
 <h2 id="unshare">unshare<a class="headerlink" href="#unshare" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File</strong></p>
 <p>Unshares a given resource</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">unshare</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">SharingResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1935,7 +1935,7 @@
 
 <h2 id="deletesharinglinkbykind">deleteSharingLinkByKind<a class="headerlink" href="#deletesharinglinkbykind" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File</strong></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingLinkKind</span><span class="p">,</span> <span class="nx">SharingResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingLinkKind</span><span class="p">,</span> <span class="nx">SharingResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">deleteSharingLinkByKind</span><span class="p">(</span><span class="nx">SharingLinkKind</span><span class="p">.</span><span class="nx">AnonymousEdit</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">SharingResult</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1948,7 +1948,7 @@
 
 <h2 id="unsharelink">unshareLink<a class="headerlink" href="#unsharelink" title="Permanent link">&para;</a></h2>
 <p><strong>Applies to: Item, Folder, File</strong></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingLinkKind</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">,</span> <span class="nx">SharingLinkKind</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">unshareLink</span><span class="p">(</span><span class="nx">SharingLinkKind</span><span class="p">.</span><span class="nx">AnonymousEdit</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 

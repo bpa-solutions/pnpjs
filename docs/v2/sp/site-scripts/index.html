@@ -2209,7 +2209,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspsite-scripts">@pnp/sp/site-scripts<a class="headerlink" href="#pnpspsite-scripts" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsite-scripts">@bpa-solutions/pnp-sp/site-scripts<a class="headerlink" href="#pnpspsite-scripts" title="Permanent link">&para;</a></h1>
 <p><a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a></p>
 <table>
 <thead>
@@ -2221,17 +2221,17 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/site-scripts";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/site-scripts";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h2 id="create-a-new-site-script">Create a new site script<a class="headerlink" href="#create-a-new-site-script" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-scripts&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-scripts&quot;;
 
 const sitescriptContent = {
     &quot;$schema&quot;: &quot;schema.json&quot;,
@@ -2250,8 +2250,8 @@ const siteScript = await sp.siteScripts.createSiteScript(&quot;Title&quot;, &quo
 console.log(siteScript.Title);
 </code></pre>
 <h2 id="retrieval">Retrieval<a class="headerlink" href="#retrieval" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-scripts&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-scripts&quot;;
 
 // Retrieving all site scripts
 const allSiteScripts = await sp.siteScripts.getSiteScripts();
@@ -2262,8 +2262,8 @@ const siteScript = await sp.siteScripts.getSiteScriptMetadata(&quot;884ed56b-1aa
 console.log(siteScript.Title);
 </code></pre>
 <h2 id="update-and-delete">Update and delete<a class="headerlink" href="#update-and-delete" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-scripts&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-scripts&quot;;
 
 // Update
 const updatedSiteScript = await sp.siteScripts.updateSiteScript({ Id: &quot;884ed56b-1aab-4653-95cf-4be0bfa5ef0a&quot;, Title: &quot;New Title&quot; });
@@ -2273,8 +2273,8 @@ console.log(updatedSiteScript.Title);
 await sp.siteScripts.deleteSiteScript(&quot;884ed56b-1aab-4653-95cf-4be0bfa5ef0a&quot;);
 </code></pre>
 <h2 id="get-site-script-from-a-list">Get site script from a list<a class="headerlink" href="#get-site-script-from-a-list" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-scripts&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-scripts&quot;;
 
 // Using the absolute URL of the list
 const ss = await sp.siteScripts.getSiteScriptFromList(&quot;https://TENANT.sharepoint.com/Lists/mylist&quot;);
@@ -2283,8 +2283,8 @@ const ss = await sp.siteScripts.getSiteScriptFromList(&quot;https://TENANT.share
 const ss2 = await sp.web.lists.getByTitle(&quot;mylist&quot;).getSiteScript();
 </code></pre>
 <h2 id="get-site-script-from-a-web">Get site script from a web<a class="headerlink" href="#get-site-script-from-a-web" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-scripts&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-scripts&quot;;
 
 const extractInfo = {
     IncludeBranding: true,
@@ -2301,16 +2301,16 @@ const ss = await sp.siteScripts.getSiteScriptFromWeb(&quot;https://TENANT.sharep
 const ss2 = await sp.web.getSiteScript(extractInfo);
 </code></pre>
 <h2 id="execute-site-script-action">Execute Site Script Action<a class="headerlink" href="#execute-site-script-action" title="Permanent link">&para;</a></h2>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/site-scripts&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/site-scripts&quot;;
 
 const siteScript = &quot;your site script action...&quot;;
 
 const ss = await sp.siteScripts.executeSiteScriptAction(siteScript);
 </code></pre>
 <h3 id="execute-site-script-for-a-specific-web">Execute site script for a specific web<a class="headerlink" href="#execute-site-script-for-a-specific-web" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { SiteScripts } &quot;@pnp/sp/site-scripts&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { SiteScripts } &quot;@bpa-solutions/pnp-sp/site-scripts&quot;;
 
 const siteScript = &quot;your site script action...&quot;;
 

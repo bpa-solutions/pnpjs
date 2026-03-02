@@ -1,4 +1,4 @@
-# @pnp/sp/utilities
+# @bpa-solutions/pnp-sp/utilities
 
 Through the REST api you are able to call a subset of the SP.Utilities.Utility methods. We have explicitly defined some of these methods and provided a method to call any others in a generic manner. These methods are exposed on pnp.sp.utility and support batching and caching.
 
@@ -30,9 +30,9 @@ export interface EmailProperties {
 You must define the To, Subject, and Body values - the remaining are optional.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sputilities";
-import { IEmailProperties } from "@pnp/sp/sputilities";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sputilities";
+import { IEmailProperties } from "@bpa-solutions/pnp-sp/sputilities";
 
 const sp = spfi(...);
 
@@ -56,8 +56,8 @@ console.log("Email Sent!");
 This method returns the current user's email addresses known to SharePoint.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sputilities";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sputilities";
 
 const sp = spfi(...);
 
@@ -79,8 +79,8 @@ await sp.utility.sendEmail({
 Gets information about a principal that matches the specified Search criteria
 
 ```TypeScript
-import { spfi, SPFx, IPrincipalInfo, PrincipalType, PrincipalSource } from "@pnp/sp";
-import "@pnp/sp/sputilities";
+import { spfi, SPFx, IPrincipalInfo, PrincipalType, PrincipalSource } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sputilities";
 
 const sp = spfi(...);
 
@@ -94,8 +94,8 @@ console.log(principal);
 Gets information about the principals that match the specified Search criteria.
 
 ```TypeScript
-import { spfi, SPFx, IPrincipalInfo, PrincipalType, PrincipalSource } from "@pnp/sp";
-import "@pnp/sp/sputilities";
+import { spfi, SPFx, IPrincipalInfo, PrincipalType, PrincipalSource } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sputilities";
 
 const sp = spfi(...);
 
@@ -109,8 +109,8 @@ console.log(principals);
 Gets the external (outside the firewall) URL to a document or resource in a site.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sputilities";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sputilities";
 
 const sp = spfi(...);
 
@@ -123,8 +123,8 @@ console.log(url);
 Resolves the principals contained within the supplied groups
 
 ```TypeScript
-import { spfi, SPFx, IPrincipalInfo } from "@pnp/sp";
-import "@pnp/sp/sputilities";
+import { spfi, SPFx, IPrincipalInfo } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sputilities";
 
 const sp = spfi(...);
 
@@ -139,9 +139,9 @@ console.log(principals);
 ## createWikiPage
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/sputilities";
-import { ICreateWikiPageResult } from "@pnp/sp/sputilities";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/sputilities";
+import { ICreateWikiPageResult } from "@bpa-solutions/pnp-sp/sputilities";
 
 const sp = spfi(...);
 

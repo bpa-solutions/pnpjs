@@ -1,10 +1,10 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-users/web";
-import "@pnp/sp/sputilities";
-import { PrincipalType, PrincipalSource } from "@pnp/sp";
-import { combine, stringIsNullOrEmpty } from "@pnp/core";
-import { IEmailProperties } from "@pnp/sp/sputilities";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import "@bpa-solutions/pnp-sp/sputilities";
+import { PrincipalType, PrincipalSource } from "@bpa-solutions/pnp-sp";
+import { combine, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
+import { IEmailProperties } from "@bpa-solutions/pnp-sp/sputilities";
 
 // cannot test with app permissions
 describe.skip("SPUtilities", function () {

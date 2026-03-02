@@ -38,8 +38,8 @@ And the matching graph type:
 The general idea of a factory function is that it takes two parameters. The first is either a string or Queryable derivative which forms base for the new object. The second is the next part of the url. In some cases (like the webs property example above) you will note there is no second parameter. Some classes are decorated with defaultPath, which automatically fills the second param. Don't worry too much right now about the deep internals of the library, let's instead focus on some concrete examples.
 
 ```TypeScript
-import { SPFx } from "@pnp/sp";
-import { Web } from "@pnp/sp/webs";
+import { SPFx } from "@bpa-solutions/pnp-sp";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
 
 // create a web from an absolute url
 const web = Web("https://tenant.sharepoint.com").using(SPFx(this.context));
@@ -179,14 +179,14 @@ To understand is how to extend functionality within the selective imports struct
 
 ```TypeScript
 // import the addProp helper
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 // import the _List concrete class from the types module (not the index!)
 import { _List } from "../lists/types";
 // import the interface and factory we are going to add to the List
 import { Items, IItems } from "./types";
 
 // This module declaration fixes up the types, allowing .items to appear in intellisense
-// when you import "@pnp/sp/items/list";
+// when you import "@bpa-solutions/pnp-sp/items/list";
 declare module "../lists/types" {
     // we need to extend the concrete type
     interface _List {

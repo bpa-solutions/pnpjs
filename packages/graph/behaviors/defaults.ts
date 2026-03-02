@@ -1,5 +1,5 @@
-import { combine, isUrlAbsolute, TimelinePipe } from "@pnp/core";
-import { InjectHeaders, Queryable, RejectOnError, ResolveOnData } from "@pnp/queryable";
+import { combine, isUrlAbsolute, TimelinePipe } from "@bpa-solutions/pnp-core";
+import { InjectHeaders, Queryable, RejectOnError, ResolveOnData } from "@bpa-solutions/pnp-queryable";
 import { Telemetry } from "./telemetry.js";
 
 export function DefaultInit(graphUrl = "https://graph.microsoft.com/v1.0"): TimelinePipe<Queryable> {

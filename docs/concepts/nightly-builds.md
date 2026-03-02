@@ -7,7 +7,7 @@ You can install the nightly builds using the below examples. While we only show 
 ### SP
 
 ```CMD
-npm install @pnp/sp@v3nightly --save
+npm install @bpa-solutions/pnp-sp@v3nightly --save
 ```
 
 ### Microsoft Graph

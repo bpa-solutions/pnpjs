@@ -1681,15 +1681,15 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/alias-parameters.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpsp-aliased-parameters">@pnp/sp - Aliased Parameters<a class="headerlink" href="#pnpsp-aliased-parameters" title="Permanent link">&para;</a></h1>
-<p>Within the @pnp/sp api you can alias any of the parameters so they will be written into the querystring. This is most helpful if you are hitting up against the 
+                <h1 id="pnpsp-aliased-parameters">@bpa-solutions/pnp-sp - Aliased Parameters<a class="headerlink" href="#pnpsp-aliased-parameters" title="Permanent link">&para;</a></h1>
+<p>Within the @bpa-solutions/pnp-sp api you can alias any of the parameters so they will be written into the querystring. This is most helpful if you are hitting up against the 
 url length limits when working with files and folders.</p>
 <p>To alias a parameter you include the label name, a separator ("::") and the value in the string. You also need to prepend a "!" to the string to trigger the replacement. You can see this below, as well as the string that will be generated. Labels must start with a "@" followed by a letter. It is also your responsibility to ensure that the aliases you supply do not conflict, for example if you use "@p1" you should use "@p2" for a second parameter alias in the same query.</p>
 <h3 id="construct-a-parameter-alias">Construct a parameter alias<a class="headerlink" href="#construct-a-parameter-alias" title="Permanent link">&para;</a></h3>
 <p>Pattern: !@{label name}::{value}</p>
 <p>Example: "!@p1::\sites\dev" or "!@p2::\text.txt"</p>
 <h3 id="example-without-aliasing">Example without aliasing<a class="headerlink" href="#example-without-aliasing" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="c1">// still works as expected, no aliasing</span>
 <span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/&quot;</span><span class="p">).</span><span class="nx">files</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;Title&quot;</span><span class="p">).</span><span class="nx">top</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 
@@ -1704,7 +1704,7 @@ url length limits when working with files and folders.</p>
 
 
 <h3 id="example-with-aliasing">Example with aliasing<a class="headerlink" href="#example-with-aliasing" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="c1">// same query with aliasing</span>
 <span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;!@p1::/sites/dev/Shared Documents/&quot;</span><span class="p">).</span><span class="nx">files</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;Title&quot;</span><span class="p">).</span><span class="nx">top</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 
@@ -1720,7 +1720,7 @@ url length limits when working with files and folders.</p>
 
 <h3 id="example-with-aliasing-and-batching">Example with aliasing and batching<a class="headerlink" href="#example-with-aliasing-and-batching" title="Permanent link">&para;</a></h3>
 <p>Aliasing is supported with batching as well:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="c1">// same query with aliasing and batching</span>
 <span class="kr">const</span> <span class="nx">batch</span> <span class="o">=</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">createBatch</span><span class="p">();</span>
 

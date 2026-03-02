@@ -2207,7 +2207,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspfeatures">@pnp/sp/features<a class="headerlink" href="#pnpspfeatures" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspfeatures">@bpa-solutions/pnp-sp/features<a class="headerlink" href="#pnpspfeatures" title="Permanent link">&para;</a></h1>
 <p>Features module provides method to get the details of activated features. And to activate/deactivate features scoped at Site Collection and Web.</p>
 <h2 id="ifeatures">IFeatures<a class="headerlink" href="#ifeatures" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a></p>
@@ -2222,31 +2222,31 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/features/site";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/features/site";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/features/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/features/web";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/features";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/features";</td>
 </tr>
 <tr>
 <td>Selective 4</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/features";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/features";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, IFeatures, Features } from "@pnp/sp/presets/all";</td>
+<td>import { sp, IFeatures, Features } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="getbyid">getById<a class="headerlink" href="#getbyid" title="Permanent link">&para;</a></h3>
 <p>Gets the information about a feature for the given GUID</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/features&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/features&quot;;
 
 //Example of GUID format a7a2793e-67cd-4dc1-9fd0-43f61581207a
 const webFeatureId = &quot;guid-of-web-feature&quot;;
@@ -2257,9 +2257,9 @@ const siteFeature = await sp.site.features.getById(siteFeatureId)();
 </code></pre>
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
 <p>Adds (activates) a feature at the Site or Web level</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/features&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/features&quot;;
 
 //Example of GUID format a7a2793e-67cd-4dc1-9fd0-43f61581207a
 const webFeatureId = &quot;guid-of-web-feature&quot;;
@@ -2269,9 +2269,9 @@ res = await sp.web.features.add(webFeatureId, true);
 </code></pre>
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
 <p>Removes and deactivates the specified feature from the SharePoint Site or Web</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/features&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/features&quot;;
 
 //Example of GUID format a7a2793e-67cd-4dc1-9fd0-43f61581207a
 const webFeatureId = &quot;guid-of-web-feature&quot;;
@@ -2292,31 +2292,31 @@ res = await sp.web.features.remove(webFeatureId, true);
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/features/site";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/features/site";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/features/web";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/features/web";</td>
 </tr>
 <tr>
 <td>Selective 3</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/features";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/features";</td>
 </tr>
 <tr>
 <td>Selective 4</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";<br/>import "@pnp/sp/features";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";<br/>import "@bpa-solutions/pnp-sp/features";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, IFeatures, Features, IFeature, Feature } from "@pnp/sp/presets/all";</td>
+<td>import { sp, IFeatures, Features, IFeature, Feature } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="deactivate">deactivate<a class="headerlink" href="#deactivate" title="Permanent link">&para;</a></h3>
 <p>Deactivates the specified feature from the SharePoint Site or Web</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/features&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/features&quot;;
 
 //Example of GUID format a7a2793e-67cd-4dc1-9fd0-43f61581207a
 const webFeatureId = &quot;guid-of-web-feature&quot;;

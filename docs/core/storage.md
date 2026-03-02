@@ -1,4 +1,4 @@
-# @pnp/core : storage
+# @bpa-solutions/pnp-core : storage
 
 This module provides a thin wrapper over the browser local and session storage. If neither option is available it shims storage with a non-persistent in memory polyfill. Optionally through configuration you can activate expiration. Sample usage is shown below.
 
@@ -7,7 +7,7 @@ This module provides a thin wrapper over the browser local and session storage. 
 The main export of this module, contains properties representing local and session storage.
 
 ```TypeScript
-import { PnPClientStorage } from "@pnp/core";
+import { PnPClientStorage } from "@bpa-solutions/pnp-core";
 
 const storage = new PnPClientStorage();
 const myvalue = storage.local.get("mykey");
@@ -19,7 +19,7 @@ Each of the storage locations (session and local) are wrapped with this helper c
 from an instance of PnPClientStorage as shown below. These examples all use local storage, the operations are identical for session storage.
 
 ```TypeScript
-import { PnPClientStorage } from "@pnp/core";
+import { PnPClientStorage } from "@bpa-solutions/pnp-core";
 
 const storage = new PnPClientStorage();
 
@@ -58,7 +58,7 @@ storage.local.deleteExpired();
 The ability remove of expired items based on a configured timeout can help if the cache is filling up. This can be accomplished by explicitly calling the deleteExpired method on the cache you wish to clear. A suggested usage is to add this into your page init code as clearing expired items once per page load is likely sufficient.
 
 ```TypeScript
-import { PnPClientStorage } from "@pnp/core";
+import { PnPClientStorage } from "@bpa-solutions/pnp-core";
 
 const storage = new PnPClientStorage();
 

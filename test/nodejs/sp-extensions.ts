@@ -1,11 +1,11 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/folders/web";
-import "@pnp/sp/folders/list";
-import "@pnp/sp/files/web";
-import "@pnp/sp/files/folder";
-import "@pnp/sp/lists/web";
-import { getRandomString, isFunc } from "@pnp/core";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/folders/web";
+import "@bpa-solutions/pnp-sp/folders/list";
+import "@bpa-solutions/pnp-sp/files/web";
+import "@bpa-solutions/pnp-sp/files/folder";
+import "@bpa-solutions/pnp-sp/lists/web";
+import { getRandomString, isFunc } from "@bpa-solutions/pnp-core";
 import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";

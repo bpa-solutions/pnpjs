@@ -2157,12 +2157,12 @@
                 
                 <h1 id="debugging-proxy-objects">Debugging Proxy Objects<a class="headerlink" href="#debugging-proxy-objects" title="Permanent link">&para;</a></h1>
 <p>Because all queryables are now represented as Proxy objects you can't immediately see the properties/method of the object or the data stored about the request. In certain debugging scenarios it can help to get visibility into the object that is wrapped by the proxy. To enable this we provide <a href="../extensions/">a set of extensions</a> to help.</p>
-<p>The debug extensions are added by including the <code>import "@pnp/queryable/debug";</code> statement in your project. It should be removed for production. This module provides several methods to help with debugging Queryable Proxy objects.</p>
+<p>The debug extensions are added by including the <code>import "@bpa-solutions/pnp-queryable/debug";</code> statement in your project. It should be removed for production. This module provides several methods to help with debugging Queryable Proxy objects.</p>
 <h2 id="unwrap">Unwrap<a class="headerlink" href="#unwrap" title="Permanent link">&para;</a></h2>
 <p>The <code>__unwrap()</code> method returns the concrete Queryable instance wrapped by the Proxy. You can then examine this object in various ways or dump it to the console for debugging.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/queryable/debug&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-queryable/debug&quot;;
 
 // unwrap the underlying concrete queryable instance
 const unwrapped = sp.web.__unwrap();
@@ -2174,9 +2174,9 @@ console.log(JSON.stringify(unwrapped, null, 2));
 </blockquote>
 <h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h2>
 <p>All of the information related to a queryable's request is contained within the "data" property. If you need to grab that information you can use the <code>__data</code> property.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/queryable/debug&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-queryable/debug&quot;;
 
 // get the underlying queryable's data
 const data = sp.web.__data;
@@ -2185,9 +2185,9 @@ console.log(JSON.stringify(data, null, 2));
 </code></pre>
 <h2 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
 <p>You can also get a representation of the wrapped instance in JSON format consisting of all its own properties and values.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/queryable/debug&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-queryable/debug&quot;;
 
 // get the underlying queryable's as JSON
 const data = sp.web.__json();
@@ -2197,9 +2197,9 @@ console.log(JSON.stringify(data, null, 2));
 <h2 id="deep-trace">Deep Trace<a class="headerlink" href="#deep-trace" title="Permanent link">&para;</a></h2>
 <p>Deep tracing is the ability to write every property and method access to the log. This produces VERY verbose output but can be helpful in situations where you need to trace how things are called and when within the Proxy. You enable deep tracing using the <code>__enableDeepTrace</code> method and disable using <code>__disableDeepTrace</code>.</p>
 <pre><code class="language-TypeScript">import { Logger, ConsoleListener } from &quot;@pnp/logging&quot;;
-import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/queryable/debug&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-queryable/debug&quot;;
 
 Logger.subscribe(new ConsoleListener());
 

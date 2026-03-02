@@ -1,5 +1,5 @@
 import { AuthenticationParameters, Configuration, UserAgentApplication } from "msal";
-import { Queryable } from "@pnp/queryable";
+import { Queryable } from "@bpa-solutions/pnp-queryable";
 
 export function MSAL(config: Configuration, authParams: AuthenticationParameters = { scopes: ["https://graph.microsoft.com/.default"] }): (instance: Queryable) => Queryable {
 

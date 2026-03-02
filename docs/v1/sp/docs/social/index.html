@@ -1791,12 +1791,12 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/social.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspsocial">@pnp/sp/social<a class="headerlink" href="#pnpspsocial" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspsocial">@bpa-solutions/pnp-sp/social<a class="headerlink" href="#pnpspsocial" title="Permanent link">&para;</a></h1>
 <p>The social API allows you to track followed sites, people, and docs. Note, many of these methods only work with the context of a logged in user, and not
 with app-only permissions.</p>
 <h2 id="getfollowedsitesuri">getFollowedSitesUri<a class="headerlink" href="#getfollowedsitesuri" title="Permanent link">&para;</a></h2>
 <p>Gets a URI to a site that lists the current user's followed sites.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">uri</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">getFollowedSitesUri</span><span class="p">();</span>
 </pre></div>
@@ -1804,7 +1804,7 @@ with app-only permissions.</p>
 
 <h2 id="getfolloweddocumentsuri">getFollowedDocumentsUri<a class="headerlink" href="#getfolloweddocumentsuri" title="Permanent link">&para;</a></h2>
 <p>Gets a URI to a site that lists the current user's followed documents.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">uri</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">getFollowedDocumentsUri</span><span class="p">();</span>
 </pre></div>
@@ -1812,7 +1812,7 @@ with app-only permissions.</p>
 
 <h2 id="follow">follow<a class="headerlink" href="#follow" title="Permanent link">&para;</a></h2>
 <p>Makes the current user start following a user, document, site, or tag</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// follow a site</span>
 <span class="kr">const</span> <span class="nx">r1</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">follow</span><span class="p">({</span>
@@ -1846,7 +1846,7 @@ with app-only permissions.</p>
 
 <h2 id="isfollowed">isFollowed<a class="headerlink" href="#isfollowed" title="Permanent link">&para;</a></h2>
 <p>Indicates whether the current user is following a specified user, document, site, or tag</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// pass the same social actor struct as shown in follow example for each type</span>
 <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">isFollowed</span><span class="p">({</span>
@@ -1858,7 +1858,7 @@ with app-only permissions.</p>
 
 <h2 id="stopfollowing">stopFollowing<a class="headerlink" href="#stopfollowing" title="Permanent link">&para;</a></h2>
 <p>Makes the current user stop following a user, document, site, or tag</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// pass the same social actor struct as shown in follow example for each type</span>
 <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">stopFollowing</span><span class="p">({</span>
@@ -1871,7 +1871,7 @@ with app-only permissions.</p>
 <h2 id="my">my<a class="headerlink" href="#my" title="Permanent link">&para;</a></h2>
 <h3 id="get">get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
 <p>Gets this user's social information</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">my</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </pre></div>
@@ -1879,7 +1879,7 @@ with app-only permissions.</p>
 
 <h3 id="followed">followed<a class="headerlink" href="#followed" title="Permanent link">&para;</a></h3>
 <p>Gets users, documents, sites, and tags that the current user is following based on the supplied flags.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// get all the followed documents</span>
 <span class="kr">const</span> <span class="nx">r1</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">my</span><span class="p">.</span><span class="nx">followed</span><span class="p">(</span><span class="nx">SocialActorTypes</span><span class="p">.</span><span class="nx">Document</span><span class="p">);</span>
@@ -1894,7 +1894,7 @@ with app-only permissions.</p>
 
 <h3 id="followedcount">followedCount<a class="headerlink" href="#followedcount" title="Permanent link">&para;</a></h3>
 <p>Works as followed but returns on the count of actors specifed by the query</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">SocialActorTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// get the followed documents count</span>
 <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">my</span><span class="p">.</span><span class="nx">followedCount</span><span class="p">(</span><span class="nx">SocialActorTypes</span><span class="p">.</span><span class="nx">Document</span><span class="p">);</span>
@@ -1903,7 +1903,7 @@ with app-only permissions.</p>
 
 <h3 id="followers">followers<a class="headerlink" href="#followers" title="Permanent link">&para;</a></h3>
 <p>Gets the users who are following the current user.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// get the followed documents count</span>
 <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">my</span><span class="p">.</span><span class="nx">followers</span><span class="p">();</span>
@@ -1912,7 +1912,7 @@ with app-only permissions.</p>
 
 <h3 id="suggestions">suggestions<a class="headerlink" href="#suggestions" title="Permanent link">&para;</a></h3>
 <p>Gets users who the current user might want to follow.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// get the followed documents count</span>
 <span class="kr">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">my</span><span class="p">.</span><span class="nx">suggestions</span><span class="p">();</span>

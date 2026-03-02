@@ -1,7 +1,7 @@
 import { expect } from "chai";
-import "@pnp/sp/sites";
-import "@pnp/sp/webs";
-import "@pnp/sp/features";
+import "@bpa-solutions/pnp-sp/sites";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/features";
 
 describe("Features", function () {
 

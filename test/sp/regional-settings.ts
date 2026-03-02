@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/regional-settings";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/regional-settings";
 
 describe("Regional Settings", function () {
 

@@ -1,4 +1,4 @@
-import { op, get, post, patch, del, put } from "@pnp/queryable";
+import { op, get, post, patch, del, put } from "@bpa-solutions/pnp-queryable";
 import { IGraphQueryable } from "./graphqueryable.js";
 
 export const graphGet = <T = any>(o: IGraphQueryable<any>, init?: RequestInit): Promise<T> => {

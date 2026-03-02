@@ -16,7 +16,7 @@ In 2020 we tracked steady month/month growth in raw usage measured by requests a
 
 These tenants generated 6.1 billion requests to the service in January growing to 9.2 billion by December, peaking at 10.1 billion requests in November.
 
-![Graph showing requests and tenants/month for @pnp/sp](../img/usage-2020-eoy.png)
+![Graph showing requests and tenants/month for @bpa-solutions/pnp-sp](../img/usage-2020-eoy.png)
 
 > 1) There was a data glitch in October so the numbers do not fully represent usage. 2) These numbers only include public cloud SPO usage, true usage is higher than we can track due to on-premesis and gov/sovereign clouds
 
@@ -24,7 +24,7 @@ These tenants generated 6.1 billion requests to the service in January growing t
 
 We continued our monthly release cadence as it represents a good pace for addressing issues while not expecting folks to update too often and keeping each update to a reasonable size. All changes can be tracked in our [change log](https://github.com/pnp/pnpjs/blob/version-2/CHANGELOG.md), updated with each release. You can check our scheduled releases through [project milestones](https://github.com/pnp/pnpjs/milestones), understanding there are occasionally delays. Monthly releases allows us to ensure bugs do not linger and we continually improve and expand the capabilities of the libraries.
 
-### NPM Package download statistics (@pnp/sp):
+### NPM Package download statistics (@bpa-solutions/pnp-sp):
 
 | Month    | Count   | *   | Month       | Count  |
 | -------- | ------- | --- | ----------- | ------ |
@@ -37,7 +37,7 @@ We continued our monthly release cadence as it represents a good pace for addres
 |          |         |     |             |        |
 |          |         |     | Grand Total | 543,836|
 
-With 2020 our total all time downloads of @pnp/sp is now at: 949,638
+With 2020 our total all time downloads of @bpa-solutions/pnp-sp is now at: 949,638
 
 > Stats from https://npm-stat.com/
 

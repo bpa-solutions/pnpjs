@@ -2139,7 +2139,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspforms">@pnp/sp/forms<a class="headerlink" href="#pnpspforms" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspforms">@bpa-solutions/pnp-sp/forms<a class="headerlink" href="#pnpspforms" title="Permanent link">&para;</a></h1>
 <p>Forms in SharePoint are the Display, New, and Edit forms associated with a list.</p>
 <h2 id="ifields">IFields<a class="headerlink" href="#ifields" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -2153,23 +2153,23 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { Webs, IWebs } from "@pnp/sp/webs"; <br /></td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { Webs, IWebs } from "@bpa-solutions/pnp-sp/webs"; <br /></td>
 </tr>
 <tr>
-<td>import "@pnp/sp/forms";<br/></td>
+<td>import "@bpa-solutions/pnp-sp/forms";<br/></td>
 <td></td>
 </tr>
 <tr>
-<td>import "@pnp/sp/lists";</td>
+<td>import "@bpa-solutions/pnp-sp/lists";</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <h3 id="get-form-by-id">Get Form by Id<a class="headerlink" href="#get-form-by-id" title="Permanent link">&para;</a></h3>
 <p>Gets a form from the collection by id (guid). Note that the library will handle a guid formatted with curly braces (i.e. '{03b05ff4-d95d-45ed-841d-3855f77a2483}') as well as without curly braces (i.e. '03b05ff4-d95d-45ed-841d-3855f77a2483'). The Id parameter is also case insensitive.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/forms&quot;;
-import &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/forms&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // get the field by Id for web
 const form = sp.web.lists.getByTitle(&quot;Documents&quot;).forms.getById(&quot;{c4486774-f1e2-4804-96f3-91edf3e22a19}&quot;)();

@@ -2163,8 +2163,8 @@
 <p>So you will need to handle any of those options along with the provided url when sending your request. The library will expect your implementation to return a Promise that resolves to a Response defined by the <a href="https://fetch.spec.whatwg.org/">fetch specification</a> - which you've already read 👍.</p>
 <h2 id="using-your-custom-httpclientimpl">Using Your Custom HttpClientImpl<a class="headerlink" href="#using-your-custom-httpclientimpl" title="Permanent link">&para;</a></h2>
 <p>Once you have written your implementation using it on your requests is done by setting it in the global library configuration:</p>
-<pre><code class="language-TypeScript">import { setup } from &quot;@pnp/core&quot;;
-import { sp, Web } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { setup } from &quot;@bpa-solutions/pnp-core&quot;;
+import { sp, Web } from &quot;@bpa-solutions/pnp-sp&quot;;
 import { MyAwesomeClient } from &quot;./awesomeclient&quot;;
 
 sp.setup({

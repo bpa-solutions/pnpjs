@@ -1763,10 +1763,10 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/comments-likes.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspcomments-and-likes">@pnp/sp/comments and likes<a class="headerlink" href="#pnpspcomments-and-likes" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspcomments-and-likes">@bpa-solutions/pnp-sp/comments and likes<a class="headerlink" href="#pnpspcomments-and-likes" title="Permanent link">&para;</a></h1>
 <p>Likes and comments in the context of modern sites are based on list items, meaning the operations branch from the Item class. To load an item you can refer to the guidance in the <a href="../items/">items article</a>. If you want to set the likes or comments on a modern page and don't know the item id but do know the url you can first load the file and then use the getItem method to get an item instance:</p>
 <p><em>These APIs are currently in BETA and are subject to change or may not work on all tenants.</em></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/SitePages/Test_8q5L.aspx&quot;</span><span class="p">).</span><span class="nx">getItem</span><span class="p">();</span>
 
@@ -1783,7 +1783,7 @@
 
 
 <p>You can also get the comments merged with instances of the Comment class to immediately start accessing the properties and methods:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">comments</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">spODataEntityArray</span><span class="o">&lt;</span><span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Comment</span><span class="p">));</span>
 
@@ -1805,7 +1805,7 @@
 
 
 <h3 id="delete-a-comment">Delete a Comment<a class="headerlink" href="#delete-a-comment" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">comments</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">spODataEntityArray</span><span class="o">&lt;</span><span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Comment</span><span class="p">));</span>
 
@@ -1815,7 +1815,7 @@
 
 
 <h3 id="like-comment">Like Comment<a class="headerlink" href="#like-comment" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">comments</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">spODataEntityArray</span><span class="o">&lt;</span><span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Comment</span><span class="p">));</span>
 
@@ -1825,7 +1825,7 @@
 
 
 <h3 id="unlike-comment">Unlike Comment<a class="headerlink" href="#unlike-comment" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">comments</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">spODataEntityArray</span><span class="o">&lt;</span><span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Comment</span><span class="p">));</span>
 
@@ -1834,7 +1834,7 @@
 
 
 <h3 id="reply-to-a-comment">Reply to a Comment<a class="headerlink" href="#reply-to-a-comment" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">comments</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">spODataEntityArray</span><span class="o">&lt;</span><span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Comment</span><span class="p">));</span>
 
@@ -1843,7 +1843,7 @@
 
 
 <h3 id="load-replies-to-a-comment">Load Replies to a Comment<a class="headerlink" href="#load-replies-to-a-comment" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spODataEntityArray</span><span class="p">,</span> <span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">comments</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">spODataEntityArray</span><span class="o">&lt;</span><span class="nx">Comment</span><span class="p">,</span> <span class="nx">CommentData</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">Comment</span><span class="p">));</span>
 
@@ -1853,7 +1853,7 @@
 
 <h2 id="like">Like<a class="headerlink" href="#like" title="Permanent link">&para;</a></h2>
 <p>You can like items and comments on items. See above for how to like or unlike a comment. Below you can see how to like and unlike an items, as well as get the liked by data.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">LikeData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">LikeData</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// like an item</span>
 <span class="nx">await</span> <span class="nx">item</span><span class="p">.</span><span class="nx">like</span><span class="p">();</span>

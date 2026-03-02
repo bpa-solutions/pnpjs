@@ -1,4 +1,4 @@
-# @pnp/sp/ - social
+# @bpa-solutions/pnp-sp/ - social
 
 [![Selective Imports Banner](https://img.shields.io/badge/Selective%20Imports-informational.svg)](../concepts/selective-imports.md)  
 
@@ -10,8 +10,8 @@ with app-only permissions.
 Gets a URI to a site that lists the current user's followed sites.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -23,8 +23,8 @@ const uri = await sp.social.getFollowedSitesUri();
 Gets a URI to a site that lists the current user's followed documents.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -36,8 +36,8 @@ const uri = await sp.social.getFollowedDocumentsUri();
 Makes the current user start following a user, document, site, or tag
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { SocialActorType } from "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { SocialActorType } from "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -75,8 +75,8 @@ const r4 = await sp.social.follow({
 Indicates whether the current user is following a specified user, document, site, or tag
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { SocialActorType } from "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { SocialActorType } from "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -92,8 +92,8 @@ const r = await sp.social.isFollowed({
 Makes the current user stop following a user, document, site, or tag
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { SocialActorType } from "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { SocialActorType } from "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -111,8 +111,8 @@ const r = await sp.social.stopFollowing({
 Gets this user's social information
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -124,8 +124,8 @@ const r = await sp.social.my();
 Gets users, documents, sites, and tags that the current user is following based on the supplied flags.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { SocialActorType } from "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { SocialActorType } from "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -144,8 +144,8 @@ const r3 = await sp.social.my.followed(SocialActorTypes.Site | SocialActorTypes.
 Works as followed but returns on the count of actors specified by the query
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { SocialActorType } from "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { SocialActorType } from "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -158,8 +158,8 @@ const r = await sp.social.my.followedCount(SocialActorTypes.Document);
 Gets the users who are following the current user.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 
@@ -172,8 +172,8 @@ const r = await sp.social.my.followers();
 Gets users who the current user might want to follow.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/social";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/social";
 
 const sp = spfi(...);
 

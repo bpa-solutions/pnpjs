@@ -1,0 +1,11 @@
+{
+    "name": "@bpa-solutions/pnp-queryable",
+    "version": "0.0.0-PLACEHOLDER",
+    "description": "pnp - provides shared odata functionality and base classes",
+    "main": "./index.js",
+    "typings": "./index",
+    "dependencies": {
+        "tslib": "2.4.1",
+        "@bpa-solutions/pnp-core": "0.0.0-PLACEHOLDER"
+    }
+}

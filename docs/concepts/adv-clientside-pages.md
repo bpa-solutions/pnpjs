@@ -114,9 +114,9 @@ At this point the only aspect of the above JSON payload you're going to be payin
 The code below gives a incomplete but demonstrative example of how you would extend the ClientsideWebpart class to provide an interface to build a custom class for the QuickLinks web part illustrated in our JSON payload above. This code assumes you have already added the control to a section. For more information about that step see the documentation for [Add Controls](../sp/clientside-pages.md#Add_Controls)
 
 ```TypeScript
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { ClientsideWebpart } from "@pnp/sp/clientside-pages";
+import { sp } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { ClientsideWebpart } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 //Define interface based on JSON object above
 interface IQLItem {

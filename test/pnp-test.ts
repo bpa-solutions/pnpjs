@@ -1,8 +1,8 @@
-import { spfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
 import { graphfi } from "@pnp/graph";
-import { Queryable } from "@pnp/queryable";
+import { Queryable } from "@bpa-solutions/pnp-queryable";
 import { Context } from "mocha";
-import { TimelinePipe } from "@pnp/core";
+import { TimelinePipe } from "@bpa-solutions/pnp-core";
 
 interface IPnPTestFuncThis extends Context {
     pnpid: string;

@@ -3,7 +3,7 @@ import { Presence as IUserPresence } from "@microsoft/microsoft-graph-types";
 import { _GraphQueryableCollection, graphInvokableFactory, _GraphQueryableInstance } from "../graphqueryable.js";
 import { defaultPath } from "../decorators.js";
 import { graphPost } from "../operations.js";
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 
 /**
  * Presence

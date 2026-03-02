@@ -1,4 +1,4 @@
-# @pnp/sp/items
+# @bpa-solutions/pnp-sp/items
 
 [![Invokable Banner](https://img.shields.io/badge/Invokable-informational.svg)](../concepts/invokable.md) [![Selective Imports Banner](https://img.shields.io/badge/Selective%20Imports-informational.svg)](../concepts/selective-imports.md)  
 
@@ -9,10 +9,10 @@ Getting items from a list is one of the basic actions that most applications req
 ### Basic Get
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -34,10 +34,10 @@ console.log(items2);
 Working with paging can be a challenge as it is based on skip tokens and item ids, something that is hard to guess at runtime. To simplify things you can use the getPaged method on the Items class to assist. Note that there isn't a way to move backwards in the collection, this is by design. The pattern you should use to support backwards navigation in the results is to cache the results into a local array and use the standard array operators to get previous pages. Alternatively you can append the results to the UI, but this can have performance impact for large result sets.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -77,9 +77,9 @@ if (items.hasNext) {
 The GetListItemChangesSinceToken method allows clients to track changes on a list. Changes, including deleted items, are returned along with a token that represents the moment in time when those changes were requested. By including this token when you call GetListItemChangesSinceToken, the server looks for only those changes that have occurred since the token was generated. Sending a GetListItemChangesSinceToken request without including a token returns the list schema, the full list contents and a token.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
 
 const sp = spfi(...);
 
@@ -103,11 +103,11 @@ Using the items collection's getAll method you can get all of the items in a lis
 > In v3 there is a separate import for get-all to include the functionality. This is to remove the code from bundles for folks who do not need it.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/items/get-all";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/items/get-all";
 
 const sp = spfi(...);
 
@@ -133,10 +133,10 @@ console.log(allItems.length);
 When working with lookup fields you need to use the expand operator along with select to get the related fields from the lookup column. This works for both the items collection and item instances.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -152,9 +152,9 @@ console.log(item);
 To filter on a metadata field you must use the getItemsByCAMLQuery method as $filter does not support these fields.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
 
 const sp = spfi(...);
 
@@ -168,11 +168,11 @@ const r = await sp.web.lists.getByTitle("TaxonomyList").getItemsByCAMLQuery({
 The PublishingPageImage and some other publishing-related fields aren't stored in normal fields, rather in the MetaInfo field. To get these values you need to use the technique shown below, and originally outlined in [this thread](https://github.com/SharePoint/PnP-JS-Core/issues/178). Note that a lot of information can be stored in this field so will pull back potentially a significant amount of data, so limit the rows as possible to aid performance.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import { Web } from "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
 
 try {
   const sp = spfi("https://{publishing site url}").using(SPFx(this.context));
@@ -207,11 +207,11 @@ catch (e) {
 There are several ways to add items to a list. The simplest just uses the _add_ method of the items collection passing in the properties as a plain object.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import { IItemAddResult } from "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import { IItemAddResult } from "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -229,10 +229,10 @@ console.log(iar);
 You can also set the content type id when you create an item as shown in the example below. For more information on content type IDs reference the [Microsoft Documentation](https://docs.microsoft.com/en-us/previous-versions/office/developer/sharepoint-2010/aa543822(v=office.14)). While this documentation references SharePoint 2010 the structure of the IDs has not changed.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -249,11 +249,11 @@ There are two types of user fields, those that allow a single value and those th
 Next, you need to remember there are two types of user fields, those that take a single value and those that allow multiple - these are updated in different ways. For single value user fields you supply just the user's id. For multiple value fields, you need to supply an array. Examples for both are shown below.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import { getGUID } from "@pnp/core";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import { getGUID } from "@bpa-solutions/pnp-core";
 
 const sp = spfi(...);
 
@@ -269,10 +269,10 @@ console.log(i);
 If you want to update or add user field values when using **validateUpdateListItem** you need to use the form shown below. You can specify multiple values in the array.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -297,11 +297,11 @@ What is said for User Fields is, in general, relevant to Lookup Fields:
 - Numeric Ids for lookups' items should be passed as values
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import { getGUID } from "@pnp/core";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import { getGUID } from "@bpa-solutions/pnp-core";
 
 const sp = spfi(...);
 
@@ -315,11 +315,11 @@ await sp.web.lists.getByTitle("LookupFields").items.add({
 ### Add Multiple Items
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/batching";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/batching";
 
 const sp = spfi(...);
 
@@ -348,10 +348,10 @@ The update method is very similar to the add method in that it takes a plain obj
 >Note: For updating certain types of fields, see the [Add](#add-items) examples above. The payload will be the same you will just need to replace the .add method with .getById({itemId}).update.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -368,10 +368,10 @@ console.log(i);
 ### Getting and updating a collection using filter
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -393,11 +393,11 @@ if (items.length > 0) {
 This approach avoids multiple calls for the same list's entity type name.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/batching"
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/batching"
 
 const sp = spfi(...);
 
@@ -424,10 +424,10 @@ Note: Updating Taxonomy field for a File item should be handled differently. Ins
 
 List Item
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -438,11 +438,11 @@ await sp.web.lists.getByTitle("Demo").items.getById(1).update({
 ```
 File List Item
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/files";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/files";
 
 const sp = spfi(...);
 
@@ -459,11 +459,11 @@ _Based on [this excellent article](https://www.aerieconsulting.com/blog/update-u
 As he says you must update a hidden field to get this to work via REST. My meta data field accepting multiple values is called "MultiMetaData".
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -501,10 +501,10 @@ const update = await sp.web.lists.getByTitle("Price").items.getById(7).select('*
 To send an item to the recycle bin use recycle.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -518,10 +518,10 @@ const recycleBinIdentifier = await list.items.getById(1).recycle();
 Delete is as simple as calling the .delete method. It optionally takes an eTag if you need to manage concurrency.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -535,10 +535,10 @@ await list.items.getById(1).delete();
 Deletes the item object with options.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 
@@ -559,11 +559,11 @@ Field's `EntityPropertyName` value should be used.
 The easiest way to get know EntityPropertyName is to use the following snippet:
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/fields";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/fields";
 
 const sp = spfi(...);
 
@@ -590,9 +590,9 @@ Lookup fields' names should be ended with additional `Id` suffix. E.g. for `Edit
 Gets information about an item, including details about the parent list, parent list root folder, and parent web.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/items";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/items";
 
 const sp = spfi(...);
 

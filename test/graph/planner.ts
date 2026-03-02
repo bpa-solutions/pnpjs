@@ -1,4 +1,4 @@
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import { expect } from "chai";
 import { GroupType } from "@pnp/graph/groups";
 import "@pnp/graph/planner";

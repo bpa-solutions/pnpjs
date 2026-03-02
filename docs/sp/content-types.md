@@ -1,4 +1,4 @@
-# @pnp/sp/content-types
+# @bpa-solutions/pnp-sp/content-types
 
 Content Types are used to define sets of columns in SharePoint.
 
@@ -19,7 +19,7 @@ sp.web.lists.getByTitle("Documents").contentTypes.addAvailableContentType("0x010
 ### Get a Content Type by Id
 
 ```TypeScript
-import { IContentType } from "@pnp/sp/content-types";
+import { IContentType } from "@bpa-solutions/pnp-sp/content-types";
 
 const sp = spfi(...);
 
@@ -32,7 +32,7 @@ console.log(d.name);
 ### Update a Content Type
 
 ```Typescript
-import { IContentType } from "@pnp/sp/content-types";
+import { IContentType } from "@bpa-solutions/pnp-sp/content-types";
 
 const sp = spfi(...);
 
@@ -67,9 +67,9 @@ sp.web.contentTypes.add("0x01008D19F38845B0884EBEBE239FDF359184", "My Content Ty
 Use this method to get a collection containing all the field links (SP.FieldLink) for a Content Type.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { ContentType, IContentType } from "@pnp/sp/content-types";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { ContentType, IContentType } from "@bpa-solutions/pnp-sp/content-types";
 
 const sp = spfi(...);
 
@@ -85,9 +85,9 @@ console.log(d);
 To get a collection with all fields on the Content Type, simply use this method.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { ContentType, IContentType } from "@pnp/sp/content-types";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { ContentType, IContentType } from "@bpa-solutions/pnp-sp/content-types";
 
 const sp = spfi(...);
 
@@ -101,9 +101,9 @@ console.log(d);
 ### Get parent Content Type
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { ContentType, IContentType } from "@pnp/sp/content-types";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { ContentType, IContentType } from "@bpa-solutions/pnp-sp/content-types";
 
 const sp = spfi(...);
 
@@ -117,9 +117,9 @@ console.log(d.Name)
 ### Get Content Type Workflow associations
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { ContentType, IContentType } from "@pnp/sp/content-types";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { ContentType, IContentType } from "@bpa-solutions/pnp-sp/content-types";
 
 const sp = spfi(...);
 

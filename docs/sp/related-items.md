@@ -1,4 +1,4 @@
-# @pnp/sp/related-items
+# @bpa-solutions/pnp-sp/related-items
 
 The related items API allows you to add related items to items within a task or workflow list. Related items need to be in the same site collection.
 
@@ -7,14 +7,14 @@ The related items API allows you to add related items to items within a task or 
 Instead of copying this block of code into each sample, understand that each sample is meant to run with this supporting code to work.
 
 ```TypeScript
-import { spfi, SPFx, extractWebUrl } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/related-items/web";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items/list";
-import "@pnp/sp/files/list";
-import { IList } from "@pnp/sp/lists";
-import { getRandomString } from "@pnp/core";
+import { spfi, SPFx, extractWebUrl } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/related-items/web";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items/list";
+import "@bpa-solutions/pnp-sp/files/list";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 
 const sp = spfi(...);
 
@@ -81,7 +81,7 @@ await sp.web.relatedItems.deleteSingleLink(sourceListName, sourceItem.Id, webUrl
 Gets the related items for an item
 
 ```TypeScript
-import { IRelatedItem } from "@pnp/sp/related-items";
+import { IRelatedItem } from "@bpa-solutions/pnp-sp/related-items";
 
 const sourceItem = await sourceList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r => r.data);
 const targetItem = await targetList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r => r.data);
@@ -117,7 +117,7 @@ export interface IRelatedItem {
 Gets an abbreviated set of related items
 
 ```TypeScript
-import { IRelatedItem } from "@pnp/sp/related-items";
+import { IRelatedItem } from "@bpa-solutions/pnp-sp/related-items";
 
 const sourceItem = await sourceList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r => r.data);
 const targetItem = await targetList.items.add({ Title: `Item ${getRandomString(4)}` }).then(r => r.data);

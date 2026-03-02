@@ -1,4 +1,4 @@
-# @pnp/core : observers
+# @bpa-solutions/pnp-core : observers
 
 Observers are used to implement all of the functionality within a [Timeline's](./timeline.md) [moments](./moments.md). Each moment defines the signature of observers you can register, and calling the observers is orchestrated by the implementation of the moment. A few facts about observers:
 

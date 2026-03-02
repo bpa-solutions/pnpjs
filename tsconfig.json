@@ -31,6 +31,9 @@
         "importHelpers": true,
         "resolveJsonModule": true,
         "paths": {
+            "@bpa-solutions/*": [
+                "./packages/*"
+            ],
             "@pnp/*": [
                 "./packages/*"
             ]

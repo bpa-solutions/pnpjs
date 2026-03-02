@@ -1,5 +1,5 @@
-import { body } from "@pnp/queryable";
-import { _SPInstance, defaultPath, spPost, spInvokableFactory } from "@pnp/sp";
+import { body } from "@bpa-solutions/pnp-queryable";
+import { _SPInstance, defaultPath, spPost, spInvokableFactory } from "@bpa-solutions/pnp-sp";
 import { ITenantSitePropertiesInfo } from "./types.js";
 
 @defaultPath("_api/Microsoft.Online.SharePoint.TenantAdministration.SiteProperties")

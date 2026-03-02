@@ -1,6 +1,6 @@
 import { Configuration } from "@azure/msal-node";
-import { combine, isUrlAbsolute, TimelinePipe } from "@pnp/core";
-import { DefaultParse, Queryable } from "@pnp/queryable";
+import { combine, isUrlAbsolute, TimelinePipe } from "@bpa-solutions/pnp-core";
+import { DefaultParse, Queryable } from "@bpa-solutions/pnp-queryable";
 import { DefaultHeaders, DefaultInit } from "@pnp/graph";
 import { NodeFetchWithRetry } from "./fetch.js";
 import { MSAL } from "./msal.js";

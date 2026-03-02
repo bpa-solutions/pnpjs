@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import "@pnp/graph/users";
 import "@pnp/graph/calendars";
-import { HttpRequestError } from "@pnp/queryable";
-import { stringIsNullOrEmpty } from "@pnp/core";
+import { HttpRequestError } from "@bpa-solutions/pnp-queryable";
+import { stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 import getValidUser from "./utilities/getValidUser.js";
 
 describe("Calendar", function () {

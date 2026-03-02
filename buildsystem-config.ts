@@ -20,7 +20,7 @@ export default <ConfigCollection>[
         postBuildTasks: [
             // this task replaces the $$Version$$ with the version from the root package.json at build time
             Tasks.Build.createReplaceVersion([
-                "sp/behaviors/telemetry.js",
+                "pnp-sp/behaviors/telemetry.js",
                 "graph/behaviors/telemetry.js",
             ]),
         ],
@@ -106,7 +106,7 @@ export default <ConfigCollection>[
         postBuildTasks: [
 
             Tasks.Build.createReplaceVersion([
-                "packages/sp/behaviors/telemetry.js",
+                "packages/pnp-sp/behaviors/telemetry.js",
                 "packages/graph/behaviors/telemetry.js",
             ]),
         ],

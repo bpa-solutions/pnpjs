@@ -7,7 +7,7 @@ import "@pnp/graph/content-types";
 import { IList } from "@pnp/graph/lists";
 import { ISite } from "@pnp/graph/sites";
 import { IContentType } from "@pnp/graph/content-types";
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import getTestingGraphSPSite from "./utilities/getTestingGraphSPSite.js";
 
 describe("Columns", function () {

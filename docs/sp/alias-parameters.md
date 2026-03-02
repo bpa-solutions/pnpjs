@@ -1,6 +1,6 @@
-# @pnp/sp - Aliased Parameters
+# @bpa-solutions/pnp-sp - Aliased Parameters
 
-Within the @pnp/sp api you can alias any of the parameters so they will be written into the querystring. This is most helpful if you are hitting up against the url length limits when working with files and folders.
+Within the @bpa-solutions/pnp-sp api you can alias any of the parameters so they will be written into the querystring. This is most helpful if you are hitting up against the url length limits when working with files and folders.
 
 To alias a parameter you include the label name, a separator ("::") and the value in the string. You also need to prepend a "!" to the string to trigger the replacement. You can see this below, as well as the string that will be generated. Labels must start with a "@" followed by a letter. It is also your responsibility to ensure that the aliases you supply do not conflict, for example if you use "@p1" you should use "@p2" for a second parameter alias in the same query.
 
@@ -13,10 +13,10 @@ Example: "!@p1::\sites\dev" or "!@p2::\text.txt"
 ### Example without aliasing
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/files";
-import "@pnp/sp/folders";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/files";
+import "@bpa-solutions/pnp-sp/folders";
 const sp = spfi(...);
 
 // still works as expected, no aliasing
@@ -32,10 +32,10 @@ console.log(r);
 ### Example with aliasing
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/files";
-import "@pnp/sp/folders";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/files";
+import "@bpa-solutions/pnp-sp/folders";
 
 const sp = spfi(...);
 
@@ -54,8 +54,8 @@ console.log(r);
 Aliasing is supported with batching as well:
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 

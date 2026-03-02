@@ -26,10 +26,10 @@ const authParams: AuthenticationParameters = {
 ## MSAL + Browser
 
 ```TypeScript
-import { spfi, SPBrowser } from "@pnp/sp";
+import { spfi, SPBrowser } from "@bpa-solutions/pnp-sp";
 import { graphfi, GraphBrowser } from "@pnp/graph";
 import { MSAL } from "@pnp/msaljsclient";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 import "@pnp/graph/users";
 
 const sp = spfi("https://tenant.sharepoint.com/sites/dev").using(SPBrowser(), MSAL(configuration, authParams));

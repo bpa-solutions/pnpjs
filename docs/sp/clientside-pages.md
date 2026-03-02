@@ -1,4 +1,4 @@
-# @pnp/sp/clientside-pages
+# @bpa-solutions/pnp-sp/clientside-pages
 
 The 'clientside-pages' module allows you to create, edit, and delete modern SharePoint pages. There are methods to update the page settings and add/remove client-side web parts.
 
@@ -11,10 +11,10 @@ You can create a new client-side page in several ways, all are equivalent.
 ### Create using IWeb.addClientsidePage
 
 ```TypeScript
-import { spfi, SPFI } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages/web";
-import { PromotedState } from "@pnp/sp/clientside-pages";
+import { spfi, SPFI } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/clientside-pages/web";
+import { PromotedState } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -42,10 +42,10 @@ await page3.save();
 ### Create using CreateClientsidePage method
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { Web } from "@pnp/sp/webs";
-import { CreateClientsidePage, PromotedState } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
+import { CreateClientsidePage, PromotedState } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -78,9 +78,9 @@ await page3.save();
 Using this method you can easily create a full page app page given the component id. Don't forget the page will not be published and you will need to call save.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -99,10 +99,10 @@ There are a few ways to load pages, each of which results in an IClientsidePage 
 This method takes a _server relative_ path to the page to load.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import { Web } from "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import { Web } from "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/clientside-pages/web";
 
 const sp = spfi(...);
 
@@ -118,10 +118,10 @@ const page2 = await Web([sp.web, "https://{absolute web url}"]).loadClientsidePa
 This method takes an IFile instance and loads an IClientsidePage instance.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ClientsidePageFromFile } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/webs";
-import "@pnp/sp/files/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ClientsidePageFromFile } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/files/web";
 
 const sp = spfi(...);
 
@@ -133,8 +133,8 @@ const page = await ClientsidePageFromFile(sp.web.getFileByServerRelativePath("/s
 Client-side pages are made up of sections, columns, and controls. Sections contain columns which contain controls. There are methods to operate on these within the page, in addition to the standard array methods available in JavaScript. These samples use a variable `page` that is understood to be an IClientsidePage instance which is either created or loaded as outlined in previous sections.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -159,8 +159,8 @@ await page.save();
 ### Manipulate Sections and Columns
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -184,8 +184,8 @@ await page.save();
 The vertical section, if on the page, is stored within the sections array. However, you access it slightly differently to make things easier.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -212,8 +212,8 @@ if (page.hasVerticalSection) {
 ### Reorder Sections
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -233,8 +233,8 @@ await page.save();
 The sections and columns are arrays, so normal array operations work as expected
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -256,15 +256,15 @@ Once you have your sections and columns defined you will want to add/edit contro
 ### Add Text Content
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ClientsideText, IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ClientsideText, IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
 // our page instance
 const page: IClientsidePage = await sp.web.loadClientsidePage("/sites/dev/sitepages/home.aspx");
 
-page.addSection().addControl(new ClientsideText("@pnp/sp is a great library!"));
+page.addSection().addControl(new ClientsideText("@bpa-solutions/pnp-sp is a great library!"));
 
 await page.save();
 ```
@@ -274,10 +274,10 @@ await page.save();
 Adding controls involves loading the available client-side part definitions from the server or creating a text part.
 
 ```TypeScript
-import "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages/web";
-import { spfi } from "@pnp/sp";
-import { ClientsideWebpart } from "@pnp/sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/clientside-pages/web";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ClientsideWebpart } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -315,9 +315,9 @@ await page.save();
 There are many ways that client side web parts are implemented and we can't provide handling within the library for all possibilities. This example shows how to handle a property set within the serverProcessedContent, in this case a List part's display title.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ClientsideWebpart } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ClientsideWebpart } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/webs";
 
 // we create a class to wrap our functionality in a reusable way
 class ListWebpart extends ClientsideWebpart {
@@ -360,8 +360,8 @@ There are other operation you can perform on a page in addition to manipulating 
 You can get and set the page layout. Changing the layout after creating the page may have side effects and should be done cautiously.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -379,8 +379,8 @@ await page.save();
 ### bannerImageUrl
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -404,8 +404,8 @@ Allows you to set the thumbnail used for the page independently of the banner.
 > If you set the bannerImageUrl property and not thumbnailUrl the thumbnail will be reset to match the banner, mimicking the UI functionality.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -423,8 +423,8 @@ await page.save();
 ### topicHeader
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -446,8 +446,8 @@ await page.save();
 ### title
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -467,8 +467,8 @@ await page.save();
 > Descriptions are limited to 255 chars
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -488,8 +488,8 @@ await page.save();
 Sets the layout type of the page. The valid values are: "FullWidthImage", "NoImage", "ColorBlock", "CutInShape"
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -509,8 +509,8 @@ await page.save();
 Sets the header text alignment to one of "Left" or "Center"
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -530,8 +530,8 @@ await page.save();
 Sets if the topic header is displayed on a page.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -555,8 +555,8 @@ await page.save();
 Sets if the publish date is displayed on a page.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 const sp = spfi(...);
 
 // our page instance
@@ -577,10 +577,10 @@ await page.save();
 ### Get / Set author details
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/clientside-pages";
-import "@pnp/sp/site-users";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/site-users";
 
 const sp = spfi(...);
 
@@ -609,8 +609,8 @@ await page.save();
 Loads the page from the server. This will overwrite any local unsaved changes.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -627,8 +627,8 @@ await page.load();
 Saves any changes to the page, optionally keeping them in draft state.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -647,8 +647,8 @@ await page.save(false);
 Discards any current checkout of the page by the current user.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -663,8 +663,8 @@ await page.discardPageCheckout();
 Schedules the page for publishing.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -682,8 +682,8 @@ const scheduleVersion: string = await page.schedulePublish(publishDate);
 Promotes the page as a news article.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -700,10 +700,10 @@ Used to control the availability of comments on a page.
 [![Known Issue Banner](https://img.shields.io/badge/Known%20Issue-important.svg)](https://github.com/pnp/pnpjs/issues/1383)
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
 // you need to import the comments sub-module or use the all preset
-import "@pnp/sp/comments/clientside-page";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -722,8 +722,8 @@ await page.disableComments();
 Finds a control within the page by id.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage, ClientsideText } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage, ClientsideText } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -741,8 +741,8 @@ const control = page.findControlById<ClientsideText>("06d4cdf6-bce6-4200-8b93-66
 Finds a control within the page using the supplied delegate. Can also be used to iterate through all controls in the page.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -790,9 +790,9 @@ const info = await page.getLikedByInformation();
 Creates a copy of the page, including all controls.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -816,9 +816,9 @@ pageCopy2.save();
 Copies the contents of a page to another existing page instance.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -846,8 +846,8 @@ Sets the banner image url and optionally additional properties. Allows you to se
 > Banner images need to exist within the same site collection as the page where you want to use them.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -875,14 +875,14 @@ This sample shows the full process of adding a page, image file, and setting the
 ```TypeScript
 import { join } from "path";
 import { createReadStream } from "fs";
-import { spfi, SPFI, SPFx } from "@pnp/sp";
+import { spfi, SPFI, SPFx } from "@bpa-solutions/pnp-sp";
 import { SPDefault } from "@pnp/nodejs";
 import { LogLevel  } from "@pnp/logging";
 
-import "@pnp/sp/webs";
-import "@pnp/sp/files";
-import "@pnp/sp/folders";
-import "@pnp/sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/files";
+import "@bpa-solutions/pnp-sp/folders";
+import "@bpa-solutions/pnp-sp/clientside-pages";
 
 const buffer = readFileSync("c:/temp/key.pem");
 
@@ -938,8 +938,8 @@ await page.save();
 Allows you to set the banner image from a source outside the current site collection. The image file will be copied to the SiteAssets library and referenced from there.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -955,8 +955,8 @@ await page.save();
 You can optionally supply additional props for the banner image, these match the properties when calling [setBannerImage](#setbannerimage)
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 
@@ -1031,9 +1031,9 @@ await page.share(["email@place.com", "email2@otherplace.com"], "Please check out
 You can use the `addRepostPage` method to add a report page. The method returns the absolute url of the created page. All properties are optional but it is recommended to include as much as possible to improve the quality of the repost card's display.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/clientside-pages";
 
 const sp = spfi(...);
 const page = await sp.web.addRepostPage({

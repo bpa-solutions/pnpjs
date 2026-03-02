@@ -1695,11 +1695,11 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/views.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspviews">@pnp/sp/views<a class="headerlink" href="#pnpspviews" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspviews">@bpa-solutions/pnp-sp/views<a class="headerlink" href="#pnpspviews" title="Permanent link">&para;</a></h1>
 <p>Views define the columns, ordering, and other details we see when we look at a list. You can have multiple views for a list, including private views - and one default view.</p>
 <h2 id="get-a-views-properties">Get a View's Properties<a class="headerlink" href="#get-a-views-properties" title="Permanent link">&para;</a></h2>
 <p>To get a views properties you need to know it's id or title. You can use the standard OData operators as expected to select properties. For a list of the properties, please see <a href="https://msdn.microsoft.com/en-us/library/office/dn531433.aspx#bk_View">this article</a>.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="c1">// know a view&#39;s GUID id</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">).</span><span class="nx">getView</span><span class="p">(</span><span class="s2">&quot;2B382C69-DF64-49C4-85F1-70FB9CECACFE&quot;</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;Title&quot;</span><span class="p">).</span><span class="nx">get</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1716,7 +1716,7 @@
 
 <h2 id="add-a-view">Add a View<a class="headerlink" href="#add-a-view" title="Permanent link">&para;</a></h2>
 <p>To add a view you use the add method of the views collection. You must supply a title and can supply other parameters as well.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">ViewAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">ViewAddResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="c1">// create a new view with default fields and properties</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">).</span><span class="nx">views</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;My New View&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1746,7 +1746,7 @@
 
 
 <h2 id="update-a-view">Update a View<a class="headerlink" href="#update-a-view" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">ViewUpdateResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">ViewUpdateResult</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">).</span><span class="nx">views</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;My New View&quot;</span><span class="p">).</span><span class="nx">update</span><span class="p">({</span>
     <span class="nx">RowLimit</span>: <span class="kt">20</span><span class="p">,</span>
@@ -1759,7 +1759,7 @@
 
 <h2 id="set-view-xml">Set View XML<a class="headerlink" href="#set-view-xml" title="Permanent link">&para;</a></h2>
 <p><em>Added in 1.2.6</em></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">viewXml</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;...&quot;</span><span class="p">;</span>
 
@@ -1768,7 +1768,7 @@
 
 
 <h2 id="delete-a-view">Delete a View<a class="headerlink" href="#delete-a-view" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">).</span><span class="nx">views</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;My New View&quot;</span><span class="p">).</span><span class="k">delete</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 

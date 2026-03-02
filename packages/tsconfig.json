@@ -10,7 +10,7 @@
             "path": "./azidjsclient/tsconfig.json"
         },
         {
-            "path": "./core/tsconfig.json"
+            "path": "./pnp-core/tsconfig.json"
         },
         {
             "path": "./graph/tsconfig.json"
@@ -25,10 +25,10 @@
             "path": "./nodejs/tsconfig.json"
         },
         {
-            "path": "./queryable/tsconfig.json"
+            "path": "./pnp-queryable/tsconfig.json"
         },
         {
-            "path": "./sp/tsconfig.json"
+            "path": "./pnp-sp/tsconfig.json"
         },
         {
             "path": "./sp-admin/tsconfig.json"

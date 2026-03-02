@@ -2239,47 +2239,47 @@
 <p>We have worked to make moving from @pnp library 1.<em> to 2.</em> as painless as possible, however there are some changes to how things work. The below guide we have provided an overview of what it takes to transition between the libraries. If we missed something, please let us know in the issues list so we can update the guide. Thanks!</p>
 <h2 id="installing-pnp-libraries">Installing @pnp libraries<a class="headerlink" href="#installing-pnp-libraries" title="Permanent link">&para;</a></h2>
 <p>In version 1.* the libraries were setup as peer dependencies of each other requiring you to install each of them separately. We continue to believe this correctly describes the relationship, but recognize that basically nothing in the world accounts for peer dependencies. So we have updated the libraries to be dependencies. This makes it easier to install into your projects as you only need to install a single library:</p>
-<p><code>npm i --save @pnp/sp</code></p>
+<p><code>npm i --save @bpa-solutions/pnp-sp</code></p>
 <h2 id="selective-imports">Selective Imports<a class="headerlink" href="#selective-imports" title="Permanent link">&para;</a></h2>
 <p>Another big change in v2 is the ability to selectively import the pieces you need from the libraries. This allows you to have smaller bundles and works well with tree-shaking. It does require you to have more import statements, which can potentially be a bit confusing at first. The selective imports apply to the sp and graph libraries.</p>
 <p>To help explain let's take the example of the Web object. In v1 Web includes a reference to pretty much everything else in the entire sp library. Meaning that if you use web (and you pretty much have to) you hold a ref to all the other pieces (like Fields, Lists, ContentTypes) even if you aren't using them. Because of that tree shaking can't do anything to reduce the bundle size because it "thinks" you are using them simply because they have been imported. To solve this in v2 the Web object no longer contains references to anything, it is a bare object with a few methods. If you look at the source you will see that, for example, there is no longer a "lists" property. These properties and methods are now added through selectively importing the functionality you need:</p>
 <h3 id="selectively-import-web-lists-functionality">Selectively Import Web lists functionality<a class="headerlink" href="#selectively-import-web-lists-functionality" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 // this imports the functionality for lists associated only with web
-import &quot;@pnp/sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
 
 const r = await sp.web.lists();
 </code></pre>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 // this imports all the functionality for lists
-import &quot;@pnp/sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const r = await sp.web.lists();
 </code></pre>
 <p>Each of the docs pages shows the selective import paths for each sub-module (lists, items, etc.).</p>
 <h3 id="presets">Presets<a class="headerlink" href="#presets" title="Permanent link">&para;</a></h3>
 <p>In addition to the ability to selectively import functionality you can import presets. This allows you to import an entire set of functionality in a single line. At launch the sp library will support two presets "all" and "core" with the graph library supporting "all". <strong>Using the "all" preset will match the functionality of v1.</strong> This can save you time in transitioning your projects so you can update to selective imports later. For new projects we recommend using the selective imports from day 1.</p>
-<p>To update your V1 projects to V2 you can replace all instances of "@pnp/sp" with "@pnp/sp/presets/all" and things should work as before (though some class names or other things may have changed, please review the change log and the rest of this guide).</p>
+<p>To update your V1 projects to V2 you can replace all instances of "@bpa-solutions/pnp-sp" with "@bpa-solutions/pnp-sp/presets/all" and things should work as before (though some class names or other things may have changed, please review the change log and the rest of this guide).</p>
 <pre><code class="language-TypeScript">// V1 way of doing things:
 import {
     sp,
     ClientSideWebpart,
     ClientSideWebpartPropertyTypes,
-} from &quot;@pnp/sp&quot;;
+} from &quot;@bpa-solutions/pnp-sp&quot;;
 
 // V2 way with selective imports
-import { sp } from &quot;@pnp/sp&quot;;
-import { ClientSideWebpart, ClientSideWebpartPropertyTypes } from &quot;@pnp/sp/clientside-pages&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { ClientSideWebpart, ClientSideWebpartPropertyTypes } from &quot;@bpa-solutions/pnp-sp/clientside-pages&quot;;
 
 // V2 way with preset &quot;all&quot;
-import { sp, ClientSideWebpart, ClientSideWebpartPropertyTypes } from &quot;@pnp/sp/presets/all&quot;;
+import { sp, ClientSideWebpart, ClientSideWebpartPropertyTypes } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 </code></pre>
 <h2 id="invokable-objects">Invokable Objects<a class="headerlink" href="#invokable-objects" title="Permanent link">&para;</a></h2>
 <p>Another new feature is the addition of invokable objects. Previously where you used "get()" to invoke a request you can now leave it off. We have left the .get method in place so everyone's code wasn't broken immediately upon transitioning.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // old way (still works)
 const r1 = sp.web();
@@ -2288,8 +2288,8 @@ const r1 = sp.web();
 const r2 = sp.web();
 </code></pre>
 <p>The benefit is that objects can now support default actions that are not "get" but might be "post". And you save typing a few extra characters. This still work the same as with select or any of the other odata methods:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // invokable
 const r = sp.web.select(&quot;Title&quot;, &quot;Url&quot;)();
@@ -2297,14 +2297,14 @@ const r = sp.web.select(&quot;Title&quot;, &quot;Url&quot;)();
 <h2 id="factory-functions-interfaces">Factory Functions &amp; Interfaces<a class="headerlink" href="#factory-functions-interfaces" title="Permanent link">&para;</a></h2>
 <p>Another change in the library is in the structure of exports. We are no longer exporting the objects themselves, rather we are only exposing factory functions and interfaces. This allows us to decouple what developers use from our internal implementation. For folks using the fluent chain starting with sp you shouldn't need to update your code. If you are using any of the v1 classes directly you should just need to remove the "new" keyword and update the import path. The factory functions signature matches the constructor signature of the v1 objects.</p>
 <pre><code class="language-TypeScript">// v1
-import { Web } from &quot;@pnp/sp&quot;;
+import { Web } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const web: Web = new Web(&quot;some absolute url&quot;);
 
 const r1 = web();
 
 // v2
-import { Web, IWeb } from &quot;@pnp/sp/webs&quot;;
+import { Web, IWeb } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 const web: IWeb = Web(&quot;some absolute url&quot;);
 

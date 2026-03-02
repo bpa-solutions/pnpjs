@@ -1,9 +1,9 @@
 import { ITestingSettings } from "../../test/load-settings.js";
 import { SPDefault, GraphDefault } from "@pnp/nodejs";
-import { spfi, SPFI } from "@pnp/sp";
+import { spfi, SPFI } from "@bpa-solutions/pnp-sp";
 import { GraphFI, graphfi } from "@pnp/graph";
 import { LogLevel, PnPLogging } from "@pnp/logging";
-import { Queryable } from "@pnp/queryable";
+import { Queryable } from "@bpa-solutions/pnp-queryable";
 
 export function spSetup(settings: ITestingSettings): SPFI {
 

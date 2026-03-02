@@ -1,5 +1,5 @@
 
-import { IResourcePath } from "@pnp/sp";
+import { IResourcePath } from "@bpa-solutions/pnp-sp";
 
 export interface IOffice365TenantInfo {
     /**

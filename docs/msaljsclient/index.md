@@ -9,9 +9,9 @@ You will first need to install the package:
 The configuration and authParams
 
 ```TypeScript
-import { spfi, SPBrowser } from "@pnp/sp";
+import { spfi, SPBrowser } from "@bpa-solutions/pnp-sp";
 import { MSAL } from "@pnp/msaljsclient";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const configuation = {
     auth: {

@@ -1,4 +1,4 @@
-import { addProp, body } from "@pnp/queryable";
+import { addProp, body } from "@bpa-solutions/pnp-queryable";
 import { GraphFI } from "../fi.js";
 import { _Group, Group } from "../groups/types.js";
 import { ITeamCreateResult, ITeam, Team, ITeams, Teams } from "./types.js";

@@ -1,5 +1,5 @@
 import { Event as IEventType, Group as IGroupType } from "@microsoft/microsoft-graph-types";
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 import { graphInvokableFactory } from "../graphqueryable.js";
 import { defaultPath, deleteable, IDeleteable, updateable, IUpdateable, getById, IGetById } from "../decorators.js";
 import { graphPost } from "../operations.js";

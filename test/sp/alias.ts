@@ -1,12 +1,12 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/folders/web";
-import "@pnp/sp/folders/list";
-import "@pnp/sp/files/web";
-import "@pnp/sp/files/folder";
-import "@pnp/sp/lists/web";
-import { combine } from "@pnp/core";
-import { SPQueryable } from "@pnp/sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/folders/web";
+import "@bpa-solutions/pnp-sp/folders/list";
+import "@bpa-solutions/pnp-sp/files/web";
+import "@bpa-solutions/pnp-sp/files/folder";
+import "@bpa-solutions/pnp-sp/lists/web";
+import { combine } from "@bpa-solutions/pnp-core";
+import { SPQueryable } from "@bpa-solutions/pnp-sp";
 import { URL } from 'url'; // To prevent typing error in the "parameter parsing" test
 
 describe("Alias Parameters", function () {

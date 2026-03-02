@@ -1,4 +1,4 @@
-# @pnp/sp/user-custom-actions
+# @bpa-solutions/pnp-sp/user-custom-actions
 
 Represents a custom action associated with a SharePoint list, web or site collection.
 
@@ -9,9 +9,9 @@ Represents a custom action associated with a SharePoint list, web or site collec
 ### Get a collection of User Custom Actions from a web
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/user-custom-actions";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/user-custom-actions";
 
 const sp = spfi(...);
 
@@ -21,10 +21,10 @@ const userCustomActions = sp.web.userCustomActions();
 ### Add a new User Custom Action
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/user-custom-actions";
-import { IUserCustomActionAddResult } from '@pnp/sp/user-custom-actions';
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/user-custom-actions";
+import { IUserCustomActionAddResult } from '@bpa-solutions/pnp-sp/user-custom-actions';
 
 const sp = spfi(...);
 
@@ -41,9 +41,9 @@ const response : IUserCustomActionAddResult = await sp.web.userCustomActions.add
 ### Get a User Custom Action by ID
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/user-custom-actions";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/user-custom-actions";
 
 const sp = spfi(...);
 
@@ -55,9 +55,9 @@ const ucaData = await uca();
 ### Clear the User Custom Action collection
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/user-custom-actions";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/user-custom-actions";
 
 const sp = spfi(...);
 
@@ -76,10 +76,10 @@ await sp.web.lists.getByTitle("Documents").userCustomActions.clear();
 ### Update an existing User Custom Action
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/user-custom-actions";
-import { IUserCustomActionUpdateResult } from '@pnp/sp/user-custom-actions';
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/user-custom-actions";
+import { IUserCustomActionUpdateResult } from '@bpa-solutions/pnp-sp/user-custom-actions';
 
 const sp = spfi(...);
 

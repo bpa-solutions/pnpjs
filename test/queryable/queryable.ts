@@ -6,7 +6,7 @@ import {
     DefaultParse,
     ResolveOnData,
     RejectOnError,
-} from "@pnp/queryable";
+} from "@bpa-solutions/pnp-queryable";
 
 describe("Queryable", function () {
 

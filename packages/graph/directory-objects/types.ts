@@ -1,7 +1,7 @@
 import { _GraphQueryableCollection, _GraphQueryableInstance, graphInvokableFactory } from "../graphqueryable.js";
 import { DirectoryObject as IDirectoryObjectType } from "@microsoft/microsoft-graph-types";
 import { defaultPath, getById, IGetById, deleteable, IDeleteable } from "../decorators.js";
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 import { graphPost } from "../operations.js";
 import { AsPaged, IPagedResult } from "../behaviors/paged.js";
 

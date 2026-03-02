@@ -1,4 +1,4 @@
-# @pnp/sp/views
+# @bpa-solutions/pnp-sp/views
 
 Views define the columns, ordering, and other details we see when we look at a list. You can have multiple views for a list, including private views - and one default view.
 
@@ -9,10 +9,10 @@ Views define the columns, ordering, and other details we see when we look at a l
 ### Get views in a list
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -31,10 +31,10 @@ const views3 = await list.views.top(3)();
 ### Add a View
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -63,10 +63,10 @@ await Promise.all([
 ### Get a View's Information
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -86,10 +86,10 @@ const result5 = await list.getView("{GUID view id}")();
 ### fields
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -101,10 +101,10 @@ const result = await list.views.getById("{GUID view id}").fields();
 ### update
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -118,10 +118,10 @@ const result = await list.views.getById("{GUID view id}").update({
 ### renderAsHtml
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -131,10 +131,10 @@ const result = await sp.web.lists.getByTitle("My List").views.getById("{GUID vie
 ### setViewXml
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -146,10 +146,10 @@ await sp.web.lists.getByTitle("My List").views.getById("{GUID view id}").setView
 ### delete
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -163,10 +163,10 @@ await sp.web.lists.getByTitle("My List").views.getById("{GUID view id}").delete(
 ### getSchemaXml
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -176,10 +176,10 @@ const xml = await sp.web.lists.getByTitle("My List").defaultView.fields.getSchem
 ### add
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -189,10 +189,10 @@ await sp.web.lists.getByTitle("My List").defaultView.fields.add("Created");
 ### move
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -202,10 +202,10 @@ await sp.web.lists.getByTitle("My List").defaultView.fields.move("Created", 0);
 ### remove
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 
@@ -215,10 +215,10 @@ await sp.web.lists.getByTitle("My List").defaultView.fields.remove("Created");
 ### removeAll
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/views";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/views";
 
 const sp = spfi(...);
 

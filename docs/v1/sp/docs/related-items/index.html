@@ -1709,12 +1709,12 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/related-items.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpsprelateditems">@pnp/sp/relateditems<a class="headerlink" href="#pnpsprelateditems" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsprelateditems">@bpa-solutions/pnp-sp/relateditems<a class="headerlink" href="#pnpsprelateditems" title="Permanent link">&para;</a></h1>
 <p>Related items are used in Task and Workflow lists (as well as others) to track items that have relationships similar to database relationships.</p>
 <p>All methods chain off the Web's relatedItems property as shown below:</p>
 <h2 id="getrelateditems">getRelatedItems<a class="headerlink" href="#getrelateditems" title="Permanent link">&para;</a></h2>
 <p>Expects the named library to exist within the contextual web.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">RelatedItem</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">RelatedItem</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">relatedItems</span><span class="p">.</span><span class="nx">getRelatedItems</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">RelatedItem</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1725,7 +1725,7 @@
 
 <h2 id="getpageonerelateditems">getPageOneRelatedItems<a class="headerlink" href="#getpageonerelateditems" title="Permanent link">&para;</a></h2>
 <p>Expects the named library to exist within the contextual web.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">RelatedItem</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">RelatedItem</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">relatedItems</span><span class="p">.</span><span class="nx">getPageOneRelatedItems</span><span class="p">(</span><span class="s2">&quot;Documents&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span>: <span class="kt">RelatedItem</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1735,7 +1735,7 @@
 
 
 <h2 id="addsinglelink">addSingleLink<a class="headerlink" href="#addsinglelink" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">relatedItems</span><span class="p">.</span><span class="nx">addSingleLink</span><span class="p">(</span><span class="s2">&quot;RelatedItemsList1&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;https://site.sharepoint.com/sites/dev/subsite&quot;</span><span class="p">,</span> <span class="s2">&quot;RelatedItemsList2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;https://site.sharepoint.com/sites/dev&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1751,7 +1751,7 @@
 
 <h2 id="addsinglelinktourl">addSingleLinkToUrl<a class="headerlink" href="#addsinglelinktourl" title="Permanent link">&para;</a></h2>
 <p>Adds a related item link from an item specified by list name and item id, to an item specified by url</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">relatedItems</span><span class="p">.</span><span class="nx">addSingleLinkToUrl</span><span class="p">(</span><span class="s2">&quot;RelatedItemsList1&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;https://site.sharepoint.com/sites/dev/subsite/Documents/test.txt&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1766,7 +1766,7 @@
 
 <h2 id="addsinglelinkfromurl">addSingleLinkFromUrl<a class="headerlink" href="#addsinglelinkfromurl" title="Permanent link">&para;</a></h2>
 <p>Adds a related item link from an item specified by url, to an item specified by list name and item id</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">relatedItems</span><span class="p">.</span><span class="nx">addSingleLinkFromUrl</span><span class="p">(</span><span class="s2">&quot;https://site.sharepoint.com/sites/dev/subsite/Documents/test.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;RelatedItemsList1&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// ... return is void</span>
@@ -1780,7 +1780,7 @@
 
 
 <h2 id="deletesinglelink">deleteSingleLink<a class="headerlink" href="#deletesinglelink" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">relatedItems</span><span class="p">.</span><span class="nx">deleteSingleLink</span><span class="p">(</span><span class="s2">&quot;RelatedItemsList1&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;https://site.sharepoint.com/sites/dev/subsite&quot;</span><span class="p">,</span> <span class="s2">&quot;RelatedItemsList2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;https://site.sharepoint.com/sites/dev&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 

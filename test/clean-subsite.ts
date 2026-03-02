@@ -1,6 +1,6 @@
-import { IInvokable } from "@pnp/queryable";
-import { extractWebUrl, spfi } from "@pnp/sp";
-import { IWeb } from "@pnp/sp/webs";
+import { IInvokable } from "@bpa-solutions/pnp-queryable";
+import { extractWebUrl, spfi } from "@bpa-solutions/pnp-sp";
+import { IWeb } from "@bpa-solutions/pnp-sp/webs";
 
 // Function deletes all test subsites
 export async function cleanUpAllSubsites(web: IWeb & IInvokable<any>): Promise<void> {

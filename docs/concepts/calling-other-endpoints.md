@@ -28,11 +28,11 @@ The first is the easiest to use because, as the queryable documentation tells us
 The second method essentially starts from scratch where the user constructs the entire url and then registers observers on the SPQuerable instance. Then uses spGet to execute the call. There are many other variations to arrive at the same outcome, all are dependent on your requirements.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { AssignFrom } from "@pnp/core";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import { spGet, SPQueryable, SPFx } from "@pnp/sp";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { AssignFrom } from "@bpa-solutions/pnp-core";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import { spGet, SPQueryable, SPFx } from "@bpa-solutions/pnp-sp";
 
 // Establish SPFI instance passing in the appropriate behavior to register the initial observers.
 const sp = spfi(...);
@@ -64,11 +64,11 @@ The resulting call will be to the endpoint:
 Let's now pretend that we need to get the changes on a list and want to call the `getchanges` method off list.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import { IChangeQuery, spPost, SPQueryable } from "@pnp/sp";
-import { body } from "@pnp/queryable";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import { IChangeQuery, spPost, SPQueryable } from "@bpa-solutions/pnp-sp";
+import { body } from "@bpa-solutions/pnp-queryable";
 
 // Establish SPFI instance passing in the appropriate behavior to register the initial observers.
 const sp = spfi(...);
@@ -140,7 +140,7 @@ import { graphfi } from "@pnp/graph";
 import "@pnp/graph/users";
 import "@pnp/graph/calendars";
 import { GraphQueryable, graphPost } from "@pnp/graph";
-import { body, InjectHeaders } from "@pnp/queryable";
+import { body, InjectHeaders } from "@bpa-solutions/pnp-queryable";
 
 // Establish GRAPHFI instance passing in the appropriate behavior to register the initial observers.
 const graph = graphfi(...);
@@ -198,8 +198,8 @@ If you find you need to create an instance of Queryable (for either graph or Sha
 import { graphfi } from "@pnp/graph";
 import "@pnp/graph/users";
 import { GraphQueryable, graphPost } from "@pnp/graph";
-import { body, InjectHeaders } from "@pnp/queryable";
-import { AssignFrom } from "@pnp/core";
+import { body, InjectHeaders } from "@bpa-solutions/pnp-queryable";
+import { AssignFrom } from "@bpa-solutions/pnp-core";
 
 // Establish GRAPHFI instance passing in the appropriate behavior to register the initial observers.
 const graph = graphfi(...);

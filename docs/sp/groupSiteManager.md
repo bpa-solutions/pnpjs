@@ -1,11 +1,11 @@
 
-## @pnp/sp/groupsitemanager
+## @bpa-solutions/pnp-sp/groupsitemanager
 
-The `@pnp/sp/groupsitemanager` package represents calls to `_api/groupsitemanager` endpoint and is accessible from any site url.
+The `@bpa-solutions/pnp-sp/groupsitemanager` package represents calls to `_api/groupsitemanager` endpoint and is accessible from any site url.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/groupsitemanager";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/groupsitemanager";
 
 const sp = spfi(...);
 

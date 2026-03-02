@@ -5,8 +5,8 @@ When building in SharePoint Framework you only need to provide the context to ei
 ## SPFx + SharePoint
 
 ```TypeScript
-import { SPFx, spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
+import { SPFx, spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
 
 // within a webpart, application customizer, or adaptive card extension where the context object is available
 const sp = spfi().using(SPFx(this.context));
@@ -33,7 +33,7 @@ When using the SPFx behavior, authentication is handled by a cookie stored on th
 Here's an example of how you would build an instance of the SPFI that would include an Bearer Token in the header. Be advised if you use this instance to make calls to SharePoint endpoints that you have not specifically authorized they will fail.
 
 ```TypeScript
-import { spfi, SPFxToken, SPFx } from "@pnp/sp";
+import { spfi, SPFxToken, SPFx } from "@bpa-solutions/pnp-sp";
 
 const sp = spfi().using(SPFx(context), SPFxToken(context));
 ```
@@ -50,11 +50,11 @@ Each of the following samples reference a MSAL configuration that utilizes an Az
 
 ```TypeScript
 import { SPFx as graphSPFx, graphfi } from "@pnp/graph";
-import { SPFx as spSPFx, spfi } from "@pnp/sp";
+import { SPFx as spSPFx, spfi } from "@bpa-solutions/pnp-sp";
 import { MSAL } from "@pnp/msaljsclient";
 import { Configuration, AuthenticationParameters } from "msal";
 import "@pnp/graph/users";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/webs";
 
 const configuration: Configuration = {
   auth: {

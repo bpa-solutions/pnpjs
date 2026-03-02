@@ -1,6 +1,6 @@
 import { IColumn } from "./types";
 import { graphPost } from "../operations.js";
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 import {
     ColumnDefinition as IColumnDefinition,
 } from "@microsoft/microsoft-graph-types";

@@ -32,9 +32,9 @@ import { settings } from "./settings.js";
 // at the root.
 setTimeout(async () => {
 
-    const { spfi } = await import("@pnp/sp");
+    const { spfi } = await import("@bpa-solutions/pnp-sp");
     const { SPDefault } = await import("@pnp/nodejs");
-    await import("@pnp/sp/webs");
+    await import("@bpa-solutions/pnp-sp/webs");
 
     const sp = spfi().using(SPDefault({
         baseUrl: settings.testing.sp.url,

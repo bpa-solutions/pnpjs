@@ -1,4 +1,4 @@
-# @pnp/core : timeline
+# @bpa-solutions/pnp-core : timeline
 
 Timeline provides base functionality for ochestrating async operations. A timeline defines a set of [moments](./moments.md) to which observers can be registered. [Observers](./observers.md) are functions that can act independently or together during a moment in the timeline. The model is event-like but each moment's implementation can be unique in how it interacts with the registered observers. Keep reading under [Define Moments](#define-moments) to understand more about what a moment is and how to create one.
 
@@ -20,7 +20,7 @@ A timeline is made up of a set of moments which are themselves defined by a plai
 The `first` moment uses a pre-defined moment implementation `asyncReduce`. This moment allows you to define a state based on the arguments of the observer function, in this case `FirstObserver`. `asyncReduce` takes those arguments, does some processing, and returns a promise resolving an array matching the input arguments in order and type with optionally changed values. Those values become the arguments to the next observer registered to that moment.
 
 ```TypeScript
-import { asyncReduce, ObserverAction, Timeline } from "@pnp/core";
+import { asyncReduce, ObserverAction, Timeline } from "@bpa-solutions/pnp-core";
 
 // the first observer is a function taking a number and async returning a number in an array
 // all asyncReduce observers must follow this pattern of returning async a tuple matching the args

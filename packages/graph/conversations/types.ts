@@ -1,4 +1,4 @@
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 import {
     ConversationThread as IConversationThreadType,
     Post as IPostType,

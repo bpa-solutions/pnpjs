@@ -1,6 +1,6 @@
 # sp-admin
 
-The `@pnp/sp-admin` library enables you to call the static SharePoint admin API's:
+The `@bpa-solutions/pnp-sp-admin` library enables you to call the static SharePoint admin API's:
 
 - `_api/Microsoft.Online.SharePoint.TenantManagement.Office365Tenant`
 - `_api/Microsoft.Online.SharePoint.TenantAdministration.SiteProperties`
@@ -16,13 +16,13 @@ These APIs typically require an elevated level of permissions and should not be 
 To use the library you first install the package:
 
 ```CMD
-npm install @pnp/sp-admin --save
+npm install @bpa-solutions/pnp-sp-admin --save
 ```
 
 Then import the package into your solution, it will attach a node to the sp fluent interface using selective imports.
 
 ```TS
-import "@pnp/sp-admin";
+import "@bpa-solutions/pnp-sp-admin";
 ```
 
 ## Basic Example
@@ -30,8 +30,8 @@ import "@pnp/sp-admin";
 In this example we get all of the web templates' information.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import "@pnp/sp-admin";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp-admin";
 
 const sp = spfi(...);
 
@@ -46,8 +46,8 @@ The `tenant` node represents calls to the `_api/Microsoft.Online.SharePoint.Tena
 > When calling the `tenant` endpoint you must target the -admin site as shown here. If you do not you will get only errors.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import "@pnp/sp-admin";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp-admin";
 
 const sp = spfi("https://{tenant}-admin.sharepoint.com");
 
@@ -71,8 +71,8 @@ const templates = await sp.admin.tenant.getSPOTenantAllWebTemplates();
 The `office365Tenant` node represents calls to the `_api/Microsoft.Online.SharePoint.TenantManagement.Office365Tenant` end point and is accessible from any site url.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import "@pnp/sp-admin";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp-admin";
 
 const sp = spfi(...);
 
@@ -94,8 +94,8 @@ const externalUsers = await sp.admin.office365Tenant.getExternalUsers();
 The `siteProperties` node is primarily for accessing detailed properties about a site and tenant.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import "@pnp/sp-admin";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp-admin";
 
 const sp = spfi(...);
 
@@ -121,8 +121,8 @@ All those nodes support a `call` method to easily allow calling methods not expl
 This sample shows using call to invoke the "AddTenantCdnOrigin" method of office365Tenant. While we already support for this method, it helps to show the relationship between `call` and an existing method.
 
 ```TS
-import { spfi } from "@pnp/sp";
-import { SPOTenantCdnType } from '@pnp/sp-admin';
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { SPOTenantCdnType } from '@bpa-solutions/pnp-sp-admin';
 
 const sp = spfi(...);
 

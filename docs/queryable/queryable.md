@@ -1,4 +1,4 @@
-# @pnp/queryable/queryable
+# @bpa-solutions/pnp-queryable/queryable
 
 Queryable is the base class for both the sp and graph fluent interfaces and provides the structure to which [observers](../core/observers.md) are registered. As a background to understand more of the mechanics please see the articles on [Timeline](../core/timeline.md), [moments](../core/moments.md), and [observers](../core/observers.md). For reuse it is recommended to compose your observer registrations with [behaviors](../core/behaviors.md).
 
@@ -118,9 +118,9 @@ Errors can happen at anytime and for any reason. If you are using the `RejectOnE
 The `error` observer's signature is: `(this: Timeline<T>, err: string | Error) => void`
 
 ```TypeScript
-import { spfi, DefaultInit, DefaultHeaders } from "@pnp/sp";
-import { BrowserFetchWithRetry, DefaultParse } from "@pnp/queryable";
-import "@pnp/sp/webs";
+import { spfi, DefaultInit, DefaultHeaders } from "@bpa-solutions/pnp-sp";
+import { BrowserFetchWithRetry, DefaultParse } from "@bpa-solutions/pnp-queryable";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi().using(DefaultInit(), DefaultHeaders(), BrowserFetchWithRetry(), DefaultParse());
 

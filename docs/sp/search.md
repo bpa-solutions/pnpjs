@@ -1,4 +1,4 @@
-# @pnp/sp/search
+# @bpa-solutions/pnp-sp/search
 
 Using search you can access content throughout your organization in a secure and consistent manner. The library provides support for searching and suggest - as well as some interfaces and helper classes to make building your queries and processing responses easier.
 
@@ -9,9 +9,9 @@ Using search you can access content throughout your organization in a secure and
 Search is accessed directly from the root sp object and can take either a string representing the query text, a plain object matching the ISearchQuery interface, or a SearchQueryBuilder instance.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/search";
-import { ISearchQuery, SearchResults, SearchQueryBuilder } from "@pnp/sp/search";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/search";
+import { ISearchQuery, SearchResults, SearchQueryBuilder } from "@bpa-solutions/pnp-sp/search";
 
 const sp = spfi(...);
 
@@ -48,10 +48,10 @@ console.log(results3.PrimarySearchResults);
 Starting with v3 you can use any of the caching behaviors with search and the results will be cached. Please see here [for more details on caching options](https://pnp.github.io/pnpjs/queryable/behaviors/#caching).
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/search";
-import { ISearchQuery, SearchResults, SearchQueryBuilder } from "@pnp/sp/search";
-import { Caching } from "@pnp/queryable";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/search";
+import { ISearchQuery, SearchResults, SearchQueryBuilder } from "@bpa-solutions/pnp-sp/search";
+import { Caching } from "@bpa-solutions/pnp-queryable";
 
 const sp = spfi(...).using(Caching());
 
@@ -76,9 +76,9 @@ console.log(results2.TotalRows);
 Paging is controlled by a start row and page size parameter. You can specify both arguments in your initial query however you can use the getPage method to jump to any page. The second parameter page size is optional and will use the previous RowLimit or default to 10.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/search";
-import { SearchResults, SearchQueryBuilder } from "@pnp/sp/search";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/search";
+import { SearchResults, SearchQueryBuilder } from "@bpa-solutions/pnp-sp/search";
 
 const sp = spfi(...);
 
@@ -117,9 +117,9 @@ async function prev() {
 The SearchQueryBuilder allows you to build your queries in a fluent manner. It also accepts constructor arguments for query text and a base query plain object, should you have a shared configuration for queries in an application you can define them once. The methods and properties match those on the SearchQuery interface. Boolean properties add the flag to the query while methods require that you supply one or more arguments. Also arguments supplied later in the chain will overwrite previous values.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/search";
-import { SearchQueryBuilder, SearchResults, ISearchQuery } from "@pnp/sp/search";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/search";
+import { SearchQueryBuilder, SearchResults, ISearchQuery } from "@bpa-solutions/pnp-sp/search";
 
 const sp = spfi(...);
 
@@ -152,9 +152,9 @@ const results3 = sp.search(q4);
 Search suggest works in much the same way as search, except against the suggest end point. It takes a string or a plain object that matches ISuggestQuery.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/search";
-import { ISuggestQuery, ISuggestResult } from "@pnp/sp/search";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/search";
+import { ISuggestQuery, ISuggestResult } from "@bpa-solutions/pnp-sp/search";
 
 const sp = spfi(...);
 
@@ -173,10 +173,10 @@ You can also configure a search or suggest query against any valid SP url using 
 > In this case you'll need to ensure you add observers, or use the [tuple constructor](../queryable/queryable.md/#queryable-constructor) to inherit
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/web";
-import "@pnp/sp/search";
-import { Search, Suggest } from "@pnp/sp/search";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/web";
+import "@bpa-solutions/pnp-sp/search";
+import { Search, Suggest } from "@bpa-solutions/pnp-sp/search";
 import { SPDefault } from "@pnp/nodejs";
 
 const sp = spfi(...);

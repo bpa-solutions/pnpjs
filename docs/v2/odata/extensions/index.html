@@ -2278,9 +2278,9 @@
 <p>This function is passed the current operation as the first argument, currently one of "apply", "get", "has", or "set". The second argument is the target instance upon which the operation is being invoked. The remaining parameters vary by the operation being performed, but will match their respective ProxyHandler method signatures.</p>
 <h3 id="named-extensions">Named Extensions<a class="headerlink" href="#named-extensions" title="Permanent link">&para;</a></h3>
 <p>Named extensions are designed to add or replace a single property or method, though you can register multiple using the same object. These extensions are defined by using an object which has the property/methods you want to override described. Registering named extensions globally will override that operation to all invokables.</p>
-<pre><code class="language-TypeScript">import { extendFactory } from &quot;@pnp/queryable&quot;;
-import { sp, List, Lists, IWeb, ILists, List, IList, Web } from &quot;@pnp/sp/presets/all&quot;;
-import { escapeQueryStrValue } from &quot;@pnp/sp/utils/escapeQueryStrValue&quot;;
+<pre><code class="language-TypeScript">import { extendFactory } from &quot;@bpa-solutions/pnp-queryable&quot;;
+import { sp, List, Lists, IWeb, ILists, List, IList, Web } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
+import { escapeQueryStrValue } from &quot;@bpa-solutions/pnp-sp/utils/escapeQueryStrValue&quot;;
 
 // create a plain object with the props and methods we want to add/change
 const myExtensions = {
@@ -2317,9 +2317,9 @@ console.log(JSON.stringify(items.length, null, 2));
 </code></pre>
 <h3 id="proxyhandler-extensions">ProxyHandler Extensions<a class="headerlink" href="#proxyhandler-extensions" title="Permanent link">&para;</a></h3>
 <p>You can also register a partial ProxyHandler implementation as an extension. You can implement one or more of the ProxyHandler methods as needed. Here we implement the same override of getByTitle globally. This is the most complicated method of creating an extension and assumes an understanding of how ProxyHandlers work.</p>
-<pre><code class="language-TypeScript">import { extendFactory } from &quot;@pnp/queryable&quot;;
-import { sp, Lists, IWeb, ILists, Web } from &quot;@pnp/sp/presets/all&quot;;
-import { escapeQueryStrValue } from &quot;@pnp/sp/utils/escapeSingleQuote&quot;;
+<pre><code class="language-TypeScript">import { extendFactory } from &quot;@bpa-solutions/pnp-queryable&quot;;
+import { sp, Lists, IWeb, ILists, Web } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
+import { escapeQueryStrValue } from &quot;@bpa-solutions/pnp-sp/utils/escapeSingleQuote&quot;;
 
 const myExtensions = {
     get: (target, p: string | number | symbol, _receiver: any) =&gt; {
@@ -2351,7 +2351,7 @@ console.log(JSON.stringify(items.length, null, 2));
 <p>You can register Extensions either globally, on an invocable factory, or on a per-object basis, and you can register a single extension or an array of Extensions.</p>
 <h3 id="global-registration">Global Registration<a class="headerlink" href="#global-registration" title="Permanent link">&para;</a></h3>
 <p>Globally registering an extension allows you to inject functionality into every invocable that is instantiated within your application. It is important to remember that processing extensions happens on ALL property access and method invocation operations - so global extensions should be used sparingly.</p>
-<pre><code class="language-TypeScript">import { extendGlobal } from &quot;@pnp/queryable&quot;;
+<pre><code class="language-TypeScript">import { extendGlobal } from &quot;@bpa-solutions/pnp-queryable&quot;;
 
 // we can add a logging method to very verbosely track what things are called in our application
 extendGlobal((op: string, _target: any, ...rest: any[]): void =&gt; {
@@ -2371,15 +2371,15 @@ extendGlobal((op: string, _target: any, ...rest: any[]): void =&gt; {
 </code></pre>
 <h3 id="factory-registration">Factory Registration<a class="headerlink" href="#factory-registration" title="Permanent link">&para;</a></h3>
 <p>The pattern you will likely find most useful is the ability to extend an invocable factory. This will apply your extensions to all instances created with that factory, meaning all IWebs or ILists will have the extension methods. The example below shows how to add a property to IWeb as well as a method to IList.</p>
-<pre><code class="language-TypeScript">import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import { IWeb, Web } from &quot;@pnp/sp/webs&quot;;
-import { ILists, Lists } from &quot;@pnp/sp/lists&quot;;
-import { extendFactory } from &quot;@pnp/queryable&quot;;
-import { sp } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import { IWeb, Web } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import { ILists, Lists } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import { extendFactory } from &quot;@bpa-solutions/pnp-queryable&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 // sets up the types correctly when importing across your application
-declare module &quot;@pnp/sp/webs/types&quot; {
+declare module &quot;@bpa-solutions/pnp-sp/webs/types&quot; {
 
     // we need to extend the interface
     interface IWeb {
@@ -2388,7 +2388,7 @@ declare module &quot;@pnp/sp/webs/types&quot; {
 }
 
 // sets up the types correctly when importing across your application
-declare module &quot;@pnp/sp/lists/types&quot; {
+declare module &quot;@bpa-solutions/pnp-sp/lists/types&quot; {
 
     // we need to extend the interface
     interface ILists {
@@ -2427,8 +2427,8 @@ console.log(JSON.stringify(lists3, null, 2));
 <p>Extensions are not transferred to child objects in a fluent chain, be sure you are extending the instance you think you are.</p>
 </blockquote>
 <p>Here we show the same override operation of getByTitle on the lists collection, but safely only overriding the single instance.</p>
-<pre><code class="language-TypeScript">import { extendObj } from &quot;@pnp/queryable&quot;;
-import { sp, List, ILists } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { extendObj } from &quot;@bpa-solutions/pnp-queryable&quot;;
+import { sp, List, ILists } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 const myExtensions = {
     getByTitle: function (this: ILists, title: string) {
@@ -2450,7 +2450,7 @@ console.log(JSON.stringify(items.length, null, 2));
 </code></pre>
 <h2 id="enable-disable-extensions-and-clear-global-extensions">Enable &amp; Disable Extensions and Clear Global Extensions<a class="headerlink" href="#enable-disable-extensions-and-clear-global-extensions" title="Permanent link">&para;</a></h2>
 <p>Extensions are automatically enabled when you set an extension through any of the above outlined methods. You can disable and enable extensions on demand if needed.</p>
-<pre><code class="language-TypeScript">import { enableExtensions, disableExtensions, clearGlobalExtensions } from &quot;@pnp/queryable&quot;;
+<pre><code class="language-TypeScript">import { enableExtensions, disableExtensions, clearGlobalExtensions } from &quot;@bpa-solutions/pnp-queryable&quot;;
 
 // disable Extensions
 disableExtensions();

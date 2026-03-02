@@ -1,5 +1,5 @@
 import { _Post } from "../conversations/types.js";
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 import { Attachments, IAttachments } from "./types.js";
 
 declare module "../conversations/types" {

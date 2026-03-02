@@ -1653,12 +1653,12 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp-taxonomy/docs/utilities.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpsp-taxonomyutilities">@pnp/sp-taxonomy/utilities<a class="headerlink" href="#pnpsp-taxonomyutilities" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsp-taxonomyutilities">@bpa-solutions/pnp-sp-taxonomy/utilities<a class="headerlink" href="#pnpsp-taxonomyutilities" title="Permanent link">&para;</a></h1>
 <p>These are a collection of helper methods you may find useful.</p>
 <h2 id="setitemmetadatafield">setItemMetaDataField<a class="headerlink" href="#setitemmetadatafield" title="Permanent link">&para;</a></h2>
 <p>Allows you to easily set the value of a metadata field in a list item.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">setItemMetaDataField</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">setItemMetaDataField</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="c1">// create a new item, or load an existing</span>
 <span class="kr">const</span> <span class="nx">itemResult</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;TaxonomyList&quot;</span><span class="p">).</span><span class="nx">items</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
@@ -1675,8 +1675,8 @@
 
 <h2 id="setitemmetadatamultifield">setItemMetaDataMultiField<a class="headerlink" href="#setitemmetadatamultifield" title="Permanent link">&para;</a></h2>
 <p>Allows you to easily set the value of a multi-value metadata field in a list item.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">setItemMetaDataMultiField</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp-taxonomy&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">taxonomy</span><span class="p">,</span> <span class="nx">setItemMetaDataMultiField</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp-taxonomy&quot;</span><span class="p">;</span>
 
 <span class="c1">// create a new item, or load an existing</span>
 <span class="kr">const</span> <span class="nx">itemResult</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;TaxonomyList&quot;</span><span class="p">).</span><span class="nx">items</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>

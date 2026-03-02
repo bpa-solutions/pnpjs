@@ -2207,7 +2207,7 @@
                   </a>
                 
                 
-                <h1 id="pnpcorenet">@pnp/core/net<a class="headerlink" href="#pnpcorenet" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpcorenet">@bpa-solutions/pnp-core/net<a class="headerlink" href="#pnpcorenet" title="Permanent link">&para;</a></h1>
 <p>This module contains a set of classes and interfaces used to characterize shared http interactions and configuration of the libraries. Some of the interfaces
 are described below (many have no use outside the library) as well as several classes.</p>
 <h2 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h2>
@@ -2221,7 +2221,7 @@ underlying HttpClientImpl fetch method.</p>
 <p>This module export two classes of note, FetchClient and BearerTokenFetchClient. Both implement HttpClientImpl.</p>
 <h3 id="fetchclient">FetchClient<a class="headerlink" href="#fetchclient" title="Permanent link">&para;</a></h3>
 <p>Basic implementation that calls the global (window) fetch method with no additional processing.</p>
-<pre><code class="language-TypeScript">import { FetchClient } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { FetchClient } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const client = new FetchClient();
 
@@ -2229,7 +2229,7 @@ client.fetch(&quot;{url}&quot;, {});
 </code></pre>
 <h3 id="bearertokenfetchclient">BearerTokenFetchClient<a class="headerlink" href="#bearertokenfetchclient" title="Permanent link">&para;</a></h3>
 <p>A simple implementation that takes a provided authentication token and adds the Authentication Bearer header to the request. No other processing is done and the token is treated as a static string.</p>
-<pre><code class="language-TypeScript">import { BearerTokenFetchClient } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { BearerTokenFetchClient } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const client = new BearerTokenFetchClient(&quot;{authentication token}&quot;);
 

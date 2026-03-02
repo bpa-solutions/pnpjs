@@ -1,14 +1,14 @@
 import { expect } from "chai";
-import { combine, dateAdd, stringIsNullOrEmpty } from "@pnp/core";
-import { IFolder } from "@pnp/sp/folders";
-import { IFile } from "@pnp/sp/files";
-import { IItem } from "@pnp/sp/items";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/folders";
-import "@pnp/sp/files";
-import "@pnp/sp/sharing";
-import "@pnp/sp/site-users";
-import { SharingRole, SharingLinkKind } from "@pnp/sp/sharing";
+import { combine, dateAdd, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
+import { IFolder } from "@bpa-solutions/pnp-sp/folders";
+import { IFile } from "@bpa-solutions/pnp-sp/files";
+import { IItem } from "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/folders";
+import "@bpa-solutions/pnp-sp/files";
+import "@bpa-solutions/pnp-sp/sharing";
+import "@bpa-solutions/pnp-sp/site-users";
+import { SharingRole, SharingLinkKind } from "@bpa-solutions/pnp-sp/sharing";
 
 
 describe("Sharing", function () {

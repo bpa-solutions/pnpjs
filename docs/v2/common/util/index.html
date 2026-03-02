@@ -2281,11 +2281,11 @@
                   </a>
                 
                 
-                <h1 id="pnpcoreutil">@pnp/core/util<a class="headerlink" href="#pnpcoreutil" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpcoreutil">@bpa-solutions/pnp-core/util<a class="headerlink" href="#pnpcoreutil" title="Permanent link">&para;</a></h1>
 <p>This module contains utility methods that you can import individually from the common library.</p>
 <pre><code class="language-TypeScript">import {
     getRandomString,
-} from &quot;@pnp/core&quot;;
+} from &quot;@bpa-solutions/pnp-core&quot;;
 
 // use from individually imported method
 console.log(getRandomString(10));
@@ -2293,7 +2293,7 @@ console.log(getRandomString(10));
 <h2 id="assign">assign<a class="headerlink" href="#assign" title="Permanent link">&para;</a></h2>
 <p>Merges a source object's own enumerable properties into a single target object. Similar to Object.assign, but allows control of overwriting of existing
 properties.</p>
-<pre><code class="language-TypeScript">import { assign } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { assign } from &quot;@bpa-solutions/pnp-core&quot;;
 
 let obj1 = {
     prop: 1,
@@ -2314,7 +2314,7 @@ const example2 = assign(obj1, obj2, true);
 </code></pre>
 <h2 id="combine">combine<a class="headerlink" href="#combine" title="Permanent link">&para;</a></h2>
 <p>Combines any number of paths, normalizing the slashes as required</p>
-<pre><code class="language-TypeScript">import { combine } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { combine } from &quot;@bpa-solutions/pnp-core&quot;;
 
 // &quot;https://microsoft.com/something/more&quot;
 const paths = combine(&quot;https://microsoft.com&quot;, &quot;something&quot;, &quot;more&quot;);
@@ -2324,7 +2324,7 @@ const paths2 = combine(&quot;/also/&quot;, &quot;/works&quot;, &quot;with/&quot;
 </code></pre>
 <h2 id="dateadd">dateAdd<a class="headerlink" href="#dateadd" title="Permanent link">&para;</a></h2>
 <p>Manipulates a date, please see the <a href="https://stackoverflow.com/questions/1197928/how-to-add-30-minutes-to-a-javascript-date-object">Stack Overflow discussion</a> from where this method was taken.</p>
-<pre><code class="language-TypeScript">import { dateAdd } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { dateAdd } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const testDate = new Date();
 
@@ -2332,7 +2332,7 @@ dateAdd(testDate,'minute',10);
 </code></pre>
 <h2 id="getctxcallback">getCtxCallback<a class="headerlink" href="#getctxcallback" title="Permanent link">&para;</a></h2>
 <p>Gets a callback function which will maintain context across async calls.</p>
-<pre><code class="language-TypeScript">import { getCtxCallback } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { getCtxCallback } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const contextThis = {
     myProp: 6,
@@ -2362,20 +2362,20 @@ callback2(); // returns 10 (6 + 4)
 </code></pre>
 <h2 id="getguid">getGUID<a class="headerlink" href="#getguid" title="Permanent link">&para;</a></h2>
 <p>Creates a random guid, please see the <a href="https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript">Stack Overflow discussion</a> from where this method was taken.</p>
-<pre><code class="language-TypeScript">import { getGUID } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { getGUID } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const newGUID = getGUID();
 </code></pre>
 <h2 id="getrandomstring">getRandomString<a class="headerlink" href="#getrandomstring" title="Permanent link">&para;</a></h2>
 <p>Gets a random string consisting of the number of characters requested.</p>
-<pre><code class="language-TypeScript">import { getRandomString } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { getRandomString } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const randomString = getRandomString(10);
 </code></pre>
 <h2 id="hop">hOP<a class="headerlink" href="#hop" title="Permanent link">&para;</a></h2>
 <p>Shortcut for Object.hasOwnProperty. Determines if an object has a specified property.</p>
-<pre><code class="language-TypeScript">import { HttpRequestError } from &quot;@pnp/queryable&quot;;
-import { hOP } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { HttpRequestError } from &quot;@bpa-solutions/pnp-queryable&quot;;
+import { hOP } from &quot;@bpa-solutions/pnp-core&quot;;
 
 export async function handleError(e: Error | HttpRequestError): Promise&lt;void&gt; {
 
@@ -2390,7 +2390,7 @@ export async function handleError(e: Error | HttpRequestError): Promise&lt;void&
 </code></pre>
 <h2 id="isarray">isArray<a class="headerlink" href="#isarray" title="Permanent link">&para;</a></h2>
 <p>Determines if a supplied variable represents an array.</p>
-<pre><code class="language-TypeScript">import { isArray } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { isArray } from &quot;@bpa-solutions/pnp-core&quot;;
 
 let x:String[] = [1,2,3]];
 
@@ -2402,7 +2402,7 @@ if (isArray(x)){
 </code></pre>
 <h2 id="isfunc">isFunc<a class="headerlink" href="#isfunc" title="Permanent link">&para;</a></h2>
 <p>Determines if a supplied variable represents a function.</p>
-<pre><code class="language-TypeScript">import { isFunc } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { isFunc } from &quot;@bpa-solutions/pnp-core&quot;;
 
 public testFunction() {
     console.log(&quot;test function&quot;);
@@ -2416,7 +2416,7 @@ if (isFunc(testFunction)){
 </code></pre>
 <h2 id="isurlabsolute">isUrlAbsolute<a class="headerlink" href="#isurlabsolute" title="Permanent link">&para;</a></h2>
 <p>Determines if a supplied url is absolute and returns true; otherwise returns false.</p>
-<pre><code class="language-TypeScript">import { isUrlAbsolute } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { isUrlAbsolute } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const webPath = 'https://{tenant}.sharepoint.com/sites/dev/';
 
@@ -2428,7 +2428,7 @@ if (isUrlAbsolute(webPath)){
 </code></pre>
 <h2 id="objectdefinednotnull">objectDefinedNotNull<a class="headerlink" href="#objectdefinednotnull" title="Permanent link">&para;</a></h2>
 <p>Determines if an object is defined and not null.</p>
-<pre><code class="language-TypeScript">import { objectDefinedNotNull } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { objectDefinedNotNull } from &quot;@bpa-solutions/pnp-core&quot;;
 
 let obj = {
     prop: 1
@@ -2442,7 +2442,7 @@ if (objectDefinedNotNull(obj)){
 </code></pre>
 <h2 id="stringisnullorempty">stringIsNullOrEmpty<a class="headerlink" href="#stringisnullorempty" title="Permanent link">&para;</a></h2>
 <p>Determines if a supplied string is null or empty.</p>
-<pre><code class="language-TypeScript">import { stringIsNullOrEmpty } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { stringIsNullOrEmpty } from &quot;@bpa-solutions/pnp-core&quot;;
 
 let x:String = &quot;hello&quot;;
 

@@ -1,4 +1,4 @@
-# @pnp/sp/column-defaults
+# @bpa-solutions/pnp-sp/column-defaults
 
 The column defaults sub-module allows you to manage the default column values on a library or library folder.
 
@@ -9,10 +9,10 @@ The column defaults sub-module allows you to manage the default column values on
 You can get the default values for a specific folder as shown below:
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/folders/web";
-import "@pnp/sp/column-defaults";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/folders/web";
+import "@bpa-solutions/pnp-sp/column-defaults";
 
 const sp = spfi(...);
 
@@ -45,10 +45,10 @@ When setting the defaults for a folder you need to include the field's internal 
 >_Note: Be very careful when setting the path as the site collection url is case sensitive_
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/folders/web";
-import "@pnp/sp/column-defaults";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/folders/web";
+import "@bpa-solutions/pnp-sp/column-defaults";
 
 const sp = spfi(...);
 
@@ -67,10 +67,10 @@ await sp.web.getFolderByServerRelativePath("/sites/dev/DefaultColumnValues/fld_G
 You can also get all of the defaults for the entire library.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/column-defaults";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/column-defaults";
 
 const sp = spfi(...);
 
@@ -103,10 +103,10 @@ You can also set the defaults for an entire library at once (root and all sub-fo
 >_Note: Be very careful when setting the path as the site collection url is case sensitive_
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/column-defaults";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/column-defaults";
 
 const sp = spfi(...);
 
@@ -122,10 +122,10 @@ await sp.web.lists.getByTitle("DefaultColumnValues").setDefaultColumnValues([{
 If you want to clear all of the folder defaults you can use the clear method:
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/folders/web";
-import "@pnp/sp/column-defaults";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/folders/web";
+import "@bpa-solutions/pnp-sp/column-defaults";
 
 const sp = spfi(...);
 
@@ -137,10 +137,10 @@ await sp.web.getFolderByServerRelativePath("/sites/dev/DefaultColumnValues/fld_G
 If you need to clear all of the default column values in a library you can pass an empty array to the list's setDefaultColumnValues method.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/column-defaults";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/column-defaults";
 
 const sp = spfi(...);
 
@@ -212,11 +212,11 @@ The following is an example of the structure for setting the default column valu
 This example shows fully how to get the taxonomy values and set them as a default column value using PnPjs.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/folders";
-import "@pnp/sp/column-defaults";
-import "@pnp/sp/taxonomy";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/folders";
+import "@bpa-solutions/pnp-sp/column-defaults";
+import "@bpa-solutions/pnp-sp/taxonomy";
 
 const sp = spfi(...);
 

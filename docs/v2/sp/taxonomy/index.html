@@ -2331,7 +2331,7 @@
                   </a>
                 
                 
-                <h1 id="pnpsptaxonomy">@pnp/sp/taxonomy<a class="headerlink" href="#pnpsptaxonomy" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsptaxonomy">@bpa-solutions/pnp-sp/taxonomy<a class="headerlink" href="#pnpsptaxonomy" title="Permanent link">&para;</a></h1>
 <p>Provides access to the v2.1 api term store</p>
 <h3 id="docs-updated-with-v209-release-as-the-underlying-api-changed">Docs updated with v2.0.9 release as the underlying API changed.<a class="headerlink" href="#docs-updated-with-v209-release-as-the-underlying-api-changed" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -2340,9 +2340,9 @@
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a></p>
 <h2 id="term-store">Term Store<a class="headerlink" href="#term-store" title="Permanent link">&para;</a></h2>
 <p>Access term store data from the root sp object as shown below.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermStoreInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermStoreInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get term store data
 const info: ITermStoreInfo = await sp.termStore();
@@ -2350,17 +2350,17 @@ const info: ITermStoreInfo = await sp.termStore();
 <h2 id="term-groups">Term Groups<a class="headerlink" href="#term-groups" title="Permanent link">&para;</a></h2>
 <p>Access term group information</p>
 <h3 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermGroupInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermGroupInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get term groups
 const info: ITermGroupInfo[] = await sp.termStore.groups();
 </code></pre>
 <h3 id="get-by-id">Get By Id<a class="headerlink" href="#get-by-id" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermGroupInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermGroupInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get term groups data
 const info: ITermGroupInfo = await sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;)();
@@ -2368,17 +2368,17 @@ const info: ITermGroupInfo = await sp.termStore.groups.getById(&quot;338666a8-11
 <h2 id="term-sets">Term Sets<a class="headerlink" href="#term-sets" title="Permanent link">&para;</a></h2>
 <p>Access term set information</p>
 <h3 id="list_1">List<a class="headerlink" href="#list_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermSetInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermSetInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get get set info
 const info: ITermSetInfo[] = await sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).sets();
 </code></pre>
 <h3 id="get-by-id_1">Get By Id<a class="headerlink" href="#get-by-id_1" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermSetInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermSetInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get term set data
 const info: ITermSetInfo = await sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).sets.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;)();
@@ -2386,10 +2386,10 @@ const info: ITermSetInfo = await sp.termStore.groups.getById(&quot;338666a8-1111
 <h3 id="getallchildrenasorderedtree">getAllChildrenAsOrderedTree<a class="headerlink" href="#getallchildrenasorderedtree" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.13</em></p>
 <p>This method will get all of a set's child terms in an ordered array. It is a costly method in terms of requests so we suggest you cache the results as taxonomy trees seldom change.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermInfo } from &quot;@pnp/sp/taxonomy&quot;;
-import { dateAdd, PnPClientStorage } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { dateAdd, PnPClientStorage } from &quot;@bpa-solutions/pnp-core&quot;;
 
 // here we get all the children of a given set
 const childTree = await sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).sets.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).getAllChildrenAsOrderedTree();
@@ -2406,9 +2406,9 @@ const cachedTree = await store.local.getOrPut(&quot;myKey&quot;, () =&gt; {
 <h2 id="terms">Terms<a class="headerlink" href="#terms" title="Permanent link">&para;</a></h2>
 <p>Access term set information</p>
 <h3 id="list_2">List<a class="headerlink" href="#list_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // list all the terms that are direct children of this set
 const infos: ITermInfo[] = await sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).sets.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).children();
@@ -2416,17 +2416,17 @@ const infos: ITermInfo[] = await sp.termStore.groups.getById(&quot;338666a8-1111
 <h3 id="list-terms">List (terms)<a class="headerlink" href="#list-terms" title="Permanent link">&para;</a></h3>
 <p><em>Added in 2.0.13</em></p>
 <p>You can use the terms property to get a flat list of all terms in the set. These terms do not contain parent/child relationship information.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // list all the terms that are direct children of this set
 const infos: ITermInfo[] = await sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).sets.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).terms();
 </code></pre>
 <h3 id="get-by-id_2">Get By Id<a class="headerlink" href="#get-by-id_2" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
-import { ITermInfo } from &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
+import { ITermInfo } from &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get term set data
 const info: ITermInfo = await sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).sets.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).getTermById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;)();
@@ -2434,8 +2434,8 @@ const info: ITermInfo = await sp.termStore.groups.getById(&quot;338666a8-1111-22
 <h2 id="get-term-parent">Get Term Parent<a class="headerlink" href="#get-term-parent" title="Permanent link">&para;</a></h2>
 <p><em>Behavior Change in 2.1.0</em></p>
 <p>The server API changed again, resulting in the removal of the "parent" property from ITerm as it is not longer supported as a path property. You now must use "expand" to load a term's parent information. The side affect of this is that the parent is no longer chainable, meaning you need to load a new term instance to work with the parent term. An approach for this is shown below.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/taxonomy&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/taxonomy&quot;;
 
 // get a ref to the set
 const set = sp.termStore.groups.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;).sets.getById(&quot;338666a8-1111-2222-3333-f72471314e72&quot;);

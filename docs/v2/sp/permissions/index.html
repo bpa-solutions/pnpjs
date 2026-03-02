@@ -2169,13 +2169,13 @@
                   </a>
                 
                 
-                <h1 id="pnpsp-permissions">@pnp/sp - permissions<a class="headerlink" href="#pnpsp-permissions" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpsp-permissions">@bpa-solutions/pnp-sp - permissions<a class="headerlink" href="#pnpsp-permissions" title="Permanent link">&para;</a></h1>
 <p>A common task is to determine if a user or the current user has a certain permission level. It is a great idea to check before performing a task such as creating a list to ensure a user can without getting back an error. This allows you to provide a better experience to the user.</p>
-<p>Permissions in SharePoint are assigned to the set of securable objects which include Site, Web, List, and List Item. These are the four level to which unique permissions can be assigned. As such @pnp/sp provides a set of methods defined in the QueryableSecurable class to handle these permissions. These examples all use the Web to get the values, however the methods work identically on all securables.</p>
+<p>Permissions in SharePoint are assigned to the set of securable objects which include Site, Web, List, and List Item. These are the four level to which unique permissions can be assigned. As such @bpa-solutions/pnp-sp provides a set of methods defined in the QueryableSecurable class to handle these permissions. These examples all use the Web to get the values, however the methods work identically on all securables.</p>
 <h2 id="get-role-assignments">Get Role Assignments<a class="headerlink" href="#get-role-assignments" title="Permanent link">&para;</a></h2>
 <p>This gets a collection of all the role assignments on a given securable. The property returns a RoleAssignments collection which supports the OData collection operators.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/security&quot;;
 import { Logger } from &quot;@pnp/logging&quot;;
 
 const roles = await sp.web.roleAssignments();
@@ -2183,8 +2183,8 @@ Logger.writeJSON(roles);
 </code></pre>
 <h2 id="first-unique-ancestor-securable-object">First Unique Ancestor Securable Object<a class="headerlink" href="#first-unique-ancestor-securable-object" title="Permanent link">&para;</a></h2>
 <p>This method can be used to find the securable parent up the hierarchy that has unique permissions. If everything inherits permissions this will be the Site. If a sub web has unique permissions it will be the web, and so on.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/security&quot;;
 import { Logger } from &quot;@pnp/logging&quot;;
 
 const obj = await sp.web.firstUniqueAncestorSecurableObject();
@@ -2192,8 +2192,8 @@ Logger.writeJSON(obj);
 </code></pre>
 <h2 id="user-effective-permissions">User Effective Permissions<a class="headerlink" href="#user-effective-permissions" title="Permanent link">&para;</a></h2>
 <p>This method returns the BasePermissions for a given user or the current user. This value contains the High and Low values for a user on the securable you have queried.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/security&quot;;
 import { Logger } from &quot;@pnp/logging&quot;;
 
 const perms = await sp.web.getUserEffectivePermissions(&quot;i:0#.f|membership|user@site.com&quot;);
@@ -2204,8 +2204,8 @@ Logger.writeJSON(perms2);
 </code></pre>
 <h2 id="user-has-permissions">User Has Permissions<a class="headerlink" href="#user-has-permissions" title="Permanent link">&para;</a></h2>
 <p>Because the High and Low values in the BasePermission don't obviously mean anything you can use these methods along with the PermissionKind enumeration to check actual rights on the securable.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { PermissionKind } from &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { PermissionKind } from &quot;@bpa-solutions/pnp-sp/security&quot;;
 
 const perms = await sp.web.userHasPermissions(&quot;i:0#.f|membership|user@site.com&quot;, PermissionKind.ApproveItems);
 console.log(perms);
@@ -2215,8 +2215,8 @@ console.log(perms2);
 </code></pre>
 <h2 id="has-permissions">Has Permissions<a class="headerlink" href="#has-permissions" title="Permanent link">&para;</a></h2>
 <p>If you need to check multiple permissions it can be more efficient to get the BasePermissions once and then use the hasPermissions method to check them as shown below.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { PermissionKind } from &quot;@pnp/sp/security&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { PermissionKind } from &quot;@bpa-solutions/pnp-sp/security&quot;;
 
 const perms = await sp.web.getCurrentUserEffectivePermissions();
 if (sp.web.hasPermissions(perms, PermissionKind.AddListItems) &amp;&amp; sp.web.hasPermissions(perms, PermissionKind.DeleteVersions)) {

@@ -2174,50 +2174,50 @@
 <h2 id="old-way">Old way<a class="headerlink" href="#old-way" title="Permanent link">&para;</a></h2>
 <pre><code class="language-TypeScript">// the sp var came with all library functionality already attached
 // meaning treeshaking couldn't reduce the size
-import { sp } from &quot;@pnp/sp&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const itemData = await sp.web.lists.getById('00000000-0000-0000-0000-000000000000').items.getById(1)();
 </code></pre>
 <h2 id="new-way">New Way<a class="headerlink" href="#new-way" title="Permanent link">&para;</a></h2>
 <pre><code class="language-TypeScript">// the sp var now has almost nothing attached at import time and relies on
-import { sp } from &quot;@pnp/sp&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
 // we need to import each of the pieces we need to &quot;attach&quot; them for chaining
 // here we are importing the specific sub modules we need and attaching the functionality for lists to web and items to list
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists/web&quot;;
-import &quot;@pnp/sp/items/list&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/items/list&quot;;
 
 const itemData = await sp.web.lists.getById('00000000-0000-0000-0000-000000000000').items.getById(1)();
 </code></pre>
 <p>Above we are being very specific in what we are importing, but you can also import entire sub-modules and be slightly less specific</p>
 <pre><code class="language-TypeScript">// the sp var now has almost nothing attached at import time and relies on
-import { sp } from &quot;@pnp/sp&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
 // we need to import each of the pieces we need to &quot;attach&quot; them for chaining
 // here we are importing the specific sub modules we need and attaching the functionality for lists to web and items to list
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import &quot;@pnp/sp/items&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import &quot;@bpa-solutions/pnp-sp/items&quot;;
 
 const itemData = await sp.web.lists.getById('00000000-0000-0000-0000-000000000000').items.getById(1)();
 </code></pre>
 <p>The above two examples both work just fine but you may end up with slightly smaller bundle sizes using the first. Consider this example:</p>
 <pre><code class="language-TypeScript">// this import statement will attach content-type functionality to list, web, and item
-import &quot;@pnp/sp/content-types&quot;;
+import &quot;@bpa-solutions/pnp-sp/content-types&quot;;
 
 // this import statement will only attach content-type functionality to web
-import &quot;@pnp/sp/content-types/web&quot;;
+import &quot;@bpa-solutions/pnp-sp/content-types/web&quot;;
 </code></pre>
 <p>If you only need to access content types on the web object you can reduce size by only importing that piece.</p>
 <pre><code class="language-TypeScript">// this will fail
-import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import { IList } from &quot;@pnp/sp/lists&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 // do this instead
-import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/lists&quot;;
-import { IList } from &quot;@pnp/sp/lists&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/lists&quot;;
+import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const lists = await sp.web.lists();
 </code></pre>
@@ -2225,13 +2225,13 @@ const lists = await sp.web.lists();
 <p>Sometimes you don't care as much about bundle size - testing or node development for example. In these cases we have provided what we are calling presets to allow you to skip importing each module individually.</p>
 <h2 id="sp">SP<a class="headerlink" href="#sp" title="Permanent link">&para;</a></h2>
 <p>For the sp library there are two presets "all" and "core". The all preset mimics the behavior in v1 and includes everything in the library already attached to the sp var.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 // sp.* exists as it did in v1, tree shaking will not work
 const lists = await sp.web.lists();
 </code></pre>
 <p>The "core" preset includes sites, webs, lists, and items.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/core&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/core&quot;;
 
 // sp.* exists as it did in v1, tree shaking will not work
 const lists = await sp.web.lists();

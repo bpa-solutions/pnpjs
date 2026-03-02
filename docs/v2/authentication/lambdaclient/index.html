@@ -2127,7 +2127,7 @@
                   </a>
                 
                 
-                <h1 id="pnpcorelambdafetchclient">@pnp/core/LambdaFetchClient<a class="headerlink" href="#pnpcorelambdafetchclient" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpcorelambdafetchclient">@bpa-solutions/pnp-core/LambdaFetchClient<a class="headerlink" href="#pnpcorelambdafetchclient" title="Permanent link">&para;</a></h1>
 <p>The LambdaFetchClient class allows you to provide an async function that returns an access token using any logic/supporting libraries you need. This provides total freedom to define how you do authentication, so long as it results in a usable Bearer token to call the target resource. The advantage to the LambdaFetchClient is that you get the url for each request, meaning your logic can account for where the request is headed.</p>
 <blockquote>
 <p>The token function should be as efficient as possible as it's logic must complete before each request will be sent.</p>
@@ -2153,7 +2153,7 @@ export interface ILambdaTokenFactoryParams {
 <p>This example shows how to use <a href="https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser">@azure/msal-browser</a> along with LambdaFetchClient to achieve signin. msal-browser has many possible configurations which are described within their documentation.</p>
 <pre><code class="language-TypeScript">import { graph } from &quot;@pnp/graph&quot;;
 import &quot;@pnp/graph/users&quot;;
-import { LambdaFetchClient } from &quot;@pnp/core&quot;;
+import { LambdaFetchClient } from &quot;@bpa-solutions/pnp-core&quot;;
 import { PublicClientApplication, Configuration } from &quot;@azure/msal-browser&quot;;
 
 const config: Configuration = {

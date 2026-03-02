@@ -1657,7 +1657,7 @@
 <p>Currently there is a single provider included in the library, but contributions of additional providers are welcome.</p>
 <h2 id="splistconfigurationprovider">SPListConfigurationProvider<a class="headerlink" href="#splistconfigurationprovider" title="Permanent link">&para;</a></h2>
 <p>This provider is based on a SharePoint list and read all of the rows and makes them available as a TypedHash<string>. By default the column names used are Title for key and "Value" for value, but you can update these as needed. Additionally the settings class supports the idea of last value in wins - so you can easily load multiple configurations. This helps to support a common scenario in the enterprise where you might have one main list for global configuration but some settings can be set at the web level. In this case you would first load the global, then the local settings and any local values will take precedence.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Settings</span><span class="p">,</span> <span class="nx">SPListConfigurationProvider</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/config-store&quot;</span><span class="p">;</span>
 
 <span class="c1">// create a new provider instance</span>
@@ -1674,7 +1674,7 @@
 <h2 id="cachingconfigurationprovider">CachingConfigurationProvider<a class="headerlink" href="#cachingconfigurationprovider" title="Permanent link">&para;</a></h2>
 <p>Because making requests on each page load is very inefficient you can optionally use the caching configuration provider, which wraps a
 provider and caches the configuration in local or session storage.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Web</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Settings</span><span class="p">,</span> <span class="nx">SPListConfigurationProvider</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/config-store&quot;</span><span class="p">;</span>
 
 <span class="c1">// create a new provider instance</span>

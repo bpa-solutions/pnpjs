@@ -1,5 +1,5 @@
-import { isUrlAbsolute, hOP, TimelinePipe, getGUID, CopyFrom, objectDefinedNotNull, isFunc, combine, jsS } from "@pnp/core";
-import { parseBinderWithErrorCheck, Queryable, body, InjectHeaders } from "@pnp/queryable";
+import { isUrlAbsolute, hOP, TimelinePipe, getGUID, CopyFrom, objectDefinedNotNull, isFunc, combine, jsS } from "@bpa-solutions/pnp-core";
+import { parseBinderWithErrorCheck, Queryable, body, InjectHeaders } from "@bpa-solutions/pnp-queryable";
 import { IGraphQueryable, _GraphQueryable } from "./graphqueryable.js";
 import { graphPost } from "./operations.js";
 import { GraphFI } from "./fi.js";

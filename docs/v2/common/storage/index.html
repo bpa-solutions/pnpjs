@@ -2153,11 +2153,11 @@
                   </a>
                 
                 
-                <h1 id="pnpcorestorage">@pnp/core/storage<a class="headerlink" href="#pnpcorestorage" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpcorestorage">@bpa-solutions/pnp-core/storage<a class="headerlink" href="#pnpcorestorage" title="Permanent link">&para;</a></h1>
 <p>This module provides a thin wrapper over the browser storage options, local and session. If neither option is available it shims storage with a non-persistent in memory polyfill. Optionally through configuration you can activate expiration. Sample usage is shown below.</p>
 <h2 id="pnpclientstorage">PnPClientStorage<a class="headerlink" href="#pnpclientstorage" title="Permanent link">&para;</a></h2>
 <p>The main export of this module, contains properties representing local and session storage.</p>
-<pre><code class="language-TypeScript">import { PnPClientStorage } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { PnPClientStorage } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const storage = new PnPClientStorage();
 const myvalue = storage.local.get(&quot;mykey&quot;);
@@ -2165,7 +2165,7 @@ const myvalue = storage.local.get(&quot;mykey&quot;);
 <h2 id="pnpclientstoragewrapper">PnPClientStorageWrapper<a class="headerlink" href="#pnpclientstoragewrapper" title="Permanent link">&para;</a></h2>
 <p>Each of the storage locations (session and local) are wrapped with this helper class. You can use it directly, but generally it would be used
 from an instance of PnPClientStorage as shown below. These examples all use local storage, the operations are identical for session storage.</p>
-<pre><code class="language-TypeScript">import { PnPClientStorage } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { PnPClientStorage } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const storage = new PnPClientStorage();
 
@@ -2200,7 +2200,7 @@ storage.local.deleteExpired();
 </code></pre>
 <h3 id="cache-expiration">Cache Expiration<a class="headerlink" href="#cache-expiration" title="Permanent link">&para;</a></h3>
 <p>The ability remove of expired items based on a configured timeout can help if the cache is filling up. This can be accomplished in two ways. The first is to explicitly call the new deleteExpired method on the cache you wish to clear. A suggested usage is to add this into your page init code as clearing expired items once per page load is likely sufficient.</p>
-<pre><code class="language-TypeScript">import { PnPClientStorage } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { PnPClientStorage } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const storage = new PnPClientStorage();
 
@@ -2217,7 +2217,7 @@ storage.local.deleteExpired().then(_ =&gt; {
 </code></pre>
 <p>The second method is to enable automated cache expiration through global config. Setting the enableCacheExpiration property to true will enable the timer. Optionally you can set the interval at which the cache is checked via the cacheExpirationIntervalMilliseconds property, by default 750 milliseconds is used. We enforce a minimum of 300 milliseconds as this functionality is enabled via setTimeout and there is little value in having an excessive number of cache checks. This method is more appropriate for a single page application where the page is infrequently reloaded and many cached operations are performed. There is no advantage to enabling cache expiration unless you are experiencing cache storage space pressure in a long running page - and you may see a performance hit due to the use of setTimeout.</p>
 <pre><code class="language-TypeScript">
-import { setup } from &quot;@pnp/core&quot;;
+import { setup } from &quot;@bpa-solutions/pnp-core&quot;;
 
 setup({
     enableCacheExpiration: true,

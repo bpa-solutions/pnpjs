@@ -2,15 +2,15 @@
     "extends": "../tsconfig.json",
     "include": [
         "./**/*.ts",
-        "../core/**/*.ts",
+        "../pnp-core/**/*.ts",
         "../graph/**/*.ts",
-        "../queryable/**/*.ts",
+        "../pnp-queryable/**/*.ts",
         "../logging/**/*.ts",
-        "../sp/**/*.ts"
+        "../pnp-sp/**/*.ts"
     ],
     "references": [
         {
-            "path": "../core/tsconfig.json"
+            "path": "../pnp-core/tsconfig.json"
         },
         {
             "path": "../graph/tsconfig.json"
@@ -19,10 +19,10 @@
             "path": "../logging/tsconfig.json"
         },
         {
-            "path": "../queryable/tsconfig.json"
+            "path": "../pnp-queryable/tsconfig.json"
         },
         {
-            "path": "../sp/tsconfig.json"
+            "path": "../pnp-sp/tsconfig.json"
         }
     ]
 }

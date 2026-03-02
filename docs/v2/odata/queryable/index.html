@@ -2291,7 +2291,7 @@
                   </a>
                 
                 
-                <h1 id="pnpqueryablequeryable">@pnp/queryable/queryable<a class="headerlink" href="#pnpqueryablequeryable" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpqueryablequeryable">@bpa-solutions/pnp-queryable/queryable<a class="headerlink" href="#pnpqueryablequeryable" title="Permanent link">&para;</a></h1>
 <p>The Queryable class is the base class for all of the libraries building fluent request apis.</p>
 <h2 id="abstract-class-odataqueryablebatchtype-extends-odatabatch">abstract class <code>ODataQueryable&lt;BatchType extends ODataBatch&gt;</code><a class="headerlink" href="#abstract-class-odataqueryablebatchtype-extends-odatabatch" title="Permanent link">&para;</a></h2>
 <p>This class takes a single type parameter representing the type of the batch implementation object. If your api will not support batching you can create a dummy class here and simply not use the batching calls.</p>
@@ -2303,8 +2303,8 @@
 <p>Directly concatenates the supplied string to the current url, not normalizing "/" chars</p>
 <h3 id="configure">configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h3>
 <p>Sets custom options for current object and all derived objects accessible via chaining</p>
-<pre><code class="language-TypeScript">import { ConfigOptions } from &quot;@pnp/queryable&quot;;
-import { sp } from &quot;@pnp/sp&quot;;
+<pre><code class="language-TypeScript">import { ConfigOptions } from &quot;@bpa-solutions/pnp-queryable&quot;;
+import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
 
 const headers: ConfigOptions = {
     Accept: 'application/json;odata=nometadata'
@@ -2328,7 +2328,7 @@ list.items().then(items =&gt; console.log(JSON.stringify(items, null, 2));
 <p>Sets custom options from another queryable instance's options. Identical to configure except the options are derived from the supplied instance.</p>
 <h3 id="usingcaching">usingCaching<a class="headerlink" href="#usingcaching" title="Permanent link">&para;</a></h3>
 <p>Enables caching for this request. See <a href="../caching/">caching</a> for more details.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;
 
 sp.web.usingCaching()().then(...);
 </code></pre>

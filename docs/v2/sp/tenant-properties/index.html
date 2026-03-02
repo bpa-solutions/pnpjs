@@ -2141,11 +2141,11 @@
                   </a>
                 
                 
-                <h1 id="pnpspweb-tenant-properties">@pnp/sp/web - tenant properties<a class="headerlink" href="#pnpspweb-tenant-properties" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspweb-tenant-properties">@bpa-solutions/pnp-sp/web - tenant properties<a class="headerlink" href="#pnpspweb-tenant-properties" title="Permanent link">&para;</a></h1>
 <p>You can set, read, and remove tenant properties using the methods shown below:</p>
 <h2 id="setstorageentity">setStorageEntity<a class="headerlink" href="#setstorageentity" title="Permanent link">&para;</a></h2>
 <p>This method MUST be called in the context of the app catalog web or you will get an access denied message.</p>
-<pre><code class="language-TypeScript">import { Web } from &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { Web } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 const w = Web(&quot;https://tenant.sharepoint.com/sites/appcatalog/&quot;);
 
@@ -2157,7 +2157,7 @@ await w.setStorageEntity(&quot;Test2&quot;, &quot;Value 2&quot;, &quot;descripti
 </code></pre>
 <h2 id="getstorageentity">getStorageEntity<a class="headerlink" href="#getstorageentity" title="Permanent link">&para;</a></h2>
 <p>This method can be used from any web to retrieve values previously set.</p>
-<pre><code class="language-TypeScript">import { sp, IStorageEntity } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp, IStorageEntity } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 const prop: IStorageEntity = await sp.web.getStorageEntity(&quot;Test1&quot;);
 
@@ -2165,7 +2165,7 @@ console.log(prop.Value);
 </code></pre>
 <h2 id="removestorageentity">removeStorageEntity<a class="headerlink" href="#removestorageentity" title="Permanent link">&para;</a></h2>
 <p>This method MUST be called in the context of the app catalog web or you will get an access denied message.</p>
-<pre><code class="language-TypeScript">import { Web } from &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { Web } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 const w = Web(&quot;https://tenant.sharepoint.com/sites/appcatalog/&quot;);
 

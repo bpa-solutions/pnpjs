@@ -36,10 +36,10 @@ body:
       I'm struggling to get a list item. Here is the code I'm running. Can anyone help me figure out what's wrong?
       
       ```TypeScript
-      import { spfi } from "@pnp/sp";
-      import "@pnp/sp/webs";
-      import "@pnp/sp/lists";
-      import "@pnp/sp/items";
+      import { spfi } from "@bpa-solutions/pnp-sp";
+      import "@bpa-solutions/pnp-sp/webs";
+      import "@bpa-solutions/pnp-sp/lists";
+      import "@bpa-solutions/pnp-sp/items";
 
       const sp = spfi(...);
 

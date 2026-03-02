@@ -1,4 +1,4 @@
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 import { _Group } from "../groups/types.js";
 import { checkIn, ICheckInOptions, checkOut } from "./funcs.js";
 import { IDrive, Drive, IDrives, Drives, _DriveItem } from "./types.js";

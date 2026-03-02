@@ -6,16 +6,16 @@ This concept works well with [custom bundling](./custom-bundle.md) to create a s
 
 If you would prefer to not worry about selective imports please see the section on [presets](#presets).
 
-> A quick note on how TypeScript handles type only imports. If you have a line like `import { IWeb } from "@pnp/sp/webs"` everything will transpile correctly but you will get runtime errors because TS will see that line as a type only import and drop it. You need to include both `import { IWeb } from "@pnp/sp/webs"` and `import "@pnp/sp/webs"` to ensure the webs functionality is correctly included. You can see this in the last example below.
+> A quick note on how TypeScript handles type only imports. If you have a line like `import { IWeb } from "@bpa-solutions/pnp-sp/webs"` everything will transpile correctly but you will get runtime errors because TS will see that line as a type only import and drop it. You need to include both `import { IWeb } from "@bpa-solutions/pnp-sp/webs"` and `import "@bpa-solutions/pnp-sp/webs"` to ensure the webs functionality is correctly included. You can see this in the last example below.
 
 ```TypeScript
 // the sp var now has almost nothing attached at import time and relies on
 
 // we need to import each of the pieces we need to "attach" them for chaining
 // here we are importing the specific sub modules we need and attaching the functionality for lists to web and items to list
-import "@pnp/sp/webs";
-import "@pnp/sp/lists/web";
-import "@pnp/sp/items/list";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists/web";
+import "@bpa-solutions/pnp-sp/items/list";
 
 // placeholder for fully configuring the sp interface
 const sp = spfi();
@@ -30,9 +30,9 @@ Above we are being very specific in what we are importing, but you can also impo
 
 // we need to import each of the pieces we need to "attach" them for chaining
 // here we are importing the specific sub modules we need and attaching the functionality for lists to web and items to list
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
 
 // placeholder for fully configuring the sp interface
 const sp = spfi();
@@ -44,10 +44,10 @@ The above two examples both work just fine but you may end up with slightly smal
 
 ```TypeScript
 // this import statement will attach content-type functionality to list, web, and item
-import "@pnp/sp/content-types";
+import "@bpa-solutions/pnp-sp/content-types";
 
 // this import statement will only attach content-type functionality to web
-import "@pnp/sp/content-types/web";
+import "@bpa-solutions/pnp-sp/content-types/web";
 ```
 
 If you only need to access content types on the web object you can reduce size by only importing that piece.
@@ -56,14 +56,14 @@ The below example shows the need to import types and module augmentation separat
 
 ```TypeScript
 // this will fail
-import "@pnp/sp/webs";
-import { IList } from "@pnp/sp/lists";
+import "@bpa-solutions/pnp-sp/webs";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
 
 // do this instead
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import { IList } from "@pnp/sp/lists";
+import { sp } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import { IList } from "@bpa-solutions/pnp-sp/lists";
 
 // placeholder for fully configuring the sp interface
 const sp = spfi();
@@ -80,7 +80,7 @@ Sometimes you don't care as much about bundle size - testing or node development
 ## SP
 
 ```TypeScript
-import "@pnp/sp/presets/all";
+import "@bpa-solutions/pnp-sp/presets/all";
 
 
 // placeholder for fully configuring the sp interface

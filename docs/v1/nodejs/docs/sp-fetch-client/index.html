@@ -1710,7 +1710,7 @@
                 <h1 id="pnpnodejsspfetchclient">@pnp/nodejs/spfetchclient<a class="headerlink" href="#pnpnodejsspfetchclient" title="Permanent link">&para;</a></h1>
 <p>The SPFetchClient is used to authentication to SharePoint as a provider hosted add-in using a client and secret in nodejs. Remember it is not a good practice to expose client ids and secrets on the client and use of this class is intended for nodejs exclusively.</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">SPFetchClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/nodejs&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
     <span class="nx">sp</span><span class="o">:</span> <span class="p">{</span>
@@ -1742,7 +1742,7 @@
 <li>USDef: USA Defense cloud</li>
 <li>USGov: USA Government cloud</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">SPFetchClient</span><span class="p">,</span> <span class="nx">SPOAuthEnv</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/nodejs&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
@@ -1758,7 +1758,7 @@
 <h2 id="set-realm">Set Realm<a class="headerlink" href="#set-realm" title="Permanent link">&para;</a></h2>
 <p>In some cases automatically resolving the realm may not work. In this case you can set the realm parameter in the SPFetchClient constructor. You can determine the correct value for the realm by navigating to "https://{site name}-admin.sharepoint.com/_layouts/15/TA_AllAppPrincipals.aspx" and copying the GUID value that appears after the "@" - this is the realm id.</p>
 <p><strong>As of version 1.1.2 the realm parameter is now the 5th parameter in the constructor.</strong></p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">SPFetchClient</span><span class="p">,</span> <span class="nx">SPOAuthEnv</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/nodejs&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>

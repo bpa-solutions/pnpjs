@@ -1,9 +1,9 @@
 import { expect } from "chai";
-import "@pnp/sp/webs";
-import "@pnp/sp/site-groups";
-import "@pnp/sp/site-users/web";
-import { getRandomString, stringIsNullOrEmpty } from "@pnp/core";
-import { IGroupAddResult } from "@pnp/sp/site-groups";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/site-groups";
+import "@bpa-solutions/pnp-sp/site-users/web";
+import { getRandomString, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
+import { IGroupAddResult } from "@bpa-solutions/pnp-sp/site-groups";
 
 describe("SiteGroups", function () {
 

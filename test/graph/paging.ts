@@ -4,9 +4,9 @@ import "@pnp/graph/users";
 import "@pnp/graph/sites";
 import "@pnp/graph/lists";
 import getTestingGraphSPSite from "./utilities/getTestingGraphSPSite.js";
-import { getRandomString } from "@pnp/core";
+import { getRandomString } from "@bpa-solutions/pnp-core";
 import { graphPost, GraphQueryableCollection, IGraphQueryableCollection } from "@pnp/graph";
-import { body } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
 
 describe("Groups", function () {
 

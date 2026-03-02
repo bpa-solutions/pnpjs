@@ -1,4 +1,4 @@
-# @pnp/sp/comments and likes
+# @bpa-solutions/pnp-sp/comments and likes
 
 Comments can be accessed through either IItem or IClientsidePage instances, though in slightly different ways. For information on loading [clientside pages](./clientside-pages.md) or [items](./items.md) please refer to those articles.
 
@@ -15,10 +15,10 @@ The IClientsidePage interface has three methods to provide easier access to the 
 You can add a comment using the addComment method as shown
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { CreateClientsidePage } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/comments/clientside-page";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { CreateClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -40,10 +40,10 @@ const comment = await page.addComment(commentInfo);
 ### Get Page Comments
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { CreateClientsidePage } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/comments/clientside-page";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { CreateClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -66,11 +66,11 @@ const comments = await page.getComments();
 Used to control the availability of comments on a page
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 // you need to import the comments sub-module or use the all preset
-import "@pnp/sp/comments/clientside-page";
-import "@pnp/sp/webs";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -87,10 +87,10 @@ await page.disableComments();
 ### GetById
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { CreateClientsidePage } from "@pnp/sp/clientside-pages";
-import "@pnp/sp/comments/clientside-page";
-import "@pnp/sp/webs";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { CreateClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
+import "@bpa-solutions/pnp-sp/webs";
 
 const sp = spfi(...);
 
@@ -108,11 +108,11 @@ const commentData = await page.getCommentById(parseInt(comment.id, 10));
 ## Item Comments
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/files/web";
-import "@pnp/sp/items";
-import "@pnp/sp/comments/item";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/files/web";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/comments/item";
 
 const sp = spfi(...);
 
@@ -135,8 +135,8 @@ const comments = await item.comments();
 You can also get the comments merged with instances of the Comment class to immediately start accessing the properties and methods:
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IComments } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IComments } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -152,8 +152,8 @@ const comments = await item.comments.expand("replies", "likedBy", "replies/liked
 ### Add Comment
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ICommentInfo } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ICommentInfo } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -166,8 +166,8 @@ const comment = await item.comments.add("string comment");
 ### Delete a Comment
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IComments } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IComments } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -180,8 +180,8 @@ comments[0].delete()
 ### Like Comment
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IComments } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IComments } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -194,8 +194,8 @@ comments[0].like();
 ### Unlike Comment
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IComments } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IComments } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -207,8 +207,8 @@ comments[0].unlike()
 ### Reply to a Comment
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IComments } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IComments } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -220,8 +220,8 @@ const comment = await comments[0].comments.add({ text: "#PnPjs is pretty ok!" })
 ### Load Replies to a Comment
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { IComments } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { IComments } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -235,12 +235,12 @@ const replies = await comments[0].replies();
 You can like/unlike client-side pages, items, and comments on items. See above for how to like or unlike a comment. Below you can see how to like and unlike an items, as well as get the liked by data.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/comments";
-import { ILikeData, ILikedByInformation } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/comments";
+import { ILikeData, ILikedByInformation } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 
@@ -259,13 +259,13 @@ const likedByInfo: ILikedByInformation = await item.getLikedByInformation();
 To like/unlike a client-side page and get liked by information.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import { ILikedByInformation } from "@pnp/sp/comments";
-import { IClientsidePage } from "@pnp/sp/clientside-pages";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import { ILikedByInformation } from "@bpa-solutions/pnp-sp/comments";
+import { IClientsidePage } from "@bpa-solutions/pnp-sp/clientside-pages";
 
-import "@pnp/sp/webs";
-import "@pnp/sp/clientside-pages";
-import "@pnp/sp/comments/clientside-page";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/clientside-pages";
+import "@bpa-solutions/pnp-sp/comments/clientside-page";
 
 const sp = spfi(...);
 
@@ -286,12 +286,12 @@ const likedByInfo: ILikedByInformation = await page.getLikedByInformation();
 You can rate list items with a numeric values between 1 and 5.
 
 ```TypeScript
-import { spfi } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import "@pnp/sp/comments";
-import { ILikeData, ILikedByInformation } from "@pnp/sp/comments";
+import { spfi } from "@bpa-solutions/pnp-sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/lists";
+import "@bpa-solutions/pnp-sp/items";
+import "@bpa-solutions/pnp-sp/comments";
+import { ILikeData, ILikedByInformation } from "@bpa-solutions/pnp-sp/comments";
 
 const sp = spfi(...);
 

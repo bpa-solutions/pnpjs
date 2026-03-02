@@ -3151,7 +3151,7 @@
                   </a>
                 
                 
-                <h1 id="pnpspwebs">@pnp/sp/webs<a class="headerlink" href="#pnpspwebs" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspwebs">@bpa-solutions/pnp-sp/webs<a class="headerlink" href="#pnpspwebs" title="Permanent link">&para;</a></h1>
 <p>Webs are one of the fundamental entry points when working with SharePoint. Webs serve as a container for lists, features, sub-webs, and all of the entity types.</p>
 <h2 id="iwebs">IWebs<a class="headerlink" href="#iwebs" title="Permanent link">&para;</a></h2>
 <p><a href="../../concepts/invokable/"><img alt="Invokable Banner" src="https://img.shields.io/badge/Invokable-informational.svg" /></a> <a href="../../concepts/selective-imports/"><img alt="Selective Imports Banner" src="https://img.shields.io/badge/Selective%20Imports-informational.svg" /></a>  </p>
@@ -3165,26 +3165,26 @@
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { Webs, IWebs } from "@pnp/sp/webs";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { Webs, IWebs } from "@bpa-solutions/pnp-sp/webs";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Webs, IWebs } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Webs, IWebs } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 <tr>
 <td>Preset: Core</td>
-<td>import { sp, Webs, IWebs } from "@pnp/sp/presets/core";</td>
+<td>import { sp, Webs, IWebs } from "@bpa-solutions/pnp-sp/presets/core";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="add-web">Add Web<a class="headerlink" href="#add-web" title="Permanent link">&para;</a></h3>
 <p>Using the library you can add a web to another web's collection of subwebs. The simplest usage requires only a title and url. This will result in a team site with all of the default settings. You can also provide other settings such as description, template, language, and inherit permissions.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IWebAddResult } from &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IWebAddResult } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 const result = await sp.web.webs.add(&quot;title&quot;, &quot;subweb1&quot;);
 
@@ -3198,8 +3198,8 @@ result.web.select(&quot;Title&quot;)().then((w: IWebAddResult)  =&gt; {
     console.log(w.Title);
 });
 </code></pre>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import { IWebAddResult } from &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import { IWebAddResult } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // create a German language wiki site with title, url, description, which does not inherit permissions
 sp.web.webs.add(&quot;wiki&quot;, &quot;subweb2&quot;, &quot;a wiki web&quot;, &quot;WIKI#0&quot;, 1031, false).then((w: IWebAddResult) =&gt; {
@@ -3219,42 +3219,42 @@ sp.web.webs.add(&quot;wiki&quot;, &quot;subweb2&quot;, &quot;a wiki web&quot;, &
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import { sp } from "@pnp/sp";<br />import { Web, IWeb } from "@pnp/sp/webs";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import { Web, IWeb } from "@bpa-solutions/pnp-sp/webs";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import { sp } from "@pnp/sp";<br />import "@pnp/sp/webs";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp";<br />import "@bpa-solutions/pnp-sp/webs";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Web, IWeb } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Web, IWeb } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 <tr>
 <td>Preset: Core</td>
-<td>import { sp, Web, IWeb } from "@pnp/sp/presets/core";</td>
+<td>import { sp, Web, IWeb } from "@bpa-solutions/pnp-sp/presets/core";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="access-a-web">Access a Web<a class="headerlink" href="#access-a-web" title="Permanent link">&para;</a></h3>
 <p>There are several ways to access a web instance, each of these methods is equivalent in that you will have an IWeb instance to work with. All of the examples below use a variable named "web" which represents an IWeb instance - regardless of how it was initially accessed.</p>
 <p><strong>Access the web from the imported "sp" object using selective import:</strong></p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 const r = await sp.web();
 </code></pre>
 <p><strong>Access the web from the imported "sp" using the 'all' preset</strong></p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 const r = await sp.web();
 </code></pre>
 <p><strong>Access the web from the imported "sp" using the 'core' preset</strong></p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/core&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/core&quot;;
 
 const r = await sp.web();
 </code></pre>
 <p><strong>Create a web instance using the factory function</strong></p>
-<pre><code class="language-TypeScript">import { Web } from &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { Web } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 const web = Web(&quot;https://something.sharepoint.com/sites/dev&quot;);
 const r = await web();
@@ -3275,7 +3275,7 @@ const props3 = await web.select(&quot;Title&quot;)&lt;{ Title: string }&gt;();
 </code></pre>
 <h3 id="getparentweb">getParentWeb<a class="headerlink" href="#getparentweb" title="Permanent link">&para;</a></h3>
 <p>Get the data and IWeb instance for the parent web for the given web instance</p>
-<pre><code class="language-TypeScript">import { IOpenWebByIdResult } from &quot;@pnp/sp/sites&quot;;
+<pre><code class="language-TypeScript">import { IOpenWebByIdResult } from &quot;@bpa-solutions/pnp-sp/sites&quot;;
 const web: IOpenWebByIdResult = web.getParentWeb();
 </code></pre>
 <h3 id="getsubwebsfilteredforcurrentuser">getSubwebsFilteredForCurrentUser<a class="headerlink" href="#getsubwebsfilteredforcurrentuser" title="Permanent link">&para;</a></h3>
@@ -3324,7 +3324,7 @@ const result = await web.update({
 });
 
 // a project implementation could wrap the update to provide type information for your expected fields:
-import { IWebUpdateResult } from &quot;@pnp/sp/webs&quot;;
+import { IWebUpdateResult } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 interface IWebUpdateProps {
     Title: string;
@@ -3340,7 +3340,7 @@ function updateWeb(props: IWebUpdateProps): Promise&lt;IWebUpdateResult&gt; {
 </code></pre>
 <h3 id="applytheme">applyTheme<a class="headerlink" href="#applytheme" title="Permanent link">&para;</a></h3>
 <p>Applies the theme specified by the contents of each of the files specified in the arguments to the site</p>
-<pre><code class="language-TypeScript">import { combine } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { combine } from &quot;@bpa-solutions/pnp-core&quot;;
 
 // we are going to apply the theme to this sub web as an example
 const web = Web(&quot;https://{tenant}.sharepoint.com/sites/dev/subweb&quot;);
@@ -3377,7 +3377,7 @@ const changes = await web.getChanges({
 </code></pre>
 <h3 id="maptoicon">mapToIcon<a class="headerlink" href="#maptoicon" title="Permanent link">&para;</a></h3>
 <p>Returns the name of the image file for the icon that is used to represent the specified file</p>
-<pre><code class="language-TypeScript">import { combine } from &quot;@pnp/core&quot;;
+<pre><code class="language-TypeScript">import { combine } from &quot;@bpa-solutions/pnp-core&quot;;
 
 const iconFileName = await web.mapToIcon(&quot;test.docx&quot;);
 // iconPath === &quot;icdocx.png&quot;
@@ -3396,9 +3396,9 @@ const iconFullPath3 = combine(this.context.pageContext.web.absoluteUrl, &quot;_l
 const icon32FileName = await web.mapToIcon(&quot;test.docx&quot;, 1);
 </code></pre>
 <h3 id="storage-entities">storage entities<a class="headerlink" href="#storage-entities" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/appcatalog&quot;;
-import { IStorageEntity } from &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/appcatalog&quot;;
+import { IStorageEntity } from &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // needs to be unique, GUIDs are great
 const key = &quot;my-storage-key&quot;;
@@ -3438,21 +3438,21 @@ await tenantAppCatalogWeb.removeStorageEntity(key);
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/appcatalog";</td>
+<td>import "@bpa-solutions/pnp-sp/appcatalog";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/appcatalog/web";</td>
+<td>import "@bpa-solutions/pnp-sp/appcatalog/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="getappcatalog">getAppCatalog<a class="headerlink" href="#getappcatalog" title="Permanent link">&para;</a></h3>
 <p>Returns this web as an IAppCatalog instance or creates a new IAppCatalog instance from the provided url.</p>
-<pre><code class="language-TypeScript">import { IApp } from &quot;@pnp/sp/appcatalog&quot;;
+<pre><code class="language-TypeScript">import { IApp } from &quot;@bpa-solutions/pnp-sp/appcatalog&quot;;
 
 const appWeb = web.getAppCatalog();
 // appWeb url === web url
@@ -3473,22 +3473,22 @@ const appWeb2 = web.getAppCatalog(&quot;https://tenant.sharepoing.com/sites/some
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/client-side-pages";</td>
+<td>import "@bpa-solutions/pnp-sp/client-side-pages";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/client-side-pages/web";</td>
+<td>import "@bpa-solutions/pnp-sp/client-side-pages/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp, Web, IWeb } from "@pnp/sp/presets/all";</td>
+<td>import { sp, Web, IWeb } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <p>You can create and load clientside page instances directly from a web. More details on <a href="../clientside-pages/">working with clientside pages</a> are available in the dedicated article.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/webs&quot;;
-import &quot;@pnp/sp/clientside-pages/web&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
+import &quot;@bpa-solutions/pnp-sp/clientside-pages/web&quot;;
 
 // simplest add a page example
 const page = await sp.web.addClientsidePage(&quot;mypage1&quot;);
@@ -3507,15 +3507,15 @@ const page = await sp.web.loadClientsidePage(&quot;/sites/dev/sitepages/mypage3.
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/content-types";</td>
+<td>import "@bpa-solutions/pnp-sp/content-types";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/content-types/web";</td>
+<td>import "@bpa-solutions/pnp-sp/content-types/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3537,15 +3537,15 @@ const cts2 = await web.contentTypes.select(&quot;Name&quot;)();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/features";</td>
+<td>import "@bpa-solutions/pnp-sp/features";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/features/web";</td>
+<td>import "@bpa-solutions/pnp-sp/features/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3564,15 +3564,15 @@ const cts2 = await web.contentTypes.select(&quot;Name&quot;)();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/fields";</td>
+<td>import "@bpa-solutions/pnp-sp/fields";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/fields/web";</td>
+<td>import "@bpa-solutions/pnp-sp/fields/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3591,27 +3591,27 @@ const cts2 = await web.contentTypes.select(&quot;Name&quot;)();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/files";</td>
+<td>import "@bpa-solutions/pnp-sp/files";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/files/web";</td>
+<td>import "@bpa-solutions/pnp-sp/files/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="getfilebyserverrelativeurl">getFileByServerRelativeUrl<a class="headerlink" href="#getfilebyserverrelativeurl" title="Permanent link">&para;</a></h3>
 <p>Gets a file by server relative url</p>
-<pre><code class="language-TypeScript">import { IFile } from &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { IFile } from &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 const file: IFile = web.getFileByServerRelativeUrl(&quot;/sites/dev/library/myfile.docx&quot;);
 </code></pre>
 <h3 id="getfilebyserverrelativepath">getFileByServerRelativePath<a class="headerlink" href="#getfilebyserverrelativepath" title="Permanent link">&para;</a></h3>
 <p>Gets a file by server relative url if your file name contains # and % characters</p>
-<pre><code class="language-TypeScript">import { IFile } from &quot;@pnp/sp/files&quot;;
+<pre><code class="language-TypeScript">import { IFile } from &quot;@bpa-solutions/pnp-sp/files&quot;;
 
 const file: IFile = web.getFileByServerRelativePath(&quot;/sites/dev/library/my # file%.docx&quot;);
 </code></pre>
@@ -3626,15 +3626,15 @@ const file: IFile = web.getFileByServerRelativePath(&quot;/sites/dev/library/my 
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/folders";</td>
+<td>import "@bpa-solutions/pnp-sp/folders";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/folders/web";</td>
+<td>import "@bpa-solutions/pnp-sp/folders/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3654,13 +3654,13 @@ const folders2 = await web.folders.orderBy(&quot;TimeLastModified&quot;).top(1)(
 </code></pre>
 <h3 id="getfolderbyserverrelativeurl">getFolderByServerRelativeUrl<a class="headerlink" href="#getfolderbyserverrelativeurl" title="Permanent link">&para;</a></h3>
 <p>Gets a folder by server relative url</p>
-<pre><code class="language-TypeScript">import { IFolder } from &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { IFolder } from &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folder: IFolder = web.getFolderByServerRelativeUrl(&quot;/sites/dev/library&quot;);
 </code></pre>
 <h3 id="getfolderbyserverrelativepath">getFolderByServerRelativePath<a class="headerlink" href="#getfolderbyserverrelativepath" title="Permanent link">&para;</a></h3>
 <p>Gets a folder by server relative url if your folder name contains # and % characters</p>
-<pre><code class="language-TypeScript">import { IFolder } from &quot;@pnp/sp/folders&quot;;
+<pre><code class="language-TypeScript">import { IFolder } from &quot;@bpa-solutions/pnp-sp/folders&quot;;
 
 const folder: IFolder = web.getFolderByServerRelativePath(&quot;/sites/dev/library/my # folder%/&quot;);
 </code></pre>
@@ -3675,21 +3675,21 @@ const folder: IFolder = web.getFolderByServerRelativePath(&quot;/sites/dev/libra
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/hubsites";</td>
+<td>import "@bpa-solutions/pnp-sp/hubsites";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/hubsites/web";</td>
+<td>import "@bpa-solutions/pnp-sp/hubsites/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="hubsitedata">hubSiteData<a class="headerlink" href="#hubsitedata" title="Permanent link">&para;</a></h3>
 <p>Gets hub site data for the current web</p>
-<pre><code class="language-TypeScript">import { IHubSiteWebData } from &quot;@pnp/sp/hubsites&quot;;
+<pre><code class="language-TypeScript">import { IHubSiteWebData } from &quot;@bpa-solutions/pnp-sp/hubsites&quot;;
 
 // get the data and force a refresh
 const data: IHubSiteWebData = await web.hubSiteData(true);
@@ -3709,25 +3709,25 @@ const data: IHubSiteWebData = await web.hubSiteData(true);
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/lists";</td>
+<td>import "@bpa-solutions/pnp-sp/lists";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/lists/web";</td>
+<td>import "@bpa-solutions/pnp-sp/lists/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 <tr>
 <td>Preset: Core</td>
-<td>import { sp } from "@pnp/sp/presets/core";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/core";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="lists">lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h3>
 <p>Gets the collection of all lists that are contained in the Web site</p>
-<pre><code class="language-TypeScript">import { ILists } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { ILists } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const lists: ILists = web.lists;
 
@@ -3739,7 +3739,7 @@ const data2 = await web.lists.top(3).orderBy(&quot;LastItemModifiedDate&quot;)()
 </code></pre>
 <h3 id="siteuserinfolist">siteUserInfoList<a class="headerlink" href="#siteuserinfolist" title="Permanent link">&para;</a></h3>
 <p>Gets the UserInfo list of the site collection that contains the Web site</p>
-<pre><code class="language-TypeScript">import { IList } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const list: IList = web.siteUserInfoList;
 
@@ -3750,13 +3750,13 @@ const items = await list.items.top(2)();
 </code></pre>
 <h3 id="defaultdocumentlibrary">defaultDocumentLibrary<a class="headerlink" href="#defaultdocumentlibrary" title="Permanent link">&para;</a></h3>
 <p>Get a reference the default documents library of a web</p>
-<pre><code class="language-TypeScript">import { IList } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const list: IList = web.defaultDocumentLibrary;
 </code></pre>
 <h3 id="customlisttemplates">customListTemplates<a class="headerlink" href="#customlisttemplates" title="Permanent link">&para;</a></h3>
 <p>Gets the collection of all list definitions and list templates that are available</p>
-<pre><code class="language-TypeScript">import { IList } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const templates = await web.customListTemplates();
 
@@ -3765,7 +3765,7 @@ const templates2 = await web.customListTemplates.select(&quot;Title&quot;)();
 </code></pre>
 <h3 id="getlist">getList<a class="headerlink" href="#getlist" title="Permanent link">&para;</a></h3>
 <p>Gets a list by server relative url (list's root folder)</p>
-<pre><code class="language-TypeScript">import { IList } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const list: IList = web.getList(&quot;/sites/dev/lists/test&quot;);
 
@@ -3815,7 +3815,7 @@ const listData = list();
 </tr>
 </tbody>
 </table>
-<pre><code class="language-TypeScript">import { IList } from &quot;@pnp/sp/lists&quot;;
+<pre><code class="language-TypeScript">import { IList } from &quot;@bpa-solutions/pnp-sp/lists&quot;;
 
 const templateCatalog: IList = await web.getCatalog(111);
 
@@ -3832,21 +3832,21 @@ const themeCatalog: IList = await web.getCatalog(123);
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/navigation";</td>
+<td>import "@bpa-solutions/pnp-sp/navigation";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/navigation/web";</td>
+<td>import "@bpa-solutions/pnp-sp/navigation/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h3 id="navigation">navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h3>
 <p>Gets a navigation object that represents navigation on the Web site, including the Quick Launch area and the top navigation bar</p>
-<pre><code class="language-TypeScript">import { INavigation } from &quot;@pnp/sp/navigation&quot;;
+<pre><code class="language-TypeScript">import { INavigation } from &quot;@bpa-solutions/pnp-sp/navigation&quot;;
 
 const nav: INavigation = web.navigation;
 
@@ -3863,19 +3863,19 @@ const navData = await nav();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/regional-settings";</td>
+<td>import "@bpa-solutions/pnp-sp/regional-settings";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/regional-settings/web";</td>
+<td>import "@bpa-solutions/pnp-sp/regional-settings/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-TypeScript">import { IRegionalSettings } from &quot;@pnp/sp/navigation&quot;;
+<pre><code class="language-TypeScript">import { IRegionalSettings } from &quot;@bpa-solutions/pnp-sp/navigation&quot;;
 
 const settings: IRegionalSettings = web.regionalSettings;
 
@@ -3892,19 +3892,19 @@ const settingsData = await settings();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/related-items";</td>
+<td>import "@bpa-solutions/pnp-sp/related-items";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/related-items/web";</td>
+<td>import "@bpa-solutions/pnp-sp/related-items/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-TypeScript">import { IRelatedItemManager, IRelatedItem } from &quot;@pnp/sp/related-items&quot;;
+<pre><code class="language-TypeScript">import { IRelatedItemManager, IRelatedItem } from &quot;@bpa-solutions/pnp-sp/related-items&quot;;
 
 const manager: IRelatedItemManager = web.relatedItems;
 
@@ -3925,15 +3925,15 @@ const data: IRelatedItem[] = await manager.getRelatedItems(&quot;{list name}&quo
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/site-groups";</td>
+<td>import "@bpa-solutions/pnp-sp/site-groups";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/site-groups/web";</td>
+<td>import "@bpa-solutions/pnp-sp/site-groups/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -3985,15 +3985,15 @@ await web.createDefaultAssociatedGroups(&quot;Contoso&quot;, &quot;{first owner 
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/site-users";</td>
+<td>import "@bpa-solutions/pnp-sp/site-users";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/site-users/web";</td>
+<td>import "@bpa-solutions/pnp-sp/site-users/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
@@ -4014,13 +4014,13 @@ const user2 = await web.currentUser.select(&quot;LoginName&quot;)();
 </code></pre>
 <h3 id="ensureuser">ensureUser<a class="headerlink" href="#ensureuser" title="Permanent link">&para;</a></h3>
 <p>Checks whether the specified login name belongs to a valid user in the web. If the user doesn't exist, adds the user to the web</p>
-<pre><code class="language-TypeScript">import { IWebEnsureUserResult } from &quot;@pnp/sp/site-users/&quot;;
+<pre><code class="language-TypeScript">import { IWebEnsureUserResult } from &quot;@bpa-solutions/pnp-sp/site-users/&quot;;
 
 const result: IWebEnsureUserResult = await web.ensureUser(&quot;i:0#.f|membership|user@domain.onmicrosoft.com&quot;);
 </code></pre>
 <h3 id="getuserbyid">getUserById<a class="headerlink" href="#getuserbyid" title="Permanent link">&para;</a></h3>
 <p>Returns the user corresponding to the specified member identifier for the current web</p>
-<pre><code class="language-TypeScript">import { ISiteUser } from &quot;@pnp/sp/site-users/&quot;;
+<pre><code class="language-TypeScript">import { ISiteUser } from &quot;@bpa-solutions/pnp-sp/site-users/&quot;;
 
 const user: ISiteUser = web.getUserById(23);
 
@@ -4039,21 +4039,21 @@ const userData2 = await user.select(&quot;LoginName&quot;)();
 <tbody>
 <tr>
 <td>Selective 1</td>
-<td>import "@pnp/sp/user-custom-actions";</td>
+<td>import "@bpa-solutions/pnp-sp/user-custom-actions";</td>
 </tr>
 <tr>
 <td>Selective 2</td>
-<td>import "@pnp/sp/user-custom-actions/web";</td>
+<td>import "@bpa-solutions/pnp-sp/user-custom-actions/web";</td>
 </tr>
 <tr>
 <td>Preset: All</td>
-<td>import { sp } from "@pnp/sp/presets/all";</td>
+<td>import { sp } from "@bpa-solutions/pnp-sp/presets/all";</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usercustomactions">userCustomActions<a class="headerlink" href="#usercustomactions" title="Permanent link">&para;</a></h2>
 <p>Gets a newly refreshed collection of the SPWeb's SPUserCustomActionCollection</p>
-<pre><code class="language-TypeScript">import { IUserCustomActions } from &quot;@pnp/sp/user-custom-actions&quot;;
+<pre><code class="language-TypeScript">import { IUserCustomActions } from &quot;@bpa-solutions/pnp-sp/user-custom-actions&quot;;
 
 const actions: IUserCustomActions = web.userCustomActions;
 

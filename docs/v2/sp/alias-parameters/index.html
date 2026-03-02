@@ -2167,14 +2167,14 @@
                   </a>
                 
                 
-                <h1 id="pnpsp-aliased-parameters">@pnp/sp - Aliased Parameters<a class="headerlink" href="#pnpsp-aliased-parameters" title="Permanent link">&para;</a></h1>
-<p>Within the @pnp/sp api you can alias any of the parameters so they will be written into the querystring. This is most helpful if you are hitting up against the url length limits when working with files and folders.</p>
+                <h1 id="pnpsp-aliased-parameters">@bpa-solutions/pnp-sp - Aliased Parameters<a class="headerlink" href="#pnpsp-aliased-parameters" title="Permanent link">&para;</a></h1>
+<p>Within the @bpa-solutions/pnp-sp api you can alias any of the parameters so they will be written into the querystring. This is most helpful if you are hitting up against the url length limits when working with files and folders.</p>
 <p>To alias a parameter you include the label name, a separator ("::") and the value in the string. You also need to prepend a "!" to the string to trigger the replacement. You can see this below, as well as the string that will be generated. Labels must start with a "@" followed by a letter. It is also your responsibility to ensure that the aliases you supply do not conflict, for example if you use "@p1" you should use "@p2" for a second parameter alias in the same query.</p>
 <h2 id="construct-a-parameter-alias">Construct a parameter alias<a class="headerlink" href="#construct-a-parameter-alias" title="Permanent link">&para;</a></h2>
 <p>Pattern: !@{label name}::{value}</p>
 <p>Example: "!@p1::\sites\dev" or "!@p2::\text.txt"</p>
 <h3 id="example-without-aliasing">Example without aliasing<a class="headerlink" href="#example-without-aliasing" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 // still works as expected, no aliasing
 const query = sp.web.getFolderByServerRelativeUrl(&quot;/sites/dev/Shared Documents/&quot;).files.select(&quot;Title&quot;).top(3);
@@ -2186,7 +2186,7 @@ const r = await query();
 console.log(r);;
 </code></pre>
 <h3 id="example-with-aliasing">Example with aliasing<a class="headerlink" href="#example-with-aliasing" title="Permanent link">&para;</a></h3>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 
 // same query with aliasing
 const query = sp.web.getFolderByServerRelativeUrl(&quot;!@p1::/sites/dev/Shared Documents/&quot;).files.select(&quot;Title&quot;).top(3);
@@ -2199,7 +2199,7 @@ console.log(r);
 </code></pre>
 <h3 id="example-with-aliasing-and-batching">Example with aliasing and batching<a class="headerlink" href="#example-with-aliasing-and-batching" title="Permanent link">&para;</a></h3>
 <p>Aliasing is supported with batching as well:</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp/presets/all&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp/presets/all&quot;;
 // same query with aliasing and batching
 const batch = sp.web.createBatch();
 

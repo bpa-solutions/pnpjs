@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import "@pnp/graph/users";
 import "@pnp/graph/contacts";
-import { HttpRequestError } from "@pnp/queryable";
-import { getRandomString, stringIsNullOrEmpty } from "@pnp/core";
+import { HttpRequestError } from "@bpa-solutions/pnp-queryable";
+import { getRandomString, stringIsNullOrEmpty } from "@bpa-solutions/pnp-core";
 
 describe("Contacts", function () {
 

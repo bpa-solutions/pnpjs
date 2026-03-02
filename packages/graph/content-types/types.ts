@@ -5,8 +5,8 @@ import {
 import { _GraphQueryableCollection, graphInvokableFactory, _GraphQueryableInstance } from "../graphqueryable.js";
 import { defaultPath, deleteable, IDeleteable, updateable, IUpdateable, getById, IGetById } from "../decorators.js";
 import { graphGet, graphPost } from "../operations.js";
-import { body } from "@pnp/queryable";
-import { JSONHeaderParse } from "@pnp/queryable";
+import { body } from "@bpa-solutions/pnp-queryable";
+import { JSONHeaderParse } from "@bpa-solutions/pnp-queryable";
 
 /**
  * Represents a content type entity

@@ -1843,11 +1843,11 @@
                   <a href="http://github.com/pnp/pnpjs/tree/dev/packages/sp/docs/files.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pnpspfiles">@pnp/sp/files<a class="headerlink" href="#pnpspfiles" title="Permanent link">&para;</a></h1>
+                <h1 id="pnpspfiles">@bpa-solutions/pnp-sp/files<a class="headerlink" href="#pnpspfiles" title="Permanent link">&para;</a></h1>
 <p>One of the more challenging tasks on the client side is working with SharePoint files, especially if they are large files. We have added some methods to the library to help and their use is outlined below.</p>
 <h2 id="reading-files">Reading Files<a class="headerlink" href="#reading-files" title="Permanent link">&para;</a></h2>
 <p>Reading files from the client using REST is covered in the below examples. The important thing to remember is choosing which format you want the file in so you can appropriately process it. You can retrieve a file as Blob, Buffer, JSON, or Text. If you have a special requirement you could also write your <a href="../../../queryable/docs/parsers/">own parser</a>.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/documents/file.avi&quot;</span><span class="p">).</span><span class="nx">getBlob</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">blob</span>: <span class="kt">Blob</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span>
 
@@ -1866,7 +1866,7 @@
 <p>Likewise you can add files using one of two methods, add or addChunked. The second is appropriate for larger files, generally larger than 10 MB but this may differ based on your bandwidth/latency so you can adjust the code to use the chunked method. The below example shows getting the file object from an input and uploading it to SharePoint, choosing the upload method based on file size.</p>
 <div class="codehilite"><pre><span></span><span class="kr">declare</span> <span class="kd">var</span> <span class="nx">require</span><span class="o">:</span> <span class="p">(</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">any</span><span class="p">;</span>
 
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">ConsoleListener</span><span class="p">,</span> <span class="nx">Web</span><span class="p">,</span> <span class="nx">Logger</span><span class="p">,</span> <span class="nx">LogLevel</span><span class="p">,</span> <span class="nx">ODataRaw</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ConsoleListener</span><span class="p">,</span> <span class="nx">Web</span><span class="p">,</span> <span class="nx">Logger</span><span class="p">,</span> <span class="nx">LogLevel</span><span class="p">,</span> <span class="nx">ODataRaw</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">auth</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./auth&quot;</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jquery&quot;</span><span class="p">);</span>
 
@@ -1911,7 +1911,7 @@
 
 <h3 id="setting-associated-item-values">Setting Associated Item Values<a class="headerlink" href="#setting-associated-item-values" title="Permanent link">&para;</a></h3>
 <p>You can also update the file properties of a newly uploaded file using code similar to the below snippet:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared%20Documents/test/&quot;</span><span class="p">).</span><span class="nx">files</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">f</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1928,7 +1928,7 @@
 
 <h2 id="update-file-content">Update File Content<a class="headerlink" href="#update-file-content" title="Permanent link">&para;</a></h2>
 <p>You can of course use similar methods to update existing files as shown below:</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/documents/test.txt&quot;</span><span class="p">).</span><span class="nx">setContent</span><span class="p">(</span><span class="s2">&quot;New string content for the file.&quot;</span><span class="p">);</span>
 
@@ -1940,7 +1940,7 @@
 <p>The library provides helper methods for checking in, checking out, and approving files. Examples of these methods are shown below.</p>
 <h3 id="check-in">Check In<a class="headerlink" href="#check-in" title="Permanent link">&para;</a></h3>
 <p>Check in takes two optional arguments, comment and check in type.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">CheckinType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span><span class="p">,</span> <span class="nx">CheckinType</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="c1">// default options with empty comment and CheckinType.Major</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/shared documents/file.txt&quot;</span><span class="p">).</span><span class="nx">checkin</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1964,7 +1964,7 @@
 
 <h3 id="check-out">Check Out<a class="headerlink" href="#check-out" title="Permanent link">&para;</a></h3>
 <p>Check out takes no arguments.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/shared documents/file.txt&quot;</span><span class="p">).</span><span class="nx">checkout</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1975,7 +1975,7 @@
 
 <h3 id="approve-and-deny">Approve and Deny<a class="headerlink" href="#approve-and-deny" title="Permanent link">&para;</a></h3>
 <p>You can also approve or deny files in libraries that use approval. Approve takes a single required argument of comment, the comment is optional for deny.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/shared documents/file.txt&quot;</span><span class="p">).</span><span class="nx">approve</span><span class="p">(</span><span class="s2">&quot;Approval Comment&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -1998,7 +1998,7 @@
 
 <h2 id="publish-and-unpublish">Publish and Unpublish<a class="headerlink" href="#publish-and-unpublish" title="Permanent link">&para;</a></h2>
 <p>You can both publish and unpublish a file using the library. Both methods take an optional comment argument.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="c1">// publish with no comment</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFileByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/shared documents/file.txt&quot;</span><span class="p">).</span><span class="nx">publish</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -2046,7 +2046,7 @@
 <p>This property controls the size of the individual chunks and is defaulted to 10485760 bytes (10 MB). You can adjust this based on your bandwidth needs - especially if writing code for mobile uploads or you are seeing frequent timeouts.</p>
 <h2 id="getitem">getItem<a class="headerlink" href="#getitem" title="Permanent link">&para;</a></h2>
 <p>This method allows you to get the item associated with this file. You can optionally specify one or more select fields. The result will be merged with a new Item instance so you will have both the returned property values and chaining ability in a single object.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">getItem</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
@@ -2070,7 +2070,7 @@
 
 
 <p>You can also supply a generic typing parameter and the resulting type will be a union type of Item and the generic type parameter. This allows you to have proper intellisense and type checking.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">sp</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@bpa-solutions/pnp-sp&quot;</span><span class="p">;</span>
 <span class="c1">// also supports typing the objects so your type will be a union type</span>
 <span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">getFolderByServerRelativeUrl</span><span class="p">(</span><span class="s2">&quot;/sites/dev/Shared Documents/test&quot;</span><span class="p">).</span><span class="nx">getItem</span><span class="o">&lt;</span><span class="p">{</span> <span class="nx">Id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">Title</span>: <span class="kt">string</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&quot;Id&quot;</span><span class="p">,</span> <span class="s2">&quot;Title&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="p">{</span>
 

@@ -9,12 +9,12 @@ import {
     RejectOnError,
     ResolveOnData,
     CacheKey,
-} from "@pnp/queryable";
+} from "@bpa-solutions/pnp-queryable";
 import { default as nodeFetch } from "node-fetch";
-import "@pnp/sp/webs";
-import "@pnp/sp/fields";
-import { getRandomString } from "@pnp/core";
-import { spfi } from "@pnp/sp";
+import "@bpa-solutions/pnp-sp/webs";
+import "@bpa-solutions/pnp-sp/fields";
+import { getRandomString } from "@bpa-solutions/pnp-core";
+import { spfi } from "@bpa-solutions/pnp-sp";
 
 describe("Behaviors", function () {
 

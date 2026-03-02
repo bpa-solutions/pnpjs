@@ -1,7 +1,7 @@
 import { LogLevel } from "@pnp/logging";
-import { HttpRequestError, Queryable } from "@pnp/queryable";
+import { HttpRequestError, Queryable } from "@bpa-solutions/pnp-queryable";
 import { default as nodeFetch } from "node-fetch";
-import { delay, TimelinePipe } from "@pnp/core";
+import { delay, TimelinePipe } from "@bpa-solutions/pnp-core";
 
 export interface INodeFetchProps {
     replace?: boolean;

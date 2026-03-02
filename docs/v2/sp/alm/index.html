@@ -2211,15 +2211,15 @@
                   </a>
                 
                 
-                <h1 id="pnpspappcatalog">@pnp/sp/appcatalog<a class="headerlink" href="#pnpspappcatalog" title="Permanent link">&para;</a></h1>
-<p>The ALM api allows you to manage app installations both in the tenant app catalog and individual site app catalogs. Some of the methods are still in beta and as such may change in the future. This article outlines how to call this api using @pnp/sp. Remember all these actions are bound by permissions so it is likely most users will not have the rights to perform these ALM actions.</p>
+                <h1 id="pnpspappcatalog">@bpa-solutions/pnp-sp/appcatalog<a class="headerlink" href="#pnpspappcatalog" title="Permanent link">&para;</a></h1>
+<p>The ALM api allows you to manage app installations both in the tenant app catalog and individual site app catalogs. Some of the methods are still in beta and as such may change in the future. This article outlines how to call this api using @bpa-solutions/pnp-sp. Remember all these actions are bound by permissions so it is likely most users will not have the rights to perform these ALM actions.</p>
 <h2 id="understanding-the-app-catalog-hierarchy">Understanding the App Catalog Hierarchy<a class="headerlink" href="#understanding-the-app-catalog-hierarchy" title="Permanent link">&para;</a></h2>
 <p>Before you begin provisioning applications it is important to understand the relationship between a local web catalog and the tenant app catalog. Some of the methods described below only work within the context of the tenant app catalog web, such as adding an app to the catalog and the app actions retract, remove, and deploy. You can install, uninstall, and upgrade an app in any web. <a href="https://docs.microsoft.com/en-us/sharepoint/dev/apis/alm-api-for-spfx-add-ins">Read more in the official documentation</a>.</p>
 <h2 id="referencing-an-app-catalog">Referencing an App Catalog<a class="headerlink" href="#referencing-an-app-catalog" title="Permanent link">&para;</a></h2>
-<p>There are several ways using @pnp/sp to get a reference to an app catalog. These methods are to provide you the greatest amount of flexibility in gaining access to the app catalog. Ultimately each method produces an AppCatalog instance differentiated only by the web to which it points.</p>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/appcatalog&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<p>There are several ways using @bpa-solutions/pnp-sp to get a reference to an app catalog. These methods are to provide you the greatest amount of flexibility in gaining access to the app catalog. Ultimately each method produces an AppCatalog instance differentiated only by the web to which it points.</p>
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/appcatalog&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // get the current context web's app catalog
 const catalog = await sp.web.getAppCatalog()();
@@ -2228,9 +2228,9 @@ const catalog = await sp.web.getAppCatalog()();
 const apps = await sp.web.getAppCatalog()();
 console.log(apps);
 </code></pre>
-<pre><code class="language-TypeScript">import { sp } from &quot;@pnp/sp&quot;;
-import &quot;@pnp/sp/appcatalog&quot;;
-import &quot;@pnp/sp/webs&quot;;
+<pre><code class="language-TypeScript">import { sp } from &quot;@bpa-solutions/pnp-sp&quot;;
+import &quot;@bpa-solutions/pnp-sp/appcatalog&quot;;
+import &quot;@bpa-solutions/pnp-sp/webs&quot;;
 
 // you can get the tenant app catalog (or any app catalog) by using the getTenantAppCatalogWeb method
 const appCatWeb = await sp.getTenantAppCatalogWeb()();
@@ -2244,13 +2244,13 @@ const tenantCatalog = await sp.web.getAppCatalog(&quot;https://mytenant.sharepoi
 const catalog = await sp.web.getAppCatalog(&quot;https://mytenant.sharepoint.com/sites/anothersite&quot;)();
 </code></pre>
 <pre><code class="language-TypeScript">// alternatively you can create a new app catalog instance directly by importing the AppCatalog class
-import { IAppCatalog, AppCatalog } from '@pnp/sp/appcatalog';
+import { IAppCatalog, AppCatalog } from '@bpa-solutions/pnp-sp/appcatalog';
 
 const catalog: IAppCatalog = await AppCatalog(&quot;https://mytenant.sharepoint.com/sites/apps&quot;)();
 </code></pre>
 <pre><code class="language-TypeScript">// and finally you can combine use of the Web and AppCatalog classes to create an AppCatalog instance from an existing Web
-import { Web } from '@pnp/sp/webs';
-import { AppCatalog } from '@pnp/sp/appcatalog';
+import { Web } from '@bpa-solutions/pnp-sp/webs';
+import { AppCatalog } from '@bpa-solutions/pnp-sp/appcatalog';
 
 const web = Web(&quot;https://mytenant.sharepoint.com/sites/apps&quot;);
 const catalog = await AppCatalog(web)();

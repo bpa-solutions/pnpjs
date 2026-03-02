@@ -1,4 +1,4 @@
-import { addProp } from "@pnp/queryable";
+import { addProp } from "@bpa-solutions/pnp-queryable";
 import { _User } from "../users/types.js";
 import { ITeams, Teams } from "./types.js";
 
